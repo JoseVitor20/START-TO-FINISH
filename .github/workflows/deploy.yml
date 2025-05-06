@@ -1,0 +1,71 @@
+name: Deploy Laravel para public_html via FTP
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  test:
+    name: Executar Testes de back-end
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Obter código mais recente
+        uses: actions/checkout@v3
+
+      - name: 📦 Instalar dependências do Composer
+        run: composer install --prefer-dist --no-interaction --no-scripts
+
+      - name: 🛠️ Configurar ambiente de teste
+        run: cp .env.example .env && php artisan key:generate
+
+      - name: 📦 Instalar PHPUnit
+        run: composer require --dev phpunit/phpunit
+
+      - name: 🧪 Rodar testes
+        run: ./vendor/bin/phpunit
+
+  deploy:
+    name: Deploy Laravel via FTP
+    runs-on: ubuntu-latest
+    needs: test # Somente roda se os testes passarem
+    steps:
+      - name: 📥 Obter código mais recente
+        uses: actions/checkout@v3
+
+      - name: 🧹 Limpar cache do runner
+        run: rm -rf ~/.cache ~/.ssh
+
+      - name: 📂 Enviar arquivos via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{secrets.FTP_SERVER}}
+          username: ${{secrets.FTP_USER}}
+          password: ${{secrets.FTP_PASSWORD}}
+          local-dir: ./
+          exclude: ""
+
+      - name: 🚀 Executar comandos no servidor via SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H nexocode.com.br >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/id_rsa ${{secrets.SSH_USER}}@${{secrets.SSH_SERVER}} << 'EOF'
+          cd ${{secrets.SERVER_DIR}}
+          echo "📦 Instalando dependências..."
+          composer install --no-dev --optimize-autoloader
+          echo "🔄 Configurando ambiente..."
+          mkdir -p storage bootstrap/cache
+          php artisan storage:link
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan route:clear
+          php artisan view:clear
+          echo "🛠️ Aplicando permissões..."
+          chmod -R 775 storage bootstrap/cache public/
+          chown -R www-data:www-data storage bootstrap/cache public/
+          echo "🗄️ Migrando banco de dados..."
+          php artisan migrate --force
+          echo "✅ Deploy efetuado com sucesso!"
+          EOF
