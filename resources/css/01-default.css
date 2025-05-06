@@ -27,7 +27,7 @@
 
     .light-mode {
         --bg-pri-color: #fff;
-        --bg-sec-color: #efefef;
+        --bg-sec-color: #cfcfcf;
         --text-pri-color: #101010;
         --text-sec-color: #303030;
         --inver-img: invert(0%);
