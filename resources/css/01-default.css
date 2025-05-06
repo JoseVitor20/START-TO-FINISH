@@ -11,19 +11,33 @@
 
 /* === PALETA DE CORES=== */
     :root{
-        --background-n1: #101010;
-        --background-n2: #262626;
-        --text-n1: #fff;
-        --text-n2: #cfcfcf;
-        --imagem: invert(100%);
+        --bg-pri-color: #101010;
+        --bg-sec-color: #262626;
+        --text-pri-color: #fff;
+        --text-sec-color: #cfcfcf;
+        --inver-img: invert(100%);
         --primary-color: #1a1a2e;
         --secondary-color: #21325e;
-        --neon: #00fffd;
-        --color-gradiente-n1: #00fffd;
-        --color-gradiente-n2: #19bf00;
+        --gradiente-pri-color: #00fffd;
+        --gradiente-sec-color: #19bf00;
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         --card-bg: #1e1e1e;
         --border-color: #444;
+    }
+
+    .light-mode {
+        --bg-pri-color: #fff;
+        --bg-sec-color: #efefef;
+        --text-pri-color: #101010;
+        --text-sec-color: #303030;
+        --inver-img: invert(0%);
+        --primary-color: #3620df;
+        --secondary-color: #7c00ff;
+        --gradiente-pri-color: #21ff00;
+        --gradiente-sec-color: #00fffd;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --card-bg: #ffffff;
+        --border-color: #e0e0e0;
     }
 
 /* === HTML, BODY === */
@@ -32,9 +46,10 @@
         font-family: 'Josefin Sans', sans-serif;
         scroll-behavior: smooth;
         height: 100vh;
-        background-color: var(--background-n1);
-        color: var(--text-n1);
+        background-color: var(--bg-color);
+        color: var(--text-pri-color);
         transition: all 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
 /* === CLASSES GLOBAIS ===*/
@@ -47,7 +62,7 @@
 
     /* Texto gradiente */
         .text-gradient {
-            background: linear-gradient(135deg, var(--color-gradiente-n1), var(--color-gradiente-n2));
+            background: linear-gradient(135deg, var(--gradiente-pri-color), var(--color-gradiente-n2));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -62,15 +77,14 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-top: 1rem;
-            border: 1px solid var(--background-n2);
-            color: var(--text-n1);
+            border: 1px solid var(--bg-sec-color);
+            color: var(--text-pri-color);
             margin-right: 5px;
         }
 
         button.active{
-            color: var(--background-n2) ;
-            background-color: var(--text-n1) ;
-            color: var(--background-n2) ;
+            background-color: var(--text-pri-color) ;
+            color: var(--bg-sec-color) ;
         }
 
         .btn:hover {
