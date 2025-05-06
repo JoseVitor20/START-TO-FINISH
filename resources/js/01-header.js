@@ -3,24 +3,24 @@ const icon = toggleButton.querySelector('i');
 const body = document.body;
 
 function enableDarkMode() {
-  body.classList.add('dark-mode');
+  body.classList.add('light-mode');
   icon.classList.replace('fa-moon', 'fa-sun');
-  localStorage.setItem('dark-mode', 'enabled');
+  localStorage.setItem('light-mode', 'enabled');
 }
 
 function disableDarkMode() {
-  body.classList.remove('dark-mode');
+  body.classList.remove('light-mode');
   icon.classList.replace('fa-sun', 'fa-moon');
-  localStorage.setItem('dark-mode', 'disabled');
+  localStorage.setItem('light-mode', 'disabled');
 }
 
 // Estado inicial baseado no localStorage
-if (localStorage.getItem('dark-mode') === 'enabled') {
+if (localStorage.getItem('light-mode') === 'enabled') {
   enableDarkMode();
 }
 
 toggleButton.addEventListener('click', () => {
-  if (body.classList.contains('dark-mode')) {
+  if (body.classList.contains('light-mode')) {
     disableDarkMode();
   } else {
     enableDarkMode();
