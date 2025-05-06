@@ -32,6 +32,15 @@
     }
 
 /* === LOGO ===  */
+    a.header__logo--hidden-link > img{
+        display: none;
+        height: 60px;
+        position: relative;
+        top: 5px;
+        left: 20px;
+        filter: var(--inver-img);
+    }
+
     div.header__logo {
         width: 20%;
     }
@@ -190,17 +199,23 @@
 /* === RESPONSIVO === */
 @media (max-width: 1050px) {
     div.header__container {
+        position: absolute;
+        top: 70px;
         flex-direction: column;
         height: auto;
         padding: 20px 4%;
         gap: 20px; /* Espaço entre os elementos */
         align-items: flex-start; /* ou center, dependendo do visual desejado */
-        background-color: var();
+        background-color: var(--bg-pri-color);
+        border-bottom: 2px solid var(--text-pri-color);
+    }
+
+    a.header__logo--hidden-link > img{
+        display: block;
     }
 
     div.header__logo {
-        width: 100%;
-        justify-content: center;
+        display: none;
     }
 
     nav.header__nav {

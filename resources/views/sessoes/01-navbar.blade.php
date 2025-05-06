@@ -1,4 +1,8 @@
 <header class="header">
+    <div class="header__logo--hidden">
+        <a href="#" class="header__logo--hidden-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a>
+    </div>
+
     <div class="header__container">
         <div class="header__logo">
             <a href="#" class="header__logo-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a>
