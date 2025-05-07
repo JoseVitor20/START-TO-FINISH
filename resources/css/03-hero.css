@@ -374,8 +374,22 @@
 
 @media (max-width: 475px) {   
     .hero-section {
-        height: 150vh !important;
+        height: 155vh !important;
         text-align: center;
         padding: 80px 0 60px;
+    }
+
+    div.hero-cta > a {
+        font-size: 18px !important;
+    }
+
+    .hero-social span {        
+        font-size: 20px;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
     }
 }

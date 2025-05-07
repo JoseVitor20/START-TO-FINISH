@@ -8,7 +8,7 @@
             <div class="col-lg-6 hero-image-col order-lg-2 order-1">
                 <div class="hero-image-container animate__animated animate__fadeInRight animate__delay-1s">
                     <div class="hero-image-wrapper">
-                        <img src="{{asset('IMG/ambiente-trabalho.png')}}" alt="José Vitor" class="hero-image">
+                        <img src="{{asset('img/ambiente-trabalho.png')}}" alt="José Vitor" class="hero-image">
                         <div class="hero-image-bg"></div>
                         <div class="hero-image-shape"></div>
                     </div>
