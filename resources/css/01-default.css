@@ -23,11 +23,13 @@
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         --card-bg: #1e1e1e;
         --border-color: #444;
+        --btn-shodow: #fff;
+        --btn-bg-hover: #000;
     }
 
     .light-mode {
         --bg-pri-color: #fff;
-        --bg-sec-color: #cfcfcf;
+        --bg-sec-color: #efefef;
         --text-pri-color: #101010;
         --text-sec-color: #303030;
         --inver-img: invert(0%);
@@ -38,6 +40,8 @@
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         --card-bg: #ffffff;
         --border-color: #e0e0e0;
+        --btn-shodow: #9f9f9f;
+        --btn-bg-hover: #fff;
     }
 
 /* === HTML, BODY === */
