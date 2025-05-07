@@ -30,12 +30,12 @@
         align-items: center;
     }
 
-/* === LOGO ===  */
+/* === LOGOS ===  */
     a.header__logo--hidden-link > img{
         display: none;
         height: 60px;
         position: relative;
-        top: 5px;
+        top: 0px;
         left: 20px;
         filter: var(--inver-img);
     }
