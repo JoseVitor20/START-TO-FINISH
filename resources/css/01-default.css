@@ -66,7 +66,7 @@
 
     /* Texto gradiente */
         .text-gradient {
-            background: linear-gradient(135deg, var(--gradiente-pri-color), var(--color-gradiente-n2));
+            background: linear-gradient(135deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -88,7 +88,6 @@
 
         button.active{
             background-color: var(--text-pri-color) ;
-            color: var(--bg-sec-color) ;
         }
 
         .btn:hover {
