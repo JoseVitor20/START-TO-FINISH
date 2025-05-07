@@ -7,7 +7,7 @@
         left: 0;
         padding: 5px 0;
         border-bottom: 1px solid var(--text-pri-color);
-        z-index: 1;
+        z-index: 999;
     }
 
     div.header__container {

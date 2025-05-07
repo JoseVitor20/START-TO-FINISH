@@ -18,6 +18,7 @@
         --inver-img: invert(100%);
         --primary-color: #1a1a2e;
         --secondary-color: #21325e;
+        --neon: #00fffd;
         --gradiente-pri-color: #00fffd;
         --gradiente-sec-color: #19bf00;
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -35,6 +36,7 @@
         --inver-img: invert(0%);
         --primary-color: #3620df;
         --secondary-color: #7c00ff;
+        --neon: #00fffd;
         --gradiente-pri-color: #21ff00;
         --gradiente-sec-color: #00fffd;
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
