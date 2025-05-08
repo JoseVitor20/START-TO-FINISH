@@ -1,0 +1,92 @@
+.projects-section {
+  margin: auto;
+  padding: 60px 20px;
+  background-color: var(--bg-sec-color);
+}
+
+.projects-section h2, h4{
+  text-align: center;
+  font-weight: bold;
+}
+
+.projects-section h4{
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.projects-section .header-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+  margin: 0 auto 50px;
+  border-radius: 2px;
+}
+
+.projects-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background-color: var(--bg-pri-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card .content {
+  padding: 20px;
+  flex: 1;
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.project-card ul li {
+  font-size: 0.95rem;
+  color: var(--text-pri-color);
+}
+
+.project-card .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.project-card button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.project-card button:hover {
+  background-color: #0056b3;
+}
