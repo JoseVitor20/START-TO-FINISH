@@ -38,6 +38,7 @@
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--text-pri-color);
 }
 
 .depoimento-card:hover {
@@ -64,7 +65,7 @@
 .depoimento-autor {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 .autor-foto {
@@ -83,14 +84,15 @@
 }
 
 .autor-info h4 {
-    font-size: 15px;
+    font-size: 20px;
     color: var(--text-pri-color);
 }
 
 .autor-info p {
     margin-top: -10px;
     color: #7f8c8d;
-    font-size: 0.9rem;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .avaliacao {
