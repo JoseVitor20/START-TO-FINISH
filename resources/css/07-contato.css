@@ -1,0 +1,131 @@
+/* === CLASSES ===*/
+    .contact{
+      width: 100%;
+      background-color: var(--bg-sec-color);
+    }
+
+    .sucesso {
+      width: max-content;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: var(--gradiente-sec-color);
+      position: absolute;
+      top: 75px;
+      right: 4%;
+      color: white;
+      font-size: 20px;
+      opacity: 0;
+      animation: fadeSlide 5s ease-in-out forwards;
+    }
+
+    /* Animação de entrada (0s–1s), pausa visível (1s–4s), saída (4s–5s) */
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      80% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+
+
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 50px auto;
+      background-color: var(--bg-pri-color);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--text-sec-color);
+      position: relative;
+    }
+
+    .contact-left, .contact-right {
+      padding: 40px;
+      color: var(--text-pri-color);
+    }
+
+    .contact-left {
+      background-color: var(--bg-sec-color);
+      border-right: 1px solid var(--bg-sec-color);
+    }
+
+    .contact-left img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .contato-cta {
+      width: 100%;
+    }
+
+    .contato-cta {
+      border: 2px solid var(--text-pri-color) ;
+      color: var(--text-pri-color) ;
+      margin-right: 10px;
+      font-size: 15px;
+    }
+
+    .contato-cta:hover {
+      color: var(--bg-pri-color);
+      background-color: var(--text-pri-color);
+    }
+
+    .form-label {
+      font-weight: bold;
+      color: var(--text-pri-color);
+    }
+
+    .form-control {
+      border-radius: 10px;
+      padding: 10px 15px;
+    }
+
+    .form-check-label {
+      color: var(--text-sec-color);
+    }
+
+    .form-check-input {
+      margin-top: 0.3rem;
+    }
+
+    .alert-box {
+      padding: 15px;
+      font-size: 0.9rem;
+      color: var(--text-pri-color);
+    }
+
+    .alert-box::before {
+      content: "!";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: #00fffd;
+      color: var(--bg-pri-color);
+      border-radius: 50%;
+      line-height: 30px;
+      text-align: center;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+/* === RESPONSIVO === */
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+      }
+
+      .alert-box {
+        position: static;
+        margin: 20px auto 0;
+      }
+    }

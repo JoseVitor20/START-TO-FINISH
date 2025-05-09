@@ -211,7 +211,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
-    animation: bounce 2s infinite;
+    animation: bounce s infinite;
 }
 
 .scroll-down span {
