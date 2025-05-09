@@ -33,11 +33,11 @@
                 </div>
                 <!-- Redes Sociais -->
                 <div class="hero-social animate__animated animate__fadeIn animate__delay-2-5s">
-                    <span>Minhas redes sociais:</span>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <span>Minhas redes sociais:</span>                                                                                
+                    <a class="social-icon" href="https://www.linkedin.com/in/josé-vitor-nascimento-lopes-aa2a24265" target="_blank" ><i class="fab fa-linkedin-in"></i></a>
+                    <a class="social-icon" href="https://github.com/JoseVitor20" target="_blank" ><i class="fab fa-github"></i></a>
+                    <a class="social-icon" href="https://www.instagram.com/josevitor.nascimentolopes" target="_blank" ><i class="fab fa-instagram"></i></a>
+                    <a class="social-icon" href="https://www.facebook.com/josevitor.nascimentolopes" target="_blank" ><i class="fab fa-facebook"></i></a>                    
                 </div>
             </div>
         </div>

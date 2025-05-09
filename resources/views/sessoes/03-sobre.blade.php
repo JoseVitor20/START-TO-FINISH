@@ -15,10 +15,9 @@
                     </div>
                     <h3 class="mt-4 text-gradient">José Vitor N.L</h3>
                     <span>START TO FINISH</span>
-                    <p></p>
-                    {{-- teste --}}
+                    <p></p>                    
                     <h4>Desenvolvedor Full Stack | Criador de Soluções Digitais</h4>
-                    <a class="btn btn-outline-light btn-lg" href="https://github.com/JoseVitor20"><i class="fab fa-github fa-lg"></i> Link para meu <strong>Github</strong></a>
+                    <a class="btn btn-outline-light btn-lg" href="https://github.com/JoseVitor20" target="_blank"><i class="fab fa-github fa-lg"></i> Link para meu <strong>Github</strong></a>
                 </div>
             </div>
             <!-- Coluna do Conteúdo -->
