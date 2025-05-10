@@ -19,14 +19,14 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="Start to Finish">
         <meta property="og:description" content="Especialistas em desenvolvimento Laravel e soluções web.">
-        <meta property="og:image" content="https://www.starttofinish.com.br/img/og.png">
+        <meta property="og:image" content="https://www.starttofinish.com.br/img/perfil-social.png">
         <meta property="og:url" content="https://www.starttofinish.com.br">
 
     {{-- === TWITTER CARDS (PARA TWITTER/X) === --}}
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Start to Finish">
         <meta name="twitter:description" content="A Start to Finish oferece soluções completas em tecnologia.">
-        <meta name="twitter:image" content="https://www.starttofinish.com.br/img/og.png">
+        <meta name="twitter:image" content="https://www.starttofinish.com.br/img/perfil-social.png">
 
     {{-- === SCHEMA.ORG STRUCTURED DATA === --}}
         <script type="application/ld+json">
