@@ -36,7 +36,6 @@ const headerNavItems = document.querySelectorAll('li.header__nav-item');
 const headerNavItemsLinks = document.querySelectorAll('a.header__nav-link');
 const actionMenu = document.getElementById('hidden');
 const buttonDarkMode = document.querySelector('button.header__action--dark-mode');
-const buttonRegistro = document.querySelector('a.header__action--register');
 
 function toggleMenu() {
     menuBtn.classList.toggle('active');
@@ -64,8 +63,6 @@ headerNavItemsLinks.forEach(item => {
 headerOpacidade.addEventListener('click', toggleMenu);
 
 buttonDarkMode.addEventListener('click', toggleMenu);
-
-buttonRegistro.addEventListener('click', toggleMenu)
 
 // === MATER O ÚLTIMO ELEMENTO ATIVO MESMO QUE A PÁGINA SEJA ATUALIZADA ===    
     // Função para remover a classe 'selected' de todos os itens e deixar apenas um elemento ativo como destaque

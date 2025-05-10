@@ -13,6 +13,7 @@
         "gulp-clean-css": "^4.3.0",
         "gulp-concat": "^2.6.1",
         "gulp-htmlmin": "^5.0.1",
+        "gulp-sourcemaps": "^3.0.0",
         "gulp-wrap": "^0.15.0",
         "laravel-vite-plugin": "^1.2.0",
         "tailwindcss": "^4.0.0",
