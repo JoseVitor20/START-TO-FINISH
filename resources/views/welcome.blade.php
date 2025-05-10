@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- === SEO === --}}
         <meta name="description" content="Oferecemos soluções completas em desenvolvimento web, com foco em performance, velocidade, escalabilidade e design responsivo.">
+        
+        <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk" />
     
     <title>Start To Finish</title>
     <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
