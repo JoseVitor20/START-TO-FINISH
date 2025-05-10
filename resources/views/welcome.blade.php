@@ -2,15 +2,40 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- === SEO === --}}
-        <meta name="description" content="Oferecemos soluções completas em desenvolvimento web, com foco em performance, velocidade, escalabilidade e design responsivo.">
-        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk" />
+        <meta name="description" content="A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.">
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Starttofinish",
+              "url": "https://www.starttofinish.com.br",
+              "logo": "https://www.ignifock.com/img/icone.ico",
+              "description": "Especialistas em desenvolvimento web full-stack, soluções Laravel e apps modernos.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressCountry": "BR"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+55-11-1234-5678",
+                "contactType": "customer service"
+              },
+              "sameAs": [
+                "https://www.instagram.com/ignifock",
+                "https://www.linkedin.com/company/ignifock"
+              ]
+            }
+        </script>
+
+    {{-- IDENTIDADE DO SITE  --}}
+        <title>Start to Finish | Soluções completas em tecnologia e desenvolvimento web</title>
     
-    <title>Start To Finish</title>
-    <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
     {{-- === BOOTSTRAP CSS === --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
