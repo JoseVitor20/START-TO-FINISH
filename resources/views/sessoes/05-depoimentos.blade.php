@@ -1,4 +1,4 @@
-<section class="depoimentos">
+<section id="depoimentos" class="depoimentos" data-aos="zoom-in-down" data-aos-duration="1000">
 <div class="container">
     <h2 class="display-4 fw-bold">Os <span class="text-gradient">Depoimentos</span></h2>
     <div class="header-divider"></div>   

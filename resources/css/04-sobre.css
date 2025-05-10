@@ -1,26 +1,26 @@
 /* === CLASSES ===*/
-#sobre-mim {
+#sobre {
   background-color: var(--bg-pri-color);
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
 
-#sobre-mim .section-header {
+#sobre .section-header {
   position: relative;
   margin-bottom: 3rem;
 }
 
-#sobre-mim .section-header h2 {
+#sobre .section-header h2 {
   font-weight: 800;
   color: var(--text-pri-color);
 }
 
-#sobre-mim .section-header p {
+#sobre .section-header p {
   color: var(--text-n2);
 }
 
-#sobre-mim .section-header .header-divider {
+#sobre .section-header .header-divider {
   width: 80px;
   height: 4px;
   background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
@@ -29,7 +29,7 @@
 }
 
 /* Coluna da Foto*/
-    #sobre-mim .profile-card {
+    #sobre .profile-card {
       padding: 50px 2vmin;
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       border-radius: 15px;
@@ -37,18 +37,18 @@
       transition: transform 0.3s ease;
     }
 
-    #sobre-mim .profile-card:hover {
+    #sobre .profile-card:hover {
       transform: translateY(-10px);
     }
 
-    #sobre-mim .profile-card .profile-image-container {
+    #sobre .profile-card .profile-image-container {
       position: relative;
       width: 220px;
       height: 220px;
       margin: 0 auto 1.5rem;
     }
 
-    #sobre-mim .profile-card .profile-image-container img {
+    #sobre .profile-card .profile-image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -57,7 +57,7 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
-    #sobre-mim .profile-card .profile-image-container .image-border {
+    #sobre .profile-card .profile-image-container .image-border {
       position: absolute;
       top: -15px;
       left: -15px;
@@ -69,21 +69,21 @@
       animation: spin 20s linear infinite;
     }
 
-    #sobre-mim .profile-card .profile-image-container .animate-spin {
+    #sobre .profile-card .profile-image-container .animate-spin {
       animation: spin 20s linear infinite;
     }
 
-    #sobre-mim .profile-card h3 {
+    #sobre .profile-card h3 {
       font-size: clamp(35px, 5vw, 40px);
       font-weight: bold;
     }
 
-    #sobre-mim .profile-card span {
+    #sobre .profile-card span {
       font-size: clamp(15px, 10vw, 20px);
       color: #ffff;
     }
 
-    #sobre-mim .profile-card p {
+    #sobre .profile-card p {
       height: 3px;
       width: 100px;
       background-color: var(--neon);
@@ -91,22 +91,22 @@
       margin-bottom: 20px;
     }
 
-    #sobre-mim .profile-card h4 {
+    #sobre .profile-card h4 {
       font-size: clamp(5px, 3vw, 14px);
       color: #ffff;
     }
 
-    #sobre-mim .profile-card a {
+    #sobre .profile-card a {
       transition: all 0.3s ease;
       border-color: #fff !important;
       color: #ffff;
     }
 
-    #sobre-mim .profile-card a:hover {
+    #sobre .profile-card a:hover {
       color: black;
     }
 
-    #sobre-mim .nav-tabs {
+    #sobre .nav-tabs {
       width: 100%;
       border-bottom: 2px solid #ffff;
       padding-bottom: 15px;
@@ -117,16 +117,16 @@
       margin-top: 0px;
     }
 
-    #sobre-mim .nav-item {
+    #sobre .nav-item {
       position: relative;
     }
 
-    #sobre-mim .nav-item:not(2,4) {
+    #sobre .nav-item:not(2,4) {
       padding-right: 4%;
     }
 
 /* Abas de Navegação*/
-    #sobre-mim .nav-item button {
+    #sobre .nav-item button {
       width: 95%;
       margin: 0 auto;
       font-size: clamp(15px, 3vw, 20px);
@@ -148,13 +148,13 @@
     }
 
 /* Profissional*/
-    #sobre-mim .tab-pane h4,
-    #sobre-mim .tab-pane h5,
-    #sobre-mim .tab-pane p {
+    #sobre .tab-pane h4,
+    #sobre .tab-pane h5,
+    #sobre .tab-pane p {
       color: var(--text-pri-color);
     }
 
-    #sobre-mim .highlight-item {
+    #sobre .highlight-item {
       background-color: var(--bg-sec-color);
       padding: 0 1.5rem;
       padding-top: 1rem;
@@ -164,13 +164,13 @@
       transition: transform 0.3s ease;
     }
 
-    #sobre-mim .highlight-item li,
-    #sobre-mim .highlight-item p,
-    #sobre-mim .highlight-item h5 {
+    #sobre .highlight-item li,
+    #sobre .highlight-item p,
+    #sobre .highlight-item h5 {
       color: var(--text-pri-color);
     }
 
-    #sobre-mim .icon-box {
+    #sobre .icon-box {
       width: 40px;
       height: 40px;
       background: rgba(78, 84, 200, 0.1);
@@ -181,30 +181,30 @@
       flex-shrink: 0;
     }
 
-    #sobre-mim .icon-box i {
+    #sobre .icon-box i {
       font-size: 15px;
     }
 
-    #sobre-mim .highlight-item h5 {
+    #sobre .highlight-item h5 {
       font-size: clamp(15px, 3vw, 25px);
       font-weight: bold;
       margin-bottom: 0px;
     }
 
-    #sobre-mim .highlight-item p, li {
+    #sobre .highlight-item p, li {
       font-size: clamp(12px, 3vw, 15px);
     }
 
-    #sobre-mim .highlight-item p {
+    #sobre .highlight-item p {
       margin-left: 15px;
     }
 
-    #sobre-mim .highlight-item li {
+    #sobre .highlight-item li {
       margin-left: -10px;
     }
 
 /* Técnico */
-    #sobre-mim .skills-grid {
+    #sobre .skills-grid {
       height: 330px;
       padding-bottom: 40px;
       overflow-y: auto;
@@ -214,11 +214,11 @@
       border-radius: 10px;
     }
 
-    #sobre-mim .skill-item {
+    #sobre .skill-item {
       transition: all 0.3s ease;
     }
 
-    #sobre-mim .skill-card {
+    #sobre .skill-card {
       background: var(--bg-sec-color);
       padding: 1.5rem 1rem;
       border-radius: 10px;
@@ -229,30 +229,30 @@
       border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
-    #sobre-mim .skill-card:hover {
+    #sobre .skill-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
-    #sobre-mim .skill-img > img {
+    #sobre .skill-img > img {
       width: 7vmin;
       margin-bottom: 1rem;
       color: var(--text-n2);
       filter: var(--inver-img);
     }
 
-    #sobre-mim .skill-img i {
+    #sobre .skill-img i {
       width: 100%;
     }
 
-    #sobre-mim .skill-card h6 {
+    #sobre .skill-card h6 {
       font-size: 1rem;
       margin-bottom: 1rem;
       font-weight: 600;
       color: var(--text-pri-color);
     }
 
-    #sobre-mim .skill-level {
+    #sobre .skill-level {
       height: 6px;
       background: var(--text-pri-color);
       border-radius: 3px;
@@ -260,28 +260,28 @@
       overflow: hidden;
     }
 
-    #sobre-mim .level-bar {
+    #sobre .level-bar {
       height: 100%;
       border-radius: 3px;
       background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
       transition: width 1.5s ease-in-out;
     }
 
-    #sobre-mim .skill-percent {
+    #sobre .skill-percent {
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-n2);
     }
 
 /* Filtros por Categoria*/
-    #sobre-mim .btn-group-sm .btn {
+    #sobre .btn-group-sm .btn {
         font-size: 0.75rem;
         padding: 0.25rem 0.5rem;
         border: 1px solid var(--text-pri-color);
     }
 
 /* Experiência*/
-    #sobre-mim .timeline {
+    #sobre .timeline {
       height: 390px;
       overflow-y: auto;
       overflow-x: hidden;
@@ -292,17 +292,17 @@
       border-radius: 10px;
     }
 
-    #sobre-mim .timeline-item {
+    #sobre .timeline-item {
       position: relative;
       margin-top: -8px;
       margin-bottom: 2.5rem;
     }
 
-    #sobre-mim .timeline-item:last-child {
+    #sobre .timeline-item:last-child {
       margin-bottom: 0;
     }
 
-    #sobre-mim .timeline-date {
+    #sobre .timeline-date {
       position: absolute;
       left: -30px;
       top: 0px;
@@ -323,7 +323,7 @@
       z-index: 99;
     }
 
-    #sobre-mim .timeline-content {
+    #sobre .timeline-content {
       background-color: var(--bg-sec-color);
       margin-left: -10px;
       border-radius: 10px;
@@ -333,7 +333,7 @@
       padding-bottom: 10px;
     }
 
-    #sobre-mim .timeline-content h4 {
+    #sobre .timeline-content h4 {
       width: inherit;
       height: 49px;
       font-size: clamp(15px, 5vw, 30px);
@@ -345,7 +345,7 @@
       background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
     }
 
-    #sobre-mim .timeline-content h5 {
+    #sobre .timeline-content h5 {
       font-size: clamp(15px, 4vw, 20px);
       font-weight: bold;
       color: var(--text-pri-color);
@@ -354,22 +354,22 @@
       margin-bottom: 0px;
     }
 
-    #sobre-mim hr {
+    #sobre hr {
       color: var(--text-pri-color);
     }
 
-    #sobre-mim .timeline-content ul {
+    #sobre .timeline-content ul {
       padding-left: 12vmin;
     }
 
-    #sobre-mim .timeline-content li {
+    #sobre .timeline-content li {
       margin-bottom: 0.5rem;
       font-size: clamp(10px, 3.5vw, 15px);
       color: var(--text-n2);
     }
 
 /* Tragetória*/
-    #sobre-mim .roadmap-container {
+    #sobre .roadmap-container {
       padding-top: 10px;
       height: 390px;
       position: relative;
@@ -380,17 +380,17 @@
       border-radius: 10px;
     }
 
-    #sobre-mim .roadmap-phase {
+    #sobre .roadmap-phase {
       position: relative;
       padding-left: 60px;
       margin-bottom: 2rem;
     }
 
-    #sobre-mim .roadmap-phase:last-child {
+    #sobre .roadmap-phase:last-child {
       margin-bottom: 0;
     }
 
-    #sobre-mim .roadmap-phase::before {
+    #sobre .roadmap-phase::before {
       content: '';
       position: absolute;
       left: 30px;
@@ -400,18 +400,18 @@
       background: linear-gradient(to bottom, var(--gradiente-pri-color), var(--gradiente-sec-color));
     }
 
-    #sobre-mim .roadmap-phase:last-child::before {
+    #sobre .roadmap-phase:last-child::before {
       display: none;
     }
 
-    #sobre-mim .phase-header {
+    #sobre .phase-header {
       position: relative;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
     }
 
-    #sobre-mim .phase-icon {
+    #sobre .phase-icon {
       position: absolute;
       left: -50px;
       width: 40px;
@@ -427,11 +427,11 @@
       color: var(--neon);
     }
 
-    #sobre-mim h5 {
+    #sobre h5 {
       color: var(--neon);
     }
 
-    #sobre-mim .phase-content {
+    #sobre .phase-content {
       background: var(--bg-sec-color);
       padding: 1.5rem;
       border-radius: 10px;
@@ -439,7 +439,7 @@
       color: var(--text-pri-color);
     }
 
-    #sobre-mim .roadmap-phase.future .phase-content {
+    #sobre .roadmap-phase.future .phase-content {
       background: rgba(78, 84, 200, 0.05);
       border: 1px dashed rgba(78, 84, 200, 0.3);
     }
@@ -529,7 +529,7 @@
         height: 150px;
     }
 
-    #sobre-mim .timeline-content h4 {
+    #sobre .timeline-content h4 {
       height: 45.25px;
       padding-top: 14px;
       background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));

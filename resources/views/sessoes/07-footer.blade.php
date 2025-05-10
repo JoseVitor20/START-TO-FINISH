@@ -7,7 +7,7 @@
         
         <div class="footer-section">
             <h3>Contato</h3>
-            <p>Encarnação Hidalgo Valezi, 1825</p>
+            <p>Encarnação Hidalgo Valezi, 1853</p>
             <p>Fátima do Sul, MS</p>
             <p>Email: josevitor@starttofinish.com.br</p>
             <p>Telefone: (67) 99872-2284</p>

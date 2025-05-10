@@ -15,6 +15,9 @@
     {{-- === ANIMATE === --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
 
+    {{--  === AOS ===  --}}
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     {{-- === FONT AWESOME === --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -30,13 +33,30 @@
 
 <body>
 
-    @include('sessoes-min')
+    <!-- Overlay de carregamento -->
+    <div class="loading-overlay">
+        <div class="loading-content"> 
+            <img src="{{asset('img/icone.ico')}}" alt="">                
+            <div class="spinner">
+            </div>
+        </div>
+    </div>
+
+    <div class="real-content">
+        @include('sessoes-min')
+    </div>
 
     {{-- === BOOTSTRAP === --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     {{-- PARTICLES.JS --}}
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    {{--  === AOS ===  --}}
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
 
     {{-- === LÓGICA JS ===  --}}
     <script src="{{asset('js/scripts.min.js')}}"></script>
