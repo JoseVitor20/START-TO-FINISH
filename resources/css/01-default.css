@@ -52,7 +52,7 @@
         font-family: 'Josefin Sans', sans-serif;
         scroll-behavior: smooth;
         height: 100vh;
-        background-color: var(--bg-pri-color);
+        background-color: var(--bg-color);
         color: var(--text-pri-color);
         transition: all 0.3s ease;
         transition: background-color 0.3s ease, color 0.3s ease;

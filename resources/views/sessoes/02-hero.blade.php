@@ -43,7 +43,7 @@
         </div>
     </div>
     <!-- Scroll Down Indicator -->
-    <a href="#sobre" class="scroll-down animate__animated animate__fadeIn animate__delay-3s">
+    <a href="#sobre-mim" class="scroll-down animate__animated animate__fadeIn animate__delay-3s">
         <div class="scroll-down-arrow">
             <i class="fas fa-chevron-down"></i>
         </div>
