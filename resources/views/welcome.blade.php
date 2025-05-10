@@ -2,42 +2,67 @@
 <html lang="pt-BR">
 
 <head>
-    {{-- === SEO === --}}
+    {{-- === SEO ESSENCIAL === --}}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk" />
+        <meta http-equiv="Content-Language" content="pt-BR">
+        <meta name="robots" content="index, follow">
         <meta name="description" content="A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.">
+        <meta name="author" content="Start to Finish">
+        <meta name="keywords" content="laravel, desenvolvimento web, full-stack, sistemas personalizados">
+        <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk">
+
+    {{-- === URL CANÔNICA === --}}
+        <link rel="canonical" href="https://www.starttofinish.com.br/">
+
+    {{-- === OPEN GRAPH (PARA FACEBOOK, LINKEDIN ETC.) === --}}
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Start to Finish">
+        <meta property="og:description" content="Especialistas em desenvolvimento Laravel e soluções web.">
+        <meta property="og:image" content="https://www.starttofinish.com.br/img/og.png">
+        <meta property="og:url" content="https://www.starttofinish.com.br">
+
+    {{-- === TWITTER CARDS (PARA TWITTER/X) === --}}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Start to Finish">
+        <meta name="twitter:description" content="A Start to Finish oferece soluções completas em tecnologia.">
+        <meta name="twitter:image" content="https://www.starttofinish.com.br/img/og.png">
+
+    {{-- === SCHEMA.ORG STRUCTURED DATA === --}}
         <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Start to Finish",
-              "url": "https://www.starttofinish.com.br",
-              "logo": "https://www.starttofinish.com.br/img/icone.ico",
-              "description": "A 'Start to Finish' oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Mato Grosso do Sul",
-                "addressCountry": "BR"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+55-67-9872-2284",
-                "contactType": "customer service"
-              },
-              "sameAs": [
-                "https://www.linkedin.com/in/josé-vitor-nascimento-lopes-aa2a24265",
-                "https://github.com/JoseVitor20",
-                "https://www.instagram.com/josevitor.nascimentolopes",
-                "https://www.facebook.com/josevitor.nascimentolopes"                
-              ]
-            }
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Start to Finish",
+          "url": "https://www.starttofinish.com.br",
+          "logo": "https://www.starttofinish.com.br/img/icone.ico",
+          "description": "A 'Start to Finish' oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Encarnação Hidalgo Valezi, 1853",
+            "addressLocality": "Fátima do Sul",
+            "postalCode": "79000-000",
+            "addressCountry": "BR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-67-9872-2284",
+            "contactType": "customer service"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/josé-vitor-nascimento-lopes-aa2a24265",
+            "https://github.com/JoseVitor20",
+            "https://www.instagram.com/josevitor.nascimentolopes",
+            "https://www.facebook.com/josevitor.nascimentolopes"
+          ]
+        }
         </script>
 
-    {{-- IDENTIDADE DO SITE  --}}
-        <title>Start to Finish | Soluções completas em tecnologia e desenvolvimento web</title>
-    
+    {{-- === TÍTULO DA PÁGINA E ÍCONE=== --}}
+        <title>Start to Finish - Desenvolvimento Web Full-Stack</title>
+
         <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
+        
     {{-- === BOOTSTRAP CSS === --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -47,7 +72,7 @@
     {{-- === ANIMATE === --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
 
-    {{--  === AOS ===  --}}
+    {{-- === AOS === --}}
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     {{-- === FONT AWESOME === --}}
@@ -60,12 +85,11 @@
 
     {{-- === ESTILOS CSS ==== --}}
         <link rel="stylesheet" href="{{asset('css/style.min.css')}}">
-
 </head>
 
 <body>
 
-    <!-- Overlay de carregamento -->
+    {{-- === OVERLAY DE CARREGAMENTO === --}}
     <div class="loading-overlay">
         <div class="loading-content"> 
             <img src="{{asset('img/icone.ico')}}" alt="">                
