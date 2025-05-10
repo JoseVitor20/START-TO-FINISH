@@ -11,23 +11,25 @@
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Starttofinish",
+              "name": "Start to Finish",
               "url": "https://www.starttofinish.com.br",
-              "logo": "https://www.ignifock.com/img/icone.ico",
-              "description": "Especialistas em desenvolvimento web full-stack, soluções Laravel e apps modernos.",
+              "logo": "https://www.starttofinish.com.br/img/icone.ico",
+              "description": "A 'Start to Finish' oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "São Paulo",
+                "addressLocality": "Mato Grosso do Sul",
                 "addressCountry": "BR"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+55-11-1234-5678",
+                "telephone": "+55-67-9872-2284",
                 "contactType": "customer service"
               },
               "sameAs": [
-                "https://www.instagram.com/ignifock",
-                "https://www.linkedin.com/company/ignifock"
+                "https://www.linkedin.com/in/josé-vitor-nascimento-lopes-aa2a24265",
+                "https://github.com/JoseVitor20",
+                "https://www.instagram.com/josevitor.nascimentolopes",
+                "https://www.facebook.com/josevitor.nascimentolopes"                
               ]
             }
         </script>
