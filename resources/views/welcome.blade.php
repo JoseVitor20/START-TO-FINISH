@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Language" content="pt-BR">
         <meta name="robots" content="index, follow">
-        <meta name="description" content="A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.">
         <meta name="author" content="Start to Finish">
+        <meta name="description" content="Start to Finish é especialista em desenvolvimento Laravel e sistemas web personalizados. Velocidade, segurança e soluções sob medida para sua empresa.">
         <meta name="keywords" content="laravel, desenvolvimento web, full-stack, sistemas personalizados">
         <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk">
 
@@ -24,7 +24,7 @@
 
     {{-- === TWITTER CARDS (PARA TWITTER/X) === --}}
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Start to Finish">
+        <meta name="twitter:t   itle" content="Start to Finish">
         <meta name="twitter:description" content="A Start to Finish oferece soluções completas em tecnologia.">
         <meta name="twitter:image" content="https://www.starttofinish.com.br/img/perfil-social.png">
 
@@ -35,7 +35,7 @@
           "@type": "Organization",
           "name": "Start to Finish",
           "url": "https://www.starttofinish.com.br",
-          "logo": "https://www.starttofinish.com.br/img/icone.ico",
+          "logo": "https://www.starttofinish.com.br/public/img/icone.ico",
           "description": "A 'Start to Finish' oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
           "address": {
             "@type": "PostalAddress",
