@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Executar Testes de back-end
+    name: Executar Testes
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Obter código mais recente
