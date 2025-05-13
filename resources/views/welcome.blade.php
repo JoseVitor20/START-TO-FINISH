@@ -35,8 +35,8 @@
           "@type": "Organization",
           "name": "Start to Finish",
           "url": "https://www.starttofinish.com.br",
-          "logo": "https://www.starttofinish.com.br/public/img/icone.ico",
-          "description": "A 'Start to Finish' oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
+          "logo": "https://www.starttofinish.com.br/img/logo-internet.png",
+          "description": "A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Encarnação Hidalgo Valezi, 1853",
@@ -57,6 +57,7 @@
           ]
         }
         </script>
+
 
     {{-- === TÍTULO DA PÁGINA E ÍCONE=== --}}
         <title>Start to Finish - Desenvolvimento Web Full-Stack</title>
@@ -83,7 +84,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-    {{-- === ESTILOS CSS ==== --}}
+    {{-- === ESTILOS CSS === --}}
         <link rel="stylesheet" href="{{asset('css/style.min.css')}}">
 </head>
 
