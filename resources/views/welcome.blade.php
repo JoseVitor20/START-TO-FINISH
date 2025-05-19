@@ -93,7 +93,7 @@
     {{-- === OVERLAY DE CARREGAMENTO === --}}
     <div class="loading-overlay">
         <div class="loading-content"> 
-            <img src="{{asset('img/icone.ico')}}" alt="">                
+            <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start To Finish">                
             <div class="spinner">
             </div>
         </div>
