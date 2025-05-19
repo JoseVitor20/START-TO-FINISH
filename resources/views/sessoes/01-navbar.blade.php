@@ -15,7 +15,7 @@
         </div>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#inicio" class="header__nav-link selected" id="item1">Início</a></li>
+                <li class="header__nav-item"><a href="#inicio" class="header__nav-link" id="item1">Início</a></li>
                 <li class="header__nav-item"><a href="#sobre" class="header__nav-link" id="item2">Sobre</a></li>
                 <li class="header__nav-item"><a href="#projetos" class="header__nav-link" id="item3">Projetos</a></li>
                 <li class="header__nav-item"><a href="#depoimentos" class="header__nav-link" id="item4">Depoimentos</a></li>
