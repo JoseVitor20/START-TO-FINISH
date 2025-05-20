@@ -92,9 +92,9 @@
         content: '';
         position: absolute;
         left: 0;
-        bottom: 7px;
+        bottom: 9px;
         width: 100%;
-        height: 8px;
+        height: 4px;
         background-color: var(--gradiente-pri-color);
         transform: scaleX(0);
         transform-origin: bottom right;
@@ -105,18 +105,21 @@
     li.header__nav-item>a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
-        background: linear-gradient(to bottom, var(--gradiente-pri-color), var(--gradiente-sec-color));
+        background: linear-gradient(to right, var(--gradiente-pri-color), var(--gradiente-sec-color));
         border-radius: 5px;
     }
 
-    a.selected::before{
+    li.selected a:before{
         content: "";
         width: 100%;
-        height: 8px;
+        height: 4px;
         position: absolute;
         left: 0;
-        bottom: 7px;
-        background: linear-gradient(to bottom, var(--gradiente-pri-color), var(--gradiente-sec-color));
+        bottom: 9px;
+        background: linear-gradient(to right, var(--gradiente-pri-color), var(--gradiente-sec-color));
+        border-radius: 5px;
+        transform: scaleX(1);
+        transform-origin: bottom left;
         border-radius: 5px;
     }
 

@@ -81,3 +81,11 @@
 .real-content {
     width: 100%;
 }
+
+@media (max-width: 480px){
+    .loading-content > img{
+        height: 90px;
+        position: relative;
+        top: 125px;
+    }
+}

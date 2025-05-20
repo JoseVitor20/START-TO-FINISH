@@ -65,28 +65,39 @@ headerOpacidade.addEventListener('click', toggleMenu);
 buttonDarkMode.addEventListener('click', toggleMenu);
 
 // === MATER O ÚLTIMO ELEMENTO ATIVO MESMO QUE A PÁGINA SEJA ATUALIZADA ===    
-    // Função para remover a classe 'selected' de todos os itens e deixar apenas um elemento ativo como destaque
-    headerNavItemsLinks[0].classList.add('selected')
-    function clearSelection() {
-      document.querySelectorAll('a.header__nav-link').forEach(item => {
-        item.classList.remove('selected');
-      });
+    // Ativar links
+    const VALID_HASHES = [
+      '#inicio',
+      '#sobre',
+      '#projetos',
+      '#depoimentos',
+      '#contato',
+    ];
+
+    function updateSelectedNavItem () {
+      const currentHash = window.location.hash;
+
+      document.querySelectorAll('.selected').forEach(item =>
+        item.classList.remove('selected')
+      );
+
+      if (VALID_HASHES.includes(currentHash)) {
+        // Pode repetir esse mesmos sistema para outras estruturas que usem os mesmos links
+          const link = document.querySelector(
+            `.header__nav-item a[href="${currentHash}"]`
+          );
+          link?.closest('.header__nav-item')?.classList.add('selected');
+      }
     }
 
-    // Ao carregar a página, aplica a seleção salva (se clique)
-      // const savedId = localStorage.getItem('lastClickedId');
-      // if (savedId) {
-      //   const savedElement = document.getElementById(savedId);
-      //   if (savedElement) {
-      //     savedElement.classList.add('selected');
-      //   }
-      // }
+    updateSelectedNavItem()
 
-      // Adiciona eventos de clique em cada item
-      document.querySelectorAll('a.header__nav-link').forEach(item => {
-        item.addEventListener('click', () => {
-          clearSelection();
-          item.classList.add('selected');
-          localStorage.setItem('lastClickedId', item.id);
-        });
-      });
+    window.addEventListener('hashchange', updateSelectedNavItem);
+
+    document.addEventListener('click', e => {
+        // Pode repetir esse mesmos sistema para outras estruturas que usem os mesmos links
+          const link = e.target.closest('.header__nav-item a[href^="#"]');
+          if (link) {
+            updateSelectedNavItem();
+          }
+    });
