@@ -67,11 +67,11 @@ buttonDarkMode.addEventListener('click', toggleMenu);
 // === MATER O ÚLTIMO ELEMENTO ATIVO MESMO QUE A PÁGINA SEJA ATUALIZADA ===    
     // Ativar links
     const VALID_HASHES = [
-        '#inicio',
-        '#sobre',
-        '#projetos',
-        '#depoimentos',
-        '#contato'
+      '#inicio',
+      '#sobre',
+      '#projetos',
+      '#depoimentos',
+      '#contato',
     ];
 
     function updateSelectedNavItem () {
@@ -83,21 +83,21 @@ buttonDarkMode.addEventListener('click', toggleMenu);
 
       if (VALID_HASHES.includes(currentHash)) {
         // Pode repetir esse mesmos sistema para outras estruturas que usem os mesmos links
-            const link = document.querySelector(
-              `.header__nav-item a[href="${currentHash}"]`
-            );
-            link?.closest('.header__nav-item')?.classList.add('selected');
+          const link = document.querySelector(
+            `.header__nav-item a[href="${currentHash}"]`
+          );
+          link?.closest('.header__nav-item')?.classList.add('selected');
       }
     }
 
-    document.addEventListener('DOMContentLoaded', updateSelectedNavItem);
+    updateSelectedNavItem()
 
     window.addEventListener('hashchange', updateSelectedNavItem);
 
     document.addEventListener('click', e => {
         // Pode repetir esse mesmos sistema para outras estruturas que usem os mesmos links
-        const link = e.target.closest('.header__nav-item a[href^="#"]');
-        if (link) {
-          updateSelectedNavItem();
-        }
+          const link = e.target.closest('.header__nav-item a[href^="#"]');
+          if (link) {
+            updateSelectedNavItem();
+          }
     });
