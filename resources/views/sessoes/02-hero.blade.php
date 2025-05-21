@@ -22,7 +22,7 @@
                 <h1 class="hero-title animate__animated animate__fadeInUp animate__delay-1s">
                     Olá, eu sou &lt;<span class="text-gradient" id="typed-name"></span>&#47;&gt;
                 </h1>
-                <q class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1-5s">Ideias de hoje, conquistas de amanhã</q>
+                <q class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1-5s">Iniciativas de hoje, conquistas de amanhã.</q>
                 <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
                     <a href="https://wa.me/556798722284" target="_blank" class="btn btn-outline-light btn-lg mb-0 me-lg-3">
                         <i class="fab fa-whatsapp"></i> WhatsApp
