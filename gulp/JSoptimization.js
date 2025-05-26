@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 
 // Caminhos
 const paths = {
-  js: path.join(__dirname, '../resources/js/**/*.js'),
+  js: path.join(__dirname, '../resources/js/*.js'),
   dest: path.join(__dirname, '../public/js/')
 };
 

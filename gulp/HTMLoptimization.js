@@ -4,7 +4,7 @@ import path from 'path';
 import concat from 'gulp-concat';
 
 const paths = {
-    html: './resources/views/sessoes/*.blade.php', // supondo que você tenha HTML fora do Blade
+    html: './resources/views/sessoes/*', // supondo que você tenha HTML fora do Blade
     dest: './resources/views/' // ou qualquer pasta de destino
 };
 

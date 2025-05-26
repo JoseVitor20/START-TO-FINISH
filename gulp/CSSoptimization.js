@@ -6,7 +6,7 @@ import path from 'path';
 import autoprefixer from 'gulp-autoprefixer';
 
 const paths = {
-    css: './resources/css/*.css',
+    css: './resources/css/*.css*',
     dest: './public/css/'
 };
 

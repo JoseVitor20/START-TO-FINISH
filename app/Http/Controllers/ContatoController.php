@@ -20,6 +20,6 @@ class ContatoController extends Controller
 
         Mail::to(env('MAIL_TO_ADDRESS', env('MAIL_FROM_ADDRESS')))->send(new ContatoMail($dados));
 
-        return redirect()->back()->with('success', 'E-mail enviado com sucesso!');
+        return view('welcome')->with('success', 'E-mail enviado com sucesso!');
     }
 }

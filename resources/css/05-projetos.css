@@ -1,126 +1,99 @@
-.projects-section {
-  margin: auto;
-  padding: 60px 20px;
-  background-color: var(--bg-sec-color);
+.categorias-section {
+    padding: 0 20px;
+    background-color: var(--bg-sec-color);
+    padding-bottom: 40px;
 }
 
-.projects-section h2,
-.projects-section h4 {
-  text-align: center;
-  font-weight: bold;
+.categorias-section h2 {
+    text-align: center;
+    position: relative;
+    color: var(--text-pri-color);
+    padding-top: 80px;
 }
 
-.projects-section h4 {
-  margin: 40px 0;
-  font-weight: bold;
-}
-
-.projects-section .header-divider {
+.categorias-section .header-divider {
   width: 80px;
   height: 4px;
   background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
-  margin: 0 auto 50px;
+  margin: 0 auto 1.5rem;
   border-radius: 2px;
+  margin-bottom: 80px;
 }
 
-.projects-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+.categorias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    position: relative;
+    cursor: pointer;
 }
 
-.project-card {
-  background-color: var(--bg-pri-color);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
+.categoria-single:hover::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; /* ou 400 dependendo do ícone */
+    content: "\f00e"; /* este é o código Unicode do ícone search-plus */
+    font-size: 20px;
+    background-color: lightblue;
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 37%;
+    transform: translateX(-25%);
+    transform: translateY(-37%);
+    padding: 20px 25px;
+    border-radius: 100%;
 }
 
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+.categoria-card {
+    background: var(--bg-pri-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
 }
 
-.project-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
-  transition: transform 0.3s ease;
-  transform: scaleX(0);
-  transform-origin: left;
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.project-card:hover::after {
-  transform: scaleX(1);
+.categoria-icon {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+.categoria-info {
+    padding: 15px;
 }
 
-.project-card .content {
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.categoria-nome {
+    margin: 0;
+    color: var(--text-sec-color);
+    font-size: 1.2rem;
 }
 
-.project-card h3 {
-  font-size: 1.4rem;
-  color: var(--text-pri-color);
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
+.categoria-desc {
+    color: var(--text-sec-color);
+    font-size: 0.9rem;
+    margin: 8px 0 0;
 }
 
-.project-card:hover h3 {
-  color: var(--gradiente-pri-color);
+/* Responsividade */
+@media (max-width: 768px) {
+    .categorias-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  color: var(--text-sec-color);
-  line-height: 1.5;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
+@media (max-width: 480px) {
+    .categorias-container {
+        grid-template-columns: 1fr;
+    }
 
-.project-card:hover p {
-  color: var(--text-pri-color);
-}
-
-.project-card ul {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.project-card ul li {
-  background-color: var(--bg-sec-color);
-  color: var(--text-pri-color);
-  font-size: 0.85rem;
-  padding: 6px 12px;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.project-card ul li:hover {
-  background: var(--gradiente-sec-color);
-  color: #fff;
-  transform: scale(1.05);
+    .section-title {
+        font-size: 1.5rem;
+    }
 }
