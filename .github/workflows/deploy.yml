@@ -39,7 +39,17 @@ jobs:
       - name: 📂 Copiar conteúdo da pasta public para raiz
         run: |
           cp -r public/* .
-          cp public/.htaccess . || true  # Se .htaccess existir
+          cp public/.htaccess . || true  # Copia se existir
+          # Se o .htaccess não existir, cria um básico para Laravel
+          if [ ! -f .htaccess ]; then
+            echo "<IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteBase /
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule ^ index.php [L]
+            </IfModule>" > .htaccess
+          fi
           # Modificar index.php para ajustar os caminhos
           sed -i "s|__DIR__.'/../vendor/autoload.php'|__DIR__.'/vendor/autoload.php'|" index.php
           sed -i "s|__DIR__.'/../bootstrap/app.php'|__DIR__.'/bootstrap/app.php'|" index.php
