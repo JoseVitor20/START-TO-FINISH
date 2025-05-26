@@ -30,8 +30,8 @@
 
 .categoria-single:hover::after {
     font-family: "Font Awesome 5 Free";
-    font-weight: 900; /* ou 400 dependendo do ícone */
-    content: "\f00e"; /* este é o código Unicode do ícone search-plus */
+    font-weight: 900;
+    content: "\f00e"; 
     font-size: 20px;
     background-color: lightblue;
     color: white;
@@ -40,11 +40,13 @@
     left: 37%;
     transform: translateX(-25%);
     transform: translateY(-37%);
-    padding: 20px 25px;
+    padding: 25px 30px;
     border-radius: 100%;
+    opacity: .8;
 }
 
 .categoria-card {
+    height: 250px;
     background: var(--bg-pri-color);
     border-radius: 10px;
     overflow: hidden;
