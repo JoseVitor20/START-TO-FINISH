@@ -25,7 +25,7 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer
+      - name: 📦 Instalar dependências
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: 🔑 Gerar key do Laravel
