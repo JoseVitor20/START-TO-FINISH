@@ -25,18 +25,22 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências
+      - name: 📦 Instalar dependências do Composer localmente
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: 🔑 Gerar key do Laravel
         run: cp .env.example .env && php artisan key:generate
 
-      - name: 📝 Copiar e ajustar index.php e .htaccess
+      - name: 📂 Copiar index.php e .htaccess para a raiz
         run: |
           cp public/index.php index.php
           cp public/.htaccess .htaccess
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
+
+      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
+        run: |
+          rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
       - name: 🚀 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
