@@ -46,7 +46,7 @@
 }
 
 .categoria-card {
-    height: 250px;
+    height: 280px;
     background: var(--bg-pri-color);
     border-radius: 10px;
     overflow: hidden;
