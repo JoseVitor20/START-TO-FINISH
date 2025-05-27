@@ -379,17 +379,25 @@
         padding: 80px 0 60px;
     }
 
-    div.hero-cta > a {
-        font-size: 18px !important;
-    }
+    /*Firefox*/
+    @-moz-document url-prefix() {
+        .hero-section {
+            height: 180vh !important;
+            text-align: center;
+            padding: 80px 0 60px;
+        }
 
-    .hero-social span {        
-        font-size: 20px;
-    }
+        .hero-badge span {
+            font-size: 15px;
+        }
 
-    .social-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 25px;
+        .hero-title{
+            font-size: clamp(23px, 4vw, 55px);
+        }
+
+        .hero-social span {            
+            font-size: 15px;
+        }
+
     }
 }

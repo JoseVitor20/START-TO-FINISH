@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Boutique - Loja de Roupas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS Personalizado -->
+@extends('layout')
+
+@section('title', 'Fashion Boutique - Loja de Roupas')
+
+@push('estilos')
     <style>
         :root {
             --primary-color: #6c63ff;
@@ -321,9 +315,9 @@
             }
         }
     </style>
-</head>
-<body>
-    <!-- Navbar -->
+@endpush
+
+@section('content')
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">Fashion Boutique</a>
@@ -607,10 +601,9 @@
             </div>
         </div>
     </footer>
+@endsection
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Smooth Scroll -->
+@push('scripts')
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -622,5 +615,4 @@
             });
         });
     </script>
-</body>
-</html>
+@endpush

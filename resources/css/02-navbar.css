@@ -1,35 +1,35 @@
-    header.header {
-        width: 100%;
-        height: max-content;
-        background: var(--bg-pri-color);
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 5px 0;
-        border-bottom: 1px solid var(--text-pri-color);
-        z-index: 999;
-    }
+header.header {
+    width: 100%;
+    height: max-content;
+    background: var(--bg-pri-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--text-pri-color);
+    z-index: 999;
+}
 
-    div.header__container {
-        width: 100%;
-        height: max-contert;
-        padding: 0 4%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+div.header__container {
+    width: 100%;
+    height: max-contert;
+    padding: 0 4%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    div.header__logo,
-    nav.header__nav,
-    ul.header__nav-list,
-    div.header__actions {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+div.header__logo,
+nav.header__nav,
+ul.header__nav-list,
+div.header__actions {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 /* === LOGOS ===  */
     a.header__logo--hidden-link > img{
@@ -217,7 +217,7 @@
     button.header__action--dark-mode:hover {
         transform: rotate(20deg) scale(1.1);
         box-shadow: 0 0 12px var(--btn-shodow);
-        background-color: var(--btn-bg-hover);
+        background: transparent;
     }
 
     button.header__action--dark-mode i {
@@ -361,5 +361,27 @@
 
     .header__opacidade{
         display: block;
+    }
+}
+
+@media (max-width: 480px){
+    @-moz-document url-prefix() {
+        a.header__logo--hidden-link > img{            
+            height: 50px;
+        }
+
+        .header__menu-hamburguer {
+          top: 15px;
+          width: 40px;
+          height: 25px;
+        }
+
+        div.header__container {
+            top: 60px;
+        }
+
+        div.header__container.ativo{
+            height: 300px;
+        }        
     }
 }

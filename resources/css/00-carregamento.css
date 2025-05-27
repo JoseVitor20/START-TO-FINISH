@@ -88,4 +88,16 @@
         position: relative;
         top: 125px;
     }
+
+    .loading-content {
+        position: relative;
+        top: -50px;
+    }
+
+    @-moz-document url-prefix() {
+        .loading-content {
+            position: relative;
+            top: -50px;
+        }
+    }
 }
