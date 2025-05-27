@@ -3,7 +3,7 @@
         <h2 class="display-4 fw-bold">Explore por <strong class="text-gradient">Categorias</strong></h2>
         <div class="header-divider"></div>
         <div class="categorias-container"><div class="categoria-card">
-            <a href="restaurantes">
+            <a href="restaurante">
                 <div class="categoria-single">
                         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Restaurantes" class="categoria-icon">
                         <div class="categoria-info">
@@ -12,7 +12,7 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </a>k
 
             <a href="mercado">                
                 <div class="categoria-card">
