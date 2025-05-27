@@ -12,7 +12,7 @@
                         </div>
                     </div>
                 </div>
-            </a>k
+            </a>
 
             <a href="mercado">                
                 <div class="categoria-card">
