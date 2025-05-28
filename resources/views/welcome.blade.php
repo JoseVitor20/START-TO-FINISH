@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Start to Finish - Desenvolvimento Web Full-Stack')
+@section('title', 'Start To Finish - Desenvolvimento Web Full-Stack')
   
 @push('estilos')
     <link rel="stylesheet" href="{{asset('css/style.min.css')}}">
