@@ -43,7 +43,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Salões de Beleza" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Salões de Beleza</h3>
+                        <h3 class="categoria-nome">Salão de Beleza</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Salão de Beleza</q></p>
                     </div>
                 </div>
