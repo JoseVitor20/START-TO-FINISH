@@ -67,7 +67,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Lojas de Roupas" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Lojas de Roupa</h3>
+                        <h3 class="categoria-nome">Loja de Roupas</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Lojas de Roupas</q></p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="categoria-single">
                     <img src="https://media.istockphoto.com/id/2191392441/pt/foto/kitchen-showroom-exploration-with-modern-island-features.webp?a=1&amp;b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=YdTWncFsm5aY8KfOdM0anh0MBAwugNBAMabCNRR_umQ=" alt="Lojas de móveis" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Lojas de móveis</h3>
+                        <h3 class="categoria-nome">Loja de móveis</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Lojas de móveis</q></p>
                     </div>
                 </div>
