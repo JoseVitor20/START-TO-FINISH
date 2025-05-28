@@ -7,7 +7,7 @@
                 <div class="categoria-single">
                         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Restaurantes" class="categoria-icon">
                         <div class="categoria-info">
-                            <h3 class="categoria-nome">Restaurantes</h3>
+                            <h3 class="categoria-nome">Restaurante</h3>
                             <p class="categoria-desc">Exemplo de site destinado a <q>Restaurante</q></p>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1lcmNhZG98ZW58MHx8MHx8fDA%3D" alt="Mercados" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Mercados</h3>
+                        <h3 class="categoria-nome">Mercado</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Mercado</q></p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Panificadoras" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Panificadoras</h3>
+                        <h3 class="categoria-nome">Panificadora</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Panificadora</q></p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Farmácias" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Farmácias</h3>
+                        <h3 class="categoria-nome">Farmácia</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Farmácias</q></p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="categoria-single">
                     <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="Lojas de Roupas" class="categoria-icon">
                     <div class="categoria-info">
-                        <h3 class="categoria-nome">Lojas de Roupas</h3>
+                        <h3 class="categoria-nome">Lojas de Roupa</h3>
                         <p class="categoria-desc">Exemplo de site destinado a <q>Lojas de Roupas</q></p>
                     </div>
                 </div>
