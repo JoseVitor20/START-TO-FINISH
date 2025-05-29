@@ -1,5 +1,8 @@
-@if(session('success'))
-    <span class="email-enviado">{{ session('success') }}</span>
+@if(session('email-enviado'))
+    <div class="mensagem-sucesso">
+        <i class="fas fa-check-circle"></i>
+        Mensagem enviada com sucesso!
+    </div>
 @endif
 
 <div class="contact py-3" id="contato" data-aos="zoom-in-down" data-aos-duration="1000">
