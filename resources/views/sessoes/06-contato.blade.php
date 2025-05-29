@@ -1,5 +1,5 @@
 @if(session('success'))
-    <span class="sucesso animate-sucesso">{{ session('success') }}</span>
+    <span class="email-enviado">{{ session('success') }}</span>
 @endif
 
 <div class="contact py-3" id="contato" data-aos="zoom-in-down" data-aos-duration="1000">
