@@ -15,7 +15,7 @@
       color: white;
       font-size: 20px;
       opacity: 0;
-      animation: fadeSlide 5s ease-in-out forwards;
+      /*animation: fadeSlide 10s ease-in-out forwards;*/
     }
 
     /* Animação de entrada (0s–1s), pausa visível (1s–4s), saída (4s–5s) */
