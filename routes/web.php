@@ -19,10 +19,26 @@ Route::view('salao-beleza', 'categorias.salao');
 
 Route::view('farmacia', 'categorias.farmacia');
 
-Route::view('lojas-roupa', 'categorias.lojas-roupas');
+Route::view('loja-roupas', 'categorias.lojas-roupas');
 
-Route::view('psicologico', 'categorias.psicologico');
+Route::view('psicologia', 'categorias.psicologico');
 
-Route::view('loja-imoveis', 'categorias.lojas-moveis');
+Route::view('imoveis', 'categorias.lojas-moveis');
 
 Route::view('hotel', 'categorias.hotel');
+
+Route::view('clinica', 'categorias.clinica');
+
+Route::view('turismo', 'categorias.turismo');
+
+Route::view('dentista', 'categorias.odonto');
+
+Route::view('pousada', 'categorias.pousada');
+
+Route::view('barbearia', 'categorias.barbearia');
+
+Route::view('aqua-park', 'categorias.aqua-park');
+
+Route::view('cafeteria', 'categorias.cafeteria');
+
+Route::view('centro-cultural', 'categorias.centro-cultural');

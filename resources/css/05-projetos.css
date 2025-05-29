@@ -1,101 +1,130 @@
 .categorias-section {
-    padding: 0 20px;
+    padding: 60px 0;
     background-color: var(--bg-sec-color);
-    padding-bottom: 40px;
 }
 
-.categorias-section h2 {
-    text-align: center;
-    position: relative;
-    color: var(--text-pri-color);
-    padding-top: 80px;
-}
-
-.categorias-section .header-divider {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
-  margin: 0 auto 1.5rem;
-  border-radius: 2px;
-  margin-bottom: 80px;
+.header-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
 }
 
 .categorias-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-.categoria-single:hover::after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f00e"; 
-    font-size: 20px;
-    background-color: lightblue;
-    color: white;
-    position: absolute;
-    top: 25%;
-    left: 37%;
-    transform: translateX(-25%);
-    transform: translateY(-37%);
-    padding: 25px 30px;
-    border-radius: 100%;
-    opacity: .8;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .categoria-card {
-    height: max-content;
     background: var(--bg-pri-color);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
 }
 
 .categoria-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .categoria-icon {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.categoria-card:hover .categoria-icon {
+    transform: scale(1.05);
 }
 
 .categoria-info {
-    padding: 15px;
+    height: 100%;
+    padding: 20px;
 }
 
 .categoria-nome {
-    margin: 0;
-    color: var(--text-sec-color);
-    font-size: 1.2rem;
+    font-weight: 700;
+    font-size: clamp(15px, 5vw, 20px);
+    margin-bottom: 10px;
+    color: var(--text-pri-color);
 }
 
 .categoria-desc {
     color: var(--text-sec-color);
-    font-size: 0.9rem;
-    margin: 8px 0 0;
+    font-size: 0.95rem;
 }
 
-/* Responsividade */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: 2px solid var(--text-sec-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover{
+    background: var(--text-sec-color);
+    color: var(--bg-pri-color);
+    border-color: var(--bg-pri-color);
+}
+
+.page-btn.active {
+    background: var(--text-pri-color);
+    color: var(--bg-pri-color);
+    border-color: var(--text-sec-color);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: var(--bg-sec-color);
+    border: 2px solid var(--text-pri-color);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: var(--text-pri-color);
+}
+
+.filter-btn:hover{
+    background: var(--border-color);
+    color: var(--text-pri-color);
+    border-color: var(--text-sec-color);
+}
+
+.filter-btn.active {
+    background: var(--text-pri-color);
+    color: var(--bg-pri-color);
+    border-color: var(--text-sec-color);
+}
+
 @media (max-width: 768px) {
     .categorias-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .categorias-container {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 }

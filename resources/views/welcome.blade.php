@@ -23,5 +23,5 @@
 
 @push('scripts')
     {{-- === LÓGICA JS ===  --}}
-    <script src="{{asset('js/scripts.min.js')}}"></script>
+    <script defer src="{{asset('js/scripts.min.js')}}"></script>
 @endpush
