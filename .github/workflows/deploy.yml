@@ -56,7 +56,7 @@ jobs:
             **/vendor/**
             **/storage/**
             **/.github/**
-            .env.example
+            .env
             phpunit.xml
             README.md
 
