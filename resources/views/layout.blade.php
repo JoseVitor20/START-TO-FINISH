@@ -35,7 +35,7 @@
           "@type": "Organization",
           "name": "Start to Finish",
           "url": "https://www.starttofinish.com.br",
-          "logo": "https://www.starttofinish.com.br/img/logo-internet.png",
+          "logo": "https://www.starttofinish.com.br/img/logo-internet.ico",
           "description": "A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
           "address": {
             "@type": "PostalAddress",
