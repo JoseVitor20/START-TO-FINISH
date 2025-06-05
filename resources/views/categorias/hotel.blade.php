@@ -5,159 +5,637 @@
 @push('estilos')
     <style>
         :root {
-            --primary-color: #3a5a78;
-            --secondary-color: #e9c46a;
+            --primary-color: #c19a6b;
+            --secondary-color: #1a2a3a;
             --light-color: #f8f9fa;
-            --dark-color: #343a40;
+            --dark-color: #212529;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
         
-        .bg-primary-custom {
-            background-color: var(--primary-color) !important;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
         
-        .text-primary-custom {
+        .navbar {
+            background-color: rgba(26, 42, 58, 0.9) !important;
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--secondary-color) !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         .btn-primary-custom {
             background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
             color: white;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
         }
         
         .btn-primary-custom:hover {
-            background-color: #2c4761;
-            border-color: #2c4761;
-        }
-        
-        .btn-secondary-custom {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--dark-color);
-        }
-        
-        .btn-secondary-custom:hover {
-            background-color: #d9b24a;
-            border-color: #d9b24a;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            min-height: 80vh;
+            background-color: #a58259;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             color: white;
         }
         
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-section, .rooms-section, .services-section, .testimonials-section, 
+        .contact-section, .offers-section, .gallery-section, .events-section {
+            padding: 100px 0;
+        }
+        
+        .about-img {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
         .room-card {
-            transition: transform 0.3s;
             border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
         }
         
         .room-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .amenity-icon {
-            font-size: 2rem;
+        .room-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .room-img img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .room-card:hover .room-img img {
+            transform: scale(1.1);
+        }
+        
+        .room-price {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
         }
         
         .testimonial-card {
-            border-left: 4px solid var(--secondary-color);
+            padding: 30px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
         }
         
-        .footer {
-            background-color: var(--dark-color);
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .contact-info {
+            background-color: var(--secondary-color);
             color: white;
+            padding: 40px;
+            border-radius: 5px;
+            height: 100%;
         }
         
-        .footer a {
-            color: var(--light-color);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .social-icon {
+        .contact-icon {
             font-size: 1.5rem;
+            color: var(--primary-color);
             margin-right: 15px;
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 0;
+            border: 1px solid #ddd;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        /* New Styles for Additional Content */
+        .main-carousel {
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .main-carousel img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(26, 42, 58, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            bottom: 100px;
+        }
+        
+        .offer-card {
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(193, 154, 107, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .event-card {
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .event-date .day {
+            font-size: 1.5rem;
+            display: block;
+            line-height: 1;
+        }
+        
+        .event-date .month {
+            font-size: 0.9rem;
+            display: block;
+            line-height: 1;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .counter-section {
+            background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
             color: white;
         }
         
-        .social-icon:hover {
-            color: var(--secondary-color);
+        .counter-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .counter-text {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .about-section, .rooms-section, .services-section, 
+            .testimonials-section, .contact-section, .offers-section,
+            .gallery-section, .events-section {
+                padding: 60px 0;
+            }
+            
+            .main-carousel {
+                height: 400px;
+            }
+            
+            .carousel-caption {
+                bottom: 20px;
+                padding: 10px;
+            }
+            
+            .counter-number {
+                font-size: 2rem;
+            }
         }
     </style>
 @endpush
 
 @section('content')
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-building"></i> Hotel Paraíso
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#">LUXURY HOTELS</a>
+            <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Início</a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#quartos">Quartos</a>
+                        <a class="nav-link" href="#about">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicos">Serviços</a>
+                        <a class="nav-link" href="#rooms">Quartos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#galeria">Galeria</a>
+                        <a class="nav-link" href="#services">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link" href="#offers">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Depoimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom" href="#rooms">Reservar Agora</a>
                     </li>
                 </ul>
-                <a href="#reservas" class="btn btn-secondary-custom ms-lg-3">Reservar Agora</a>
             </div>
         </div>
     </nav>
 
-    <!-- Seção Hero -->
-    <header class="hero-section d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-4">Bem-vindo ao Hotel Paraíso</h1>
-            <p class="lead mb-5">Experiência única de luxo e conforto em um dos destinos mais desejados do mundo</p>
-            <a href="#quartos" class="btn btn-primary-custom btn-lg me-2">Nossos Quartos</a>
-            <a href="#reservas" class="btn btn-outline-light btn-lg">Reservar Agora</a>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Descubra o Luxo Redefinido</h1>
+                <p class="hero-subtitle">Bem-vindo ao Luxury Hotels, onde cada detalhe é cuidadosamente elaborado para proporcionar uma experiência de hospedagem excepcional e memorável.</p>
+                <a href="#rooms" class="btn btn-primary-custom">Explorar Quartos</a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Seção Sobre -->
-    <section class="py-5">
-        <div class="container py-5">
+    <!-- Main Carousel -->
+    <section class="main-carousel-section">
+        <div id="mainCarousel" class="carousel slide main-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Hotel Luxury">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bem-vindo ao Luxury Hotels</h5>
+                        <p>Descubra o verdadeiro significado de conforto e elegância em nossas instalações exclusivas.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" class="d-block w-100" alt="Restaurante">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gastronomia Excepcional</h5>
+                        <p>Desfrute de pratos premiados em nosso restaurante com estrela Michelin.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80" class="d-block w-100" alt="Spa">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Spa de Luxo</h5>
+                        <p>Relaxe e rejuvenesça com nossos tratamentos exclusivos de spa.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="text-center section-title">Sobre Nós</h2>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hotel Paraíso" class="img-fluid rounded shadow">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hotel Luxury" class="img-fluid">
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="text-primary-custom mb-4">Sobre Nosso Hotel</h2>
-                    <p class="lead">O Hotel Paraíso oferece uma experiência única de hospedagem, combinando conforto moderno com um toque de elegância clássica.</p>
-                    <p>Localizado em uma das áreas mais belas da cidade, nosso hotel é o destino perfeito para viajantes que buscam relaxamento e sofisticação. Com mais de 20 anos de excelência em hospitalidade, nos orgulhamos de oferecer serviços personalizados que atendem às necessidades de cada hóspede.</p>
-                    <div class="d-flex align-items-center mt-4">
-                        <i class="bi bi-award-fill text-primary-custom fs-1 me-4"></i>
-                        <div>
-                            <h5 class="mb-1">Certificado de Excelência</h5>
-                            <p class="mb-0">Premiado como melhor hotel de luxo por 5 anos consecutivos</p>
+                    <h3>Uma Experiência Única em Hospedagem</h3>
+                    <p>Fundado em 2005, o Luxury Hotels rapidamente se estabeleceu como um dos destinos mais cobiçados para viajantes exigentes que buscam o equilíbrio perfeito entre conforto, elegância e serviço impecável.</p>
+                    <p>Nossa filosofia é simples: oferecer aos nossos hóspedes uma experiência que vai além da simples hospedagem. Cada detalhe, desde a decoração meticulosamente selecionada até o atendimento personalizado, é projetado para criar memórias duradouras.</p>
+                    <p>Localizado no coração da cidade, nosso hotel combina a conveniência de uma localização privilegiada com a tranquilidade de um refúgio urbano.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-concierge-bell service-icon me-3" style="font-size: 2rem;"></i>
+                                <div>
+                                    <h5 class="mb-0">Serviço Premium</h5>
+                                    <p class="mb-0">Atendimento 24 horas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-utensils service-icon me-3" style="font-size: 2rem;"></i>
+                                <div>
+                                    <h5 class="mb-0">Gastronomia</h5>
+                                    <p class="mb-0">Restaurante premiado</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,257 +643,169 @@
         </div>
     </section>
 
-    <!-- Seção Quartos -->
-    <section id="quartos" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-primary-custom">Nossos Quartos</h2>
-                <p class="lead">Escolha o ambiente perfeito para sua estadia</p>
-            </div>
-            <div class="row g-4">
-                <!-- Quarto 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card room-card h-100">
-                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Quarto Standard">
-                        <div class="card-body">
-                            <h5 class="card-title">Quarto Standard</h5>
-                            <p class="card-text">Conforto e praticidade em um espaço bem planejado, perfeito para estadias curtas.</p>
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 20m²</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 1 cama de casal</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Wi-Fi gratuito</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 text-primary-custom">R$ 350<small>/noite</small></h5>
-                                <a href="#reservas" class="btn btn-primary-custom">Reservar</a>
-                            </div>
-                        </div>
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="150">0</div>
+                        <div class="counter-text">Quartos Luxuosos</div>
                     </div>
                 </div>
-                
-                <!-- Quarto 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card room-card h-100">
-                        <img src="https://images.unsplash.com/photo-1729605411476-defbdab14c54?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cXVhcnRvJTIwZGVsdXhlfGVufDB8fDB8fHww" class="card-img-top" alt="Quarto Deluxe">
-                        <div class="card-body">
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="25">0</div>
+                        <div class="counter-text">Anos de Experiência</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="1200">0</div>
+                        <div class="counter-text">Hóspedes Satisfeitos</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <div class="counter-number" data-count="50">0</div>
+                        <div class="counter-text">Prêmios Recebidos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section bg-light" id="rooms">
+        <div class="container">
+            <h2 class="text-center section-title">Nossos Quartos</h2>
+            <p class="text-center mb-5">Cada um de nossos quartos e suítes foi projetado para oferecer o máximo em conforto e estilo.</p>
+            <div class="row">
+                <!-- Room 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Quarto Deluxe">
+                            <div class="room-price">R$ 890/noite</div>
+                        </div>
+                        <div class="card-body p-3">
                             <h5 class="card-title">Quarto Deluxe</h5>
-                            <p class="card-text">Amplo e sofisticado, com vista privilegiada e amenities exclusivas.</p>
+                            <p class="card-text">Um espaço generoso com vista para a cidade, equipado com todas as comodidades modernas para uma estadia confortável.</p>
                             <ul class="list-unstyled">
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 35m²</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 1 cama king size</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Varanda privativa</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Banheira de hidromassagem</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> 30m²</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Cama King Size</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Wi-Fi de alta velocidade</li>
                             </ul>
-                        </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 text-primary-custom">R$ 650<small>/noite</small></h5>
-                                <a href="#reservas" class="btn btn-primary-custom">Reservar</a>
-                            </div>
+                            <a href="#" class="btn btn-primary-custom w-100">Reservar Agora</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Quarto 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card room-card h-100">
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Suíte Presidencial">
-                        <div class="card-body">
-                            <h5 class="card-title">Suíte Presidencial</h5>
-                            <p class="card-text">O máximo em luxo e conforto, com serviço de mordomo 24 horas e área privativa.</p>
+                <!-- Room 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Suíte Executiva">
+                            <div class="room-price">R$ 1.290/noite</div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Suíte Executiva</h5>
+                            <p class="card-text">Ampla suíte com área de estar separada, perfeita para quem busca espaço adicional e conforto superior.</p>
                             <ul class="list-unstyled">
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 80m²</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> 2 quartos separados</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Sala de estar</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Serviço de mordomo</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i> Vista panorâmica</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> 45m²</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Cama King Size</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Área de trabalho executiva</li>
                             </ul>
+                            <a href="#" class="btn btn-primary-custom w-100">Reservar Agora</a>
                         </div>
-                        <div class="card-footer bg-white border-0">
+                    </div>
+                </div>
+                
+                <!-- Room 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Suíte Presidencial">
+                            <div class="room-price">R$ 2.490/noite</div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Suíte Presidencial</h5>
+                            <p class="card-text">Nosso espaço mais exclusivo, oferecendo o pináculo do luxo com múltiplas áreas de estar e vistas panorâmicas.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i> 80m²</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Cama King Size premium</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Banheira de hidromassagem</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary-custom w-100">Reservar Agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#rooms" class="btn btn-primary-custom">Ver Todos os Quartos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers-section" id="offers">
+        <div class="container">
+            <h2 class="text-center section-title">Ofertas Especiais</h2>
+            <p class="text-center mb-5">Aproveite nossas promoções exclusivas para uma experiência ainda mais memorável</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="offer-card">
+                        <div class="offer-badge">-30%</div>
+                        <div class="room-img">
+                            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Pacote Romântico">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Pacote Romântico</h5>
+                            <p class="card-text">Desfrute de uma escapada romântica com jantar à luz de velas, champanhe e decoração especial.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 text-primary-custom">R$ 1.200<small>/noite</small></h5>
-                                <a href="#reservas" class="btn btn-primary-custom">Reservar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Serviços -->
-    <section id="servicos" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-primary-custom">Nossos Serviços</h2>
-                <p class="lead">Tudo que você precisa para uma estadia perfeita</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-cup-hot-fill"></i>
-                    </div>
-                    <h5>Café da Manhã</h5>
-                    <p>Buffet completo com opções saudáveis e regionais, servido diariamente das 6h às 11h.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-wifi"></i>
-                    </div>
-                    <h5>Wi-Fi Rápido</h5>
-                    <p>Internet de alta velocidade em todo o hotel, sem custo adicional.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-bicycle"></i>
-                    </div>
-                    <h5>Academia</h5>
-                    <p>Equipamentos modernos e espaço para atividades físicas, aberto 24 horas.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-car-front-fill"></i>
-                    </div>
-                    <h5>Estacionamento</h5>
-                    <p>Área coberta e monitorada para seu veículo, com valet service disponível.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-water"></i>
-                    </div>
-                    <h5>Piscina</h5>
-                    <p>Área de lazer com piscina aquecida e serviço de bar à beira da piscina.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-shop"></i>
-                    </div>
-                    <h5>Spa</h5>
-                    <p>Tratamentos relaxantes e terapêuticos com profissionais qualificados.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-bag-check-fill"></i>
-                    </div>
-                    <h5>Serviço de Concierge</h5>
-                    <p>Assistência personalizada para passeios, reservas e recomendações locais.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center">
-                    <div class="amenity-icon">
-                        <i class="bi bi-egg-fried"></i>
-                    </div>
-                    <h5>Room Service</h5>
-                    <p>Cardápio diversificado disponível 24 horas para seu conforto.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Galeria -->
-    <section id="galeria" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-primary-custom">Galeria</h2>
-                <p class="lead">Conheça nossos espaços e instalações</p>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" class="img-fluid rounded shadow" alt="Piscina do hotel">
-                </div>
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid rounded shadow" alt="Restaurante do hotel">
-                </div>
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid rounded shadow" alt="Spa do hotel">
-                </div>
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" class="img-fluid rounded shadow" alt="Bar do hotel">
-                </div>
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="img-fluid rounded shadow" alt="Quarto do hotel">
-                </div>
-                <div class="col-md-4 col-6">
-                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1494&q=80" class="img-fluid rounded shadow" alt="Academia do hotel">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Depoimentos -->
-    <section class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-primary-custom">O que nossos hóspedes dizem</h2>
-                <p class="lead">Experiências reais de quem já se hospedou conosco</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3 testimonial-card">
-                        <div class="card-body">
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="card-text">"Excelente hotel! Atendimento impecável, quartos limpos e confortáveis, café da manhã delicioso. Sem dúvidas voltarei em minhas próximas viagens."</p>
-                        </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="50" alt="Cliente">
                                 <div>
-                                    <h6 class="mb-0">Ana Carolina</h6>
-                                    <small class="text-muted">São Paulo, SP</small>
+                                    <span class="text-decoration-line-through text-muted me-2">R$ 1.200</span>
+                                    <span class="fw-bold">R$ 840</span>
                                 </div>
+                                <a href="#" class="btn btn-sm btn-primary-custom">Reservar</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3 testimonial-card">
-                        <div class="card-body">
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="card-text">"Fiquei impressionado com a qualidade do serviço. A suíte presidencial é espetacular, e o spa do hotel é um dos melhores que já visitei. Recomendo!"</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="offer-card">
+                        <div class="offer-badge">-25%</div>
+                        <div class="room-img">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fim de Semana Relaxante">
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3" width="50" alt="Cliente">
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Fim de Semana Relaxante</h5>
+                            <p class="card-text">2 noites de hospedagem com café da manhã buffet e crédito de R$ 300 para serviços de spa.</p>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h6 class="mb-0">Ricardo Almeida</h6>
-                                    <small class="text-muted">Rio de Janeiro, RJ</small>
+                                    <span class="text-decoration-line-through text-muted me-2">R$ 1.800</span>
+                                    <span class="fw-bold">R$ 1.350</span>
                                 </div>
+                                <a href="#" class="btn btn-sm btn-primary-custom">Reservar</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 p-3 testimonial-card">
-                        <div class="card-body">
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <p class="card-text">"Hotel maravilhoso para uma escapada romântica. Adoramos o jantar à beira da piscina e o atendimento personalizado. Voltaremos no nosso próximo aniversário!"</p>
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="offer-card">
+                        <div class="offer-badge">-20%</div>
+                        <div class="room-img">
+                            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Pacote Família">
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="50" alt="Cliente">
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Pacote Família</h5>
+                            <p class="card-text">Estadia para 2 adultos e 2 crianças com acesso ilimitado ao clube infantil e atividades recreativas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h6 class="mb-0">Fernanda e Pedro</h6>
-                                    <small class="text-muted">Belo Horizonte, MG</small>
+                                    <span class="text-decoration-line-through text-muted me-2">R$ 2.500</span>
+                                    <span class="fw-bold">R$ 2.000</span>
                                 </div>
+                                <a href="#" class="btn btn-sm btn-primary-custom">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -424,72 +814,193 @@
         </div>
     </section>
 
-    <!-- Seção Reservas -->
-    <section id="reservas" class="py-5 bg-primary-custom text-white">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="display-5 fw-bold mb-4">Reserve sua estadia</h2>
-                    <p class="lead mb-4">Garanta já sua experiência inesquecível no Hotel Paraíso.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-telephone-fill fs-4 me-3"></i>
-                        <div>
-                            <h5 class="mb-0">Ligue para nós</h5>
-                            <p class="mb-0">(11) 1234-5678</p>
+    <!-- Services Section -->
+    <section class="services-section bg-light" id="services">
+        <div class="container">
+            <h2 class="text-center section-title">Nossos Serviços</h2>
+            <p class="text-center mb-5">Descubra os serviços exclusivos que tornam sua estadia verdadeiramente especial</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
                         </div>
+                        <h4>Spa & Bem-estar</h4>
+                        <p>Tratamentos revitalizantes em nosso spa de classe mundial, com terapias personalizadas para relaxamento e rejuvenescimento.</p>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-envelope-fill fs-4 me-3"></i>
-                        <div>
-                            <h5 class="mb-0">Envie um e-mail</h5>
-                            <p class="mb-0">reservas@hotelparaiso.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Gastronomia</h4>
+                        <p>Experiências culinárias excepcionais em nossos restaurantes premiados, com chefs renomados e ingredientes locais selecionados.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <h4>Piscina Infinity</h4>
+                        <p>Nossa piscina infinity com vista panorâmica é o lugar perfeito para relaxar e desfrutar de momentos inesquecíveis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h4>Serviço de Concierge</h4>
+                        <p>Nosso concierge está disponível 24/7 para atender a todas as suas necessidades e criar experiências personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="text-center section-title">Galeria</h2>
+            <p class="text-center mb-5">Explore nossos espaços através destas imagens</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-lightbox="gallery" data-title="Lobby do Hotel">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Lobby">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" data-lightbox="gallery" data-title="Restaurante Principal">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Restaurante">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80" data-lightbox="gallery" data-title="Área do Spa">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Spa">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-lightbox="gallery" data-title="Piscina Infinity">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Piscina">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-lightbox="gallery" data-title="Quarto Deluxe">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Quarto">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.pexels.com/photos/453201/pexels-photo-453201.jpeg?auto=compress&cs=tinysrgb&w=600" data-lightbox="gallery" data-title="Suíte Executiva">
+                        <div class="gallery-item">
+                            <img src="https://images.pexels.com/photos/453201/pexels-photo-453201.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Suíte">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.pexels.com/photos/261181/pexels-photo-261181.jpeg?auto=compress&cs=tinysrgb&w=600" data-lightbox="gallery" data-title="Suíte Presidencial">
+                        <div class="gallery-item">
+                            <img src="https://images.pexels.com/photos/261181/pexels-photo-261181.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Suíte Presidencial">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" data-lightbox="gallery" data-title="Bar do Hotel">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bar">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section bg-light" id="events">
+        <div class="container">
+            <h2 class="text-center section-title">Eventos & Festas</h2>
+            <p class="text-center mb-5">Organizamos eventos memoráveis em nossos espaços exclusivos</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Casamentos">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">Jun</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Casamentos</h5>
+                            <p class="card-text">Realize o casamento dos seus sonhos em nossos salões elegantes, com serviço personalizado para tornar seu dia perfeito.</p>
+                            <a href="#" class="btn btn-primary-custom">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card shadow">
-                        <div class="card-body p-4">
-                            <h4 class="text-primary-custom mb-4">Formulário de Reserva</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="nome" class="form-label">Nome completo</label>
-                                        <input type="text" class="form-control" id="nome" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">E-mail</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="telefone" class="form-label">Telefone</label>
-                                        <input type="tel" class="form-control" id="telefone" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="quarto" class="form-label">Tipo de Quarto</label>
-                                        <select class="form-select" id="quarto" required>
-                                            <option value="" selected disabled>Selecione</option>
-                                            <option value="standard">Quarto Standard</option>
-                                            <option value="deluxe">Quarto Deluxe</option>
-                                            <option value="presidencial">Suíte Presidencial</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="checkin" class="form-label">Check-in</label>
-                                        <input type="date" class="form-control" id="checkin" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="checkout" class="form-label">Check-out</label>
-                                        <input type="date" class="form-control" id="checkout" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="mensagem" class="form-label">Mensagem adicional</label>
-                                        <textarea class="form-control" id="mensagem" rows="3"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary-custom w-100">Enviar Reserva</button>
-                                    </div>
-                                </div>
-                            </form>
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Conferências">
+                            <div class="event-date">
+                                <span class="day">12</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Conferências</h5>
+                            <p class="card-text">Salas de reunião equipadas com tecnologia de ponta para eventos corporativos e conferências de todos os tamanhos.</p>
+                            <a href="#" class="btn btn-primary-custom">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="event-card">
+                        <div class="room-img position-relative">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Festas Temáticas">
+                            <div class="event-date">
+                                <span class="day">03</span>
+                                <span class="month">Ago</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Festas Temáticas</h5>
+                            <p class="card-text">Celebre ocasiões especiais com nossas festas temáticas exclusivas, desde aniversários até eventos corporativos.</p>
+                            <a href="#" class="btn btn-primary-custom">Saiba Mais</a>
                         </div>
                     </div>
                 </div>
@@ -497,112 +1008,302 @@
         </div>
     </section>
 
-    <!-- Seção Contato -->
-    <section id="contato" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-primary-custom">Entre em Contato</h2>
-                <p class="lead">Estamos à disposição para qualquer dúvida ou informação</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="amenity-icon mb-3">
-                                <i class="bi bi-geo-alt-fill"></i>
-                            </div>
-                            <h5>Endereço</h5>
-                            <p class="mb-0">Av. Beira Mar, 1234<br>Praia do Paraíso<br>Florianópolis - SC, 88000-000</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="text-center section-title">O Que Nossos Hóspedes Dizem</h2>
+            <p class="text-center mb-5">Experiências reais de hóspedes que viveram o luxo em primeira mão</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card text-center">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Silva">
                         </div>
+                        <h5>Maria Silva</h5>
+                        <p class="text-muted">São Paulo, Brasil</p>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"A suíte presidencial superou todas as minhas expectativas. A atenção aos detalhes e o serviço impecável fizeram da minha estadia uma experiência verdadeiramente memorável."</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="amenity-icon mb-3">
-                                <i class="bi bi-telephone-fill"></i>
-                            </div>
-                            <h5>Telefone</h5>
-                            <p class="mb-2"><strong>Reservas:</strong> (11) 1234-5678</p>
-                            <p class="mb-0"><strong>Recepção:</strong> (11) 9876-5432</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card text-center">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Mendes">
                         </div>
+                        <h5>Carlos Mendes</h5>
+                        <p class="text-muted">Rio de Janeiro, Brasil</p>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"O serviço de concierge foi excepcional, organizando todos os meus passeios e reservas com perfeição. O spa é simplesmente divino - voltarei certamente!"</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="amenity-icon mb-3">
-                                <i class="bi bi-envelope-fill"></i>
-                            </div>
-                            <h5>E-mail</h5>
-                            <p class="mb-2"><strong>Reservas:</strong> reservas@hotelparaiso.com</p>
-                            <p class="mb-0"><strong>Contato geral:</strong> contato@hotelparaiso.com</p>
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="testimonial-card text-center">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Costa">
                         </div>
+                        <h5>Ana Costa</h5>
+                        <p class="text-muted">Lisboa, Portugal</p>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p class="mb-0">"Adoramos a localização do hotel e a decoração elegante. O café da manhã era uma experiência gastronômica por si só. Recomendo sem hesitação!"</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mapa -->
-    <div class="container-fluid p-0">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.992901777459!2d-48.55158892453703!3d-27.59449047628093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952738248efc5a6b%3A0x9c1e5e1e2a6e0f1d!2sPraia%20do%20Para%C3%ADso%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1689876543210!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <!-- Contact Section -->
+    <section class="contact-section bg-light" id="contact">
+        <div class="container">
+            <h2 class="text-center section-title">Entre em Contato</h2>
+            <p class="text-center mb-5">Estamos à disposição para tornar sua estadia inesquecível</p>
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Informações de Contato</h3>
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h5>Endereço</h5>
+                                <p>Av. Paulista, 1000<br>São Paulo - SP, 01310-100</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <div>
+                                <h5>Telefone</h5>
+                                <p>+55 (11) 4002-8922</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>reservas@luxuryhotels.com.br</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h5>Horário de Funcionamento</h5>
+                                <p>Recepção 24 horas<br>Restaurante: 6h - 23h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" placeholder="Seu Nome" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="email" class="form-control" placeholder="Seu Email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <input type="tel" class="form-control" placeholder="Seu Telefone">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <select class="form-control">
+                                    <option value="" disabled selected>Assunto</option>
+                                    <option>Reserva</option>
+                                    <option>Informações</option>
+                                    <option>Eventos</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="5" placeholder="Sua Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Rodapé -->
-    <footer class="footer py-5">
+    <!-- Map Section -->
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.376415267273!2d-46.65581572469114!3d-23.55508057880704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1689877890622!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 class="mb-4"><i class="bi bi-building"></i> Hotel Paraíso</h5>
-                    <p>Oferecendo experiências memoráveis desde 2003. Nosso compromisso é com o conforto, luxo e atendimento personalizado.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    <h3 class="mb-4">LUXURY HOTELS</h3>
+                    <p>Redefinindo o conceito de luxo na hotelaria desde 2005. Comprometidos em oferecer experiências memoráveis através de serviço excepcional, comodidades de primeira classe e atenção aos detalhes.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="mb-4">Links Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#">Início</a></li>
-                        <li class="mb-2"><a href="#quartos">Quartos</a></li>
-                        <li class="mb-2"><a href="#servicos">Serviços</a></li>
-                        <li class="mb-2"><a href="#galeria">Galeria</a></li>
-                        <li class="mb-2"><a href="#contato">Contato</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Links Rápidos</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">Sobre</a></li>
+                            <li><a href="#rooms">Quartos</a></li>
+                            <li><a href="#services">Serviços</a></li>
+                            <li><a href="#testimonials">Depoimentos</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Assine nossa newsletter para receber ofertas exclusivas.</p>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Seu e-mail">
-                            <button class="btn btn-secondary-custom" type="submit">Assinar</button>
-                        </div>
-                    </form>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Serviços</h5>
+                        <ul>
+                            <li><a href="#">Reservas</a></li>
+                            <li><a href="#">Spa & Bem-estar</a></li>
+                            <li><a href="#">Restaurante</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Pacotes Especiais</a></li>
+                            <li><a href="#">Transporte</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Horário de Funcionamento</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><strong>Recepção:</strong> 24 horas</li>
-                        <li class="mb-2"><strong>Restaurante:</strong> 6h-23h</li>
-                        <li class="mb-2"><strong>Spa:</strong> 8h-20h</li>
-                        <li class="mb-2"><strong>Academia:</strong> 5h-23h</li>
-                    </ul>
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-links">
+                        <h5>Newsletter</h5>
+                        <p>Assine nossa newsletter para receber ofertas exclusivas e novidades.</p>
+                        <form class="mt-3">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Seu Email" aria-label="Seu Email">
+                                <button class="btn btn-primary-custom" type="button">Assinar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <hr class="my-4 bg-secondary">
+            <hr class="mt-5" style="border-color: rgba(255,255,255,0.1);">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2023 Hotel Paraíso. Todos os direitos reservados.</p>
+                    <p class="mb-0">&copy; 2023 Luxury Hotels. Todos os direitos reservados.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Desenvolvido com <i class="bi bi-heart-fill text-danger"></i> por Equipe Hotel Paraíso</p>
+                    <p class="mb-0">Desenvolvido com <i class="fas fa-heart text-danger"></i> por sua equipe</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
 @endsection
+
+@push('scripts')
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Initialize counters when section is in view
+        const counterSection = document.querySelector('.counter-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(counterSection);
+        
+        // Initialize lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'showImageNumberLabel': true
+        });
+    </script>
+@endpush
