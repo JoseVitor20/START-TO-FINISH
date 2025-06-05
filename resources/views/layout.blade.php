@@ -18,15 +18,15 @@
     {{-- === OPEN GRAPH (PARA FACEBOOK, LINKEDIN ETC.) === --}}
         <meta property="og:type" content="website">
         <meta property="og:title" content="Start to Finish">
-        <meta property="og:description" content="Especialistas em desenvolvimento Laravel e soluções web.">
-        <meta property="og:image" content="https://www.starttofinish.com.br/img/perfil-social.png">
+        <meta property="og:description" content="A Start To Finish é especialista em divulgação online, atuando na criação de sites e na publicação de anúncios em plataformas como Facebook, Instagram, Youtube, etc.">
+        <meta property="og:image" content="https://www.starttofinish.com.br/img/perfil-google.png">
         <meta property="og:url" content="https://www.starttofinish.com.br">
 
     {{-- === TWITTER CARDS (PARA TWITTER/X) === --}}
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:t   itle" content="Start to Finish">
         <meta name="twitter:description" content="A Start to Finish oferece soluções completas em tecnologia.">
-        <meta name="twitter:image" content="https://www.starttofinish.com.br/img/perfil-social.png">
+        <meta name="twitter:image" content="https://www.starttofinish.com.br/img/perfil-google.png">
 
     {{-- === SCHEMA.ORG STRUCTURED DATA === --}}
         <script type="application/ld+json">
@@ -39,8 +39,8 @@
           "description": "A Start to Finish oferece soluções completas em tecnologia, sites, sistemas e aplicações web personalizadas. Inove seu projeto com agilidade e qualidade.",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Encarnação Hidalgo Valezi, 1853",
-            "addressLocality": "Fátima do Sul",
+            "streetAddress": "Rua Padre Aquiles Pio Redin, 150",
+            "addressLocality": "Dourados - MS",
             "postalCode": "79000-000",
             "addressCountry": "BR"
           },
@@ -62,7 +62,7 @@
     {{-- === TÍTULO DA PÁGINA E ÍCONE=== --}}
         <title>@yield('title')</title>
 
-        <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('img/logo-internet.ico')}}" type="image/x-icon">
         
     {{-- === BOOTSTRAP CSS === --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
