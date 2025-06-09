@@ -1,16 +1,17 @@
-name: Deploy Laravel sem /public via FTP e SSH
+name: 🚀 Deploy Laravel 12 (sem /public) via FTP e SSH
 
 on:
   push:
     branches:
-      - develop
+      - develop  # Ou substitua por 'main' conforme seu fluxo
 
 jobs:
   deploy:
-    name: Deploy Laravel 12
+    name: 🛠️ Deploy Laravel
     runs-on: ubuntu-latest
 
     steps:
+      # --- ETAPA 1: PREPARAÇÃO ---
       - name: 📥 Obter código mais recente
         uses: actions/checkout@v3
 
@@ -25,24 +26,46 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer localmente
-        run: composer install --no-dev --optimize-autoloader --no-interaction
-
-      - name: 🔑 Gerar key do Laravel
-        run: cp .env.example .env && php artisan key:generate
-
-      - name: 📂 Copiar index.php e .htaccess para a raiz
+      # --- ETAPA 2: BUILD DO PROJETO ---
+      - name: 📦 Instalar dependências do Composer
         run: |
+          composer install --no-dev --optimize-autoloader --no-interaction
+          composer dump-autoload
+
+      - name: 🔑 Gerar chave do Laravel (se necessário)
+        run: |
+          [ -f .env ] || cp .env.example .env
+          php artisan key:generate
+
+      # --- ETAPA 3: CORREÇÕES PARA EVITAR /PUBLIC/ ---
+      - name: 📂 Preparar arquivos para deploy (raiz)
+        run: |
+          # Copiar index.php e .htaccess para a raiz
           cp public/index.php index.php
           cp public/.htaccess .htaccess
+
+          # Ajustar caminhos no index.php (remover referências a /public/)
+          sed -i 's|/public/|/|g' index.php
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
 
-      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
-        run: |
+          # Adicionar regras de redirecionamento no .htaccess (evitar /public/)
+          echo '
+          # ----- REDIRECIONAMENTOS PARA EVITAR DUPLICAÇÃO -----
+          RewriteEngine On
+          RewriteRule ^public/(.*)$ /$1 [L,R=301]
+
+          # Forçar HTTPS e WWW (opcional)
+          RewriteCond %{HTTPS} off [OR]
+          RewriteCond %{HTTP_HOST} !^www\. [NC]
+          RewriteRule ^ https://www.starttofinish.com.br%{REQUEST_URI} [L,R=301]
+          ' >> .htaccess
+
+          # Copiar conteúdo de public/ para a raiz (exceto index.php e .htaccess)
           rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
-      - name: 🚀 Deploy via FTP
+      # --- ETAPA 4: DEPLOY VIA FTP ---
+      - name: 🚀 Enviar arquivos via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -59,24 +82,39 @@ jobs:
             .env
             phpunit.xml
             README.md
+            deploy.yml
 
-      - name: 🔐 Configurar SSH e acessar servidor
+      # --- ETAPA 5: CONFIGURAÇÃO NO SERVIDOR ---
+      - name: 🔐 Executar comandos SSH (otimizações pós-deploy)
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.SERVER_DIR }}
-            echo "📦 Instalando dependências no servidor..."
-            composer install --no-dev --optimize-autoloader
-            echo "🔄 Limpando caches..."
+
+            # Limpar caches e otimizar
             php artisan config:clear
             php artisan cache:clear
             php artisan route:clear
             php artisan view:clear
-            echo "🛠️ Corrigindo permissões..."
+            php artisan optimize
+
+            # Corrigir permissões
             chmod -R 775 storage bootstrap/cache
             chown -R www-data:www-data storage bootstrap/cache
-            echo "✅ Deploy finalizado com sucesso!"
+
+            # Reiniciar serviços (opcional)
+            sudo service php8.2-fpm restart  # Ajuste para sua versão do PHP
+            sudo service nginx restart
           EOF
+
+      # --- ETAPA 6: NOTIFICAÇÃO (OPCIONAL) ---
+      - name: 📢 Notificar sucesso (Slack/Email)
+        if: success()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "✅ Deploy concluído em https://www.starttofinish.com.br"
