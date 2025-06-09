@@ -62,7 +62,7 @@
     {{-- === TÍTULO DA PÁGINA E ÍCONE=== --}}
         <title>@yield('title')</title>
 
-        <link rel="icon" href="{{asset('img/logo-internet.ico')}}" type="image/x-icon">
+        <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
         
     {{-- === BOOTSTRAP CSS === --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
