@@ -13,7 +13,7 @@
         <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk">
 
     {{-- === URL CANÔNICA === --}}
-        <link rel="canonical" href="https://www.starttofinish.com.br/">
+        <link rel="canonical" href="{{ request()->url() }}">
 
     {{-- === OPEN GRAPH (PARA FACEBOOK, LINKEDIN ETC.) === --}}
         <meta property="og:type" content="website">
