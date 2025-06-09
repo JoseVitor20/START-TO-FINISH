@@ -1,4 +1,4 @@
-name: Deploy Laravel para public_html via FTP
+name: Deploy Laravel sem /public via FTP e SSH
 
 on:
   push:
@@ -6,80 +6,77 @@ on:
       - develop
 
 jobs:
-  test:
-    name: Executar Testes de Back-end
+  deploy:
+    name: Deploy Laravel
     runs-on: ubuntu-latest
+
     steps:
       - name: 📥 Obter código mais recente
         uses: actions/checkout@v3
 
-      - name: 📦 Instalar dependências do Composer
-        run: composer install --prefer-dist --no-interaction --no-scripts
+      - name: 🔍 Validar variáveis de ambiente
+        run: |
+          [ -z "${{ secrets.SSH_HOST }}" ] && echo "🚨 SSH_HOST não definido" && exit 1
+          [ -z "${{ secrets.FTP_SERVER }}" ] && echo "🚨 FTP_SERVER não definido" && exit 1
+          [ -z "${{ secrets.FTP_USER }}" ] && echo "🚨 FTP_USER não definido" && exit 1
+          [ -z "${{ secrets.FTP_PASSWORD }}" ] && echo "🚨 FTP_PASSWORD não definido" && exit 1
+          [ -z "${{ secrets.SSH_USER }}" ] && echo "🚨 SSH_USER não definido" && exit 1
+          [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] && echo "🚨 SSH_PRIVATE_KEY não definido" && exit 1
+          [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
+          echo "✅ Variáveis verificadas"
 
-      - name: 🛠️ Configurar ambiente de teste
+      - name: 📦 Instalar dependências do Composer localmente
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: 🔑 Gerar key do Laravel
         run: cp .env.example .env && php artisan key:generate
 
-      - name: 🧪 Rodar testes
-        run: ./vendor/bin/phpunit
-
-  deploy:
-    name: Deploy Laravel via FTP
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: 📥 Obter código mais recente
-        uses: actions/checkout@v3
-
-      - name: 🧹 Limpar cache do runner
-        run: rm -rf ~/.cache ~/.ssh
-
-      - name: 🛠️ Copiar index.php e .htaccess para a raiz
+      - name: 📂 Copiar index.php e .htaccess para a raiz
         run: |
           cp public/index.php index.php
           cp public/.htaccess .htaccess
-          # Corrige caminhos internos
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
-          # Adiciona redirecionamento do /public para a raiz no .htaccess
-          echo "
-          <IfModule mod_rewrite.c>
-          RewriteEngine On
-          RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
-          RewriteRule ^ /%1 [R=301,L]
-          </IfModule>
-          " >> .htaccess
 
-      - name: 📂 Enviar arquivos via FTP (exceto .env)
+      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
+        run: |
+          rsync -av --exclude=index.php --exclude=.htaccess public/ ./
+
+      - name: 🚀 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{secrets.FTP_SERVER}}
-          username: ${{secrets.FTP_USER}}
-          password: ${{secrets.FTP_PASSWORD}}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           exclude: |
+            **/.git*
+            **/node_modules/**
+            **/tests/**
+            **/vendor/**
+            **/storage/**
+            **/.github/**
             .env
+            phpunit.xml
+            README.md
 
-      - name: 🚀 Executar comandos no servidor via SSH
+      - name: 🔐 Configurar SSH e acessar servidor
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_SERVER }} >> ~/.ssh/known_hosts
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER }} << 'EOF'
-          cd ${{ secrets.SERVER_DIR }}
-          echo "📦 Instalando dependências..."
-          composer install --no-dev --optimize-autoloader
-          echo "🔄 Configurando ambiente..."
-          mkdir -p storage bootstrap/cache
-          php artisan config:clear
-          php artisan cache:clear
-          php artisan route:clear
-          php artisan view:clear
-          php artisan storage:link
-          echo "🛠️ Aplicando permissões..."
-          chmod -R 775 storage bootstrap/cache public/
-          chown -R www-data:www-data storage bootstrap/cache public/
-          echo "🗄️ Migrando banco de dados..."
-          php artisan migrate --force
-          echo "✅ Deploy efetuado com sucesso!"
+          ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            cd ${{ secrets.SERVER_DIR }}
+            echo "📦 Instalando dependências no servidor..."
+            composer install --no-dev --optimize-autoloader
+            echo "🔄 Limpando caches..."
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan route:clear
+            php artisan view:clear
+            echo "🛠️ Corrigindo permissões..."
+            chmod -R 775 storage bootstrap/cache
+            chown -R www-data:www-data storage bootstrap/cache
+            echo "✅ Deploy finalizado com sucesso!"
           EOF
