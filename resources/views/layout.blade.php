@@ -110,7 +110,7 @@
     @stack('scripts')
 
     <!-- Google tag (gtag.js) -->
-    
+    <script async src="google-site-verification=6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
