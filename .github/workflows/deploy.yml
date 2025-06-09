@@ -1,21 +1,21 @@
-name: 🚀 Deploy Laravel 12 (sem /public) via FTP e SSH
+name: 🚀 Deploy Laravel 12 (Otimizado)
 
 on:
   push:
     branches:
-      - develop  # Ou substitua por 'main' conforme seu fluxo
+      - develop  # Ou 'main' conforme seu fluxo
 
 jobs:
   deploy:
-    name: 🛠️ Deploy Laravel
+    name: 🛠️ Deploy Automatizado
     runs-on: ubuntu-latest
 
     steps:
       # --- ETAPA 1: PREPARAÇÃO ---
-      - name: 📥 Obter código mais recente
+      - name: 📥 Obter código
         uses: actions/checkout@v3
 
-      - name: 🔍 Validar variáveis de ambiente
+      - name: 🔍 Validar variáveis
         run: |
           [ -z "${{ secrets.SSH_HOST }}" ] && echo "🚨 SSH_HOST não definido" && exit 1
           [ -z "${{ secrets.FTP_SERVER }}" ] && echo "🚨 FTP_SERVER não definido" && exit 1
@@ -24,48 +24,45 @@ jobs:
           [ -z "${{ secrets.SSH_USER }}" ] && echo "🚨 SSH_USER não definido" && exit 1
           [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] && echo "🚨 SSH_PRIVATE_KEY não definido" && exit 1
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
-          echo "✅ Variáveis verificadas"
+          echo "✅ Variáveis OK"
 
-      # --- ETAPA 2: BUILD DO PROJETO ---
-      - name: 📦 Instalar dependências do Composer
+      # --- ETAPA 2: BUILD ---
+      - name: 📦 Instalar dependências
         run: |
           composer install --no-dev --optimize-autoloader --no-interaction
           composer dump-autoload
 
-      - name: 🔑 Gerar chave do Laravel (se necessário)
+      - name: 🔑 Gerar chave (se necessário)
         run: |
           [ -f .env ] || cp .env.example .env
           php artisan key:generate
 
-      # --- ETAPA 3: CORREÇÕES PARA EVITAR /PUBLIC/ ---
-      - name: 📂 Preparar arquivos para deploy (raiz)
+      # --- ETAPA 3: PREPARAR ARQUIVOS ---
+      - name: 📂 Estrutura de deploy
         run: |
-          # Copiar index.php e .htaccess para a raiz
+          # Copiar arquivos essenciais
           cp public/index.php index.php
           cp public/.htaccess .htaccess
 
-          # Ajustar caminhos no index.php (remover referências a /public/)
+          # Ajustar paths
           sed -i 's|/public/|/|g' index.php
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
 
-          # Adicionar regras de redirecionamento no .htaccess (evitar /public/)
+          # Redirecionamentos
           echo '
-          # ----- REDIRECIONAMENTOS PARA EVITAR DUPLICAÇÃO -----
           RewriteEngine On
           RewriteRule ^public/(.*)$ /$1 [L,R=301]
-
-          # Forçar HTTPS e WWW (opcional)
           RewriteCond %{HTTPS} off [OR]
           RewriteCond %{HTTP_HOST} !^www\. [NC]
           RewriteRule ^ https://www.starttofinish.com.br%{REQUEST_URI} [L,R=301]
           ' >> .htaccess
 
-          # Copiar conteúdo de public/ para a raiz (exceto index.php e .htaccess)
+          # Copiar conteúdo público
           rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
-      # --- ETAPA 4: DEPLOY VIA FTP ---
-      - name: 🚀 Enviar arquivos via FTP
+      # --- ETAPA 4: FTP ---
+      - name: 🚀 Enviar via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -76,16 +73,11 @@ jobs:
             **/.git*
             **/node_modules/**
             **/tests/**
-            **/vendor/**
-            **/storage/**
-            **/.github/**
-            .env
-            phpunit.xml
-            README.md
-            deploy.yml
+            **/.env
+            **/deploy.yml
 
-      # --- ETAPA 5: CONFIGURAÇÃO NO SERVIDOR ---
-      - name: 🔐 Executar comandos SSH (otimizações pós-deploy)
+      # --- ETAPA 5: SSH (SEM SUDO) ---
+      - name: 🔐 Comandos remotos
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
@@ -94,27 +86,22 @@ jobs:
 
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.SERVER_DIR }}
-
-            # Limpar caches e otimizar
+            
+            # Comandos seguros sem sudo
             php artisan config:clear
             php artisan cache:clear
             php artisan route:clear
             php artisan view:clear
             php artisan optimize
-
-            # Corrigir permissões
-            chmod -R 775 storage bootstrap/cache
-            chown -R www-data:www-data storage bootstrap/cache
-
-            # Reiniciar serviços (opcional)
-            sudo service php8.2-fpm restart  # Ajuste para sua versão do PHP
-            sudo service nginx restart
+            
+            # Migrations (se necessário)
+            # php artisan migrate --force
           EOF
 
-      # --- ETAPA 6: NOTIFICAÇÃO (OPCIONAL) ---
-      - name: 📢 Notificar sucesso (Slack/Email)
+      # --- ETAPA 6: NOTIFICAÇÃO ---
+      - name: 📢 Slack/Email
         if: success()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: "✅ Deploy concluído em https://www.starttofinish.com.br"
+          SLACK_MESSAGE: "🚀 Deploy concluído: $(date '+%d/%m/%Y %H:%M')"
