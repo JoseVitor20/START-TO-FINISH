@@ -2,6 +2,34 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContatoController;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/'))
+        ->add(Url::create('/restaurante'))
+        ->add(Url::create('/mercado'))
+        ->add(Url::create('/panificadora'))
+        ->add(Url::create('/salao-beleza'))
+        ->add(Url::create('/farmacia'))
+        ->add(Url::create('/loja-roupas'))
+        ->add(Url::create('/psicologia'))
+        ->add(Url::create('/imoveis'))
+        ->add(Url::create('/hotel'))
+        ->add(Url::create('/clinica'))
+        ->add(Url::create('/turismo'))
+        ->add(Url::create('/dentista'))
+        ->add(Url::create('/pousada'))
+        ->add(Url::create('/barbearia'))
+        ->add(Url::create('/aqua-park'))
+        ->add(Url::create('/cafeteria'))
+        ->add(Url::create('/centro-cultural'));
+
+    $sitemap->writeToFile(public_path('sitemap.xml'));
+
+    return response()->file(public_path('sitemap.xml'));
+});
 
 Route::get('/', function () {
     return view('welcome');

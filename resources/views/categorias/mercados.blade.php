@@ -657,7 +657,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Bebidas">
+                        <img src="https://plus.unsplash.com/premium_photo-1684952849219-5a0d76012ed2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmViaWRhc3xlbnwwfHwwfHx8MA%3D%3D" alt="Bebidas">
                         <div class="category-overlay">
                             <h5>Bebidas</h5>
                         </div>
@@ -665,7 +665,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Carnes">
+                        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FybmVzfGVufDB8fDB8fHww" alt="Carnes">
                         <div class="category-overlay">
                             <h5>Carnes</h5>
                         </div>
@@ -673,7 +673,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80" alt="Padaria">
+                        <img src="https://media.istockphoto.com/id/2042866626/pt/foto/french-bread-in-production-inside-the-bakery.webp?a=1&b=1&s=612x612&w=0&k=20&c=i1LfLAeO2-QJzDBsrlh78VBTwvhYZ4-4xit38kDxFmg=" alt="Padaria">
                         <div class="category-overlay">
                             <h5>Padaria</h5>
                         </div>
@@ -681,7 +681,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1581495307358-3e8c55942678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Limpeza">
+                        <img src="https://media.istockphoto.com/id/2169450161/pt/foto/box-with-cleaning-products-on-the-kitchen-counter-at-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=KDk4PHTLEzF-2ggfLx2RP9uaIn03jofQ5VQ2__PYXgE=" alt="Limpeza">
                         <div class="category-overlay">
                             <h5>Limpeza</h5>
                         </div>
@@ -689,7 +689,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Congelados">
+                        <img src="https://media.istockphoto.com/id/183405249/pt/foto/carne-de-vaca-congelada.webp?a=1&b=1&s=612x612&w=0&k=20&c=uJ7MrchkpWcyO87yjs9J7MJYoKXa3Iq71to2ItMTUk8=" alt="Congelados">
                         <div class="category-overlay">
                             <h5>Congelados</h5>
                         </div>
@@ -697,7 +697,7 @@
                 </div>
                 <div class="col">
                     <div class="category-card">
-                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8b58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Utilidades">
+                        <img src="https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmVycmFtZW50YXN8ZW58MHx8MHx8fDA%3D" alt="Utilidades">
                         <div class="category-overlay">
                             <h5>Utilidades</h5>
                         </div>
@@ -877,9 +877,6 @@
                 <div class="col-md-6">
                     <p class="mb-0">&copy; 2024 MarketPrime. Todos os direitos reservados.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <img src="https://via.placeholder.com/200x30?text=Payment+Methods" alt="Formas de Pagamento" class="img-fluid">
-                </div>
             </div>
         </div>
     </footer>
@@ -889,16 +886,16 @@
     <script>
         // Dados dos produtos
         const products = [
-            { id: 1, name: "Arroz Integral", category: "mercearia", price: 12.90, oldPrice: 15.90, image: "https://images.unsplash.com/photo-1598346762291-aee88549193f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", offer: false },
-            { id: 2, name: "Feijão Carioca", category: "mercearia", price: 8.50, oldPrice: 9.90, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", offer: false },
+            { id: 1, name: "Arroz Integral", category: "mercearia", price: 12.90, oldPrice: 15.90, image: "https://imgs.search.brave.com/EOOMxeRiuWMxblNq5FQ_KdnWFLt4qAlQSccBYspyLQU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzcwNDE1OC1NTEE3/NDc4MDAxODcxN18w/MjIwMjQtVi53ZWJw", offer: false },
+            { id: 2, name: "Feijão Carioca", category: "mercearia", price: 8.50, oldPrice: 9.90, image: "https://imgs.search.brave.com/6GcT8VK-mTRz_mgoIqAQpdOmd5CepLIM_z_RzhGEWh4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF83/NzExMzUtTUxVNzE3/MDUxMjIyMjNfMDky/MDIzLUYuanBn", offer: false },
             { id: 3, name: "Azeite de Oliva", category: "mercearia", price: 29.90, oldPrice: 34.90, image: "https://media.istockphoto.com/id/1206682746/pt/foto/pouring-extra-virgin-olive-oil-in-a-glass-bowl.webp?a=1&b=1&s=612x612&w=0&k=20&c=-XqNh1AvA-I5MF47VVkoPiTjLugps9e3KoomMHUReuw=", offer: true },
             { id: 4, name: "Leite Integral", category: "bebidas", price: 4.20, oldPrice: 4.80, image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", offer: false },
             { id: 5, name: "Café em Grãos", category: "mercearia", price: 18.90, oldPrice: 22.50, image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", offer: true },
             { id: 6, name: "Banana Prata", category: "hortifruti", price: 3.90, oldPrice: 4.50, image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80", offer: false },
             { id: 7, name: "Maçã Fuji", category: "hortifruti", price: 7.90, oldPrice: 9.20, image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", offer: false },
-            { id: 8, name: "Sabão em Pó", category: "limpeza", price: 15.90, oldPrice: 18.90, image: "https://media.istockphoto.com/id/1413851648/pt/foto/woman-adding-fabric-softener-or-detergent-to-a-washing-machine.webp?a=1&b=1&s=612x612&w=0&k=20&c=KrSBUimzvKBEmOmLbWSCSPtcFo51b4poSEYVdY6AJ3s=", offer: true },
-            { id: 9, name: "Desinfetante", category: "limpeza", price: 6.50, oldPrice: 7.90, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80", offer: false },
-            { id: 10, name: "Água Mineral", category: "bebidas", price: 2.90, oldPrice: 3.50, image: "https://images.unsplash.com/photo-1561047029-3000c68339ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", offer: false },
+            { id: 8, name: "Sabão em Pó", category: "limpeza", price: 15.90, oldPrice: 18.90, image: "https://media.istockphoto.com/id/517747006/pt/foto/detergente-da-roupa-de-lavagem.webp?a=1&b=1&s=612x612&w=0&k=20&c=jb7xsALByjCEbzD2aHcxe-zzpNG8UbIAF13lswKxr00=", offer: true },
+            { id: 9, name: "Desinfetante", category: "limpeza", price: 6.50, oldPrice: 7.90, image: "https://media.istockphoto.com/id/2162243254/pt/foto/young-man-cleaning-his-window-sill-at-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=0Q3vK4i_vOIX6oQSgBg736L4TxpU7-0vzjIOds0ju74=", offer: false },
+            { id: 10, name: "Água Mineral", category: "bebidas", price: 2.90, oldPrice: 3.50, image: "https://images.unsplash.com/photo-1595994195534-d5219f02f99f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUMzJUExZ3VhJTIwbWluZXJhbHxlbnwwfHwwfHx8MA%3D%3D", offer: false },
             { id: 11, name: "Refrigerante", category: "bebidas", price: 7.50, oldPrice: 8.90, image: "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", offer: false },
             { id: 12, name: "Pão de Forma", category: "padaria", price: 9.90, oldPrice: 11.50, image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80", offer: true }
         ];
