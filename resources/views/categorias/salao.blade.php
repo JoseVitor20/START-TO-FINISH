@@ -5,212 +5,223 @@
 @push('estilos')
     <style>
         :root {
-            --primary-color: #d4af37;
-            --secondary-color: #f8f1e5;
-            --dark-color: #1a1a1a;
-            --light-color: #ffffff;
-            --accent-color: #e8c8a0;
+            --primary: #f8c8dc;
+            --secondary: #a64d79;
+            --accent: #d291bc;
+            --dark: #4a235a;
+            --light: #f9f0ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--dark-color);
-            background-color: var(--secondary-color);
-            scroll-behavior: smooth;
+            background-color: #fff;
+            color: #333;
+            overflow-x: hidden;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+        .botao{
+            height: 50px !important;
+        }
+
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--secondary);
             font-weight: 700;
         }
         
         .navbar {
-            background-color: var(--light-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 5px 0;
-        }
-        
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary-color) !important;
-            font-size: 1.8rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
         }
         
         .nav-link {
-            color: var(--dark-color);
-            font-weight: 600;
+            color: var(--dark) !important;
+            font-weight: 500;
             margin: 0 10px;
             position: relative;
-        }
-        
-        .nav-link:before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary-color);
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .nav-link:hover:before {
-            visibility: visible;
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            color: var(--light-color);
-        }
-        
-        .hero-content {
-            max-width: 600px;
-        }
-        
-        .hero-title {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-        
-        .btn-gold {
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 30px;
             transition: all 0.3s ease;
         }
         
-        .btn-gold:hover {
-            background-color: var(--light-color);
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(166, 77, 121, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(74, 35, 90, 0.7), rgba(74, 35, 90, 0.7)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
         
         .section-title {
             position: relative;
-            display: inline-block;
             margin-bottom: 50px;
-            color: var(--dark-color);
+            text-align: center;
+            color: var(--dark);
+            font-weight: 700;
         }
         
-        .section-title:after {
+        .section-title::after {
             content: '';
             position: absolute;
-            width: 50%;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 3px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 0;
+            background: var(--accent);
         }
         
         .service-card {
-            background-color: var(--light-color);
-            border-radius: 10px;
+            border: none;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             margin-bottom: 30px;
-            height: 100%;
+            background-color: var(--light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(166, 77, 121, 0.2);
         }
         
         .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            color: var(--secondary);
             margin-bottom: 20px;
         }
         
-        .team-member {
-            text-align: center;
+        .promotion {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .team-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
             margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .team-img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid var(--primary-color);
-            margin-bottom: 20px;
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(166, 77, 121, 0.2);
+        }
+        
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: rgba(166, 77, 121, 0.9);
+            padding: 15px 0;
             transition: all 0.3s ease;
         }
         
-        .team-member:hover .team-img {
-            transform: scale(1.05);
+        .team-card:hover .team-social {
+            bottom: 0;
         }
         
         .testimonial-card {
-            background-color: var(--light-color);
+            background: white;
+            border-radius: 15px;
             padding: 30px;
-            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
+            margin: 20px 0;
         }
         
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-color);
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
         }
         
         .gallery-item {
-            margin-bottom: 30px;
-            overflow: hidden;
             border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
             position: relative;
+            height: 250px;
         }
         
         .gallery-item img {
-            transition: all 0.5s ease;
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
+            transition: all 0.5s ease;
         }
         
         .gallery-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(212, 175, 55, 0.7);
+            right: 0;
+            bottom: 0;
+            background: rgba(166, 77, 121, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -222,55 +233,49 @@
             opacity: 1;
         }
         
-        .contact-info {
-            margin-bottom: 30px;
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
         
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 10px;
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .form-control {
-            border-radius: 0;
-            border: 1px solid #ddd;
-            padding: 12px;
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
             margin-bottom: 20px;
         }
         
         .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-color);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.25rem rgba(166, 77, 121, 0.25);
         }
         
-        .botao-assinar{
-            background-color: var(--primary-color);
-            height: 50px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            outline: none;
-            border: none;
-            font-size: 20px;
-        }
-
-        .botao-assinar:hover{
-            opacity: .850;
-        }
-
         footer {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 50px 0 20px;
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
         }
         
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            display: inline-block;
+        .footer-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
         }
         
         .social-icon {
@@ -279,518 +284,495 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--light-color);
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             margin-right: 10px;
             transition: all 0.3s ease;
         }
         
         .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            transform: translateY(-3px);
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-5px);
         }
         
-        .back-to-top {
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        .appointment-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
+            background: var(--secondary);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(166, 77, 121, 0.5);
+            animation: pulse 2s infinite;
         }
         
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(166, 77, 121, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(166, 77, 121, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(166, 77, 121, 0); }
         }
         
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
         }
         
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
     </style>
 @endpush
 
 @section('content')
-    <body data-bs-spy="scroll" data-bs-target=".navbar">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Glamour</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team">Equipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Galeria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <!-- Botão de Agendamento Flutuante -->
+    <a href="#contact" class="appointment-btn">
+        <i class="fas fa-calendar-check"></i>
+    </a>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content fade-in">
-                    <h1 class="hero-title">Descubra Sua Beleza Interior</h1>
-                    <p class="hero-subtitle">No Salão Glamour, transformamos sua aparência e elevamos sua autoestima com nossos serviços exclusivos.</p>
-                    <a href="#contact" class="btn btn-gold btn-lg">Agende Agora</a>
-                </div>
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="logo-text">Elegance Beauty</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary ms-lg-3">Agendar Horário</a>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <!-- Services Section -->
-        <section id="services" class="py-5">
-            <div class="container">
-                <div class="text-center mb-5 fade-in">
-                    <h2 class="section-title">Nossos Serviços</h2>
-                    <p class="lead">Oferecemos os melhores tratamentos de beleza com profissionais qualificados</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Descubra sua beleza única</h1>
+                <p>No Elegance Beauty, transformamos sua autoestima com serviços exclusivos e profissionais qualificados. Sua jornada para a beleza começa aqui.</p>
+                <a href="#services" class="btn btn-primary me-2">Nossos Serviços</a>
+                <a href="#contact" class="btn btn-outline-light">Agendar Horário</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://plus.unsplash.com/premium_photo-1663050860891-82b5fec7e0bf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNhbCVDMyVBM28lMjBkZSUyMGJlbGV6YXxlbnwwfHwwfHx8MA%3D%3D" class="img-fluid rounded" alt="Salão Elegance Beauty">
                 </div>
-                <div class="row">
-                    <div class="col-md-4 fade-in delay-1">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <h3>Cortes Modernos</h3>
-                            <p>Cortes de cabelo personalizados que realçam seus traços faciais e refletem sua personalidade.</p>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p class="lead">Bem-vindo ao Elegance Beauty, onde a beleza encontra a excelência.</p>
+                    <p>Fundado em 2010, nosso salão se tornou referência em cuidados estéticos e bem-estar. Nossa missão é realçar sua beleza natural com técnicas inovadoras e produtos de alta qualidade.</p>
+                    <p>Com uma equipe de profissionais apaixonados e altamente qualificados, oferecemos uma experiência personalizada em um ambiente sofisticado e acolhedor.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Profissionais Certificados</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Produtos Premium</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Ambiente Higienizado</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-2">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-paint-brush"></i>
-                            </div>
-                            <h3>Coloração Profissional</h3>
-                            <p>Técnicas avançadas de coloração que protegem seus fios enquanto entregam resultados vibrantes.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-3">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <h3>Tratamentos Capilares</h3>
-                            <p>Terapias intensivas para recuperação de fios danificados, deixando-os saudáveis e brilhantes.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-1">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-hand-sparkles"></i>
-                            </div>
-                            <h3>Manicure & Pedicure</h3>
-                            <p>Cuidados especializados para mãos e pés, incluindo esmaltação duradoura e tratamentos.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-2">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h3>Design de Sobrancelhas</h3>
-                            <p>Modelagem perfeita que harmoniza seu rosto, realçando sua expressão natural.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-3">
-                        <div class="service-card p-4 text-center">
-                            <div class="service-icon">
-                                <i class="fas fa-magic"></i>
-                            </div>
-                            <h3>Maquiagem Profissional</h3>
-                            <p>Maquiagem para ocasiões especiais ou para o dia a dia, com produtos de alta qualidade.</p>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Atendimento Personalizado</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Técnicas Atualizadas</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Resultados Garantidos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-5 bg-light">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0 fade-in">
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="Sobre o Salão" class="img-fluid rounded">
-                    </div>
-                    <div class="col-lg-6 fade-in delay-1">
-                        <h2 class="section-title">Sobre Nós</h2>
-                        <p class="lead">O Salão Glamour nasceu da paixão por beleza e autoestima.</p>
-                        <p>Fundado em 2010, nosso salão se tornou referência em tratamentos capilares e serviços de beleza na região. Nossa missão é proporcionar experiências transformadoras, onde cada cliente se sinta especial e único.</p>
-                        <p>Utilizamos apenas produtos de alta qualidade e técnicas atualizadas, garantindo resultados excepcionais que superam expectativas. Nossa equipe está em constante treinamento para oferecer o que há de mais moderno no mundo da beleza.</p>
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle me-2 text-primary"></i>
-                                    <span>Profissionais Certificados</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle me-2 text-primary"></i>
-                                    <span>Produtos Premium</span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle me-2 text-primary"></i>
-                                    <span>Ambiente Luxuoso</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle me-2 text-primary"></i>
-                                    <span>Atendimento Personalizado</span>
-                                </div>
-                            </div>
+    <!-- Serviços -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Nossos Serviços</h2>
+            <p class="text-center mb-5">Oferecemos uma variedade de serviços para realçar sua beleza natural</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-cut"></i>
                         </div>
+                        <h4>Cortes e Penteados</h4>
+                        <p>Cortes modernos, escovas progressivas e penteados para ocasiões especiais.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 80</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Coloração</h4>
+                        <p>Técnicas de coloração, mechas, reflexos e tonalização com produtos profissionais.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 120</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h4>Tratamentos Capilares</h4>
+                        <p>Hidratação, reconstrução, cauterização e botox capilar para fios saudáveis.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 90</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h4>Manicure e Pedicure</h4>
+                        <p>Cuidados completos para mãos e pés, com esmaltação tradicional e em gel.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 60</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Design de Sobrancelhas</h4>
+                        <p>Design personalizado, henna e micropigmentação para realçar seu olhar.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 50</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4>Maquiagem</h4>
+                        <p>Maquiagem social e artística para eventos especiais com produtos de alta qualidade.</p>
+                        <p class="text-primary fw-bold">A partir de R$ 100</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Team Section -->
-        <section id="team" class="py-5">
-            <div class="container">
-                <div class="text-center mb-5 fade-in">
-                    <h2 class="section-title">Nossa Equipe</h2>
-                    <p class="lead">Profissionais apaixonados por transformar sua beleza</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 fade-in delay-1">
-                        <div class="team-member">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Equipe" class="team-img">
-                            <h4>Ana Carolina</h4>
-                            <p class="text-primary">Hair Stylist</p>
-                            <div class="social-links">
-                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 fade-in delay-2">
-                        <div class="team-member">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Equipe" class="team-img">
-                            <h4>Juliana Santos</h4>
-                            <p class="text-primary">Color Specialist</p>
-                            <div class="social-links">
-                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 fade-in delay-3">
-                        <div class="team-member">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Equipe" class="team-img">
-                            <h4>Marcos Vinícius</h4>
-                            <p class="text-primary">Barbeiro</p>
-                            <div class="social-links">
-                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 fade-in delay-4">
-                        <div class="team-member">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Equipe" class="team-img">
-                            <h4>Fernanda Lima</h4>
-                            <p class="text-primary">Esteticista</p>
-                            <div class="social-links">
-                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="text-decoration-none"><i class="fab fa-facebook"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Promoção -->
+    <section class="promotion">
+        <div class="container text-center">
+            <h2 class="mb-4">Pacote Especial de Verão</h2>
+            <p class="lead mb-4">Corte + Coloração + Hidratação Profunda</p>
+            <h3 class="display-4 fw-bold mb-4">Por apenas R$ 220</h3>
+            <p>Promoção válida até 30 de Agosto</p>
+            <a href="#contact" class="btn btn-light mt-3">Agendar Promoção</a>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5 fade-in">
-                    <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-                    <p class="lead">Depoimentos de quem já experimentou nossos serviços</p>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 fade-in delay-1">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">"O melhor salão que já frequentei! A Ana fez um trabalho incrível no meu cabelo, recuperou totalmente os fios danificados. Super recomendo!"</p>
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Cliente" class="rounded-circle me-3" width="50">
-                                <div>
-                                    <h6 class="mb-0 testimonial-author">Camila Oliveira</h6>
-                                    <small>Cliente há 3 anos</small>
-                                </div>
-                            </div>
+    <!-- Equipe -->
+    <section id="team" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Nossa Equipe</h2>
+            <p class="text-center mb-5">Profissionais qualificados prontos para cuidar de você</p>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card position-relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/1887700422/pt/foto/hairdresser-creating-a-beautiful-finish-with-drying.webp?a=1&b=1&s=612x612&w=0&k=20&c=9ToFsO3tBJorMdy-EDmvO8VeqnJpzi8qpC_oz9I8xpY=" class="img-fluid" alt="Cabeleireira">
+                        <div class="p-3">
+                            <h5 class="mb-1">Carla Mendes</h5>
+                            <p class="text-muted mb-0">Cabeleireira Master</p>
                         </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-2">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">"Sou cliente do Glamour desde a inauguração. O atendimento é impecável e sempre saio me sentindo mais bonita e confiante. Vale cada centavo!"</p>
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Cliente" class="rounded-circle me-3" width="50">
-                                <div>
-                                    <h6 class="mb-0 testimonial-author">Patrícia Mendes</h6>
-                                    <small>Cliente há 10 anos</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 fade-in delay-3">
-                        <div class="testimonial-card">
-                            <p class="testimonial-text">"O Marcos é excepcional! Depois que comecei a fazer minha barba com ele, nunca mais quis saber de outro barbeiro. Atencioso e extremamente profissional."</p>
-                            <div class="d-flex align-items-center">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="rounded-circle me-3" width="50">
-                                <div>
-                                    <h6 class="mb-0 testimonial-author">Ricardo Almeida</h6>
-                                    <small>Cliente há 2 anos</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallery" class="py-5">
-            <div class="container">
-                <div class="text-center mb-5 fade-in">
-                    <h2 class="section-title">Nossos Trabalhos</h2>
-                    <p class="lead">Alguns momentos especiais capturados em nosso salão</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 fade-in delay-1">
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 fade-in delay-2">
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 fade-in delay-3">
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 fade-in delay-1">
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 fade-in delay-2">
-                        <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsJUMzJUEzbyUyMGRlJTIwYmVsZXphfGVufDB8fDB8fHww" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 fade-in delay-3">
-                        <div class="gallery-item">
-                            <img src="https://plus.unsplash.com/premium_photo-1661290231745-15f1ed6fea88?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FsJUMzJUEzbyUyMGRlJTIwYmVsZXphfGVufDB8fDB8fHww" alt="Galeria" class="img-fluid">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus text-white fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-5 bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 fade-in">
-                        <h2 class="section-title mb-4">Entre em Contato</h2>
-                        <p class="mb-5">Estamos ansiosos para atendê-lo e proporcionar a melhor experiência em beleza.</p>
-                        
-                        <div class="contact-info">
-                            <div class="d-flex mb-4">
-                                <i class="fas fa-map-marker-alt contact-icon"></i>
-                                <div>
-                                    <h5>Endereço</h5>
-                                    <p>Av. Beleza, 123 - Centro, São Paulo - SP</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-4">
-                                <i class="fas fa-phone-alt contact-icon"></i>
-                                <div>
-                                    <h5>Telefone</h5>
-                                    <p>(11) 1234-5678</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-4">
-                                <i class="fas fa-envelope contact-icon"></i>
-                                <div>
-                                    <h5>Email</h5>
-                                    <p>contato@salaoglamour.com.br</p>
-                                </div>
-                            </div>
-                            <div class="d-flex mb-4">
-                                <i class="fas fa-clock contact-icon"></i>
-                                <div>
-                                    <h5>Horário de Funcionamento</h5>
-                                    <p>Segunda a Sábado: 9h às 20h</p>
-                                    <p>Domingo: 10h às 16h</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 fade-in delay-1">
-                        <div class="card border-0 shadow">
-                            <div class="card-body p-5">
-                                <h3 class="mb-4">Agende Seu Horário</h3>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Seu Nome" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="email" class="form-control" placeholder="Seu Email" required>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="tel" class="form-control" placeholder="Seu Telefone" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <select class="form-control" required>
-                                                <option value="" disabled selected>Serviço Desejado</option>
-                                                <option>Corte de Cabelo</option>
-                                                <option>Coloração</option>
-                                                <option>Tratamento Capilar</option>
-                                                <option>Manicure/Pedicure</option>
-                                                <option>Design de Sobrancelhas</option>
-                                                <option>Maquiagem</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="date" class="form-control" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="time" class="form-control" required>
-                                        </div>
-                                    </div>
-                                    <textarea class="form-control" rows="4" placeholder="Mensagem (Opcional)"></textarea>
-                                    <button type="submit" class="btn btn-gold mt-3 w-100">Enviar Agendamento</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <a href="#" class="footer-logo">Glamour</a>
-                        <p class="text-white-50">Transformando sua beleza e elevando sua autoestima desde 2010. Venha viver a experiência Glamour.</p>
-                        <div class="social-links mt-4">
+                        <div class="team-social text-center">
                             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <h5 class="text-white mb-4">Links Úteis</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#home" class="text-white-50 text-decoration-none">Home</a></li>
-                            <li class="mb-2"><a href="#services" class="text-white-50 text-decoration-none">Serviços</a></li>
-                            <li class="mb-2"><a href="#about" class="text-white-50 text-decoration-none">Sobre Nós</a></li>
-                            <li class="mb-2"><a href="#team" class="text-white-50 text-decoration-none">Nossa Equipe</a></li>
-                            <li class="mb-2"><a href="#gallery" class="text-white-50 text-decoration-none">Galeria</a></li>
-                            <li class="mb-2"><a href="#contact" class="text-white-50 text-decoration-none">Contato</a></li>
-                        </ul>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card position-relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/1269029424/pt/foto/young-woman-enjoying-haircut-at-beauty-salon-empty-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=VFMGYevCYrfRakXOCGE1oBEZiFSc0dT5JlWo0qIha9s=" class="img-fluid" alt="Colorista">
+                        <div class="p-3">
+                            <h5 class="mb-1">Fernanda Lima</h5>
+                            <p class="text-muted mb-0">Especialista em Coloração</p>
+                        </div>
+                        <div class="team-social text-center">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
-                    <div class="col-lg-4">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p class="text-white-50">Assine nossa newsletter para receber promoções e novidades.</p>
-                        <form class="mt-4">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Seu Email" required>
-                                <button class="botao-assinar" type="submit">Assinar</button>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card position-relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/1357074670/pt/foto/reflection-in-a-mirror-of-happy-woman-and-her-hairdresser-after-hair-treatment-at-the-salon.webp?a=1&b=1&s=612x612&w=0&k=20&c=kb7hIfD7llPnKtazXNGS6lbvBcXs1pvZC8g1v5hsMh4=" class="img-fluid" alt="Manicure">
+                        <div class="p-3">
+                            <h5 class="mb-1">Juliana Santos</h5>
+                            <p class="text-muted mb-0">Manicure e Pedicure</p>
+                        </div>
+                        <div class="team-social text-center">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card position-relative overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/2148731592/pt/foto/woman-hair-salon-employee-in-modern-hair-studio-cutting-hair.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ijp4NoGZO_Vm5ZEQdxGSE1Gg8bvy7FvgMDCJAtCy6tk=" class="img-fluid" alt="Maquiadora">
+                        <div class="p-3">
+                            <h5 class="mb-1">Patrícia Oliveira</h5>
+                            <p class="text-muted mb-0">Maquiadora Profissional</p>
+                        </div>
+                        <div class="team-social text-center">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Nossa Galeria</h2>
+            <p class="text-center mb-5">Alguns momentos e trabalhos realizados em nosso salão</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3" alt="Corte de cabelo">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Corte Moderno</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3" alt="Coloração">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Coloração</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1599351431408-433ef72fe40b?ixlib=rb-4.0.3" alt="Salão">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Nosso Ambiente</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3" alt="Manicure">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Manicure</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3" alt="Sobrancelha">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Design de Sobrancelhas</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1599351431408-433ef72fe40b?ixlib=rb-4.0.3" alt="Maquiagem">
+                        <div class="gallery-overlay">
+                            <h5 class="text-white">Maquiagem</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Agende seu Horário</h2>
+            <p class="text-center mb-5">Estamos ansiosos para cuidar de você</p>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Seu Nome" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Seu E-mail" required>
+                                </div>
                             </div>
+                            <input type="tel" class="form-control" placeholder="Seu Telefone" required>
+                            <select class="form-select form-control">
+                                <option selected>Selecione um serviço</option>
+                                <option>Corte e Penteado</option>
+                                <option>Coloração</option>
+                                <option>Tratamento Capilar</option>
+                                <option>Manicure/Pedicure</option>
+                                <option>Design de Sobrancelhas</option>
+                                <option>Maquiagem</option>
+                            </select>
+                            <input type="date" class="form-control" required>
+                            <textarea class="form-control" rows="4" placeholder="Mensagem (opcional)"></textarea>
+                            <button type="submit" class="btn btn-primary w-100">Agendar Horário</button>
                         </form>
                     </div>
                 </div>
-                <hr class="my-5 bg-white-10">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="text-white-50 mb-0">&copy; 2023 Glamour. Todos os direitos reservados.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <p class="text-white-50 mb-0">Desenvolvido com <i class="fas fa-heart text-danger"></i> por Glamour</p>
+                
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <h4 class="mb-4">Informações de Contato</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                <strong>Endereço:</strong> Av. Paulista, 1000 - São Paulo/SP
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-phone-alt text-primary me-2"></i>
+                                <strong>Telefone:</strong> (11) 9999-8888
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                <strong>E-mail:</strong> contato@elegancebeauty.com.br
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-clock text-primary me-2"></i>
+                                <strong>Horário de Funcionamento:</strong><br>
+                                Segunda a Sexta: 9h às 20h<br>
+                                Sábado: 9h às 18h<br>
+                                Domingo: Fechado
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-4">
+                            <h5 class="mb-3">Siga-nos</h5>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <!-- Back to Top Button -->
-        <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-    </body>
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-title">Elegance Beauty</h4>
+                    <p>Transformando autoestima e realçando beleza desde 2010. Seu bem-estar é nossa prioridade.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Sobre Nós</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Serviços</a></li>
+                        <li class="mb-2"><a href="#team" class="text-white text-decoration-none">Equipe</a></li>
+                        <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none">Galeria</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p>Inscreva-se para receber nossas promoções e novidades</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                            <button class="btn btn-primary botao" type="submit">Inscrever</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright text-center">
+                <p class="mb-0">&copy; 2023 Elegance Beauty. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
 @endsection
 
 @push('scripts')
