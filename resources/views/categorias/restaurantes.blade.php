@@ -457,7 +457,7 @@
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="menu-card card">
-                                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="card-img-top" alt="Entrada 1">
+                                <img src="https://media.istockphoto.com/id/1255004844/pt/foto/ahi-tuna-tartare-on-toasted-crostinis.webp?a=1&b=1&s=612x612&w=0&k=20&c=SgjQ2PVvRTo_CqNm4fHBKxzTjTvbS1n20mhngPq_Auw=" class="card-img-top" alt="Entrada 1">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-title">Tartar de Atum</h5>
@@ -469,7 +469,7 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="menu-card card">
-                                <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Entrada 2">
+                                <img src="https://media.istockphoto.com/id/1422866960/pt/foto/seared-foie-gras.webp?a=1&b=1&s=612x612&w=0&k=20&c=zv8_L9NaqtjyZXLnaUab9NRJUv5W7dI6UyIgp4tTGWs=" class="card-img-top" alt="Entrada 2">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-title">Foie Gras</h5>
@@ -481,7 +481,7 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="menu-card card">
-                                <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Entrada 3">
+                                <img src="https://media.istockphoto.com/id/1330094289/pt/foto/beetroot-carpaccio-with-sause-pesto-on-plate-on-old-wooden-table.webp?a=1&b=1&s=612x612&w=0&k=20&c=Wy3ae8DcgmYjnLeVLkaV98PwFGz8sXOrPWp2S_TyQUM=" class="card-img-top" alt="Entrada 3">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-title">Carpaccio de Beterraba</h5>
