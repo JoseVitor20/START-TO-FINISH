@@ -355,7 +355,7 @@
     </a>
 
     <!-- Navegação -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span class="logo-text">Elegance Beauty</span>
