@@ -696,7 +696,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="chef-card">
-                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Chef 2" class="chef-img">
+                        <img src="https://plus.unsplash.com/premium_photo-1673830185931-40661a11948f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJlc3R1cmFudHxlbnwwfHwwfHx8MA%3D%3D" alt="Chef 2" class="chef-img">
                         <h4>Carlos Mendez</h4>
                         <p class="text-muted">Chef de Cozinha</p>
                         <div class="divider"></div>
@@ -705,7 +705,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="chef-card">
-                        <img src="https://images.unsplash.com/photo-1601315488950-3b5047998b38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Chef 3" class="chef-img">
+                        <img src="https://media.istockphoto.com/id/1331280439/pt/foto/smiling-entrepreneur-holding-a-digital-tablet-in-her-cafe.webp?a=1&b=1&s=612x612&w=0&k=20&c=bI2i-oV7-6O-DmbouP12qhOZK6VFmTP0feFDjB3qViU=" alt="Chef 3" class="chef-img">
                         <h4>Sophie Laurent</h4>
                         <p class="text-muted">Chef Confeiteira</p>
                         <div class="divider"></div>
