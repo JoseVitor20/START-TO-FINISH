@@ -5,7 +5,7 @@
 @push('estilos')
     <style>
         :root {
-            --primary-color: #8B0000;
+            --primary-color: red;
             --secondary-color: #D4AF37;
             --dark-color: #1A1A1A;
             --light-color: #F8F9FA;
@@ -347,39 +347,27 @@
 
 @section('content')
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top nav-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Éclat</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Galeria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#chefs">Chefs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reservation">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chefs">Chefs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
