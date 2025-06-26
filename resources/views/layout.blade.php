@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Language" content="pt-BR">
         <meta name="robots" content="index, follow">
         <meta name="author" content="Start to Finish">
-        <meta name="description" content="Start to Finish é especialista em desenvolvimento Laravel e sistemas web personalizados. Velocidade, segurança e soluções sob medida para sua empresa.">
+        <meta name="description" content="A Start To Finish é especialista em divulgação online, atuando na criação de sites e na publicação de anúncios em plataformas como Facebook, Instagram, Youtube, etc.">
         <meta name="keywords" content="laravel, desenvolvimento web, full-stack, sistemas personalizados">
         <meta name="google-site-verification" content="6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk">
 
