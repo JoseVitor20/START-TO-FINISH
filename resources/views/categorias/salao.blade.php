@@ -8,7 +8,7 @@
             --primary: #f8c8dc;
             --secondary: #a64d79;
             --accent: #d291bc;
-            --dark: #4a235a;
+            --dark: #b076c9;
             --light: #f9f0ff;
         }
         
@@ -600,7 +600,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3" alt="Corte de cabelo">
+                        <img src="https://media.istockphoto.com/id/1264558427/pt/foto/woman-with-protective-mask-receiving-treatment-in-hair-salon.webp?a=1&b=1&s=612x612&w=0&k=20&c=7s1NIxzKAr4rFWCaFDCW4VEYR68iDT0ev-cfl4ywh9s=" alt="Corte de cabelo">
                         <div class="gallery-overlay">
                             <h5 class="text-white">Corte Moderno</h5>
                         </div>
@@ -618,7 +618,7 @@
                 
                 <div class="col-md-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1599351431408-433ef72fe40b?ixlib=rb-4.0.3" alt="Salão">
+                        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2FsJUMzJUEzbyUyMGRlJTIwYmVsZXphfGVufDB8fDB8fHww" alt="Salão">
                         <div class="gallery-overlay">
                             <h5 class="text-white">Nosso Ambiente</h5>
                         </div>
@@ -627,7 +627,7 @@
                 
                 <div class="col-md-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3" alt="Manicure">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWFuaWN1cmV8ZW58MHx8MHx8fDA%3D" alt="Manicure">
                         <div class="gallery-overlay">
                             <h5 class="text-white">Manicure</h5>
                         </div>
@@ -636,7 +636,7 @@
                 
                 <div class="col-md-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3" alt="Sobrancelha">
+                        <img src="https://media.istockphoto.com/id/1286660007/pt/foto/beautician-measuring-brows-with-ruler.webp?a=1&b=1&s=612x612&w=0&k=20&c=yUhc8BzH2_6itvTms7Jz-dIhlCvo6F0wZzYjrZNW9Lo=" alt="Sobrancelha">
                         <div class="gallery-overlay">
                             <h5 class="text-white">Design de Sobrancelhas</h5>
                         </div>
@@ -645,7 +645,7 @@
                 
                 <div class="col-md-4">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1599351431408-433ef72fe40b?ixlib=rb-4.0.3" alt="Maquiagem">
+                        <img src="https://images.unsplash.com/photo-1622336889416-8d790ad807d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FsJUMzJUEzbyUyMGRlJTIwYmVsZXphfGVufDB8fDB8fHww" alt="Maquiagem">
                         <div class="gallery-overlay">
                             <h5 class="text-white">Maquiagem</h5>
                         </div>
