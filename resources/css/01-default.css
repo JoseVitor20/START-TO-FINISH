@@ -35,7 +35,7 @@
         --text-sec-color: #303030;
         --inver-img: invert(0%);
         --primary-color: #3620df;
-        --secondary-color: #7c00ff;
+        --secondary-color: #8c20ff;
         --neon: #00fffd;
         --gradiente-pri-color: #21ff00;
         --gradiente-sec-color: #00fffd;
@@ -56,6 +56,7 @@
         color: var(--text-pri-color);
         transition: all 0.3s ease;
         transition: background-color 0.3s ease, color 0.3s ease;
+        user-select: none;
     }
 
 /* === CLASSES GLOBAIS ===*/

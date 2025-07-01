@@ -72,6 +72,7 @@ buttonDarkMode.addEventListener('click', toggleMenu);
       '#projetos',
       '#depoimentos',
       '#contato',
+      '#precos'
     ];
 
     function updateSelectedNavItem () {

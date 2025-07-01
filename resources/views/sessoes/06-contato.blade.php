@@ -7,6 +7,7 @@
 
 <div class="contact py-3" id="contato" data-aos="zoom-in-down" data-aos-duration="1000">
     <h2 class=" text-center mt-lg-5 mt-3 display-4 fw-bold">Entre em <span class="text-gradient">Contato</span></h2>
+    <div class="header-divider"></div>
     <div class="container contact-wrapper d-flex flex-wrap">
 
         <!-- Lado Esquerdo: Mapa + Botões -->

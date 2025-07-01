@@ -20,6 +20,7 @@
                 <li class="header__nav-item"><a href="#projetos" class="header__nav-link" id="item3">Projetos</a></li>
                 <li class="header__nav-item"><a href="#depoimentos" class="header__nav-link" id="item4">Depoimentos</a></li>
                 <li class="header__nav-item"><a href="#contato" class="header__nav-link" id="item5">Contato</a></li>
+                <li class="header__nav-item"><a href="#precos" class="header__nav-link" id="item6">Preços</a></li>
             </ul>
         </nav>
         <div class="header__actions" id="hidden">
