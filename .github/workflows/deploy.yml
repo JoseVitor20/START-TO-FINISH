@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Obter código mais recente teste 1
+      - name: 📥 Obter código mais recente
         uses: actions/checkout@v3
 
       - name: 🔍 Validar variáveis de ambiente
@@ -25,11 +25,8 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer localmente
+      - name: 📦 Instalar dependências do Composer localmente (para garantir estrutura)
         run: composer install --no-dev --optimize-autoloader --no-interaction
-
-      - name: 🔑 Gerar key do Laravel
-        run: cp .env.example .env && php artisan key:generate
 
       - name: 📂 Copiar index.php e .htaccess para a raiz
         run: |
@@ -38,7 +35,7 @@ jobs:
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
 
-      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
+      - name: 📂 Copiar conteúdo da pasta public (exceto index.php e .htaccess)
         run: |
           rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
@@ -53,30 +50,48 @@ jobs:
             **/.git*
             **/node_modules/**
             **/tests/**
-            **/vendor/**
-            **/storage/**
             **/.github/**
             .env
             phpunit.xml
             README.md
 
-      - name: 🔐 Configurar SSH e acessar servidor
+      - name: 🔐 Configurar SSH e executar comandos no servidor
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            set -e
+
             cd ${{ secrets.SERVER_DIR }}
+
             echo "📦 Instalando dependências no servidor..."
             composer install --no-dev --optimize-autoloader
-            echo "🔄 Limpando caches..."
+
+            echo "🔄 Limpando caches antigos..."
             php artisan config:clear
-            php artisan cache:clear
             php artisan route:clear
             php artisan view:clear
+            php artisan cache:clear
+
+            echo "📥 Recompilando caches..."
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+
             echo "🛠️ Corrigindo permissões..."
             chmod -R 775 storage bootstrap/cache
             chown -R www-data:www-data storage bootstrap/cache
+
+            echo "🧩 Executando migrations..."
+            php artisan migrate --force
+
+            echo "🌱 Executando seeders..."
+            php artisan db:seed --force
+
+            echo "🗒️ Registrando log de deploy..."
+            echo "Deploy executado em: $(date)" >> storage/logs/deploy.log
+
             echo "✅ Deploy finalizado com sucesso!"
           EOF
