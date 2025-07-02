@@ -1,4 +1,4 @@
-name: Deploy Laravel sem /public via FTP e SSH (rápido)
+name: Deploy Laravel sem /public via FTP e SSH
 
 on:
   push:
@@ -28,6 +28,9 @@ jobs:
       - name: 📦 Instalar dependências do Composer localmente
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
+      - name: 🔑 Gerar key do Laravel
+        run: cp .env.example .env && php artisan key:generate
+
       - name: 📂 Copiar index.php e .htaccess para a raiz
         run: |
           cp public/index.php index.php
@@ -35,11 +38,11 @@ jobs:
           sed -i 's|../vendor|vendor|g' index.php
           sed -i 's|../bootstrap|bootstrap|g' index.php
 
-      - name: 📂 Copiar conteúdo da pasta public (exceto index.php e .htaccess)
+      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
         run: |
           rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
-      - name: 🚀 Deploy via FTP (com vendor/)
+      - name: 🚀 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -50,6 +53,8 @@ jobs:
             **/.git*
             **/node_modules/**
             **/tests/**
+            **/vendor/**
+            **/storage/**
             **/.github/**
             .env
             phpunit.xml
@@ -62,20 +67,16 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            set -e
-
             cd ${{ secrets.SERVER_DIR }}
 
-            echo "🔄 Limpando caches antigos..."
+            echo "📦 Instalando dependências no servidor..."
+            composer install --no-dev --optimize-autoloader
+
+            echo "🔄 Limpando caches..."
             php artisan config:clear
+            php artisan cache:clear
             php artisan route:clear
             php artisan view:clear
-            php artisan cache:clear
-
-            echo "📥 Recompilando caches..."
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
 
             echo "🛠️ Corrigindo permissões..."
             chmod -R 775 storage bootstrap/cache
@@ -83,12 +84,6 @@ jobs:
 
             echo "🧩 Executando migrations..."
             php artisan migrate --force
-
-            echo "🌱 Executando seeders..."
-            php artisan db:seed --force
-
-            echo "🗒️ Registrando log de deploy..."
-            echo "Deploy executado em: $(date)" >> storage/logs/deploy.log
 
             echo "✅ Deploy finalizado com sucesso!"
           EOF
