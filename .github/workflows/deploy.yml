@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Obter código mais recente teste 2
+      - name: 📥 Obter código mais recente
         uses: actions/checkout@v3
 
       - name: 🔍 Validar variáveis de ambiente
@@ -25,8 +25,13 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer localmente
+      - name: 📦 Instalar dependências do Composer
         run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: 📦 Instalar dependências do Node e gerar build do Vite
+        run: |
+          npm ci
+          npm run build
 
       - name: 🔑 Gerar key do Laravel
         run: cp .env.example .env && php artisan key:generate
@@ -77,6 +82,7 @@ jobs:
             php artisan cache:clear
             php artisan route:clear
             php artisan view:clear
+            php artisan view:cache
 
             echo "🛠️ Corrigindo permissões..."
             chmod -R 775 storage bootstrap/cache
