@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Obter código mais recente
+      - name: 📥 Obter código mais recente teste
         uses: actions/checkout@v3
 
       - name: 🔍 Validar variáveis de ambiente
