@@ -1,4 +1,4 @@
-<section class="preco-section" id="precos">
+<section class="preco-section" id="precos" data-aos="zoom-in-down" data-aos-duration="2000">
     <div class="section-header">
         <h2 class="display-4 fw-bold">Meus <span class="text-gradient">Preços</span></h2>
         <div class="header-divider"></div>

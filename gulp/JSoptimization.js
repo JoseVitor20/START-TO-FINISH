@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const paths = {
-  js: path.join(__dirname, '../resources/js/*.js'),
+  js: path.join(__dirname, '../resources/javascript-view/*.js'),
   dest: path.join(__dirname, '../public/js/')
 };
 

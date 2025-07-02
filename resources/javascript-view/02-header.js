@@ -5,13 +5,13 @@
 
     function enableDarkMode() {
         body.classList.add('light-mode');
-        icon.classList.replace('fa-sun', 'fa-moon');
+        icon.classList.replace('fa-moon', 'fa-sun');
         localStorage.setItem('light-mode', 'enabled');
     }
 
     function disableDarkMode() {
         body.classList.remove('light-mode');
-        icon.classList.replace('fa-moon', 'fa-sun');
+        icon.classList.replace('fa-sun', 'fa-moon');
         localStorage.setItem('light-mode', 'disabled');
     }
 

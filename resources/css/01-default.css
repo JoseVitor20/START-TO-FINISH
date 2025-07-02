@@ -26,6 +26,7 @@
         --border-color: #444;
         --btn-shodow: #fff;
         --btn-bg-hover: #000;
+        --sol-lua: white;
     }
 
     .light-mode {
@@ -44,6 +45,7 @@
         --border-color: #e0e0e0;
         --btn-shodow: #9f9f9f;
         --btn-bg-hover: #fff;
+        --sol-lua: orange; 
     }
 
 /* === HTML, BODY === */

@@ -1,4 +1,4 @@
-<section class="categorias-section" id="projetos">
+<section class="categorias-section" id="projetos" data-aos="zoom-in-down" data-aos-duration="2000">
     <div class="container">
         <h2 class="text-center display-5 fw-bold">Meus <span class="text-gradient">Projetos</span></h2>
         <div class="header-divider"></div>

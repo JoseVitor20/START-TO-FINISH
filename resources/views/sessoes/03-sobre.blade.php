@@ -1,4 +1,4 @@
-<section id="sobre" class="py-5" data-aos="zoom-in-down" data-aos-duration="1000">
+<section id="sobre" class="py-5" data-aos="zoom-in-down" data-aos-duration="2000">
     <div class="container">
         <div class="section-header text-center mb-5">
             <h2 class="display-4 fw-bold">Sobre <span class="text-gradient">Mim</span></h2>
