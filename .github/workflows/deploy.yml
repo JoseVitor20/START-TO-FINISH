@@ -1,4 +1,4 @@
-name: Deploy Laravel sem /public via FTP e SSH
+name: Deploy Laravel sem /public via FTP e SSH (rápido)
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer localmente (para garantir estrutura)
+      - name: 📦 Instalar dependências do Composer localmente
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: 📂 Copiar index.php e .htaccess para a raiz
@@ -39,7 +39,7 @@ jobs:
         run: |
           rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
-      - name: 🚀 Deploy via FTP
+      - name: 🚀 Deploy via FTP (com vendor/)
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -65,9 +65,6 @@ jobs:
             set -e
 
             cd ${{ secrets.SERVER_DIR }}
-
-            echo "📦 Instalando dependências no servidor..."
-            composer install --no-dev --optimize-autoloader
 
             echo "🔄 Limpando caches antigos..."
             php artisan config:clear
