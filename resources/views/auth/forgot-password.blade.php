@@ -104,7 +104,7 @@
         .auth-header h2::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: 5px;
             left: 0;
             width: 50px;
             height: 3px;
