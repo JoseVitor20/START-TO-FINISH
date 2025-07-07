@@ -1,34 +1,45 @@
 @extends('layouts.guest')
 
-@section('title', 'Verificar E-mail - Start To Finish')
+@section('title', 'Start To Finish - Verificar E-mail')
 
 @push('estilos')
 <style>
     :root {
-        --primary-color: #6c63ff;
-        --primary-hover: #564fee;
-        --success-color: #10b981;
-        --text-color: #2d3748;
-        --light-bg: #f8fafc;
-        --white: #ffffff;
+        --bg-pri-color: #101010;
+        --bg-sec-color: #262626;
+        --text-pri-color: #fff;
+        --text-sec-color: #cfcfcf;
+        --text-ter-color: #dfdfdf;
+        --inver-img: invert(100%);
+        --primary-color: #1a1a2e;
+        --secondary-color: #21325e;
+        --neon: #00fffd;
+        --gradiente-pri-color: #00fffd;
+        --gradiente-sec-color: #19bf00;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        --card-bg: #1e1e1e;
+        --border-color: #444;
+        --btn-shodow: #fff;
+        --btn-bg-hover: #000;
+        --sol-lua: white;
         --rounded-lg: 16px;
         --rounded-full: 9999px;
         --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        --gradient-primary: linear-gradient(135deg, #6c63ff 0%, #8b5cf6 100%);
     }
 
     body {
-        font-family: 'Poppins', sans-serif;
-        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsIDI1MCwgMjUyLCAwLjMpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiBvcGFjaXR5PSIwLjEiLz48L3N2Zz4='),
-                    linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        font-family: 'Josefin Sans', sans-serif;
+        background-color: var(--bg-pri-color);
+        color: var(--text-ter-color);
         min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--text-color);
-        line-height: 1.6;
         padding: 1rem;
+        line-height: 1.6;
+        background-image: 
+            radial-gradient(circle at 25% 25%, rgba(0, 255, 253, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(25, 191, 0, 0.05) 0%, transparent 50%);
     }
 
     .auth-container {
@@ -38,20 +49,21 @@
     }
 
     .auth-card {
-        background: var(--white);
+        background: var(--card-bg);
         border-radius: var(--rounded-lg);
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--box-shadow);
         padding: 3rem;
         position: relative;
         overflow: hidden;
         transform: translateY(0);
         transition: var(--transition-all);
         z-index: 1;
+        border: 1px solid var(--border-color);
     }
 
     .auth-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
     .auth-card::before {
@@ -60,8 +72,8 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 8px;
-        background: var(--gradient-primary);
+        height: 6px;
+        background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
     }
 
     .auth-header {
@@ -73,6 +85,7 @@
         height: 60px;
         margin-bottom: 1.5rem;
         transition: var(--transition-all);
+        filter: var(--inver-img);
     }
 
     .auth-header .logo-registro:hover {
@@ -83,14 +96,24 @@
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 1rem;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        color: var(--neon);
+        position: relative;
+        display: inline-block;
+    }
+
+    .auth-header h1::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+        border-radius: 3px;
     }
 
     .auth-header p {
-        color: #64748b;
+        color: var(--text-sec-color);
         font-size: 1rem;
         max-width: 320px;
         margin: 0 auto;
@@ -99,29 +122,29 @@
     .verification-message {
         display: flex;
         align-items: flex-start;
-        background-color: #f8fafc;
+        background-color: rgba(38, 38, 38, 0.7);
         border-radius: 10px;
         padding: 1.25rem;
         margin-bottom: 1.5rem;
-        border-left: 4px solid var(--primary-color);
+        border-left: 4px solid var(--neon);
     }
 
     .verification-message i {
         font-size: 1.25rem;
-        color: var(--primary-color);
+        color: var(--neon);
         margin-right: 1rem;
         margin-top: 2px;
     }
 
     .verification-message div {
         flex: 1;
-        color: var(--text-color);
+        color: var(--text-sec-color);
     }
 
     .verification-resend {
         background: none;
         border: none;
-        color: var(--primary-color);
+        color: var(--neon);
         font-weight: 600;
         cursor: pointer;
         padding: 0;
@@ -130,7 +153,7 @@
     }
 
     .verification-resend:hover {
-        color: var(--primary-hover);
+        color: var(--gradiente-sec-color);
         text-decoration: none;
     }
 
@@ -149,19 +172,20 @@
         border-radius: 10px;
         cursor: pointer;
         transition: var(--transition-all);
-        border: 2px solid #e2e8f0;
-        background-color: var(--white);
-        color: var(--text-color);
+        border: 2px solid var(--border-color);
+        background-color: var(--bg-sec-color);
+        color: var(--text-pri-color);
     }
 
     .auth-button:hover {
-        background-color: #f8fafc;
-        border-color: #cbd5e0;
+        background-color: var(--primary-color);
+        border-color: var(--neon);
         transform: translateY(-2px);
     }
 
     .auth-button i {
         margin-right: 0.75rem;
+        transition: var(--transition-all);
     }
 
     .button-text {
@@ -170,6 +194,10 @@
 
     .auth-button:hover .button-text {
         transform: translateX(3px);
+    }
+
+    .auth-button:hover i {
+        color: var(--neon);
     }
 
     /* Efeitos de animação */
@@ -205,7 +233,7 @@
     .circle-1 {
         width: 200px;
         height: 200px;
-        background: var(--primary-color);
+        background: var(--gradiente-pri-color);
         top: -50px;
         right: -50px;
     }
@@ -213,7 +241,7 @@
     .circle-2 {
         width: 150px;
         height: 150px;
-        background: var(--success-color);
+        background: var(--gradiente-sec-color);
         bottom: -30px;
         left: -30px;
     }
@@ -239,14 +267,14 @@
         <div class="decorative-circle circle-2"></div>
         
         <div class="auth-header">
-            <img src="{{ asset('img/logo-internet.png') }}" class="logo-registro" alt="Start To Finish">    
+            <img src="{{ asset('img/starttofinish-black.png') }}" style="filter: invert(100%);" class="logo-registro" alt="Start To Finish">    
             <h1>Verifique seu e-mail</h1>
             <p>Antes de continuar, por favor verifique seu e-mail com o link que enviamos.</p>
         </div>
 
         @if (session('status') === 'verification-link-sent')
             <div class="verification-message animate__animated animate__fadeIn">
-                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-check-circle" style="margin-right: 10px; margin-top: 5px;"></i>
                 <div>
                     Um novo link de verificação foi enviado para o endereço de e-mail fornecido durante o registro.
                 </div>
@@ -254,12 +282,12 @@
         @endif
 
         <div class="verification-message">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" style="margin-right: 10px; margin-top: 5px;"></i>
             <div>
                 Se você não recebeu o e-mail de verificação,
                 <form method="POST" action="{{ route('verification.send') }}" class="inline">
                     @csrf
-                    <button type="submit" class="verification-resend">
+                    <button type="submit" class="verification-resend" style="font-size: 15px; margin-top: 10px;">
                         clique aqui para solicitar outro
                     </button>.
                 </form>

@@ -14,6 +14,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Contracts\Auth\MustVerifyEmail; 
 use App\Notifications\CustomVerifyEmail;
+use App\Notifications\CustomResetPassword;
 
 class User extends Authenticatable implements MustVerifyEmail 
 {
@@ -74,4 +75,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new CustomVerifyEmail);
     }  
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomResetPassword($token));
+    }
 }
