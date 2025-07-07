@@ -86,21 +86,16 @@
             <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start To Finish">
         </div>
         <div class="content">
-            <h1>Redefinição de Senha</h1>
+            <h1>Confirmação de E-mail</h1>
             <p>Olá, {{ $user->name ?? 'usuário' }}😁</p>
 
-            <p>Você solicitou uma confirmação de E-mail. Clique no botão abaixo para criar confirmar seu E-mail👇</p>
+            <p>Você solicitou uma confirmação de E-mail. Clique no botão abaixo para confirmar seu E-mail👇</p>
 
             <div class="button">
                 <a href="{{ $actionUrl }}">Confirmar E-mail</a>
             </div>
 
-            <p>Se você não solicitou essa alteração, ignore este e-mail.</p>
-
-            <div class="subcopy">
-                Se o botão acima não funcionar, copie e cole o link abaixo no seu navegador:<br>
-                <a href="{{ $actionUrl }}">{{ $actionUrl }}</a>
-            </div>
+            <p>Se você não solicitou essa verificação, ignore este e-mail.</p>
         </div>
         <div class="footer">
             &copy; {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.
