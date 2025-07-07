@@ -2,58 +2,44 @@
 
 namespace App\Notifications;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Auth\Notifications\VerifyEmail as BaseVerifyEmail;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\HtmlString;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
-class CustomVerifyEmail extends Notification
+class CustomVerifyEmail extends BaseVerifyEmail
 {
-    use Queueable;
-
     /**
-     * Create a new notification instance.
+     * Cria a URL de verificação personalizada (igual a padrão)
      */
-    public function __construct()
+    protected function verificationUrl($notifiable)
     {
-        //
-    }
-
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @return array<int, string>
-     */
-    public function via(object $notifiable): array
-    {
-        return ['mail'];
+        return URL::temporarySignedRoute(
+            'verification.verify',
+            Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
+            [
+                'id' => $notifiable->getKey(),
+                'hash' => sha1($notifiable->getEmailForVerification()),
+            ]
+        );
     }
 
     /**
-     * Get the mail representation of the notification.
+     * Conteúdo do e-mail de verificação
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+        $url = $this->verificationUrl($notifiable);
+
+        return (new \Illuminate\Notifications\Messages\MailMessage)
+            ->subject('Confirmação de E-mail')
+            ->view('emails.email-verification', [
+                'url' => $url,
+                'user' => $notifiable,
+            ]);
     }
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @return array<string, mixed>
-     */
-    public function toArray(object $notifiable): array
-    {
-        return [
-            //
-        ];
-    }
-    
-    public function sendEmailVerificationNotification()
-    {
-        $this->notify(new \App\Notifications\CustomVerifyEmail);
-    }
 }
+

@@ -1,8 +1,8 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Redefinição de Senha</title>
+    <title>Redefinir Senha</title>
     <style>
         body {
             background-color: #101010;
@@ -12,48 +12,48 @@
             margin: 0;
         }
 
-        .email-container {
+        .container {
             max-width: 600px;
             margin: 0 auto;
             background-color: #1e1e1e;
             border: 1px solid #444;
             border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .email-header {
+        .header {
             background-color: #21325e;
             padding: 20px;
             text-align: center;
         }
 
-        .email-header img {
+        .header img {
             max-height: 50px;
             filter: invert(100%);
         }
 
-        .email-body {
+        .content {
             padding: 30px;
         }
 
-        .email-body h1 {
+        h1 {
             color: #00fffd;
             font-size: 22px;
         }
 
-        .email-body p {
+        p {
             font-size: 16px;
             color: #cfcfcf;
             line-height: 1.6;
         }
 
-        .email-button {
+        .button {
             margin: 30px 0;
             text-align: center;
         }
 
-        .email-button a {
+        .button a {
             background-color: #00fffd;
             color: #101010;
             padding: 14px 28px;
@@ -62,38 +62,47 @@
             font-weight: bold;
             display: inline-block;
             box-shadow: 0 0 10px #00fffd;
-            transition: background 0.3s;
         }
 
-        .email-button a:hover {
-            background-color: #19bf00;
-            box-shadow: 0 0 12px #19bf00;
-        }
-
-        .email-footer {
+        .footer {
             background-color: #262626;
             text-align: center;
             padding: 20px;
             font-size: 13px;
             color: #999;
         }
+
+        .subcopy {
+            font-size: 13px;
+            color: #888;
+            margin-top: 30px;
+            word-break: break-word;
+        }
     </style>
 </head>
 <body>
-    <div class="email-container">
-        <div class="email-header">
-            <img src="{{asset('img/logo-internet.png')}}" alt="Start To Finish">
+    <div class="container">
+        <div class="header">
+            <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start To Finish">
         </div>
-        <div class="email-body">
-            <h1>Verificação de conta de E-mail</h1>
+        <div class="content">
+            <h1>Redefinição de Senha</h1>
+            <p>Olá, {{ $user->name ?? 'usuário' }}😁</p>
 
-            <p>Olá! Recebemos uma solicitação para <strong>confirmar E-mail</strong>. Se você não fez essa solicitação, pode ignorar este e-mail.</p>
+            <p>Você solicitou uma confirmação de E-mail. Clique no botão abaixo para criar confirmar seu E-mail👇</p>
 
-            <div class="email-button">
+            <div class="button">
                 <a href="{{ $actionUrl }}">Confirmar E-mail</a>
             </div>
+
+            <p>Se você não solicitou essa alteração, ignore este e-mail.</p>
+
+            <div class="subcopy">
+                Se o botão acima não funcionar, copie e cole o link abaixo no seu navegador:<br>
+                <a href="{{ $actionUrl }}">{{ $actionUrl }}</a>
+            </div>
         </div>
-        <div class="email-footer">
+        <div class="footer">
             &copy; {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.
         </div>
     </div>
