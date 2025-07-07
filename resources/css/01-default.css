@@ -15,6 +15,7 @@
         --bg-sec-color: #262626;
         --text-pri-color: #fff;
         --text-sec-color: #cfcfcf;
+        --text-ter-color: #dfdfdf;
         --inver-img: invert(100%);
         --primary-color: #1a1a2e;
         --secondary-color: #21325e;
@@ -34,16 +35,17 @@
         --bg-sec-color: #efefef;
         --text-pri-color: #101010;
         --text-sec-color: #303030;
+        --text-ter-color: #404040;
         --inver-img: invert(0%);
         --primary-color: #3620df;
         --secondary-color: #8c20ff;
-        --neon: #00fffd;
+        --neon: #1ddf00;
         --gradiente-pri-color: #21ff00;
         --gradiente-sec-color: #00fffd;
         --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         --card-bg: #ffffff;
         --border-color: #e0e0e0;
-        --btn-shodow: #9f9f9f;
+        --btn-shodow: #bfbfbf;
         --btn-bg-hover: #fff;
         --sol-lua: orange; 
     }

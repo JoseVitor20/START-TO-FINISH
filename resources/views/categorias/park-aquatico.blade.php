@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Aqua Park Paradise - O Maior Parque Aquático do Brasil')
+@section('title', 'Park Aquático Paradise - O Maior Parque Aquático do Brasil')
 
 @push('estilos')
     <style>

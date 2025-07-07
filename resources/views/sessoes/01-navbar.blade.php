@@ -44,11 +44,11 @@
             @guest
                 <a class="navbar-brand" href="register ">
                     <i class="fas fa-user-plus icon"></i> <!-- Ícone de usuário com + -->
-                    <span>Ser cliente</span>
+                    <span style="padding-left: 5px;"> Ser cliente</span>
                 </a>
                 <a class="client-btn" href="login">
                     <i class="fas fa-user-check icon"></i> <!-- Ícone de usuário com check -->
-                    <span>Sou cliente</span>
+                    <span style="padding-left: 5px;"> Sou cliente</span>
                 </a>                
             @endguest
             <button class="header__action header__action--dark-mode" aria-label="Alternar modo escuro">

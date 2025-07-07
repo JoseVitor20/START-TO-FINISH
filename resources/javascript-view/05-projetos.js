@@ -77,7 +77,7 @@ const projetos = [
         nome: "Consultório Odontológico",
         descricao: "Site profissional para consultórios odontológicos com gestão de agendamentos e serviços.",
         imagem: "https://media.istockphoto.com/id/2153871515/pt/foto/dentist-performing-a-checkup-on-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=VZg8ZpQzYQ9G5bVhm9rJ6EXOe-rWLYZVBqXGLqXu1Oc=",
-        link: "dentista",
+        link: "odonto",
         categorias: ["saude"]
     },
     {
@@ -109,7 +109,7 @@ const projetos = [
         nome: "Parque Aquático",
         descricao: "Site interativo para parques aquáticos com informações de atrações e ingressos.",
         imagem: "https://media.istockphoto.com/id/177132940/pt/foto/parque-aqu%C3%A1tico-e-piscina.webp?a=1&b=1&s=612x612&w=0&k=20&c=9NhyBd5PVc73haObOUy27lCTT32YPjUr8kNTFgUYnH0=",
-        link: "aqua-park",
+        link: "park-aquatico",
         categorias: ["repouso"]
     },
     {
