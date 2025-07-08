@@ -17,7 +17,7 @@
         <div style="padding: 40px;">
             <h1 style="color: #00fffd; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
                 Confirmação de E-mail
-                <span style="display: block; height: 3px; width: 50px; background: linear-gradient(90deg, #00fffd, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
+                <span style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00fffd, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
             </h1>
 
             <div style="font-size: 18px; color: #fff; margin-bottom: 30px;">

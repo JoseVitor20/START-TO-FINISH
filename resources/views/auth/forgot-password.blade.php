@@ -78,7 +78,6 @@
         }
 
         .auth-logo {
-            margin-bottom: 2rem;
             transition: var(--transition-all);
         }
 
@@ -94,7 +93,7 @@
 
         .auth-header h2 {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: bold;
             color: var(--neon);
             margin-bottom: 0.75rem;
             position: relative;
@@ -105,7 +104,8 @@
             content: '';
             position: absolute;
             bottom: 5px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
@@ -120,6 +120,7 @@
         }
 
         .form-group {
+            width: 100%;
             margin-bottom: 2rem;
             position: relative;
         }
@@ -134,8 +135,9 @@
         }
 
         .form-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
+            width: calc(100% - 17px);
+            padding: 1rem 0px;
+            padding-left: 15px;
             border: 2px solid var(--border-color);
             border-radius: 10px;
             font-size: 1rem;
@@ -342,7 +344,7 @@
                 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11V11.99z"/>
             </svg>
         </div>
-        <h2>Redefinir sua senha</h2>
+        <h2>Redefinir Senha</h2>
         <p>Digite o e-mail associado à sua conta e enviaremos um link para redefinir sua senha</p>
     </div>
 

@@ -104,8 +104,9 @@
     .auth-header h1::after {
         content: '';
         position: absolute;
-        bottom: -8px;
-        left: 0;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 50px;
         height: 3px;
         background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
