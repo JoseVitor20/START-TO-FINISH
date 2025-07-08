@@ -29,7 +29,7 @@
             </p>
 
             <div style="text-align: center; margin: 40px 0;">
-                <a href="{{ $actionUrl }}" style="background: linear-gradient(135deg, #00fffd, #19bf00); color: #000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; font-size: 16px; box-shadow: 0 0 15px rgba(0,255,253,0.4);">
+                <a href="{{ $url }}" style="background: linear-gradient(135deg, #00fffd, #19bf00); color: #000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; font-size: 16px; box-shadow: 0 0 15px rgba(0,255,253,0.4);">
                     Confirmar E-mail
                 </a>
             </div>
