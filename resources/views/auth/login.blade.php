@@ -724,7 +724,7 @@
                 <span class="button-text">Entrar na conta</span>
             </button>
 
-            <div class="divider">OU</div>
+{{--             <div class="divider">OU</div>
 
             <div class="social-login">
                 <button type="button" class="social-button">
@@ -735,7 +735,7 @@
                     <i class="fab fa-facebook-f facebook"></i>
                     Continue com o Facebook
                 </button>
-            </div>
+            </div> --}}
 
             <div class="auth-links animate__animated animate__fadeIn animate__delay-6s">
                 Não possui uma conta? <a href="{{ route('register') }}">Crie uma agora</a>

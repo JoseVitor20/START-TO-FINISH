@@ -746,7 +746,7 @@
                 <span class="button-text">Me tornar cliente!</span>
             </button>
 
-            <div class="divider animate__animated animate__fadeIn animate__delay-7s">OU</div>
+{{--             <div class="divider animate__animated animate__fadeIn animate__delay-7s">OU</div>
 
             <div class="social-login animate__animated animate__fadeIn animate__delay-8s">
                 <button type="button" class="social-button">
@@ -758,7 +758,7 @@
                     Continue com o Facebook
                 </button>
             </div>
-
+ --}}
             <div class="auth-links animate__animated animate__fadeIn animate__delay-9s">
                 Já tem uma conta? <a href="{{ route('login') }}">Entrar</a>
             </div>
