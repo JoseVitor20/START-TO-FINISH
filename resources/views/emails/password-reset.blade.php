@@ -26,7 +26,6 @@
         <!-- Header -->
         <div style="background: linear-gradient(135deg, #1a1a2e, #21325e); padding: 30px 20px; text-align: center; position: relative;">
             <img src="{{ asset('img/starttofinish-white.png') }}" alt="Logo {{ config('app.name') }}" style="max-height: 60px;">
-            <div style="height: 4px; background: linear-gradient(90deg, #00fffd, #19bf00); position: absolute; top: 0; left: 0; right: 0;"></div>
         </div>
 
         <!-- Content -->
