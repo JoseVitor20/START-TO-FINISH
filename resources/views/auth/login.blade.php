@@ -718,7 +718,7 @@
                     <a class="forgot-pass animate__animated animate__fadeIn animate__delay-3s" href="{{ route('password.request') }}">Esqueceu sua senha?</a>                      
                 </div>
             </div>
-
+temporariamente
             <button type="submit" class="auth-button">
                 <i class="fas fa-user-plus"></i>
                 <span class="button-text">Entrar na conta</span>
