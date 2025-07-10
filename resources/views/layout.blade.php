@@ -58,7 +58,6 @@
         }
         </script>
 
-
     {{-- === TÍTULO DA PÁGINA E ÍCONE=== --}}
         <title>@yield('title')</title>
 

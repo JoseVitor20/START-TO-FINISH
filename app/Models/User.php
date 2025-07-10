@@ -35,6 +35,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -79,5 +80,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPassword($token));
+    }
+
+    public function getGravatarAttribute(): string
+    {
+        $email = strtolower(trim($this->email));
+        $hash = md5($email);
+        return "https://www.gravatar.com/avatar/{$hash}?s=80&d=mp";
     }
 }

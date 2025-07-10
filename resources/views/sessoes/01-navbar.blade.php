@@ -10,9 +10,6 @@
   </div>
 
     <div class="header__container">
-{{--         <div class="header__logo">
-            <a href="#" class="header__logo-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a>
-        </div> --}}
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="logo-nav"><a href="#" class="header__logo-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a></li>
@@ -28,7 +25,16 @@
             @auth
                 <div class="user-menu">
                     <a class="user-profile" href="{{ route('dashboard') }}">
-                        <i class="fas fa-user-circle"></i>
+                        @php
+                            function getGravatarUrl($email, $size = 80)
+                            {
+                                $hash = md5(strtolower(trim($email)));
+                                return "https://www.gravatar.com/avatar/{$hash}?s={$size}";
+                            }
+                        @endphp
+
+                        <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="user-avatar">
+
                         <span>{{Auth::user()->name}}</span>                        
                     </a>
                     

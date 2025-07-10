@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,9 +12,7 @@ Route::get('/', function () {
 
 // Rota da página DASHBOARD
     Route::middleware(['auth', 'verified'])->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
+        Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
     });
 
     Route::middleware('auth')->group(function () {
