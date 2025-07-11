@@ -15,6 +15,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Contracts\Auth\MustVerifyEmail; 
 use App\Notifications\CustomVerifyEmail;
 use App\Notifications\CustomResetPassword;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable implements MustVerifyEmail 
 {
@@ -25,6 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
