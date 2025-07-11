@@ -64,7 +64,7 @@
                         </div>
                     </li>                    
                 </ul>
-                <a class="btn-servico" href="{{route('checkout', ['session_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz'])}}">Fazer Assinatura</a>
+                <a class="btn-servico" href="{{ route('checkout', ['session_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz']) }}">Assinar Produto</a>
                 {{-- <button class="btn-servico">Quero minha Landing Page</button> --}}
             </div>
         </div>

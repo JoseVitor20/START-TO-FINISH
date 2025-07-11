@@ -264,7 +264,15 @@
             </div>
         </div>
 
-        <div class="header-right">
+        <div class="header-right">            
+            @can('access-client')
+                <a href="{{ route('receipts') }}">Minhas Compras</a>
+            @endcan     
+
+            @can('access-owner')
+                <a href="{{ route('admin.refunds.index') }}">Pedidos de Reembolso</a>
+            @endcan   
+            
             <div class="header-actions">
                 <button class="header-action header-action--dark-mode" title="Alternar tema">
                     <i class="fas fa-moon"></i>
@@ -301,6 +309,7 @@
                 <i class="fas fa-chevron-down" style="font-size: 0.9rem;"></i>
             </div>
         </div>
+
 
         <!-- Dropdown Menu (opcional) -->
         <div class="dropdown-menu" id="dropdown-menu">

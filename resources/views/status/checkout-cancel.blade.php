@@ -1,1 +1,3 @@
-<h1>cancel</h1>
+<h1>Pagamento Cancelado</h1>
+
+<p>Sua transação foi cancelada. Você pode tentar novamente a qualquer momento.</p>

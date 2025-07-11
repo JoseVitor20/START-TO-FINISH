@@ -30,17 +30,6 @@
                                         <div class="user-status-indicator"></div>
                                     </li>
                                 @endforeach
-                                
-                                @foreach($usuarios->where('role', '!=', 'owner')->skip(5) as $usuario)
-                                    <li class="user-list-item hidden-user">
-                                        <img src="{{ $usuario->gravatar }}" alt="{{ $usuario->name }}" class="user-avatar">
-                                        <div class="user-info">
-                                            <div class="user-name">{{ $usuario->name }}</div>
-                                            <div class="user-email">{{ $usuario->email }}</div>
-                                        </div>
-                                        <div class="user-status-indicator"></div>
-                                    </li>
-                                @endforeach
                             </ul>
                             @if($usuarios->where('role', '!=', 'owner')->count() > 5)
                             <button class="view-all-btn" id="viewAllBtn">
