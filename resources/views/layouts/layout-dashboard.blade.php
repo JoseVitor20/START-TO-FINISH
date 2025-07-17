@@ -265,6 +265,8 @@
         </div>
 
         <div class="header-right">
+            <a href="{{route('subscription.index')}}">Nossos planos de assinatura</a>
+
             <div class="header-actions">
                 <button class="header-action header-action--dark-mode" title="Alternar tema">
                     <i class="fas fa-moon"></i>

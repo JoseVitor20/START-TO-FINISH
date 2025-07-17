@@ -5,6 +5,8 @@ use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\PrivateController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,5 +57,22 @@ Route::get('/', function () {
 
     Route::view('/centro-cultural', 'categorias.centro-cultural');
 
+
+// Assinatura
+    Route::middleware(['auth', 'verified'])->group(function () {
+        // Rota para exibir os planos de assinatura mensal
+        Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription.index');           
+        // Rota para armazenar no banco de dados a nova assinatura
+        Route::post('/subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
+        // Rota para exibir o comprovante e mensagem de sucesso
+        Route::get('/subscription/seccess', [SubscriptionController::class, 'seccess'])->name('subscription.seccess');
+        // Rota para exibir a mensagem de cancelamento de pagamento
+        Route::get('/subscription/cancelled', [SubscriptionController::class, 'cancelled'])->name('subscription.cancelled');
+
+        // Rota para exibir informações sobre o usuário assinado
+        Route::middleware(['auth', 'verified'])->group(function () {
+            Route::get('/private', [PrivateController::class, 'index'])->name('private.index');
+        });
+    });
 
 require __DIR__.'/auth.php';
