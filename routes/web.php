@@ -7,10 +7,13 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\PrivateController;
+use App\Http\Controllers\WebhookController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
 // Rota da página DASHBOARD
     Route::middleware(['auth', 'verified'])->group(function () {
@@ -57,7 +60,6 @@ Route::get('/', function () {
 
     Route::view('/centro-cultural', 'categorias.centro-cultural');
 
-
 // Assinatura
     Route::middleware(['auth', 'verified'])->group(function () {
         // Rota para exibir os planos de assinatura mensal
@@ -65,14 +67,22 @@ Route::get('/', function () {
         // Rota para armazenar no banco de dados a nova assinatura
         Route::post('/subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
         // Rota para exibir o comprovante e mensagem de sucesso
-        Route::get('/subscription/seccess', [SubscriptionController::class, 'seccess'])->name('subscription.seccess');
+        Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
         // Rota para exibir a mensagem de cancelamento de pagamento
         Route::get('/subscription/cancelled', [SubscriptionController::class, 'cancelled'])->name('subscription.cancelled');
 
         // Rota para exibir informações sobre o usuário assinado
-        Route::middleware(['auth', 'verified'])->group(function () {
-            Route::get('/private', [PrivateController::class, 'index'])->name('private.index');
-        });
+        Route::get('/private', [PrivateController::class, 'index'])->name('private.index');
+
+        // Cancelamento de assinatura
+        Route::post('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+
+        // Cancelamento de assinatura imediato
+        Route::post('/subscription/cancel-now', [SubscriptionController::class, 'cancelNow'])->name('subscription.cancelNow');
+        // Renovar assinatura
+        Route::post('/subscription/resume', [SubscriptionController::class, 'resume'])->name('subscription.resume');
+        // Atualizar plano
+        Route::post('/subscription/update', [SubscriptionController::class, 'updateSubscription'])->name('subscription.update');
     });
 
 require __DIR__.'/auth.php';
