@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\PrivateController;
 use App\Http\Controllers\WebhookController;
@@ -17,7 +16,7 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
 // Rota da página DASHBOARD
     Route::middleware(['auth', 'verified'])->group(function () {
-        Route::get('dashboard', [UserController::class, 'index'])->name('dashboard');
+        Route::get('dashboard', [PrivateController::class, 'index'])->name('dashboard');
     });
 
     Route::middleware('auth')->group(function () {
@@ -70,9 +69,6 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
         Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
         // Rota para exibir a mensagem de cancelamento de pagamento
         Route::get('/subscription/cancelled', [SubscriptionController::class, 'cancelled'])->name('subscription.cancelled');
-
-        // Rota para exibir informações sobre o usuário assinado
-        Route::get('/private', [PrivateController::class, 'index'])->name('private.index');
 
         // Cancelamento de assinatura
         Route::post('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');

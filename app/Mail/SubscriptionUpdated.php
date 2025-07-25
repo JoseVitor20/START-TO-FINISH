@@ -41,7 +41,7 @@ class SubscriptionUpdated extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.subscriptions.updated', // Nome da view Markdown para o e-mail
+            view: 'emails.subscriptions.updated',
             with: [
                 'userName' => $this->user->name,
                 'planName' => $this->subscription->stripe_price, // Ou um nome mais amigável

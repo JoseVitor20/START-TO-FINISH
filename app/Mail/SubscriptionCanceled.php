@@ -16,18 +16,12 @@ class SubscriptionCanceled extends Mailable
     public $user;
     public $subscription;
 
-    /**
-     * Create a new message instance.
-     */
     public function __construct(User $user, $subscription)
     {
         $this->user = $user;
         $this->subscription = $subscription; // A instância da assinatura do Cashier
     }
 
-    /**
-     * Get the message envelope.
-     */
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -35,13 +29,10 @@ class SubscriptionCanceled extends Mailable
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.subscriptions.canceled', // Nome da view Markdown para o e-mail
+            view: 'emails.subscriptions.canceled', // Nome da view Markdown para o e-mail
             with: [
                 'userName' => $this->user->name,
                 'planName' => $this->subscription->stripe_price, // Ou um nome mais amigável
@@ -50,11 +41,6 @@ class SubscriptionCanceled extends Mailable
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
     public function attachments(): array
     {
         return [];

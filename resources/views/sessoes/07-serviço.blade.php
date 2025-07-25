@@ -64,7 +64,12 @@
                         </div>
                     </li>                    
                 </ul>
-                <button class="btn-servico">Quero minha Landing Page</button>
+                <form action="{{ route('subscription.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="plan" value="main_subscription">
+                    <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                    <button type="submit" class="btn-servico">Quero minha Landing Page</button>
+                </form>                
             </div>
         </div>
         <!-- Plano Essencial -->
@@ -319,7 +324,12 @@
                         </div>
                     </li>                    
                 </ul>
-                <button class="btn-servico">Quero Crescer Meu Negócio</button>
+                <form action="{{ route('subscription.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="plan" value="main_subscription">
+                    <input type="hidden" name="price_id" value="price_1RjQtlPSFtrJEyUPc3gxFVIz">
+                    <button type="submit" class="btn-servico">Quero Crescer Meu Negócio</button>
+                </form>                
             </div>
         </div>
     </div>

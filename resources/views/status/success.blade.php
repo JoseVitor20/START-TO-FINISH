@@ -4,28 +4,10 @@
 
 @push('estilos')
     <style>
-        :root {
-            --bg-pri-color: #101010;
-            --bg-sec-color: #262626;
-            --text-pri-color: #fff;
-            --text-sec-color: #cfcfcf;
-            --text-ter-color: #dfdfdf;
-            --primary-color: #1a1a2e;
-            --secondary-color: #21325e;
-            --neon: #00fffd;
-            --gradient: linear-gradient(135deg, #00fffd 0%, #19bf00 100%);
-            --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --card-bg: rgba(30, 30, 30, 0.8);
-            --border-color: rgba(68, 68, 68, 0.5);
-            --success-color: #4caf50;
-            --warning-color: #ff9800;
-        }
-
         .success-wrapper {
             min-height: 100vh;
             background: var(--bg-pri-color);
             padding: 2rem;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .success-main {
@@ -52,7 +34,7 @@
         .success-hero {
             padding: 3rem 2rem;
             text-align: center;
-            background: linear-gradient(rgba(22, 22, 22, 0.9), rgba(22, 22, 22, 0.9));
+            background: linear-gradient(to bottom, var(--bg-pri-color), var(--bg-sec-color));
             position: relative;
             overflow: hidden;
         }
@@ -182,7 +164,7 @@
             align-items: center;
             gap: 12px;
             padding: 10px;
-            background: rgba(40, 40, 40, 0.5);
+            background: var(--border-color);
             border-radius: 8px;
             margin-top: 10px;
             border-left: 3px solid var(--neon);
@@ -194,7 +176,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--border-color);
             border-radius: 6px;
             font-size: 1.5rem;
         }
@@ -231,14 +213,14 @@
             align-items: center;
             margin-bottom: 1.5rem;
             padding: 1rem;
-            background: rgba(40, 40, 40, 0.5);
+            background: var(--card-bg);
             border-radius: 8px;
             border-left: 3px solid var(--neon);
         }
 
         .product-image {
-            width: 80px;
-            height: 80px;
+            width: 300px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid var(--border-color);
@@ -249,12 +231,15 @@
         }
 
         .product-name {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 25px;
             color: var(--neon);
             margin-bottom: 0.5rem;
         }
 
         .billing-info {
-            background: rgba(30, 30, 30, 0.6);
+            background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: auto;
@@ -265,9 +250,9 @@
             align-items: center;
             justify-content: center;
             padding: 0.8rem 2.5rem;
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--gradiente-pri-color), var(--gradiente-sec-color));
             color: var(--bg-pri-color);
-            font-weight: 600;
+            font-weight: bold;
             text-decoration: none;
             border-radius: 6px;
             transition: all 0.3s ease;
@@ -282,6 +267,7 @@
 
         .action-button:hover {
             transform: translateY(-2px);
+            color: var(--text-pri-color);
             box-shadow: 0 6px 20px rgba(0, 255, 253, 0.4);
         }
 
@@ -299,8 +285,11 @@
         }
 
         .status-active {
-            background: rgba(76, 175, 80, 0.2);
-            color: var(--success-color);
+            margin-top: 20px;
+            background: var(--neon);
+            color: var(--bg-sec-color);
+            padding-top: 6px;
+            font-weight: bold;
         }
 
         .status-pending {
@@ -334,9 +323,20 @@
     <div class="success-wrapper">
         <main class="success-main">
             <section class="success-hero">
-                <h1 class="success-title">🎉 Assinatura Concluída!</h1>
-                <p class="success-subtitle">Sua assinatura foi processada com sucesso. Abaixo estão todos os detalhes da sua compra.</p>
-                <div class="status-badge status-active">ATIVO</div>
+                @if(ucfirst($subscription->stripe_status) == 'Active')
+                    <h1 class="success-title">🎉 Assinatura Concluída!</h1>
+                    <p class="success-subtitle">Sua assinatura foi processada com sucesso. Abaixo estão todos os detalhes da sua compra.</p>
+                    <div class="status-badge status-active">ATIVO</div>
+                @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
+                    <h1 class="success-title">🧪Assinatura De Teste Iniciada!</h1>
+                    <p class="success-subtitle">Sua assinatura de teste foi iniciada com sucesso. Abaixo estão todos os detalhes da assinatura de teste.</p>
+                    <div class="status-badge status-active">TESTANDO</div>                    
+                @else
+                    <h1 class="success-title">🚫Assinatura Cancelada!</h1>
+                    <p class="success-subtitle">Sua assinatura foi cancelada com sucesso. Abaixo estão todos os detalhes do cancelamento.</p>
+                    <div class="status-badge status-active">DESATIVADO</div>                    
+                @endif
+
             </section>
 
             <div class="success-content">
@@ -366,7 +366,7 @@
                             <h3 class="section-title">Período de Teste</h3>
                             <div class="info-item">
                                 <div class="info-value">
-                                    Válido até: <span id="trial-ends-date" data-utc-time="{{ $subscription->trial_ends_at->toISOString() }}"></span>
+                                    O período de teste termina em: <br> <span id="trial-ends-date" data-utc-time="{{ $subscription->trial_ends_at->toISOString() }}"></span>
                                 </div>
                             </div>
                         </div>
@@ -440,9 +440,12 @@
                                 </div>
                                 <div class="info-item">
                                     <div class="info-label"><i class="fas fa-sync-alt"></i> Intervalo</div>
-                                    <div class="info-value">
-                                        {{ $price->recurring->interval_count }}
-                                        {{ \Illuminate\Support\Str::plural($price->recurring->interval, $price->recurring->interval_count) }}
+                                    <div class="info-value">                                        
+                                        @if(\Illuminate\Support\Str::plural($price->recurring->interval, $price->recurring->interval_count) == 'month')
+                                            {{ $price->recurring->interval_count }} vez por Mês
+                                        @else
+                                            {{ $price->recurring->interval_count }} vez por Ano
+                                        @endif
                                     </div>
                                 </div>
                             @endisset
@@ -453,20 +456,34 @@
                             </div>
                             <div class="info-item">
                                 <div class="info-label"><i class="fas fa-info-circle"></i> Status</div>
-                                <div class="info-value highlight">{{ ucfirst($subscription->stripe_status) }}</div>
+                                <div class="info-value highlight">
+                                    @if(ucfirst($subscription->stripe_status) == 'Active')
+                                        Assinatura Ativada
+                                    @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
+                                        Período de teste                                         
+                                    @else
+                                        Assinatura Cancelada
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="billing-info">
-                        <h3 class="section-title">Próximas Cobranças</h3>
                         @isset($nextBillingDate)
                             @php
                                 $nextBillingDateIso = $nextBillingDate instanceof \Carbon\Carbon ? $nextBillingDate->toISOString() : $nextBillingDate;
                             @endphp
+                            <h3 class="section-title">Próximas Cobranças</h3>                                                 
                             <div class="info-item">
                                 <div class="info-value">
-                                    Próxima cobrança: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
+                                    @if(ucfirst($subscription->stripe_status) == 'Active')
+                                        Próxima cobrança: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
+                                    @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
+                                        A cobrança irá começar: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>                              
+                                    @else
+                                        Última cobrança: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
+                                    @endif
                                 </div>
                             </div>
                         @else
@@ -475,10 +492,6 @@
                             </div>
                         @endisset
                     </div>
-
-                    <a href="{{ route('private.index') }}" class="action-button">
-                        <i class="fas fa-tachometer-alt"></i> Acessar Painel
-                    </a>
                 </section>
             </div>
         </main>

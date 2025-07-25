@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SubscriptionPurchased; // Presumo que você tenha estas classes de Mail
 use App\Mail\SubscriptionCanceled;
+use App\Mail\SubscriptionCanceledNow;
 use App\Mail\SubscriptionResumed;
 use App\Mail\SubscriptionUpdated;
 use App\Models\User;
@@ -29,7 +30,7 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         return $request->user()->newSubscription(request('plan'), request('price_id'))
-            // ->allowMultipleCharges() // Importante para Boleto/PIX em assinaturas
+            ->trialDays(31)
             ->checkout([
                 'success_url' => route('subscription.success') . '?session_id={CHECKOUT_SESSION_ID}',
                 'cancel_url' => route('subscription.cancelled'),
@@ -116,11 +117,11 @@ class SubscriptionController extends Controller
             // Disparar e-mail de cancelamento (no final do período)
             Mail::to($user->email)->queue(new SubscriptionCanceled($user, $subscription));
 
-            return redirect()->route('private.index')
+            return redirect()->route('dashboard')
                 ->with('status', 'Assinatura cancelada! Ela permanecerá ativa até o final do período.');
         }
 
-        return redirect()->route('private.index')->with('error', 'Assinatura não encontrada ou não ativa para cancelamento.');
+        return redirect()->route('dashboard')->with('error', 'Assinatura não encontrada ou não ativa para cancelamento.');
     }
 
     public function cancelNow(Request $request)
@@ -132,13 +133,13 @@ class SubscriptionController extends Controller
             $subscription->cancelNow();
 
             // Disparar e-mail de cancelamento imediato
-            Mail::to($user->email)->queue(new SubscriptionCanceled($user, $subscription, true)); // Pode passar um flag para diferenciar o e-mail
+            Mail::to($user->email)->queue(new SubscriptionCanceledNow($user, $subscription, true)); // Pode passar um flag para diferenciar o e-mail
 
-            return redirect()->route('private.index')
+            return redirect()->route('dashboard')
                 ->with('status', 'Assinatura cancelada imediatamente!');
         }
 
-        return redirect()->route('private.index')->with('error', 'Assinatura não encontrada ou não ativa para cancelamento imediato.');
+        return redirect()->route('dashboard')->with('error', 'Assinatura não encontrada ou não ativa para cancelamento imediato.');
     }
 
     public function resume(Request $request)
@@ -152,10 +153,10 @@ class SubscriptionController extends Controller
             // Disparar e-mail de reativação
             Mail::to($user->email)->queue(new SubscriptionResumed($user, $subscription));
 
-            return redirect()->route('private.index')->with('status', 'Assinatura reativada com sucesso!');
+            return redirect()->route('dashboard')->with('status', 'Assinatura reativada com sucesso!');
         }
 
-        return redirect()->route('private.index')->with('error', 'Não foi possível reativar a assinatura. Ela pode não estar em período de carência.');
+        return redirect()->route('dashboard')->with('error', 'Não foi possível reativar a assinatura. Ela pode não estar em período de carência.');
     }
 
     public function updateSubscription(Request $request)
@@ -172,7 +173,7 @@ class SubscriptionController extends Controller
             // Disparar e-mail de atualização de plano
             Mail::to($user->email)->queue(new SubscriptionUpdated($user, $subscription, $oldPriceId));
 
-            return redirect()->route('private.index')->with('status', 'Seu plano foi atualizado com sucesso!');
+            return redirect()->route('dashboard')->with('status', 'Seu plano foi atualizado com sucesso!');
         }
 
         return redirect()->back()->with('error', 'Você não tem uma assinatura ativa para atualizar.');

@@ -42,15 +42,19 @@
 
             <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
                 @if($planName == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
-                    O plano <strong>Basico</strong> será cancelado no final do ciclo! 🎉
+                    O plano <strong>Basico</strong> foi cancelado imediatamente com sucesso! 🎉
                 @elseif($planName == 'price_1RjQtlPSFtrJEyUPc3gxFVIz')
-                    O plano <strong>Premium</strong> será cancelado no final do ciclo! 🎉
-                @endif
+                    O plano <strong>Premium</strong> foi cancelado imediatamente com sucesso! 🎉
+                @endif                
             </p>
 
-            @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
+            @if($endsAt)
             <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
-                Seu período atual termina em <strong>{{ $endsAt }}</strong>.
+                Seu período de serviço atual termina em <strong>{{ $endsAt }}</strong>.
+            </p>
+            @else
+            <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
+                Informamos que seu acesso foi encerrado imediatamente.
             </p>
             @endif
 

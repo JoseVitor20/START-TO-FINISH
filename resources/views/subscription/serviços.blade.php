@@ -1,7 +1,7 @@
 <h1>Escolha Seu Plano</h1>
 
 @if(Auth::user() && Auth::user()->subscribed('main_subscription'))
-    <p>Você já possui uma assinatura ativa. <a href="{{ route('private.index') }}">Gerencie sua assinatura aqui.</a></p>
+    <p>Você já possui uma assinatura ativa. <a href="{{ route('dashboard') }}">Gerencie sua assinatura aqui.</a></p>
 @else
     <div style="display: flex; gap: 20px;">
         <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px;">

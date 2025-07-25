@@ -6,6 +6,10 @@
     <title>@yield('title')</title>
     <link rel="icon" href="{{asset('img/icone.ico')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <style>
         /* === PALETA DE CORES === */
         :root {
@@ -57,7 +61,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 100px;
+            font-family: 'Josefin Sans', sans-serif;
             background-color: var(--bg-pri-color);
             color: var(--text-pri-color);
         }
@@ -70,7 +75,10 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: var(--box-shadow);
-            position: relative;
+            position: fixed;
+            top: 0;
+            right:0;
+            left: 0;
             z-index: 100;
             border-bottom: 1px solid var(--border-color);
         }
@@ -253,23 +261,18 @@
     </style>
     @stack('estilos')
 
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
 </head>
 <body>
     <header class="dashboard-header">
         <div class="header-left">
             <div class="logo">
-                <a href="{{route('dashboard')}}">                    
+                <a href="/">                    
                     <img src="{{asset('img/starttofinish-black.png')}}" alt="Logo Start To Finish">
                 </a>
             </div>
         </div>
 
-        <div class="header-right">
-            <a href="{{route('subscription.index')}}">Nossos planos de assinatura</a>
-
+        <div class="header-right">          
             <div class="header-actions">
                 <button class="header-action header-action--dark-mode" title="Alternar tema">
                     <i class="fas fa-moon"></i>
@@ -310,16 +313,23 @@
         <!-- Dropdown Menu (opcional) -->
         <div class="dropdown-menu" id="dropdown-menu">
             @if(request()->is('dashboard'))
-                <a href="{{route('profile.edit')}}" class="dropdown-item">
-                    <i class="fas fa-cog"></i> Meu Perfil
-                </a>
+                <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
+                <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
+                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>
             @endif   
+            
+
+            @if(request()->is('subscription/success'))
+                <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
+                <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
+                <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            @endif  
 
             @if(request()->is('profile'))
-                <a href="{{route('dashboard')}}" class="dropdown-item">
-                    <i class="fa-solid fa-house"></i> Dashboard
-                </a>
-            @endif            
+                <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
+                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>            
+                <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            @endif                      
 
             <div class="dropdown-divider"></div>
 

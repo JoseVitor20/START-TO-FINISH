@@ -696,7 +696,7 @@
             <div class="input-group animate__animated animate__fadeIn animate__delay-2s">
                 <div class="input-wrapper">
                     <i class="fas fa-user input-icon"></i>
-                    <input id="name" type="text" name="name" value="{{ old('name') }}" required>
+                    <input id="name" type="text" name="name" value="{{ old('name') }}" required tabindex="-1">
                     <label for="name">Nome completo</label>
                 </div>
                 @if($errors->has('name'))
@@ -707,7 +707,7 @@
             <div class="input-group animate__animated animate__fadeIn animate__delay-3s">
                 <div class="input-wrapper">
                     <i class="fas fa-envelope input-icon"></i>
-                    <input id="email" type="email" name="email" value="{{ old('email') }}" required>
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required tabindex="-1">
                     <label for="email">Endereço de email</label>
                 </div>
                 @if($errors->has('email'))
@@ -718,7 +718,7 @@
             <div class="input-group animate__animated animate__fadeIn animate__delay-4s">
                 <div class="input-wrapper">
                     <i class="fas fa-lock input-icon"></i>
-                    <input id="password" type="password" name="password" required>
+                    <input id="password" type="password" name="password" required tabindex="-1">
                     <label for="password">Senha</label>
                     <button type="button" class="password-toggle">
                         <i class="fas fa-eye"></i>
@@ -733,7 +733,7 @@
             <div class="input-group animate__animated animate__fadeIn animate__delay-5s">
                 <div class="input-wrapper">
                     <i class="fas fa-lock input-icon"></i>
-                    <input id="password_confirmation" type="password" name="password_confirmation" required>
+                    <input id="password_confirmation" type="password" name="password_confirmation" required tabindex="-1">
                     <label for="password_confirmation">Confirme sua senha</label>
                     <button type="button" class="password-toggle">
                         <i class="fas fa-eye"></i>
