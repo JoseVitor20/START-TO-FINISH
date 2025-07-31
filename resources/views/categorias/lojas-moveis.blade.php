@@ -1,214 +1,15 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'MobiliArt - Móveis de Qualidade')
 
-@push('estilos')
-    <style>
-        :root {
-            --primary-color: #6d4c41;
-            --secondary-color: #8d6e63;
-            --light-color: #d7ccc8;
-            --dark-color: #3e2723;
-            --accent-color: #a1887f;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        
-        .navbar {
-            background-color: var(--primary-color) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: white !important;
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            color: var(--light-color) !important;
-            font-weight: 500;
-            margin: 0 5px;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: white !important;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            margin-bottom: 50px;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-            color: var(--dark-color);
-            font-weight: 700;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 20px;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .card-title {
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        
-        .price {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .about-section {
-            background-color: white;
-            padding: 80px 0;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        
-        .contact-section {
-            background-color: var(--light-color);
-            padding: 80px 0;
-        }
-        
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer a {
-            color: var(--light-color);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: white;
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        .page-content {
-            display: none;
-        }
-        
-        .page-content.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .badge-discount {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e53935;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            z-index: 1;
-        }
-    </style>
+@push('estilosEcodigos')
+    @vite(['resources/css/categorias/lojas-moveis.css', 'resources/js/categorias/lojas-moveis.js']);
 @endpush
 
 @section('content')
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#" onclick="showPage('home')">
+            <a class="navbar-brand" href="#" >
                 <i class="fas fa-couch me-2"></i>MobiliArt
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -217,23 +18,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
+                        <a class="nav-link active" href="#home" >Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('products')">Produtos</a>
+                        <a class="nav-link" href="#products" >Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('about')">Sobre Nós</a>
+                        <a class="nav-link" href="#about" >Sobre Nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('contact')">Contato</a>
+                        <a class="nav-link" href="#contact" >Contato</a>
                     </li>
                 </ul>
                 <div class="ms-3 d-flex">
-                    <a href="#" class="btn btn-outline-light me-2" onclick="showPage('cart')">
+                    <a href="#" class="btn btn-outline-light me-2" >
                         <i class="fas fa-shopping-cart"></i>
                     </a>
-                    <a href="#" class="btn btn-light" onclick="showPage('login')">
+                    <a href="#" class="btn btn-light" >
                         <i class="fas fa-user"></i>
                     </a>
                 </div>
@@ -248,8 +49,8 @@
             <div class="container">
                 <h1 class="display-4 fw-bold mb-4">Móveis que transformam seu lar</h1>
                 <p class="lead mb-5">Design exclusivo, qualidade premium e conforto incomparável</p>
-                <a href="#" class="btn btn-primary btn-lg px-4 me-2" onclick="showPage('products')">Ver Produtos</a>
-                <a href="#" class="btn btn-outline-light btn-lg px-4" onclick="showPage('about')">Sobre Nós</a>
+                <a href="#" class="btn btn-primary btn-lg px-4 me-2" >Ver Produtos</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4" >Sobre Nós</a>
             </div>
         </section>
 
@@ -497,7 +298,7 @@
                         <h3 class="mb-4">Nossa História</h3>
                         <p>Fundada em 1995, a MobiliArt começou como uma pequena marcenaria familiar e hoje é referência em móveis de qualidade no Brasil. Nossa missão é transformar lares com peças que unem design, funcionalidade e durabilidade.</p>
                         <p>Com mais de 25 anos de experiência, temos orgulho de oferecer produtos que são verdadeiras obras de arte funcionais, feitos com materiais selecionados e mão de obra especializada.</p>
-                        <a href="#" class="btn btn-primary mt-3" onclick="showPage('contact')">Fale Conosco</a>
+                        <a href="#" class="btn btn-primary mt-3" >Fale Conosco</a>
                     </div>
                 </div>
                 
@@ -735,7 +536,7 @@
                     </div>
                     
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="btn btn-outline-primary" onclick="showPage('products')">
+                        <a href="#" class="btn btn-outline-primary" >
                             <i class="fas fa-arrow-left me-2"></i>Continuar Comprando
                         </a>
                         <button class="btn btn-outline-danger">
@@ -767,20 +568,6 @@
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary w-100">Finalizar Compra</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">Formas de Pagamento</h5>
-                            <div class="d-flex flex-wrap">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="Visa">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="Mastercard">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="American Express">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="Elo">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="Boleto">
-                                <img src="https://via.placeholder.com/40" class="me-2 mb-2" alt="Pix">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -841,11 +628,11 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Links Rápidos</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" onclick="showPage('home')">Home</a></li>
-                        <li class="mb-2"><a href="#" onclick="showPage('products')">Produtos</a></li>
-                        <li class="mb-2"><a href="#" onclick="showPage('about')">Sobre Nós</a></li>
-                        <li class="mb-2"><a href="#" onclick="showPage('contact')">Contato</a></li>
-                        <li class="mb-2"><a href="#" onclick="showPage('login')">Minha Conta</a></li>
+                        <li class="mb-2"><a href="#" >Home</a></li>
+                        <li class="mb-2"><a href="#" >Produtos</a></li>
+                        <li class="mb-2"><a href="#" >Sobre Nós</a></li>
+                        <li class="mb-2"><a href="#" >Contato</a></li>
+                        <li class="mb-2"><a href="#" >Minha Conta</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -882,37 +669,3 @@
         </div>
     </footer>
 @endsection
-
-@push('scripts')
-    <script>
-        // SPA Navigation
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update active nav link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('onclick') === `showPage('${pageId}')`) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-            
-            // Prevent default anchor behavior
-            return false;
-        }
-        
-        // Initialize - show home page
-        document.addEventListener('DOMContentLoaded', function() {
-            showPage('home');
-        });
-    </script>
-@endpush

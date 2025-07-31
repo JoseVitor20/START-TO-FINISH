@@ -122,6 +122,6 @@ class PrivateController extends Controller
             $usuarios = User::all();
         }
 
-        return view('dashboard', compact('user', 'activeSubscriptions', 'canceledSubscriptions', 'usuarios'));
+        return view('dashboard.dashboard', compact('user', 'activeSubscriptions', 'canceledSubscriptions', 'usuarios'));
     }
 }

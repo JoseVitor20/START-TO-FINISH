@@ -1,102 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'VitaCare - Clínica Médica Integrada')
 
-@push('estilos')
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        .bg-primary-custom {
-            background-color: var(--primary-color);
-        }
-        
-        .text-primary-custom {
-            color: var(--primary-color);
-        }
-        
-        .btn-primary-custom {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-        
-        .btn-primary-custom:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                        url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            min-height: 80vh;
-            color: white;
-        }
-        
-        .service-card {
-            transition: transform 0.3s;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .doctor-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .doctor-card:hover {
-            transform: scale(1.03);
-        }
-        
-        .testimonial-card {
-            border-left: 5px solid var(--secondary-color);
-        }
-        
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-        }
-        
-        .footer a {
-            color: var(--light-color);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .nav-link.active {
-            color: var(--secondary-color) !important;
-            font-weight: bold;
-        }
-        
-        .appointment-form {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-    </style>
+@push('estilosEcodigos')
+    @vite(['resources/css/categorias/clinica.css', 'resources/js/categorias/clinica.js'])
 @endpush
 
 @section('content')
@@ -647,33 +554,3 @@
         <i class="bi bi-arrow-up"></i>
     </a>
 @endsection
-
-@push('scripts')
-    <script>
-        // Ativar links da navbar conforme a rolagem
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            const navItems = document.querySelectorAll('.nav-link');
-            
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (pageYOffset >= (sectionTop - 300)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === '#' + current) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
-@endpush

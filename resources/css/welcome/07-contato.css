@@ -1,0 +1,208 @@
+/* === BLOCK === */
+.CONTATO {
+    width: 100%;
+    background-color: var(--bg-pri-color-transparent);
+}
+
+.CONTATO-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: var(--bg-pri-color);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--text-sec-color);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* === ELEMENTS === */
+.CONTATO__lado {
+    padding: 40px;
+    color: var(--text-pri-color);
+}
+
+.CONTATO__lado--esquerdo {
+    background-color: var(--bg-sec-color);
+    border-right: 1px solid var(--bg-sec-color);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .CONTATO__lado--esquerdo {
+        width: calc(100% / 12 * 5); /* 5/12 da largura */
+    }
+    
+    .CONTATO__lado--direito {
+        width: calc(100% / 12 * 7); /* 7/12 da largura */
+    }
+}
+
+.CONTATO__separador {
+    margin: 1rem 0;
+    border-color: var(--text-sec-color);
+}
+
+.CONTATO__texto {
+    color: var(--text-pri-color);
+}
+
+.CONTATO__texto--centralizado {
+    text-align: center;
+}
+
+.CONTATO__texto--negrito {
+    font-weight: bold;
+}
+
+.CONTATO__titulo {
+    margin-bottom: 0.5rem;
+}
+
+.CONTATO__subtitulo {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.CONTATO__formulario {
+    margin-top: 2rem;
+}
+
+.CONTATO__campo {
+    margin-bottom: 1rem;
+}
+
+.CONTATO__etiqueta {
+    font-weight: bold;
+    color: var(--text-pri-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.CONTATO__entrada {
+    border-radius: 10px !important;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.CONTATO__botao {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--text-pri-color);
+    color: var(--text-pri-color);
+    font-size: 15px;
+}
+
+.CONTATO__botao--acao:hover {
+    color: var(--bg-pri-color);
+    background-color: var(--text-pri-color);
+}
+
+.CONTATO__alerta {
+    padding: 15px;
+    font-size: 0.9rem;
+    color: var(--text-pri-color);
+}
+
+.CONTATO__alerta::before {
+    content: "!";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #00fffd;
+    color: var(--bg-pri-color);
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.CONTATO-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #00fffd, #0388fc);
+    margin: 10px auto 30px;
+    border-radius: 5px;
+    margin-top: -5px;
+}
+
+/* === MODIFIERS === */
+.CONTATO-mensagem {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    overflow: hidden;
+    animation: CONTATO-fadeSlide 10s ease-in-out forwards;
+}
+
+.CONTATO-mensagem--sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.CONTATO-mensagem--sucesso::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #28a745;
+}
+
+.CONTATO-mensagem--sucesso:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.CONTATO-mensagem--sucesso i {
+    margin-right: 10px;
+    color: #28a745;
+}
+
+/* === ANIMATIONS === */
+@keyframes CONTATO-fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+    .CONTATO-container {
+        flex-direction: column;
+    }
+    
+    .CONTATO__lado {
+        width: 100% !important;
+    }
+    
+    .CONTATO__alerta {
+        position: static;
+        margin: 20px auto 0;
+    }
+}

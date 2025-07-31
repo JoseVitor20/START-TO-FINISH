@@ -8,6 +8,7 @@
             <button class="filter-btn active" data-category="todos">Todos</button>
             <button class="filter-btn" data-category="alimentacao">Alimentação</button>
             <button class="filter-btn" data-category="saude">Saúde</button>
+            <button class="filter-btn" data-category="bens-duraveis">Casa & Decoração</button>
             <button class="filter-btn" data-category="turismo">Turismo</button>
             <button class="filter-btn" data-category="repouso">Repouso</button>
             <button class="filter-btn" data-category="beleza">Beleza</button>

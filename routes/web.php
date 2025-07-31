@@ -59,6 +59,15 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
     Route::view('/centro-cultural', 'categorias.centro-cultural');
 
+    Route::view('/lojas-moveis', 'categorias.lojas-moveis');
+
+    Route::view('/loja-materiais', 'categorias.loja-materiais');
+
+    Route::view('/floricultura', 'categorias.floricultura');
+
+    Route::view('/psicologo', 'categorias.psicologo');
+
+
 // Assinatura
     Route::middleware(['auth', 'verified'])->group(function () {
         // Rota para exibir os planos de assinatura mensal

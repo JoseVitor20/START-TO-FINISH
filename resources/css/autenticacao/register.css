@@ -1,0 +1,460 @@
+@import url('../default.css');
+
+/* Bloco principal */
+.REGISTRO-card {
+    min-width: 450px;
+    width: 30vw;
+    height: max-content;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.REGISTER__particles {
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    position: absolute;
+    will-change: transform;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.REGISTRO-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 255, 253, 0.2);
+}
+
+.REGISTRO-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+    animation: gradientBG 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Estilo do botão de tema */
+.REGISTRO__theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--bg-sec-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.REGISTRO__theme-toggle:hover {
+    transform: rotate(30deg) scale(1.1);
+    box-shadow: 0 0 10px var(--sol-lua);
+}
+
+.REGISTRO__theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--text-pri-color);
+    transition: var(--transition);
+}
+
+body.auth-page {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--bg-pri-color);
+    color: var(--text-pri-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 253, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(25, 191, 0, 0.05) 0%, transparent 20%);
+    user-select: none;
+    overflow-x: hidden !important;
+}
+
+body.auth-page::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(0, 255, 253, 0.03) 50%,
+        transparent 100%
+    );
+    animation: rotateGradient 20s linear infinite;
+    z-index: -1;
+}
+
+.REGISTRO-card__header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.REGISTRO-card__logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--neon);
+    box-shadow: 0 0 15px var(--neon);
+    transition: var(--transition);
+}
+
+.REGISTRO-card__logo:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 25px var(--neon);
+}
+
+.REGISTRO-card__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 253, 0.3);
+    letter-spacing: 1px;
+}
+
+.REGISTRO-card__subtitle {
+    color: var(--text-sec-color);
+    font-size: 0.9375rem;
+    margin-top: 0.5rem;
+}
+
+.REGISTRO-card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.REGISTRO-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.REGISTRO-form__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-sec-color);
+    transition: var(--transition);
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    background: var(--card-bg);
+    padding: 0 0.5rem;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.REGISTRO-form__input-wrapper {
+    position: relative;
+}
+
+.REGISTRO-form__group input {
+    width: 100%;
+    padding: 1.25rem 3rem 1.25rem 3.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    background-color: var(--bg-sec-color);
+    transition: var(--transition);
+    color: var(--text-pri-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.REGISTRO-form__group input:focus {
+    outline: none;
+    border-color: var(--neon);
+    box-shadow: 0 0 0 2px rgba(0, 255, 253, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-sec-color);
+}
+
+.REGISTRO-form__group input:focus + .REGISTRO-form__label,
+.REGISTRO-form__group input:not(:placeholder-shown) + .REGISTRO-form__label {
+    top: -0.6rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    color: var(--neon);
+}
+
+.REGISTRO-form__input-icon {
+    position: absolute;
+    left: 32px;
+    top: 30px;
+    transform: translateY(-50%);
+    color: var(--text-sec-color);
+    transition: var(--transition);
+    z-index: 2;
+    font-size: 1rem;
+}
+
+.REGISTRO-form__group input:focus ~ .REGISTRO-form__input-icon {
+    color: var(--neon);
+    text-shadow: 0 0 8px var(--neon);
+}
+
+.REGISTRO-form__password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 32px;
+    transform: translateY(-50%);
+    color: var(--text-sec-color);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.REGISTRO-form__password-toggle:hover {
+    color: var(--neon);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.REGISTRO-form__error-message {
+    color: var(--error-color);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    animation: shake 0.5s;
+}
+
+.REGISTRO-form__submit-button {
+    background: linear-gradient(135deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
+    color: var(--btn-bg-hover);
+    padding: 1.25rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: .8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 255, 253, 0.3);
+}
+
+.REGISTRO-form__submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.REGISTRO-form__submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 253, 0.4);
+}
+
+.REGISTRO-form__submit-button:hover::before {
+    left: 100%;
+}
+
+.REGISTRO-form__submit-button:active {
+    transform: translateY(0);
+}
+
+.REGISTRO-form__links {
+    display: flex;
+    justify-content: center;
+    font-size: 0.875rem;
+    margin-top: 1.5rem;
+    color: var(--text-sec-color);
+}
+
+.REGISTRO-form__link {
+    color: var(--neon);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+    position: relative;
+}
+
+.REGISTRO-form__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--neon);
+    transition: var(--transition);
+}
+
+.REGISTRO-form__link:hover {
+    text-shadow: 0 0 8px var(--neon);
+}
+
+.REGISTRO-form__link:hover::after {
+    width: 100%;
+}
+
+.REGISTRO-card__success-message {
+    display: none;
+    background-color: var(--success-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.5s;
+    box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+}
+
+.REGISTRO-form__password-strength {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.REGISTRO-form__strength-meter {
+    flex-grow: 1;
+    height: 6px;
+    background-color: var(--bg-sec-color);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.REGISTRO-form__strength-meter-fill {
+    height: 100%;
+    width: 0;
+    transition: width 0.4s ease, background-color 0.4s ease;
+    border-radius: 3px;
+}
+
+.REGISTRO-form__strength-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: right;
+    transition: color 0.3s ease;
+}
+
+/* Níveis de força */
+.REGISTRO-form__strength-meter-fill--0 { background-color: var(--error-color); }
+.REGISTRO-form__strength-meter-fill--1 { background-color: #ff6b6b; }
+.REGISTRO-form__strength-meter-fill--2 { background-color: #feca57; }
+.REGISTRO-form__strength-meter-fill--3 { background-color: #48dbfb; }
+.REGISTRO-form__strength-meter-fill--4 { background-color: var(--success-color); }
+
+.REGISTRO-form__strength-label--0 { color: var(--error-color); }
+.REGISTRO-form__strength-label--1 { color: #ff6b6b; }
+.REGISTRO-form__strength-label--2 { color: #feca57; }
+.REGISTRO-form__strength-label--3 { color: #48dbfb; }
+.REGISTRO-form__strength-label--4 { color: var(--success-color); }
+
+/* Requisitos da senha */
+.REGISTRO-form__password-requirements {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-sec-color);
+}
+
+.REGISTRO-form__password-requirements li {
+    margin-bottom: 0.25rem;
+    position: relative;
+    list-style-type: none;
+}
+
+.REGISTRO-form__password-requirements li::before {
+    content: '○';
+    position: absolute;
+    left: -1.25rem;
+    font-size: 0.6rem;
+}
+
+.REGISTRO-form__password-requirements li.requirement-met::before {
+    content: '✓';
+    color: var(--success-color);
+}
+
+/* Animações */
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    @-moz-document url-prefix() {
+        .REGISTRO-card {
+            min-width: 300px;
+        }
+    }
+    
+    .REGISTRO-card {
+        padding: 1em;
+        border-radius: 12px;
+        min-width: unset;
+        width: 90vw;
+    }
+    
+    .REGISTRO-card__title {
+        font-size: 1.75rem;
+    }
+}

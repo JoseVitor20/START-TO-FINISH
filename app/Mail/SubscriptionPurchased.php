@@ -36,6 +36,7 @@ class SubscriptionPurchased extends Mailable
             with: [
                 'userName' => $this->user->name,
                 'planName' => $this->subscription->stripe_price, // Ou um nome mais amigável
+                'planDescription' => $this->subscription->product_description, // Ou um nome mais amigável
                 'endsAt' => $this->subscription->ends_at ? $this->subscription->ends_at->format('d/m/Y') : 'Data de término do ciclo não definida',
             ]
         );

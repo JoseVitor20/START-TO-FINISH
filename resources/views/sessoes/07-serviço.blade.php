@@ -64,12 +64,21 @@
                         </div>
                     </li>                    
                 </ul>
-                <form action="{{ route('subscription.store') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="plan" value="main_subscription">
-                    <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
-                    <button type="submit" class="btn-servico">Quero minha Landing Page</button>
-                </form>                
+                @auth
+                    @if(Auth::user()->subscription('main_subscription')->canceled() == 0)
+                        <a href="{{route('dashboard')}}" class="btn-servico"> Você já tem um plano ativo!</a>
+                    @else
+                        <form action="{{ route('subscription.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="plan" value="main_subscription">
+                            <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                            <button type="submit" class="btn-servico">Quero minha Landing Page</button>
+                        </form>           
+                    @endif
+                @endauth     
+                @guest   
+                    <a href="register" class="btn-servico">Quero minha Landing Page</a>
+                @endguest
             </div>
         </div>
         <!-- Plano Essencial -->
@@ -138,7 +147,21 @@
                         </div>
                     </li>                   
                 </ul>
-                <button class="btn-servico">Quero meu Site Completo</button>
+                @auth
+                    @if(Auth::user()->subscription('main_subscription')->canceled() == 0)
+                        <a href="{{route('dashboard')}}" class="btn-servico"> Você já tem um plano ativo!</a>
+                    @else
+                        <form action="{{ route('subscription.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="plan" value="main_subscription">
+                            <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                            <button type="submit" class="btn-servico">Quero meu Site Completo</button>
+                        </form>           
+                    @endif
+                @endauth     
+                @guest   
+                    <a href="register" class="btn-servico">Quero meu Site Completo</a>
+                @endguest                
             </div>
         </div>
         <!-- Plano Profissional -->
@@ -200,7 +223,21 @@
                         </div>
                     </li>
                 </ul>
-                <button class="btn-servico">Quero Vender Mais</button>
+                @auth
+                    @if(Auth::user()->subscription('main_subscription')->canceled() == 0)
+                        <a href="{{route('dashboard')}}" class="btn-servico"> Você já tem um plano ativo!</a>
+                    @else
+                        <form action="{{ route('subscription.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="plan" value="main_subscription">
+                            <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                            <button type="submit" class="btn-servico">Quero Vender Mais</button>
+                        </form>           
+                    @endif
+                @endauth     
+                @guest   
+                    <a href="register" class="btn-servico">Quero Vender Mais</a>
+                @endguest                 
             </div>
         </div>
         <!-- Plano Avançado -->
@@ -262,7 +299,21 @@
                         </div>
                     </li>
                 </ul>
-                <button class="btn-servico">Quero Minha Loja Virtual</button>
+                @auth
+                    @if(Auth::user()->subscription('main_subscription')->canceled() == 0)
+                        <a href="{{route('dashboard')}}" class="btn-servico"> Você já tem um plano ativo!</a>
+                    @else
+                        <form action="{{ route('subscription.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="plan" value="main_subscription">
+                            <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                            <button type="submit" class="btn-servico">Quero Minha Loja Virtual</button>
+                        </form>           
+                    @endif
+                @endauth     
+                @guest   
+                    <a href="register" class="btn-servico">Quero Minha Loja Virtual</a>
+                @endguest                
             </div>
         </div>
         <!-- Plano Premium -->
@@ -324,12 +375,21 @@
                         </div>
                     </li>                    
                 </ul>
-                <form action="{{ route('subscription.store') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="plan" value="main_subscription">
-                    <input type="hidden" name="price_id" value="price_1RjQtlPSFtrJEyUPc3gxFVIz">
-                    <button type="submit" class="btn-servico">Quero Crescer Meu Negócio</button>
-                </form>                
+                @auth
+                    @if(Auth::user()->subscription('main_subscription')->canceled() == 0)
+                        <a href="{{route('dashboard')}}" class="btn-servico"> Você já tem um plano ativo!</a>
+                    @else
+                        <form action="{{ route('subscription.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="plan" value="main_subscription">
+                            <input type="hidden" name="price_id" value="price_1RjQsDPSFtrJEyUP3fhEZkGT">
+                            <button type="submit" class="btn-servico">Quero Crescer Meu Negócio</button>
+                        </form>           
+                    @endif
+                @endauth     
+                @guest   
+                    <a href="register" class="btn-servico">Quero Crescer Meu Negócio</a>
+                @endguest                  
             </div>
         </div>
     </div>

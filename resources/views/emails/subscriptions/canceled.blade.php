@@ -19,59 +19,82 @@
         }
     </style>
 </head>
-<body style="background-color: #101010; color: #dfdfdf; font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 20px;">
+<body style="background-color: #0f0f13; color: #ffffff; font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 20px;">
 
-    <div style="max-width: 600px; margin: 0 auto; background-color: #1e1e1e; border: 1px solid #444; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); overflow: hidden;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: #1e1e2a; border: 1px solid #2d2d42; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); overflow: hidden;">
         
         <!-- Header -->
-        <div style="background: linear-gradient(135deg, #1a1a2e, #21325e); padding: 30px 20px; text-align: center; position: relative;">
+        <div style="background: linear-gradient(135deg, #1a1a24, #1900df); padding: 30px 20px; text-align: center; position: relative;">
             <img src="{{ asset('img/starttofinish-black.png') }}" alt="Logo {{ config('app.name') }}" style="max-height: 60px; filter: invert(100%);">
-            <div style="height: 4px; background: linear-gradient(90deg, #00fffd, #19bf00); position: absolute; top: 0; left: 0; right: 0;"></div>
         </div>
 
         <!-- Content -->
         <div style="padding: 40px;">
-            <h1 style="color: #00fffd; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
+            <h1 style="color: #00f5d0; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
                 Cancelamento de Plano
-                <span style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00fffd, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
+                <span style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00f5d0, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
             </h1>
 
-            <div style="font-size: 18px; color: #fff; margin-bottom: 30px;">
+            <div style="font-size: 18px; color: #ffffff; margin-bottom: 30px;">
                 Olá, {{ $userName }}! 👋
             </div>
 
-            <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
-                @if($planName == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
-                    O plano <strong>Basico</strong> será cancelado no final do ciclo! 🎉
-                @elseif($planName == 'price_1RjQtlPSFtrJEyUPc3gxFVIz')
-                    O plano <strong>Premium</strong> será cancelado no final do ciclo! 🎉
-                @endif
-            </p>
+            @if($planName == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        O plano <strong style="color: #00f5d0;">Básico</strong> será cancelado no final do ciclo!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/plano-basico.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você perderá o acesso a esses benefícios do plano Básico:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Benefício 1</li>
+                        <li style="margin-bottom: 8px;">Benefício 2</li>
+                        <li style="margin-bottom: 8px;">Benefício 3</li>
+                        <li style="margin-bottom: 8px;">Benefício 4</li>
+                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                    </ul>
+                </div>                  
+            @elseif($planName == 'price_1RjQtlPSFtrJEyUPc3gxFVIz')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        O plano <strong style="color: #00f5d0;">Premium</strong> será cancelado no final do ciclo!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/plano-premium.png') }}" alt="Plano Premium" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você perderá o acesso a esses benefícios do plano Premium:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Benefício 1</li>
+                        <li style="margin-bottom: 8px;">Benefício 2</li>
+                        <li style="margin-bottom: 8px;">Benefício 3</li>
+                        <li style="margin-bottom: 8px;">Benefício 4</li>
+                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                    </ul>
+                </div>                    
+            @endif            
 
             @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
-            <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
-                Seu período atual termina em <strong>{{ $endsAt }}</strong>.
+            <p style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 20px;">
+                Seu período atual termina em <strong style="color: #00f5d0;">{{ $endsAt }}</strong>.
             </p>
             @endif
 
-            <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
-                Agradecemos por fazer parte da nossa comunidade!
-            </p>
-
             <div style="text-align: center; margin: 40px 0;">
-                <a href="{{ route('dashboard') }}" style="background: linear-gradient(135deg, #00fffd, #19bf00); color: #000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; font-size: 16px; box-shadow: 0 0 15px rgba(0,255,253,0.4);">
+                <a href="{{ route('dashboard') }}" style="background: linear-gradient(135deg, #00f5d0, #19bf00); color: #000000; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; font-size: 16px; box-shadow: 0 0 15px rgba(0,245,208,0.4); transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);">
                     Acessar Minha Conta
                 </a>
             </div>
 
-            <p style="font-size: 16px; color: #cfcfcf; line-height: 1.7; margin-bottom: 20px;">
+            <p style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 20px;">
                 Atenciosamente,<br>
-                <strong>{{ config('app.name') }}</strong>
+                <strong style="color: #ffffff;">{{ config('app.name') }}</strong>
             </p>
         </div>
 
         <!-- Footer -->
-        <div style="background-color: #262626; text-align: center; padding: 25px; font-size: 14px; color: #cfcfcf; border-top: 1px solid #444;">
+        <div style="background-color: #1a1a24; text-align: center; padding: 25px; font-size: 14px; color: #a0a0c0; border-top: 1px solid #2d2d42;">
             &copy; {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.
         </div>
     </div>

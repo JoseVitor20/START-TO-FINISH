@@ -1,348 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Gourmet Delight | Experiência Gastronômica')
 
-@push('estilos')
-    <style>
-        :root {
-            --primary-color: red;
-            --secondary-color: #D4AF37;
-            --dark-color: #1A1A1A;
-            --light-color: #F8F9FA;
-            --transition: all 0.3s ease-in-out;
-        }
-        
-        body {
-            font-family: 'Josefin Sans', sans-serif;
-            color: var(--dark-color);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-        }
-        
-        .navbar {
-            background-color: rgba(26, 26, 26, 0.9);
-            transition: var(--transition);
-            padding: 20px 0;
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 0;
-            background-color: var(--dark-color);
-        }
-        
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--secondary-color) !important;
-        }
-        
-        .nav-link {
-            color: darkgray;
-            margin: 0 10px;
-            font-weight: 400;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: #8080ff;
-        }
-
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .nav-link:focus, .nav-link:hover:after {
-            color: var(--secondary-color);
-        }
-
-        .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .hero-content {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-            display: inline-block;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background: var(--secondary-color);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .about-img {
-            border-radius: 5px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-        
-        .about-img:hover {
-            transform: scale(1.03);
-        }
-        
-        .menu-card {
-            border: none;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            margin-bottom: 30px;
-        }
-        
-        .menu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .menu-card img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .price {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .testimonial-card {
-            padding: 30px;
-            border-radius: 5px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 15px;
-        }
-        
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--secondary-color);
-        }
-        
-        .reservation-form {
-            background-color: white;
-            padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-primary:hover {
-            background-color: #6d0000;
-            transform: translateY(-3px);
-        }
-        
-        .btn-outline-primary {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            margin-right: 10px;
-            transition: var(--transition);
-        }
-        
-        .social-icon:hover {
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
-            transform: translateY(-3px);
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .floating-label {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .floating-label input,
-        .floating-label select,
-        .floating-label textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: transparent;
-            transition: var(--transition);
-        }
-        
-        .floating-label label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            color: #777;
-            transition: var(--transition);
-            pointer-events: none;
-        }
-        
-        .floating-label input:focus ~ label,
-        .floating-label input:valid ~ label,
-        .floating-label select:valid ~ label,
-        .floating-label textarea:focus ~ label,
-        .floating-label textarea:valid ~ label {
-            top: -10px;
-            left: 10px;
-            font-size: 12px;
-            background-color: white;
-            padding: 0 5px;
-            color: var(--primary-color);
-        }
-        
-        .gallery-item {
-            margin-bottom: 30px;
-            overflow: hidden;
-            border-radius: 5px;
-            position: relative;
-        }
-        
-        .gallery-item img {
-            transition: var(--transition);
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(139, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .chef-card {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .chef-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-        
-        .chef-card:hover .chef-img {
-            transform: scale(1.05);
-        }
-        
-        .divider {
-            height: 3px;
-            width: 100px;
-            background: var(--secondary-color);
-            margin: 20px auto;
-        }
-    </style>
+@push('estilosEcodigos')
+    @vite(['resources/css/categorias/restaurante.css', 'resources/js/categorias/restaurante.js'])
 @endpush
 
 @section('content')
@@ -374,7 +35,7 @@
         <div class="container">
             <div class="hero-content text-center">
                 <h1 class="display-3 fw-bold mb-4">Éclat</h1>
-                <div class="divider mx-auto"></div>
+                <div class=" mx-auto"></div>
                 <p class="lead mb-5">Gastronomia Contemporânea com Toque Clássico</p>
                 <a href="#reservation" class="btn btn-primary me-2">Reserve Agora</a>
                 <a href="#menu" class="btn btn-outline-primary">Ver Menu</a>
@@ -387,7 +48,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Restaurante Éclat" class="img-fluid about-img">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Éclat" class="img-fluid about-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">Nossa História</h2>
@@ -690,8 +351,8 @@
                         <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Chef 1" class="chef-img">
                         <h4>Antoine Moreau</h4>
                         <p class="text-muted">Chef Executivo</p>
-                        <div class="divider"></div>
-                        <p>Com experiência em restaurantes estrelados Michelin em Paris, o Chef Antoine traz a elegância da culinária francesa para o Éclat.</p>
+                        <div class=""></div>
+                        <p>Com experiência em  estrelados Michelin em Paris, o Chef Antoine traz a elegância da culinária francesa para o Éclat.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -699,7 +360,7 @@
                         <img src="https://plus.unsplash.com/premium_photo-1673830185931-40661a11948f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJlc3R1cmFudHxlbnwwfHwwfHx8MA%3D%3D" alt="Chef 2" class="chef-img">
                         <h4>Carlos Mendez</h4>
                         <p class="text-muted">Chef de Cozinha</p>
-                        <div class="divider"></div>
+                        <div class=""></div>
                         <p>Nascido no México e treinado na Espanha, o Chef Carlos especializou-se em técnicas contemporâneas de cozinha molecular.</p>
                     </div>
                 </div>
@@ -708,7 +369,7 @@
                         <img src="https://media.istockphoto.com/id/1331280439/pt/foto/smiling-entrepreneur-holding-a-digital-tablet-in-her-cafe.webp?a=1&b=1&s=612x612&w=0&k=20&c=bI2i-oV7-6O-DmbouP12qhOZK6VFmTP0feFDjB3qViU=" alt="Chef 3" class="chef-img">
                         <h4>Sophie Laurent</h4>
                         <p class="text-muted">Chef Confeiteira</p>
-                        <div class="divider"></div>
+                        <div class=""></div>
                         <p>A Chef Sophie, formada na Le Cordon Bleu, cria sobremesas que são verdadeiras obras de arte com sabores inovadores.</p>
                     </div>
                 </div>
@@ -757,7 +418,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mb-0">"Como crítico gastronômico, posso afirmar que o Éclat está entre os melhores restaurantes que visitei. A combinação de sabores e a apresentação dos pratos são obras-primas."</p>
+                        <p class="mb-0">"Como crítico gastronômico, posso afirmar que o Éclat está entre os melhores  que visitei. A combinação de sabores e a apresentação dos pratos são obras-primas."</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -973,44 +634,3 @@
     </footer>
 
 @endsection
-
-@push('scripts')
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Back to top button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Initialize tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        });
-    </script>
-@endpush

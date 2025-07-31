@@ -1,322 +1,9 @@
 @extends('layouts.layout-dashboard')
 
-@section('title', 'Start To Finish - Compra bem-sucedida!')
+@section('title', 'Start To Finish - Comprovante!')
 
-@push('estilos')
-    <style>
-        .success-wrapper {
-            min-height: 100vh;
-            background: var(--bg-pri-color);
-            padding: 2rem;
-        }
-
-        .success-main {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: var(--bg-sec-color);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            position: relative;
-            border: 1px solid rgba(0, 255, 253, 0.1);
-        }
-
-        .success-main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .success-hero {
-            padding: 3rem 2rem;
-            text-align: center;
-            background: linear-gradient(to bottom, var(--bg-pri-color), var(--bg-sec-color));
-            position: relative;
-            overflow: hidden;
-        }
-
-        .success-hero::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 253, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .success-title {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--neon);
-            position: relative;
-            display: inline-block;
-            z-index: 1;
-            text-shadow: 0 0 15px rgba(0, 255, 253, 0.3);
-        }
-
-        .success-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--gradient);
-        }
-
-        .success-subtitle {
-            color: var(--text-sec-color);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 1rem auto 0;
-            z-index: 1;
-            position: relative;
-        }
-
-        .success-content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-
-        .success-aside {
-            flex: 1;
-            min-width: 300px;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-right: 1px solid var(--border-color);
-        }
-
-        .success-details {
-            flex: 2;
-            min-width: 400px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-section {
-            margin-bottom: 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--neon);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-        }
-
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--neon);
-            margin-right: 12px;
-            box-shadow: 0 0 8px var(--neon);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .info-item {
-            margin-bottom: 1rem;
-        }
-
-        .info-label {
-            color: var(--text-sec-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .info-label i {
-            margin-right: 8px;
-            font-size: 1rem;
-            color: var(--neon);
-        }
-
-        .info-value {
-            color: var(--text-pri-color);
-            font-size: 1.1rem;
-            word-break: break-word;
-        }
-
-        .payment-method {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            background: var(--border-color);
-            border-radius: 8px;
-            margin-top: 10px;
-            border-left: 3px solid var(--neon);
-        }
-
-        .payment-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--border-color);
-            border-radius: 6px;
-            font-size: 1.5rem;
-        }
-
-        .payment-details {
-            flex: 1;
-        }
-
-        .device-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px;
-            background: rgba(40, 40, 40, 0.5);
-            border-radius: 8px;
-            margin-top: 10px;
-            border-left: 3px solid var(--neon);
-        }
-
-        .device-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
-            font-size: 1.5rem;
-        }
-
-        .product-card {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--card-bg);
-            border-radius: 8px;
-            border-left: 3px solid var(--neon);
-        }
-
-        .product-image {
-            width: 300px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid var(--border-color);
-        }
-
-        .product-info {
-            flex: 1;
-        }
-
-        .product-name {
-            font-style: italic;
-            font-weight: bold;
-            font-size: 25px;
-            color: var(--neon);
-            margin-bottom: 0.5rem;
-        }
-
-        .billing-info {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: auto;
-        }
-
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 2.5rem;
-            background: linear-gradient(to right, var(--gradiente-pri-color), var(--gradiente-sec-color));
-            color: var(--bg-pri-color);
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            text-align: center;
-            margin-top: 2rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 255, 253, 0.3);
-            gap: 8px;
-            font-size: 1.1rem;
-        }
-
-        .action-button:hover {
-            transform: translateY(-2px);
-            color: var(--text-pri-color);
-            box-shadow: 0 6px 20px rgba(0, 255, 253, 0.4);
-        }
-
-        .highlight {
-            color: var(--neon);
-            font-weight: 600;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .status-active {
-            margin-top: 20px;
-            background: var(--neon);
-            color: var(--bg-sec-color);
-            padding-top: 6px;
-            font-weight: bold;
-        }
-
-        .status-pending {
-            background: rgba(255, 152, 0, 0.2);
-            color: var(--warning-color);
-        }
-
-        @media (max-width: 768px) {
-            .success-content {
-                flex-direction: column;
-            }
-
-            .success-aside {
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            .success-title {
-                font-size: 2rem;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+@push('estilosEcodigosDash')
+    @vite(['resources/css/dashboard/dashboard.css', 'resources/js/dashboard/dashboard.js'])
 @endpush
 
 @section('content')
@@ -326,23 +13,23 @@
                 @if(ucfirst($subscription->stripe_status) == 'Active')
                     <h1 class="success-title">🎉 Assinatura Concluída!</h1>
                     <p class="success-subtitle">Sua assinatura foi processada com sucesso. Abaixo estão todos os detalhes da sua compra.</p>
-                    <div class="status-badge status-active">ATIVO</div>
+                    <h3 class="status-badge-sucesso status-active status-ativo">ATIVO</h3>
                 @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
                     <h1 class="success-title">🧪Assinatura De Teste Iniciada!</h1>
                     <p class="success-subtitle">Sua assinatura de teste foi iniciada com sucesso. Abaixo estão todos os detalhes da assinatura de teste.</p>
-                    <div class="status-badge status-active">TESTANDO</div>                    
+                    <h3 class="status-badge-sucesso status-active status-testando">TESTANDO</h3>                    
                 @else
                     <h1 class="success-title">🚫Assinatura Cancelada!</h1>
                     <p class="success-subtitle">Sua assinatura foi cancelada com sucesso. Abaixo estão todos os detalhes do cancelamento.</p>
-                    <div class="status-badge status-active">DESATIVADO</div>                    
+                    <h3 class="status-badge-sucesso status-active status-desativado">DESATIVADO</h3>                    
                 @endif
 
             </section>
 
             <div class="success-content">
                 <aside class="success-aside">
-                    <div class="info-section">
-                        <h3 class="section-title">Seus Dados</h3>
+                    <div class="info-section-sucesso">
+                        <h3 class="section-title-sucesso">Seus Dados</h3>
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="info-label"><i class="fas fa-user"></i> Nome</div>
@@ -362,8 +49,8 @@
                     </div>
 
                     @if($subscription->trial_ends_at)
-                        <div class="info-section">
-                            <h3 class="section-title">Período de Teste</h3>
+                        <div class="info-section-sucesso">
+                            <h3 class="section-title-sucesso">Período de Teste</h3>
                             <div class="info-item">
                                 <div class="info-value">
                                     O período de teste termina em: <br> <span id="trial-ends-date" data-utc-time="{{ $subscription->trial_ends_at->toISOString() }}"></span>
@@ -372,8 +59,8 @@
                         </div>
                     @endif
 
-                    <div class="info-section">
-                        <h3 class="section-title">Pagamento</h3>
+                    <div class="info-section-sucesso">
+                        <h3 class="section-title-sucesso">Pagamento</h3>
                         <div class="info-item">
                             <div class="info-label"><i class="fas fa-credit-card"></i> Método de Pagamento</div>
                             <div class="payment-method">
@@ -417,8 +104,8 @@
                 </aside>
 
                 <section class="success-details">
-                    <div class="info-section">
-                        <h3 class="section-title">Detalhes da Assinatura</h3>
+                    <div class="info-section-sucesso">
+                        <h3 class="section-title-sucesso">Detalhes da Assinatura</h3>
 
                         @isset($product)
                             <div class="product-card">
@@ -474,7 +161,7 @@
                             @php
                                 $nextBillingDateIso = $nextBillingDate instanceof \Carbon\Carbon ? $nextBillingDate->toISOString() : $nextBillingDate;
                             @endphp
-                            <h3 class="section-title">Próximas Cobranças</h3>                                                 
+                            <h3 class="section-title-sucesso">Próximas Cobranças</h3>                                                 
                             <div class="info-item">
                                 <div class="info-value">
                                     @if(ucfirst($subscription->stripe_status) == 'Active')
