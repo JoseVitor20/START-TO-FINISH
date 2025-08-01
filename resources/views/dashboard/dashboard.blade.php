@@ -152,7 +152,7 @@
                                 <label for="new_plan" class="form-label">Selecione o novo plano</label>
                                 <div class="select-wrapper">
                                     <select name="new_price_id" id="new_plan" class="plan-select">
-                                        @if($mainSubscription->stripe_price == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
+                                        @if($mainSubscription->stripe_price != 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
                                             <option value="price_1RjQtlPSFtrJEyUPc3gxFVIz">Plano Premium - R$500,00/mês</option>
                                         @else
                                             <option value="price_1RjQsDPSFtrJEyUP3fhEZkGT">Plano Básico - R$300,00/mês</option>

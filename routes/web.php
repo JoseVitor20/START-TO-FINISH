@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\PrivateController;
 use App\Http\Controllers\WebhookController;
+use App\Http\Controllers\ContractController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,18 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
+// Rota para trabalhar com contratos
+    Route::middleware(['auth'])->group(function () {
+        // Página para aceitar os termos
+        Route::get('/painel', function () {
+            return view('acao');
+        })->middleware('auth')->name('painel');
+
+        // Mostrar o status do cliente
+        Route::get('/contrato/status', [ContractController::class, 'getContractStatus'])->name('contract.status');
+        Route::post('/contrato/aceitar', [ContractController::class, 'acceptFromBlade'])->name('contract.accept');
+    });
+    
 // Rota para enviar E-MAIL DE CONTATO
     Route::post('/contato/enviar', [ContatoController::class, 'enviar'])->name('contato.enviar');
 

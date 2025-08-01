@@ -55,7 +55,8 @@
         @if(request()->is('dashboard'))
             <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>
+            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>            
         @endif   
         
 
@@ -63,13 +64,22 @@
             <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
             <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>            
         @endif  
 
         @if(request()->is('profile'))
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>            
+            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
             <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
-        @endif                      
+            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
+        @endif        
+
+        @if(request()->is('contrato/status'))
+            <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>        
+            <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
+            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
+            <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+        @endif                          
 
         <div class="dropdown-divider"></div>
 
@@ -92,8 +102,11 @@
             <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
         </div>
         <div class="mobile-menu-item">
-            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>
+            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
         </div>
+        <div class="mobile-menu-item">
+            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
+        </div>        
     @endif   
     
     @if(request()->is('subscription/success'))
@@ -106,6 +119,9 @@
         <div class="mobile-menu-item">
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
         </div>
+        <div class="mobile-menu-item">
+            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
+        </div>        
     @endif  
 
     @if(request()->is('profile'))
@@ -113,11 +129,26 @@
             <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
         </div>
         <div class="mobile-menu-item">
-            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-file-contract"></i> Status da Assinatura</a>
+            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
         </div>
         <div class="mobile-menu-item">
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
         </div>
+        <div class="mobile-menu-item">
+            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
+        </div>        
+    @endif
+
+    @if(request()->is('contrato/status'))
+        <div class="mobile-menu-item">
+            <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
+        </div>
+        <div class="mobile-menu-item">
+            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+        </div>
+        <div class="mobile-menu-item">
+            <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
+        </div>      
     @endif
 
     <div class="mobile-menu-item">
