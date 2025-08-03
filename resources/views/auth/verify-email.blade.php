@@ -151,6 +151,7 @@
         padding: 0;
         text-decoration: underline;
         transition: var(--transition-all);
+        font-family: 'Josefin Sans', sans-serif;
     }
 
     .verification-resend:hover {
@@ -191,6 +192,7 @@
 
     .button-text {
         transition: var(--transition-all);
+        font-family: 'Josefin Sans', sans-serif;
     }
 
     .auth-button:hover .button-text {
@@ -289,7 +291,7 @@
                 <form method="POST" action="{{ route('verification.send') }}" class="inline">
                     @csrf
                     <button type="submit" class="verification-resend" style="font-size: 15px; margin-top: 10px;">
-                        clique aqui para solicitar outro
+                        Clique aqui para solicitar outro
                     </button>.
                 </form>
             </div>

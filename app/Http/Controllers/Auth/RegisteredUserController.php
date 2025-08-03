@@ -29,15 +29,21 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // 1. Adicione as regras de validação para 'document' e 'address'
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'document' => ['required', 'string', 'max:255'], // Regra de validação para CPF/CNPJ
+            'address' => ['required', 'string', 'max:255'],    // Regra de validação para Endereço
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        // 2. Passe os novos dados para o método User::create()
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'document' => $request->document, // Salva o campo 'document'
+            'address' => $request->address,   // Salva o campo 'address'
             'password' => Hash::make($request->password),
         ]);
 

@@ -68,31 +68,21 @@ export function initServicoHover() {
             }
         });
 
-        // Controle do checkbox e botões
+        // Controle do checkbox
         if (acceptCheckbox && acceptBtn && denyBtn) {
             acceptCheckbox.addEventListener('change', function() {
-                const isChecked = this.checked;
-                acceptBtn.disabled = !isChecked;
-                denyBtn.disabled = isChecked;
+                acceptBtn.disabled = !this.checked;
+                denyBtn.disabled = this.checked;
                 
-                // Atualiza o valor do input hidden
-                const acceptedInput = document.getElementById('acceptedInput');
-                if (acceptedInput) {
-                    acceptedInput.value = isChecked ? '1' : '0';
-                }
+                // Atualiza o valor do campo hidden
+                document.getElementById('acceptedInput').value = this.checked ? '1' : '0';
             });
-
-            // Configuração inicial
-            denyBtn.disabled = acceptCheckbox.checked;
         }
 
-        // Garantir que "Não aceito" envia o valor correto
+        // Configuração inicial dos botões
         if (denyBtn) {
             denyBtn.addEventListener('click', function() {
-                const acceptedInput = document.getElementById('acceptedInput');
-                if (acceptedInput) {
-                    acceptedInput.value = '0';
-                }
+                document.getElementById('acceptedInput').value = '0';
             });
         }
     }

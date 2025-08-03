@@ -16,13 +16,13 @@
         </button>     
 
         <div class="REGISTRO-card__header">
-            <img src="{{ asset('img/logo-internet.png') }}" class="REGISTRO-card__logo animate__animated animate__fadeIn animate__delay-1s" alt="Start To Finish">    
-            <h1 class="REGISTRO-card__title animate__animated animate__fadeIn">Crie sua conta</h1>
-            <p class="REGISTRO-card__subtitle animate__animated animate__fadeIn animate__delay-1s">Seja um cliente ainda hoje</p>
+            <img src="{{ asset('img/logo-internet.png') }}" class="REGISTRO-card__logo animate__animated animate__fadeIn" style="animation-delay: 0.2s; animation-duration: 0.6s;" alt="Start To Finish">    
+            <h1 class="REGISTRO-card__title animate__animated animate__fadeIn" style="animation-delay: 0.4s; animation-duration: 0.6s;">Crie sua conta</h1>
+            <p class="REGISTRO-card__subtitle animate__animated animate__fadeIn" style="animation-delay: 0.6s; animation-duration: 0.6s;">Seja um cliente ainda hoje</p>
         </div>
 
         @if(session('success'))
-            <div class="REGISTRO-card__success-message animate__animated animate__fadeIn">
+            <div class="REGISTRO-card__success-message animate__animated animate__fadeIn" style="animation-delay: 0.8s; animation-duration: 0.6s;">
                 <i class="fas fa-check-circle"></i> {{ session('success') }}
             </div>
         @endif
@@ -30,7 +30,7 @@
         <form method="POST" action="{{ route('register') }}" class="REGISTRO-card__form">
             @csrf
 
-            <div class="REGISTRO-form__group animate__animated animate__fadeIn animate__delay-2s">
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 1s; animation-duration: 0.6s;">
                 <div class="REGISTRO-form__input-wrapper">
                     <i class="fas fa-user REGISTRO-form__input-icon"></i>
                     <input id="REGISTRO-name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name">
@@ -41,7 +41,7 @@
                 @endif
             </div>  
 
-            <div class="REGISTRO-form__group animate__animated animate__fadeIn animate__delay-3s">
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 1.2s; animation-duration: 0.6s;">
                 <div class="REGISTRO-form__input-wrapper">
                     <i class="fas fa-envelope REGISTRO-form__input-icon"></i>
                     <input id="REGISTRO-email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -52,7 +52,29 @@
                 @endif                    
             </div>
 
-            <div class="REGISTRO-form__group animate__animated animate__fadeIn animate__delay-4s">
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 1.4s; animation-duration: 0.6s;">
+                <div class="REGISTRO-form__input-wrapper">
+                    <i class="fas fa-id-card REGISTRO-form__input-icon"></i>
+                    <input id="REGISTRO-document" type="numeric" name="document" value="{{ old('document') }}" required autocomplete="document">
+                    <label for="REGISTRO-document" class="REGISTRO-form__label">CPF ou CNPJ</label>
+                </div>
+                @if($errors->has('document'))
+                    <span class="REGISTRO-form__error-message"><i class="fas fa-exclamation-circle"></i> {{ $errors->first('document') }}</span>
+                @endif                    
+            </div>
+
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 1.6s; animation-duration: 0.6s;">
+                <div class="REGISTRO-form__input-wrapper">
+                    <i class="fas fa-map-marker-alt REGISTRO-form__input-icon"></i>
+                    <input id="REGISTRO-address" type="text" name="address" value="{{ old('address') }}" required autocomplete="address">
+                    <label for="REGISTRO-address" class="REGISTRO-form__label">Endereço</label>
+                </div>
+                @if($errors->has('address'))
+                    <span class="REGISTRO-form__error-message"><i class="fas fa-exclamation-circle"></i> {{ $errors->first('address') }}</span>
+                @endif                    
+            </div>           
+
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 1.8s; animation-duration: 0.6s;">
                 <div class="REGISTRO-form__input-wrapper">
                     <i class="fas fa-lock REGISTRO-form__input-icon"></i>
                     <input id="REGISTRO-password" type="password" name="password" required autocomplete="new-password">
@@ -66,7 +88,7 @@
                 @endif
             </div>
 
-            <div class="REGISTRO-form__group animate__animated animate__fadeIn animate__delay-5s">
+            <div class="REGISTRO-form__group animate__animated animate__fadeIn" style="animation-delay: 2s; animation-duration: 0.6s;">
                 <div class="REGISTRO-form__input-wrapper">
                     <i class="fas fa-lock REGISTRO-form__input-icon"></i>
                     <input id="REGISTRO-password-confirmation" type="password" name="password_confirmation" required autocomplete="new-password">
@@ -77,27 +99,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="REGISTRO-form__submit-button animate__animated animate__fadeIn animate__delay-6s">
+            <button type="submit" class="REGISTRO-form__submit-button animate__animated animate__fadeIn" style="animation-delay: 2.2s; animation-duration: 0.6s;">
                 <i class="fas fa-user-plus"></i>
                 <span class="REGISTRO-form__button-text">Me tornar cliente!</span>
             </button>
 
-{{-- 
-            <div class="REGISTRO-form__divider animate__animated animate__fadeIn animate__delay-7s">OU</div>
-
-            <div class="REGISTRO-form__social-login animate__animated animate__fadeIn animate__delay-8s">
-                <button type="button" class="REGISTRO-form__social-button">
-                    <i class="fab fa-google REGISTRO-form__social-icon--google"></i>
-                    Continue com o Google
-                </button>
-                <button type="button" class="REGISTRO-form__social-button">
-                    <i class="fab fa-facebook-f REGISTRO-form__social-icon--facebook"></i>
-                    Continue com o Facebook
-                </button>
-            </div> 
---}}
-
-            <div class="REGISTRO-form__links animate__animated animate__fadeIn animate__delay-9s">
+            <div class="REGISTRO-form__links animate__animated animate__fadeIn" style="animation-delay: 2.4s; animation-duration: 0.6s;">
                 Já tem uma conta? <a href="{{ route('login') }}" class="REGISTRO-form__link">Entrar</a>
             </div>
         </form>

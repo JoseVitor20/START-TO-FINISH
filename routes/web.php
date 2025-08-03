@@ -28,16 +28,15 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
 // Rota para trabalhar com contratos
     Route::middleware(['auth'])->group(function () {
-        // Página para aceitar os termos
-        Route::get('/painel', function () {
-            return view('acao');
-        })->middleware('auth')->name('painel');
-
         // Mostrar o status do cliente
         Route::get('/contrato/status', [ContractController::class, 'getContractStatus'])->name('contract.status');
         Route::post('/contrato/aceitar', [ContractController::class, 'acceptFromBlade'])->name('contract.accept');
+
+        // Gerenciar usuários
+        Route::get('/admin/contratos', [AdminController::class, 'verContratos'])->middleware('auth')->name('admin.contratos');   
+        Route::get('/contrato/download', [ContractController::class, 'generateContractPdf'])->name('contract.download');         
     });
-    
+
 // Rota para enviar E-MAIL DE CONTATO
     Route::post('/contato/enviar', [ContatoController::class, 'enviar'])->name('contato.enviar');
 
