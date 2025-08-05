@@ -7,23 +7,27 @@
     
     <div class="pricing-container">
         @php
-            // Array com a definição dos planos de serviço
+            // Array com a definição dos planos de serviço com ROI aprimorado e termos mais amigáveis
             $plans = [
                 [
                     'id' => 'basico',
                     'name' => 'Básico',
                     'price' => '149',
                     'tag' => null,
-                    'description' => 'Perfeito para quem está começando. Inclui criação de site SPA grátis, manutenção, hospedagem, domínio e outros recursos essenciais para estabelecer sua presença online de forma eficiente. **ROI na Prática:** Se o seu site trouxer 10 novos clientes por mês, e cada um gastar uma média de R$ 40, o faturamento mensal será de R$ 400, com lucro de R$ 200. Sendo assim, o plano se paga e ainda gera lucro. Compensa mudar para o Plano Essencial, que custa só mais R$ 50,00 por mês, para alcançar um público maior. São R$ 4,97 por dia, no mês dá R$ 149,00.',
+                    'description' => 'Perfeito para quem está começando. Inclui a criação de um site de uma única página grátis, manutenção, hospedagem, domínio e outros recursos essenciais para estabelecer sua presença online de forma eficiente. **ROI na Prática:** Com o seu site no ar, imagine atrair apenas 5 novos clientes por mês, cada um gerando um gasto médio de R$ 30. Isso resulta em um faturamento mensal de R$ 150, cobrindo o custo do plano. A medida que seu negócio cresce, com um site mais robusto e otimizado, o retorno potencial aumenta significativamente. Compensa considerar o Plano Essencial, que custa apenas R$ 50,00 a mais por mês, para ampliar seu alcance. São R$ 4,97 por dia, no mês dá R$ 149,00.',
                     'benefits' => [
-                        'Site SPA (Single Page Application)',
+                        'Site de uma única página (Gratuito)',
+                        'A criação do site terá prioridade, desde que não haja outros sites sendo criados no momento.',
                         'Design responsivo',
                         'Otimização de SEO básica para visibilidade online',
                         'Hospedagem incluída (5GB SSD)',
-                        'Domínio grátis (1 ano)',
-                        'Manutenção e suporte gerenciados por um painel exclusivo no site (1 solicitação por mês)',
-                        '3 páginas principais',
-                        'Formulário de contato'
+                        'Domínio grátis, desde que seja assinante do plano.',
+                        'Manutenção e suporte por agendamento via WhatsApp com prioridade baixa (Grátis)',
+                        '3 seções principais', // Alterei '3 páginas principais' para '3 seções principais' para ser mais coerente com um site de uma única página
+                        'Formulário de contato',
+                        'Instalação de certificado SSL grátis',
+                        'Backup semanal automático',
+                        '1 conta de e-mail profissional'
                     ],
                     'ideal_for' => 'Ideal para iniciantes',
                     'price_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIzprice_1RjQsDPSFtrJEyUP3fhEZkGT'
@@ -33,18 +37,22 @@
                     'name' => 'Essencial',
                     'price' => '199',
                     'tag' => 'Popular',
-                    'description' => 'O plano essencial oferece criação de site MPA grátis, manutenção, hospedagem e domínio. Ideal para empresas que precisam de uma presença online profissional com recursos avançados. **ROI na Prática:** Se o seu site trouxer 10 novos clientes por mês, e cada um gastar uma média de R$ 70, o faturamento será de R$ 700 e o lucro de R$ 350. Sendo assim, o plano se paga e ainda aumenta sua base de clientes. Compensar mudar para o Plano Avançado, que custa só mais R$ 70,00 por mês, para obter um site mais robusto e alcançar um público ainda maior. São R$ 6,63 por dia, no mês dá R$ 199,00.',
+                    'description' => 'O plano essencial oferece a criação de um site com várias páginas grátis, manutenção, hospedagem e domínio. Ideal para empresas que precisam de uma presença online profissional com recursos avançados. **ROI na Prática:** Com a maior visibilidade do seu site e o ranqueamento no Google, você pode facilmente atrair 8 novos clientes por mês, cada um com um gasto médio de R$ 50. O faturamento de R$ 400 por mês paga o plano e ainda gera lucro, além de construir uma base de clientes sólida. A próxima etapa é o Plano Avançado, que custa só mais R$ 70,00 por mês, para um site com mais páginas e recursos, alcançando um público ainda maior. São R$ 6,63 por dia, no mês dá R$ 199,00.',
                     'benefits' => [
-                        'Site MPA (Multi Page Application)',
+                        'Site com várias páginas (Gratuito)',
+                        'A criação do site terá prioridade, desde que não haja outros sites sendo criados no momento.',                        
                         'Design responsivo',
                         'Hospedagem premium (10GB SSD)',
-                        'Domínio grátis (1 ano)',
-                        'Manutenção e suporte gerenciados por um painel exclusivo no site (1 solicitação a cada 15 dias)',
+                        'Domínio grátis, desde que seja assinante do plano.',
+                        'Manutenção e suporte por agendamento via WhatsApp com prioridade média (Grátis)',
                         'Até 8 páginas',
                         'Integração com redes sociais',
                         'Otimização de SEO básica para ranqueamento',
                         'Certificado SSL grátis (https)',
-                        'Ambiente de Staging (versões de teste)'
+                        'Ambiente de Staging (versões de teste)',
+                        'Relatório mensal de desempenho (Google Analytics)',
+                        '5 contas de e-mail profissional',
+                        'Backup diário automático'
                     ],
                     'ideal_for' => 'Para pequenos negócios',
                     'price_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz'
@@ -54,19 +62,23 @@
                     'name' => 'Avançado',
                     'price' => '269',
                     'tag' => null,
-                    'description' => 'Solução completa com criação de site institucional grátis, manutenção, hospedagem e domínio. Perfeito para empresas que buscam uma presença online robusta e profissional. **ROI na Prática:** Com recursos avançados de SEO, se o seu site trouxer 20 novos clientes por mês, e cada um gastar uma média de R$ 90, o faturamento será de R$ 1.800, com lucro de R$ 900. Sendo assim, você justifica o investimento e cria um negócio mais sólido. Compensa mudar para o Plano Premium, que custa só mais R$ 80,00 por mês, e permite começar a vender online com e-commerce. São R$ 8,97 por dia, no mês dá R$ 269,00.',
+                    'description' => 'Solução completa com a criação de um site institucional grátis, manutenção, hospedagem e domínio. Perfeito para empresas que buscam uma presença online robusta e profissional. **ROI na Prática:** Com a otimização de SEO avançada, seu site pode facilmente atrair 15 novos clientes por mês, cada um com um gasto médio de R$ 60. Isso gera um faturamento de R$ 900 por mês, cobrindo o investimento e criando um negócio mais sólido. O upgrade para o Plano Premium, com um custo de apenas R$ 80,00 por mês, te permite começar a vender online e expandir as oportunidades de faturamento. São R$ 8,97 por dia, no mês dá R$ 269,00.',
                     'benefits' => [
-                        'Site Institucional completo',
+                        'Site Institucional completo (Gratuito)',
+                        'A criação do site terá prioridade, desde que não haja outros sites sendo criados no momento.',                        
                         'Design exclusivo e responsivo',
                         'Hospedagem avançada (20GB SSD)',
-                        'Domínio grátis (1 ano)',
-                        'Manutenção e suporte prioritário gerenciados por um painel exclusivo no site (1 solicitação por semana)',
+                        'Domínio grátis, desde que seja assinante do plano.',
+                        'Manutenção e suporte por agendamento via WhatsApp com prioridade alta(Grátis)',
                         'Até 15 páginas',
                         'Otimização de SEO avançada',
                         'Galeria de produtos/serviços',
                         'Integração com Google Analytics e APIs',
                         'Ambiente de Staging (versões de teste)',
-                        'Backup semanal automático'
+                        'Backup semanal automático',
+                        '10 contas de e-mail profissional',
+                        'Suporte prioritário via WhatsApp e Telefone',
+                        'Ferramenta de Chat Online integrada'
                     ],
                     'ideal_for' => 'Para negócios em crescimento',
                     'price_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz'
@@ -76,18 +88,22 @@
                     'name' => 'Premium',
                     'price' => '349',
                     'tag' => null,
-                    'description' => 'Plano completo com recursos avançados para empresas que exigem alta performance, funcionalidades complexas e suporte premium. Inclui todas as vantagens dos planos anteriores e muito mais. **ROI na Prática:** Com um e-commerce básico, se o seu site gerar 30 novos clientes por mês, e cada um fizer compras de cerca de R$ 100, o faturamento será de R$ 3.000, com lucro de R$ 1.500. Sendo assim, o plano se paga e ainda abre a possibilidade de vendas 24/7. Compensa mudar para o Plano Master, que custa só mais R$ 100,00 por mês e permite expandir o catálogo de produtos e ter funcionalidades avançadas. São R$ 11,63 por dia, no mês dá R$ 349,00.',
+                    'description' => 'Plano completo com recursos avançados para empresas que exigem alta performance, funcionalidades complexas e suporte premium. Inclui todas as vantagens dos planos anteriores e muito mais. **ROI na Prática:** Com um e-commerce básico e um design exclusivo, você pode facilmente converter 20 novos clientes por mês com um gasto médio de R$ 100. Isso gera um faturamento de R$ 2.000 mensais, cobrindo o plano e abrindo a possibilidade de vendas 24/7. O próximo passo é o Plano Master, por mais R$ 100,00 por mês, para um e-commerce sem limites de produtos e com funcionalidades que otimizam sua operação e faturamento. São R$ 11,63 por dia, no mês dá R$ 349,00.',
                     'benefits' => [
-                        'Site premium com design exclusivo',
+                        'Site premium com design exclusivo (Gratuito)',
+                        'A criação do site terá prioridade, desde que não haja outros sites sendo criados no momento.',                        
                         'Hospedagem empresarial (50GB SSD)',
-                        '2 domínios grátis (1 ano)',
-                        'Manutenção e atualizações diárias via painel do cliente (1 solicitação por dia)',
+                        '2 domínios grátis, desde que seja assinante do plano.',
+                        'Manutenção e suporte por agendamento via WhatsApp com prioridade urgente(Grátis)',
                         'Páginas ilimitadas',
                         'E-commerce básico (até 50 produtos)',
                         'Certificado SSL premium',
                         'Otimização de SEO avançada',
                         'Backup diário',
-                        'Suporte 24/7 por telefone'
+                        'Suporte 24/7 por telefone',
+                        'E-commerce com até 100 produtos',
+                        'Relatórios de e-commerce e vendas mensais',
+                        'Integração com gateways de pagamento e logística'
                     ],
                     'ideal_for' => 'Para empresas estabelecidas',
                     'price_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz'
@@ -97,12 +113,13 @@
                     'name' => 'Master',
                     'price' => '449',
                     'tag' => null,
-                    'description' => 'O plano definitivo para grandes empresas. Oferece todos os recursos, suporte máximo e funcionalidades premium. Ideal para corporações que exigem o máximo em desempenho, segurança e personalização. **ROI na Prática:** Com um e-commerce avançado e recursos empresariais, se o seu site trouxer 50 novos clientes por mês, e cada um fizer compras de cerca de R$ 100, o faturamento será de R$ 5.000, com lucro de R$ 2.500. Este é o plano definitivo para o seu negócio, garantindo um alto retorno sobre o investimento. São R$ 14,97 por dia, no mês dá R$ 449,00.',
+                    'description' => 'O plano definitivo para grandes empresas. Oferece todos os recursos, suporte máximo e funcionalidades premium. Ideal para corporações que exigem o máximo em desempenho, segurança e personalização. **ROI na Prática:** Com um e-commerce avançado e integrações com seus sistemas de gestão (ERP/CRM), você pode otimizar suas vendas e converter facilmente 40 novos clientes por mês com um gasto médio de R$ 100. Isso resulta em um faturamento de R$ 4.000 mensais, garantindo um alto retorno sobre o investimento e escalabilidade para o seu negócio. São R$ 14,97 por dia, no mês dá R$ 449,00.',
                     'benefits' => [
-                        'Aplicação web complexa',
+                        'Aplicação web complexa (Gratuito)',
                         'Hospedagem dedicada (100GB SSD)',
-                        '5 domínios grátis (1 ano)',
-                        'Manutenção e atualizações diárias via painel do cliente (1 solicitação por dia)',
+                        'A criação do site terá prioridade, desde que não haja outros sites sendo criados no momento.',                        
+                        '5 domínios grátis, desde que seja assinante do plano.',
+                        'Manutenção e suporte por agendamento via WhatsApp com prioridade extrema(Grátis)',
                         'E-commerce avançado',
                         'Sistema de gerenciamento de conteúdo',
                         'Integração com APIs externas',
@@ -110,7 +127,11 @@
                         'Design exclusivo e responsivo',
                         'Otimização de SEO completa',
                         'Consultoria estratégica mensal',
-                        'Suporte dedicado 24/7'
+                        'Suporte dedicado 24/7',
+                        'Backup e recuperação de desastres (Diário)',
+                        'E-commerce sem limite de produtos',
+                        'Integrações personalizadas com ERP/CRM',
+                        'IP dedicado para alta performance'
                     ],
                     'ideal_for' => 'Solução empresarial completa',
                     'price_id' => 'price_1RjQtlPSFtrJEyUPc3gxFVIz'
@@ -189,7 +210,7 @@
             <div class="modal-content">
                 <i class="fa-solid fa-xmark close-modal"></i>
                 <h2>Contrato de Uso</h2>
-                <p>Esses são os termos do contrato...</p>
+                <a href="{{route('info-contrato')}}">Esses são os termos do contrato...</a>
                 <a href="{{ route('contract.download') }}" class="download-contract" target="_blank">
                     <i class="fas fa-file-pdf"></i> Baixar contrato em PDF
                 </a>  

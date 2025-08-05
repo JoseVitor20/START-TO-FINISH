@@ -1,36 +1,14 @@
-@extends('layouts.layout-dashboard')
+@extends('layouts.app')
 
-@section('title', 'Start To Finish - Contrato e cláusulas')
+@section('title', 'Contrato de Assinatura')
 
-@push('estilosEcodigosDash')
-    @vite(['resources/css/dashboard/dashboard.css', 'resources/js/dashboard/dashboard.js'])
+@push('estilosEcodigos')
+    @vite(['resources/css/welcome/welcome.css', 'resources/js/welcome/welcome.js'])
 @endpush
 
 @section('content')
-<div class="container" style="margin-top: 50px;">
-    <h2 style="text-align: center; font-size: 40px;">Status do contrato</h2>
-
-    @if($status === 'contract_accepted')
-        <div class="status-indicator status-accepted">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>Você aceitou o contrato.</span>
-        </div>
-    @elseif($status === 'contract_refused')
-        <div class="status-indicator status-refused">
-            <i class="fa-solid fa-circle-xmark"></i>
-            <span>Você recusou os termos do contrato. Seu acesso pode ser limitado.</span>
-        </div>
-    @else
-        <div class="status-indicator status-pending">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <span>Você ainda não respondeu ao contrato.</span>
-        </div>
-        <a href="{{route('painel')}}" class="btn-action">
-            <i class="fa-solid fa-file-signature"></i> Acessar a página para aceitar os termos
-        </a>
-    @endif
-
     <div class="contract-container">
+        <a href="/#precos" class="voltar-contrato"><i class="fa-solid fa-arrow-left"></i></a>
         <h1 class="contract-title">Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
         
         <h2 class="section-heading">DAS PARTES</h2>
@@ -105,6 +83,5 @@
                 </div>
             </div>
         </div>
-    </div>    
-</div>
+    </div>
 @endsection

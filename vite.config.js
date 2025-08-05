@@ -30,13 +30,6 @@ export default defineConfig({
                     'resources/css/dashboard/dashboard.css',
                     'resources/js/dashboard/dashboard.js',    
 
-                    // Edit
-                    'resources/css/dashboard/dashboard-edit.css',
-                    'resources/js/dashboard/dashboard-edit.js',                
-                    
-                    // Sucesso
-                    'resources/css/dashboard/dashboard-sucesso.css',
-
                 // Categorias
                     // barbearia                    
                         'resources/css/categorias/barbearia.css',

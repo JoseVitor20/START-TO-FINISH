@@ -58,4 +58,17 @@ class ContractController extends Controller
         return $pdf->download('Contrato exclusivo para ('.$user->name. ')'.'.pdf');
     }
 
+    public function downloadContract()
+    {
+        // O ideal é passar os dados do contrato para a view
+        // Aqui estamos simulando os dados
+        $user = Auth::user();
+        $nextBillingDate = now()->addMonth();
+
+        // A view que você deseja converter para PDF
+        $pdf = Pdf::loadView('contrato.user_contract', compact('user', 'nextBillingDate'));
+
+        return $pdf->download('contrato-prestacao-de-servicos.pdf');
+    }
+
 }

@@ -157,7 +157,7 @@
 
     .tag {
         position: absolute;
-        top: 15px;
+        top: 12px;
         right: -30px;
         background: var(--neon);
         color: var(--bg-pri-color);
@@ -248,6 +248,10 @@
         color: var(--text-sec-color);
         margin-bottom: 1.5rem;
         line-height: 1.6;
+    }
+
+    .modal-content a{
+        margin: 5px;
     }
 
     .download-contract {

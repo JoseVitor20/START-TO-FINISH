@@ -4,6 +4,161 @@
 
 @push('estilosEcodigosDash')
     @vite(['resources/css/dashboard/dashboard.css', 'resources/js/dashboard/dashboard.js'])
+    <style>
+        /* Estilos para o Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.is-active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-button:hover {
+            color: #555;
+        }
+
+        /* Estilos do Contrato - Versão Profissional */
+        .contract-content {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .contract-content h1 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        .contract-content h2 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .contract-content h3 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .contract-content p, .contract-content ul {
+            margin-bottom: 15px;
+        }
+
+        .contract-content ul {
+            padding-left: 25px;
+        }
+
+        .contract-content li {
+            margin-bottom: 5px;
+        }
+
+        .contract-content .signature-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .contract-content .signature-line {
+            display: inline-block;
+            width: 300px;
+            border-top: 1px solid #000;
+            margin-top: 15px;
+        }
+
+        .contract-content .signature-line-text {
+            margin-top: 0px;
+        }
+
+        /* Estilos para os novos botões */
+        .contract-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .contract-button {
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .view-contract-btn {
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+        }
+        
+        .view-contract-btn:hover {
+            background-color: #34495e;
+        }
+
+        .download-contract-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+        }
+        
+        .download-contract-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -17,13 +172,12 @@
                 @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
                     <h1 class="success-title">🧪Assinatura De Teste Iniciada!</h1>
                     <p class="success-subtitle">Sua assinatura de teste foi iniciada com sucesso. Abaixo estão todos os detalhes da assinatura de teste.</p>
-                    <h3 class="status-badge-sucesso status-active status-testando">TESTANDO</h3>                    
+                    <h3 class="status-badge-sucesso status-active status-testando">TESTANDO</h3>
                 @else
                     <h1 class="success-title">🚫Assinatura Cancelada!</h1>
                     <p class="success-subtitle">Sua assinatura foi cancelada com sucesso. Abaixo estão todos os detalhes do cancelamento.</p>
-                    <h3 class="status-badge-sucesso status-active status-desativado">DESATIVADO</h3>                    
+                    <h3 class="status-badge-sucesso status-active status-desativado">DESATIVADO</h3>
                 @endif
-
             </section>
 
             <div class="success-content">
@@ -66,12 +220,10 @@
                             <div class="payment-method">
                                 <div class="payment-icon">
                                     @if(isset($paymentMethod['type']) && $paymentMethod['type'] == 'card')
-                                        {{-- Usa o ícone da bandeira do cartão se disponível, caso contrário, um ícone de cartão genérico --}}
                                         @php
-                                            $cardBrandIcon = 'cc-visa'; // Padrão
+                                            $cardBrandIcon = 'cc-visa';
                                             if (isset($paymentMethod['brand'])) {
                                                 $brandLower = strtolower($paymentMethod['brand']);
-                                                // Mapeamento de marcas para ícones Font Awesome
                                                 $brandMap = [
                                                     'visa' => 'cc-visa',
                                                     'mastercard' => 'cc-mastercard',
@@ -79,14 +231,12 @@
                                                     'discover' => 'cc-discover',
                                                     'jcb' => 'cc-jcb',
                                                     'diners club' => 'cc-diners-club',
-                                                    // Adicione outras marcas conforme necessário
                                                 ];
-                                                $cardBrandIcon = $brandMap[$brandLower] ?? 'credit-card'; // Fallback para ícone genérico
+                                                $cardBrandIcon = $brandMap[$brandLower] ?? 'credit-card';
                                             }
                                         @endphp
                                         <i class="fab fa-{{ $cardBrandIcon }}"></i>
                                     @else
-                                        {{-- Para outros tipos de pagamento (ou se tipo não for 'card') --}}
                                         <i class="fas fa-wallet"></i>
                                     @endif
                                 </div>
@@ -127,7 +277,7 @@
                                 </div>
                                 <div class="info-item">
                                     <div class="info-label"><i class="fas fa-sync-alt"></i> Intervalo</div>
-                                    <div class="info-value">                                        
+                                    <div class="info-value">
                                         @if(\Illuminate\Support\Str::plural($price->recurring->interval, $price->recurring->interval_count) == 'month')
                                             {{ $price->recurring->interval_count }} vez por Mês
                                         @else
@@ -147,7 +297,7 @@
                                     @if(ucfirst($subscription->stripe_status) == 'Active')
                                         Assinatura Ativada
                                     @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
-                                        Período de teste                                         
+                                        Período de teste
                                     @else
                                         Assinatura Cancelada
                                     @endif
@@ -161,13 +311,13 @@
                             @php
                                 $nextBillingDateIso = $nextBillingDate instanceof \Carbon\Carbon ? $nextBillingDate->toISOString() : $nextBillingDate;
                             @endphp
-                            <h3 class="section-title-sucesso">Próximas Cobranças</h3>                                                 
+                            <h3 class="section-title-sucesso">Próximas Cobranças</h3>
                             <div class="info-item">
                                 <div class="info-value">
                                     @if(ucfirst($subscription->stripe_status) == 'Active')
                                         Próxima cobrança: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
                                     @elseif(ucfirst($subscription->stripe_status) == 'Trialing')
-                                        A cobrança irá começar: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>                              
+                                        A cobrança irá começar: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
                                     @else
                                         Última cobrança: <span id="next-billing-date" data-utc-time="{{ $nextBillingDateIso }}"></span>
                                     @endif
@@ -179,11 +329,110 @@
                             </div>
                         @endisset
                     </div>
+
+                    <div class="contract-actions">
+                        <button class="contract-button view-contract-btn" id="view-contract-btn">Ver Contrato</button>
+                        <a href="{{ route('contrato.download') }}" class="contract-button download-contract-btn">Baixar Contrato</a>
+                    </div>
                 </section>
             </div>
         </main>
     </div>
 
+    {{-- O modal para visualização do contrato ainda usa a mesma estrutura HTML --}}
+    <div id="contract-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contrato de Prestação de Serviços</h2>
+                <button class="close-button" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="contract-content" id="contract-content">
+                {{-- Conteúdo do Contrato --}}
+                <h1>Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
+                
+                <h2>DAS PARTES</h2>
+                <p>
+                    <strong>CONTRATADO:</strong> START TO FINISH, pessoa jurídica de direito privado inscrita no CNPJ/CPF sob o nº 098.717.321-98, com sede na Rua Padre Aquiles Pio Redin, nº 150, Município de Dourados, Estado de Mato Grosso do Sul, doravante denominada PRESTADOR DE SERVIÇOS.
+                </p>
+                <p>
+                    <strong>CONTRATANTE:</strong> {{Auth::user()->name}}, pessoa jurídica ou física, inscrito no CNPJ/CPF sob o nº {{Auth::user()->document}}, com endereço em {{Auth::user()->address}}, doravante denominado CLIENTE.
+                </p>
+
+                <h2>CONSIDERAÇÕES INICIAIS</h2>
+                <p>
+                    O presente instrumento tem como objetivo estabelecer as condições para a prestação de serviços de assinatura mensal de website, que inclui a criação, manutenção, hospedagem e outros benefícios descritos abaixo.
+                </p>
+
+                <h3>CLÁUSULA 1 - OBJETO E BENEFÍCIOS DA ASSINATURA</h3>
+                <p>
+                    <strong>1.1. Objeto:</strong> Este contrato tem por objeto a prestação de serviços de assinatura mensal, pela qual o CLIENTE terá acesso a um pacote de benefícios relacionados a um website, conforme o plano contratado.
+                </p>
+                <p>
+                    <strong>1.2. Benefícios da Assinatura:</strong> O CLIENTE, ao manter sua assinatura em dia, terá direito aos seguintes benefícios:
+                </p>
+                <ul>
+                    <li>Criação de Site Gratuita: A criação de um site é oferecida gratuitamente, conforme as especificações e limitações do plano de assinatura escolhido.</li>
+                    <li>Manutenção Gratuita: O PRESTADOR DE SERVIÇOS realizará a manutenção técnica e de segurança do site.</li>
+                    <li>Adição de Novo Conteúdo Gratuita: O PRESTADOR DE SERVIÇOS fará a adição de novos conteúdos fornecidos pelo CLIENTE.</li>
+                    <li>Hospedagem Gratuita: O site será hospedado nos servidores do PRESTADOR DE SERVIÇOS.</li>
+                    <li>Domínio Gratuito: O domínio do site será gerenciado e mantido pelo PRESTADOR DE SERVIÇOS.</li>
+                </ul>
+
+                <h3>CLÁUSULA 2 - DAS OBRIGAÇÕES DO CLIENTE</h3>
+                <p>
+                    <strong>2.1. Agendamento:</strong> O CLIENTE deverá solicitar a criação de site, adição de conteúdo ou qualquer outro serviço através de agendamento prévio, utilizando os canais de comunicação fornecidos pelo PRESTADOR DE SERVIÇOS (e.g., WhatsApp, e-mail, etc.).
+                </p>
+                <p>
+                    <strong>2.2. Aviso Prévio:</strong> Para qualquer alteração de plano (upgrade/downgrade) ou cancelamento da assinatura, o CLIENTE deverá notificar o PRESTADOR DE SERVIÇOS com, no mínimo, 7 dias de antecedência, para que a gestão dos agendamentos e das tarefas possa ser realizada de forma adequada.
+                </p>
+                <p>
+                    <strong>2.3. Dados Cadastrais:</strong> O CLIENTE é responsável por fornecer e manter atualizados seu CPF/CNPJ e endereço. A falta ou o fornecimento de informações incorretas poderá invalidar este contrato como prova judicial para fins de cobrança ou qualquer outro processo legal movido contra o PRESTADOR DE SERVIÇOS.
+                </p>
+
+                <h3>CLÁUSULA 3 - DAS CONDIÇÕES E RESTRIÇÕES</h3>
+                <p>
+                    <strong>3.1. Downgrade de Plano:</strong> O CLIENTE que optar por um "downgrade" (migração para um plano inferior) perderá o acesso e os benefícios do site criado sob o plano anterior. Um novo site será criado, conforme as especificações do novo plano contratado. O site anterior não será excluído, mas sim arquivado, e não estará mais disponível para o CLIENTE, pois o valor do novo plano não cobre a manutenção da estrutura mais complexa.
+                </p>
+                <p>
+                    <strong>3.2. Cancelamento da Assinatura:</strong> No caso de cancelamento da assinatura, o CLIENTE perderá imediatamente o acesso a todos os benefícios do plano, incluindo manutenção, hospedagem e domínio. O site criado ficará offline. Caso o CLIENTE deseje adquirir o site para si, deverá pagar o valor justo e acordado pelo site, sendo que o PRESTADOR DE SERVIÇOS entregará todos os arquivos do site. A partir da aquisição, a manutenção, hospedagem e domínio passarão a ser de total responsabilidade do CLIENTE.
+                </p>
+
+                <h3>CLÁUSULA 4 - DAS OBRIGAÇÕES DO PRESTADOR DE SERVIÇOS</h3>
+                <p>
+                    <strong>4.1. Gestão de Planos:</strong> Em caso de alteração de plano, o PRESTADOR DE SERVIÇOS garantirá a criação de um novo site conforme o novo plano contratado. O site anterior será substituído pelo novo, mas será arquivado para fins de segurança e histórico, não sendo excluído.
+                </p>
+                <p>
+                    <strong>4.2. Arquivamento de Sites:</strong> O PRESTADOR DE SERVIÇOS se compromete a não excluir os sites criados sob planos anteriores, mas sim substituí-los no servidor pelo novo site e mantê-los arquivados, seguindo a regra do item 3.1.
+                </p>
+
+                <h3>CLÁUSULA 5 - DO PAGAMENTO E DA VIGÊNCIA</h3>
+                <p>
+                    <strong>5.1. Vigência:</strong> Este contrato entra em vigor a partir da data de sua assinatura e é válido por prazo indeterminado, com renovação automática a cada mês, mediante o pagamento da assinatura.
+                </p>
+                <p>
+                    <strong>5.2. Pagamento:</strong> O CLIENTE se compromete a efetuar o pagamento mensal da assinatura na data de {{ \Carbon\Carbon::parse($nextBillingDateIso)->isoFormat('DD [de] MMMM [de] YYYY') }} de cada mês.
+                </p>
+                
+                <h3>CLÁUSULA 6 - DO FORO</h3>
+                <p>
+                    <strong>6.1. Resolução de Conflitos:</strong> Fica eleito o foro da comarca de Dourados/MS, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer dúvidas ou conflitos oriundos do presente contrato.
+                </p>
+
+                <div class="signature-section">
+                    <p>Rua Visconde de Taunay, 250, no bairro Jardim Londrina</p>
+                    <div class="signature-line"></div>
+                    <div class="signature-line-text">
+                        <p>START TO FINISH<br>PRESTADOR DE SERVIÇOS</p>
+                    </div>
+                    <div class="signature-line"></div>
+                    <div class="signature-line-text">
+                        <p>{{Auth::user()->name}}<br>CLIENTE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             function displayLocalTime(elementId) {
@@ -205,6 +454,30 @@
             displayLocalTime('purchase-date');
             displayLocalTime('trial-ends-date');
             displayLocalTime('next-billing-date');
+
+            // Lógica do Modal
+            const modal = document.getElementById('contract-modal');
+            const openModalBtn = document.getElementById('view-contract-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            if (openModalBtn) {
+                openModalBtn.addEventListener('click', () => {
+                    modal.classList.add('is-active');
+                });
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.remove('is-active');
+                });
+            }
+
+            // Fechar modal ao clicar fora do conteúdo
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.remove('is-active');
+                }
+            });
         });
     </script>
 @endsection
