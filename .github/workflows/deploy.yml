@@ -91,5 +91,8 @@ jobs:
             echo "🧩 Executando migrations..."
             php artisan migrate --force
 
+            echo "🔄 Reiniciando Supervisor para a fila..."
+            sudo supervisorctl restart laravel-queue:* 
+
             echo "✅ Deploy finalizado com sucesso!"
           EOF
