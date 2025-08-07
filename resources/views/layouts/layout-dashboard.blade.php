@@ -17,13 +17,18 @@
 <body>
 
     {{-- === OVERLAY DE CARREGAMENTO === --}}
-    <div class="CARREGAMENTO CARREGAMENTO__overlay">
-        <div class="CARREGAMENTO__content"> 
-            <img class="CARREGAMENTO__logo" src="{{asset('img/logo-internet.png')}}" alt="Logo Start To Finish">                
-            <div class="CARREGAMENTO__spinner">
-            </div>
-        </div>
-    </div>  
+    <div id="loading-overlay">
+      <div class="overlay-background">
+          <div class="overlay-stars"></div>
+      </div>
+      <div class="loading-content">
+          <div class="logo-spinner">
+              <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start to Finish" class="logo-placeholder">
+              <div class="pulse-ring"></div>
+          </div>
+          <h1>Carregando...</h1>
+      </div>
+    </div>
 
     @include('dashboard.dashboard-header')
 
