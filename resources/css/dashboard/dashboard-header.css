@@ -1,0 +1,332 @@
+/* === HEADER STYLES === */
+.dashboard-header {
+    background-color: var(--bg-sec-color);
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    right:0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo img{
+    height: 65px;
+    filter: var(--inver-img);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-sec-color);
+    position: relative;
+}
+
+.header-action:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-pri-color);
+}
+
+.header-action i {
+    font-size: 1.2rem;
+}
+
+.header-action--dark-mode i {
+    color: var(--sol-lua);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--neon);
+    color: var(--bg-pri-color);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neon);
+}
+
+.user-avatar-mobile{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neon);  
+    position: relative;
+    top: 9px;  
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-pri-color);
+}
+
+.user-role {
+    font-size: 0.8rem;
+    color: var(--text-sec-color);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Menu dropdown (opcional) */
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 92%;
+    margin-top: 8px;
+    min-width: 200px;
+    background-color: var(--bg-sec-color);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    z-index: 50;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-pri-color);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-pri-color);
+    text-decoration: none !important;
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--text-sec-color);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.dropdown-item button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-item button:hover {
+    color: var(--text-pri-color);
+}
+
+.dropdown-item button i {
+    color: inherit;
+}
+
+#setaDropdown-mobile{
+    display: none;
+}
+
+/* === MENU MOBILE === */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-pri-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    background-color: var(--border-color);
+    border-bottom: 1px solid var(--text-pri-color);
+    border-left: 1px solid var(--text-pri-color);
+    border-right: 1px solid var(--text-pri-color);
+    box-shadow: var(--box-shadow);
+    z-index: 99;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-menu-item {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--text-pri-color);
+}
+
+.mobile-menu-item a {
+    color: var(--text-pri-color);
+    text-decoration: none !important;
+    display: block;
+}
+
+.mobile-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 992px) {
+    .dashboard-header {
+        padding: .5rem 2rem;
+    }
+    
+    .logo img {
+        height: 55px;
+    }
+
+    #setaDropdown{
+        display: none;
+    }
+
+    #setaDropdown-mobile{
+        display: block;
+    }
+
+    .user-avatar{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .dashboard-header {
+        padding: 0rem 1rem;
+    }
+
+    .user-info {
+        display: none;
+    }
+    
+    .header-actions {
+        gap: 0.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .dropdown-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        top: 78px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-right {
+        gap: .2rem;
+    }
+
+    .mobile-menu{
+        top: 80px;
+    }
+
+    .logo span {
+        display: none;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+}

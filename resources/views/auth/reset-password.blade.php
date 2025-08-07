@@ -224,6 +224,7 @@
             box-shadow: 0 0 15px rgba(0, 255, 253, 0.3);
             position: relative;
             overflow: hidden;
+            font-family: 'Josefin Sans', sans-serif;
         }
 
         button[type="submit"]:hover {

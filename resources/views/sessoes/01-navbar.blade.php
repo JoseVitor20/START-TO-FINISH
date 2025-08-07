@@ -1,30 +1,30 @@
-<header class="header">
-    <div class="header__logo--hidden">
-        <a href="#" class="header__logo--hidden-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a>
+<header class="navbar">
+    <div class="navbar__logo--hidden">
+        <a href="#" class="navbar__logo-link--hidden"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a>
     </div>
 
-  <div class="header__menu-hamburguer" id="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="navbar__menu-hamburguer" id="navbarMenuBtn">
+    <span class="navbar__menu-line"></span>
+    <span class="navbar__menu-line"></span>
+    <span class="navbar__menu-line"></span>
   </div>
 
-    <div class="header__container">
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="logo-nav"><a href="#" class="header__logo-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a></li>
-                <li class="header__nav-item"><a href="#inicio" class="header__nav-link" id="item1">Início</a></li>
-                <li class="header__nav-item"><a href="#sobre" class="header__nav-link" id="item2">Sobre</a></li>
-                <li class="header__nav-item"><a href="#projetos" class="header__nav-link" id="item3">Projetos</a></li>
-                <li class="header__nav-item"><a href="#depoimentos" class="header__nav-link" id="item4">Depoimentos</a></li>
-                <li class="header__nav-item"><a href="#contato" class="header__nav-link" id="item5">Contato</a></li>
-                <li class="header__nav-item"><a href="#precos" class="header__nav-link" id="item6">Preços</a></li>
+    <div class="navbar__container">
+        <nav class="navbar__nav">
+            <ul class="navbar__list">
+                <li class="navbar__item navbar__item--logo"><a href="/" class="navbar__logo-link"><img src="{{asset('img/starttofinish-black.png')}}" alt="Start To Finish" title="Descomplicando sonhos"></a></li>
+                <li class="navbar__item"><a href="#inicio" class="navbar__link" id="navbarItem1">Início</a></li>
+                <li class="navbar__item"><a href="#sobre" class="navbar__link" id="navbarItem2">Sobre</a></li>
+                <li class="navbar__item"><a href="#projetos" class="navbar__link" id="navbarItem3">Projetos</a></li>
+                <li class="navbar__item"><a href="#depoimentos" class="navbar__link" id="navbarItem4">Depoimentos</a></li>
+                <li class="navbar__item"><a href="#contato" class="navbar__link" id="navbarItem5">Contato</a></li>
+                <li class="navbar__item"><a href="#precos" class="navbar__link" id="navbarItem6">Preços</a></li>
             </ul>
         </nav>
-        <div class="header__actions" id="hidden">
+        <div class="navbar__actions" id="navbarHidden">
             @auth
-                <div class="user-menu">
-                    <a class="user-profile" href="{{ route('dashboard') }}">
+                <div class="navbar__user-menu">
+                    <a class="navbar__user-profile" href="{{ route('dashboard') }}">
                         @php
                             function getGravatarUrl($email, $size = 80)
                             {
@@ -33,35 +33,34 @@
                             }
                         @endphp
 
-                        <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="user-avatar">
+                        <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="navbar__user-avatar">
 
-                        <span>{{Auth::user()->name}}</span>                        
+                        <span class="navbar__user-name">{{Auth::user()->name}}</span>                        
                     </a>
                     
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="logout-btn">
-                            <i class="fas fa-sign-out-alt"></i>
+                        <button type="submit" class="navbar__logout-btn">
+                            <i class="fas fa-sign-out-alt navbar__logout-icon"></i>
                             Sair
                         </button>
                     </form>
                 </div>
             @endauth
             @guest
-                <a class="navbar-brand" href="register ">
-                    <i class="fas fa-user-plus icon"></i> <!-- Ícone de usuário com + -->
-                    <span style="padding-left: 5px;"> Ser cliente</span>
+                <a class="navbar__register-btn" href="register ">
+                    <i class="fas fa-user-plus navbar__icon"></i>
+                    <span class="navbar__btn-text"> Ser cliente</span>
                 </a>
-                <a class="client-btn" href="login">
-                    <i class="fas fa-user-check icon"></i> <!-- Ícone de usuário com check -->
-                    <span style="padding-left: 5px;"> Sou cliente</span>
+                <a class="navbar__login-btn" href="login">
+                    <i class="fas fa-user-check navbar__icon"></i>
+                    <span class="navbar__btn-text"> Sou cliente</span>
                 </a>                
             @endguest
-            <button class="header__action header__action--dark-mode" aria-label="Alternar modo escuro">
-              <i class="fa-solid fa-moon"></i>
+            <button class="navbar__dark-mode" aria-label="Alternar modo escuro">
+              <i class="fa-solid fa-moon navbar__dark-icon"></i>
             </button>                
         </div>
     </div>
-  <div class="header__opacidade"></div>
-
-</header>
+  <div class="navbar__overlay"></div>
+</header>   

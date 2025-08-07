@@ -1,0 +1,33 @@
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: white;
+}
+
+.destination-card {
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: white;
+}

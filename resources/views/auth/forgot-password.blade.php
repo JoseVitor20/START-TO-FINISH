@@ -180,6 +180,7 @@
             background: linear-gradient(135deg, var(--gradiente-pri-color), var(--gradiente-sec-color));
             color: var(--btn-bg-hover);
             box-shadow: 0 4px 6px rgba(0, 255, 253, 0.3);
+            font-family: 'Josefin Sans', sans-serif;            
         }
 
         .btn-primary:hover {
