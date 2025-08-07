@@ -26,7 +26,7 @@
             <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="user-avatar">
             
             <div class="user-info">
-                <span class="user-name">{{Auth::user()->name}}</span>
+                <span class="user-name resumo">{{Auth::user()->name}}</span>
                 @switch(Auth::user()->role)
                     @case('admin')
                         <span class="user-role">Administrador</span>
@@ -55,7 +55,9 @@
         @if(request()->is('dashboard'))
             <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @endif
             <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>            
         @endif   
         
@@ -69,7 +71,9 @@
 
         @if(request()->is('profile'))
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
+            @endif
             <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
             <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
         @endif        
@@ -77,7 +81,9 @@
         @if(request()->is('contrato/status'))
             <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>        
             <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
+            @endif
             <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
         @endif                          
 
@@ -102,7 +108,9 @@
             <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
         </div>
         <div class="mobile-menu-item">
-            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @endif
         </div>
         <div class="mobile-menu-item">
             <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
@@ -129,7 +137,9 @@
             <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
         </div>
         <div class="mobile-menu-item">
-            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @endif
         </div>
         <div class="mobile-menu-item">
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
@@ -144,7 +154,9 @@
             <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
         </div>
         <div class="mobile-menu-item">
-            <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
+                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+            @endif
         </div>
         <div class="mobile-menu-item">
             <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>

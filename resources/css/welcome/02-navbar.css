@@ -196,6 +196,13 @@
     gap: 15px;
 }
 
+.resumo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 130px !important;
+}
+
 /* Estilo para o nome do usuário */
 .navbar__user-profile {
     display: inline-flex;

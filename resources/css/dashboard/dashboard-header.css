@@ -115,6 +115,13 @@
     color: var(--text-pri-color);
 }
 
+.resumo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px !important;
+}
+
 .user-role {
     font-size: 0.8rem;
     color: var(--text-sec-color);

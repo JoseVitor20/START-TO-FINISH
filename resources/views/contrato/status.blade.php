@@ -25,15 +25,20 @@
             <i class="fa-solid fa-triangle-exclamation"></i>
             <span>Você ainda não respondeu ao contrato.</span>
         </div>
-        <a href="{{route('painel')}}" class="btn-action">
-            <i class="fa-solid fa-file-signature"></i> Acessar a página para aceitar os termos
-        </a>
+
     @endif
 
     <div class="contract-container">
-        <a href="{{ route('contract.download') }}" class="download-contract-status" target="_blank">
-            <i class="fas fa-file-pdf"></i> Baixar contrato em PDF
-        </a>  
+        <div class="option-contract">
+            <a href="{{ route('contract.download') }}" class="download-contract-status" target="_blank">
+                <i class="fas fa-file-pdf"></i> Baixar contrato em PDF
+            </a>  
+
+            <a href="/#precos" class="aceitar-contract-status">
+                <i class="fa-solid fa-file-signature"></i> Acessar a página para aceitar os termos
+            </a>            
+        </div>
+
         <h1 class="contract-title">Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
         
         <h2 class="section-heading">DAS PARTES</h2>

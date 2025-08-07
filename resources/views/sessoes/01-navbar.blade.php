@@ -35,7 +35,7 @@
 
                         <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="navbar__user-avatar">
 
-                        <span class="navbar__user-name">{{Auth::user()->name}}</span>                        
+                        <span class="navbar__user-name resumo">{{Auth::user()->name}}</span>                        
                     </a>
                     
                     <form method="POST" action="{{ route('logout') }}">

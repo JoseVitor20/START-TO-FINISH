@@ -9,7 +9,6 @@
     position: relative;
     margin: 0 auto;
     margin-bottom: 50px;
-    padding-top: 100px;
 }
 
 .contract-title {
@@ -168,6 +167,10 @@ strong {
     margin-right: 5px;
 }
 
+.option-contract{
+    margin-bottom: 50px;
+}
+
 .download-contract-status{
     padding: 10px;
     border-radius: 5px;
@@ -175,18 +178,27 @@ strong {
     color: #fff;
     border: none;  
     text-decoration: none !important;
-    position: absolute;  
-    top: 20px;
-    left: 35px;
 }
 
 .download-contract-status:hover{
     transform: scale(.950);
 }
 
-@media (max-width: 468px) {  /* Para tablets e telas menores */
-    @-moz-document url-prefix() {
+.option-contract{
+    margin-bottom: 50px;
+}
 
+.aceitar-contract-status{
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;  
+    text-decoration: none !important;
+    color: #303030 ;
+    background-color: lightgreen ;
+}
 
-    }
+.aceitar-contract-status:hover{
+    background-color: #59e659 !important;
+    color: #202020 !important;
 }

@@ -25,7 +25,7 @@
         
         <!-- Header -->
         <div style="background: linear-gradient(135deg, #1a1a24, #1900df); padding: 30px 20px; text-align: center; position: relative;">
-            <img src="{{ asset('img/starttofinish-black.png') }}" alt="Logo {{ config('app.name') }}" style="max-height: 60px; filter: invert(100%);">
+            <img src="{{ asset('img/starttofinish-white.png') }}" alt="Logo {{ config('app.name') }}" style="max-height: 60px; filter: invert(100%);">
         </div>
 
         <!-- Content -->
