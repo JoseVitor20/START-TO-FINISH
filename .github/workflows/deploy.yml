@@ -1,110 +1,100 @@
-name: Deploy Laravel sem /public via FTP e SSH
+  name: Deploy Laravel sem /public via FTP e SSH
 
-on:
-  push:
-    branches:
-      - develop
+  on:
+    push:
+      branches:
+        - develop
 
-jobs:
-  deploy:
-    name: Deploy Laravel 12
-    runs-on: ubuntu-latest
+  jobs:
+    deploy:
+      name: Deploy Laravel 12
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: 📥 Obter código mais recente
-        uses: actions/checkout@v3
+      steps:
+        - name: 📥 Obter código mais recente
+          uses: actions/checkout@v3
 
-      - name: 🔍 Validar variáveis de ambiente
-        run: |
-          [ -z "${{ secrets.SSH_HOST }}" ] && echo "🚨 SSH_HOST não definido" && exit 1
-          [ -z "${{ secrets.FTP_SERVER }}" ] && echo "🚨 FTP_SERVER não definido" && exit 1
-          [ -z "${{ secrets.FTP_USER }}" ] && echo "🚨 FTP_USER não definido" && exit 1
-          [ -z "${{ secrets.FTP_PASSWORD }}" ] && echo "🚨 FTP_PASSWORD não definido" && exit 1
-          [ -z "${{ secrets.SSH_USER }}" ] && echo "🚨 SSH_USER não definido" && exit 1
-          [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] && echo "🚨 SSH_PRIVATE_KEY não definido" && exit 1
-          [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
-          echo "✅ Variáveis verificadas"
+        - name: 🔍 Validar variáveis de ambiente
+          run: |
+            [ -z "${{ secrets.SSH_HOST }}" ] && echo "🚨 SSH_HOST não definido" && exit 1
+            [ -z "${{ secrets.FTP_SERVER }}" ] && echo "🚨 FTP_SERVER não definido" && exit 1
+            [ -z "${{ secrets.FTP_USER }}" ] && echo "🚨 FTP_USER não definido" && exit 1
+            [ -z "${{ secrets.FTP_PASSWORD }}" ] && echo "🚨 FTP_PASSWORD não definido" && exit 1
+            [ -z "${{ secrets.SSH_USER }}" ] && echo "🚨 SSH_USER não definido" && exit 1
+            [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ] && echo "🚨 SSH_PRIVATE_KEY não definido" && exit 1
+            [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
+            echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Node e gerar build do Vite
-        run: |
-          npm ci
-          npm run build
+        - name: 📦 Instalar dependências do Node e gerar build do Vite
+          run: |
+            npm ci
+            npm run build
 
-      - name: 📂 Copiar index.php e .htaccess para a raiz
-        run: |
-          cp public/index.php index.php
-          cp public/.htaccess .htaccess
-          sed -i 's|../vendor|vendor|g' index.php
-          sed -i 's|../bootstrap|bootstrap|g' index.php
+        - name: 📂 Copiar index.php e .htaccess para a raiz
+          run: |
+            cp public/index.php index.php
+            cp public/.htaccess .htaccess
+            sed -i 's|../vendor|vendor|g' index.php
+            sed -i 's|../bootstrap|bootstrap|g' index.php
 
-      - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
-        run: |
-          rsync -av --exclude=index.php --exclude=.htaccess public/ ./
+        - name: 📂 Copiar todo conteúdo da pasta public (menos index.php e .htaccess) para a raiz
+          run: |
+            rsync -av --exclude=index.php --exclude=.htaccess public/ ./
 
-      - name: 🚀 Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          exclude: |
-            **/.git*
-            **/node_modules/**
-            **/tests/**
-            **/vendor/**
-            **/storage/**
-            **/.github/**
-            .env
-            phpunit.xml
-            README.md
-          # Adicione esta opção para remover arquivos que não existem mais localmente
-          # Se você usar o modo rsync (mais eficiente para deploys), essa opção é --delete.
-          # Neste caso, o 'SamKirkland/FTP-Deploy-Action' não possui essa opção nativamente no FTP,
-          # então a melhor forma é a manual, via SSH.
+        - name: 🚀 Deploy via FTP
+          uses: SamKirkland/FTP-Deploy-Action@4.3.0
+          with:
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.FTP_USER }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            local-dir: ./
+            exclude: |
+              **/.git*
+              **/node_modules/**
+              **/tests/**
+              **/vendor/** # Removido para garantir que o FTP não suba o vendor, pois ele será instalado no servidor
+              **/storage/**
+              **/.github/**
+              .env # Removido para garantir que o .env não seja sobrescrito no servidor
+              phpunit.xml
+              README.md
 
-      - name: 🔐 Configurar SSH e executar comandos no servidor
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd ${{ secrets.SERVER_DIR }}
+        - name: 🔐 Configurar SSH e executar comandos no servidor
+          run: |
+            mkdir -p ~/.ssh
+            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan -p 22 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+              cd ${{ secrets.SERVER_DIR }}
 
-            echo "📦 Instalando dependências do Composer no servidor..."
-            composer install --no-dev --optimize-autoloader
+              echo "📦 Instalando dependências do Composer no servidor..."
+              # Assegura que o diretório `vendor` é criado e as dependências são instaladas
+              composer install --no-dev --optimize-autoloader
 
-            echo "🔑 Gerando chave da aplicação..."
-            php artisan key:generate
+              echo "🔑 Gerando chave da aplicação..."
+              # Adiciona esta etapa para garantir que a key está configurada.
+              # Se você já tem o .env no servidor, ele não será sobrescrito.
+              php artisan key:generate
 
-            # --- LIMPEZA MANUAL ---
-            # Este passo é crucial para o seu problema atual.
-            # Ele remove o arquivo de migration que causava o erro.
-            # Remova esta parte do script depois que o problema for resolvido.
-            if [ -f "database/migrations/2025_07_24_092350_add_role_to_users_table.php" ]; then
-              echo "🗑️ Removendo migration antiga 'add_role_to_users_table.php'..."
-              rm database/migrations/2025_07_24_092350_add_role_to_users_table.php
-            fi
+              echo "🧩 Executando migrations..."
+              # Este é o passo crucial. O --force evita prompts de confirmação em produção.
+              php artisan migrate --force
 
-            echo "🧩 Executando migrations..."
-            # Comando corrigido
-            php artisan migrate --force
+              echo "🔄 Limpando caches..."
+              php artisan config:clear
+              php artisan cache:clear
+              php artisan route:clear
+              php artisan view:clear
+              php artisan view:cache
 
-            echo "🔄 Limpando caches..."
-            php artisan config:clear
-            php artisan cache:clear
-            php artisan route:clear
-            php artisan view:clear
-            php artisan view:cache
+              echo "🛠️ Corrigindo permissões..."
+              chmod -R 775 storage bootstrap/cache
+              chown -R www-data:www-data storage bootstrap/cache
 
-            echo "🛠️ Corrigindo permissões..."
-            # Substitua 'www-data:www-data' pelo seu usuário e grupo corretos
-            chown -R www-data:www-data storage bootstrap/cache
+              echo "🔄 Reiniciando Supervisor para a fila..."
+              # Ajuste o nome do supervisorctl se necessário
+              sudo supervisorctl restart all
 
-            echo "🔄 Reiniciando Supervisor para a fila..."
-            # Verifique se o usuário tem permissão para usar sudo
-            sudo supervisorctl restart all
-
-            echo "✅ Deploy finalizado com sucesso!"
-          EOF
+              echo "✅ Deploy finalizado com sucesso!"
+            EOF
