@@ -25,16 +25,10 @@ jobs:
           [ -z "${{ secrets.SERVER_DIR }}" ] && echo "🚨 SERVER_DIR não definido" && exit 1
           echo "✅ Variáveis verificadas"
 
-      - name: 📦 Instalar dependências do Composer
-        run: composer install --no-dev --optimize-autoloader --no-interaction
-
       - name: 📦 Instalar dependências do Node e gerar build do Vite
         run: |
           npm ci
           npm run build
-
-      - name: 🔑 Gerar key do Laravel
-        run: cp .env.example .env && php artisan key:generate
 
       - name: 📂 Copiar index.php e .htaccess para a raiz
         run: |
@@ -58,10 +52,10 @@ jobs:
             **/.git*
             **/node_modules/**
             **/tests/**
-            **/vendor/**
+            **/vendor/** # Removido para garantir que o FTP não suba o vendor, pois ele será instalado no servidor
             **/storage/**
             **/.github/**
-            .env
+            .env # Removido para garantir que o .env não seja sobrescrito no servidor
             phpunit.xml
             README.md
 
@@ -74,8 +68,18 @@ jobs:
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.SERVER_DIR }}
 
-            echo "📦 Instalando dependências no servidor..."
+            echo "📦 Instalando dependências do Composer no servidor..."
+            # Assegura que o diretório `vendor` é criado e as dependências são instaladas
             composer install --no-dev --optimize-autoloader
+
+            echo "🔑 Gerando chave da aplicação..."
+            # Adiciona esta etapa para garantir que a key está configurada.
+            # Se você já tem o .env no servidor, ele não será sobrescrito.
+            php artisan key:generate
+
+            echo "🧩 Executando migrations..."
+            # Este é o passo crucial. O --force evita prompts de confirmação em produção.
+            php artisan migrate --force
 
             echo "🔄 Limpando caches..."
             php artisan config:clear
@@ -88,11 +92,9 @@ jobs:
             chmod -R 775 storage bootstrap/cache
             chown -R www-data:www-data storage bootstrap/cache
 
-            echo "🧩 Executando migrations..."
-            php artisan migrate --force
-
             echo "🔄 Reiniciando Supervisor para a fila..."
-            sudo supervisorctl restart laravel-queue:* 
+            # Ajuste o nome do supervisorctl se necessário
+            sudo supervisorctl restart all
 
             echo "✅ Deploy finalizado com sucesso!"
           EOF
