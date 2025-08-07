@@ -5,7 +5,18 @@
         <p class="info-plan">Oferecemos soluções completas para sua presença online - da criação à manutenção contínua. Escolha o plano ideal para o seu negócio e orçamento.</p>
     </header>
     
-    <div class="pricing-container">
+    <div class="pricing-container" id="scrollBox">
+        <script>
+            const pai = document.getElementById('scrollBox');
+
+            function scrollY(valor) {
+              pai.scrollBy({ top: valor, behavior: 'smooth' });
+            }
+
+            function scrollX(valor) {
+              pai.scrollBy({ left: valor, behavior: 'smooth' });
+            }            
+        </script>           
         @php
             $plans = [
                 [
@@ -210,9 +221,12 @@
                     @endif
                 @endauth
             </div>
-        </div>
+        </div>  
         @endforeach
     </div>
+    <button class="botao-scroll botao-voltar" onclick="scrollX(-300)"><i class="fas fa-arrow-left"></i> Anterior</button>   
+    <button class="botao-scroll botao-passar" onclick="scrollX(+300)">Próximo <i class="fas fa-arrow-right"></i> </button>
+
 </div>
 
 <!-- Modal de contrato -->

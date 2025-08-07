@@ -55,6 +55,7 @@
     padding: 0;
     box-sizing: border-box;
     transition: background-color 0.3s, color 0.3s;
+    scrollbar-width: none;
 }
 
 body {

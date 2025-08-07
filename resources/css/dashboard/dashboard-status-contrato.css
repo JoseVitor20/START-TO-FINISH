@@ -183,3 +183,10 @@ strong {
 .download-contract-status:hover{
     transform: scale(.950);
 }
+
+@media (max-width: 468px) {  /* Para tablets e telas menores */
+    @-moz-document url-prefix() {
+
+
+    }
+}
