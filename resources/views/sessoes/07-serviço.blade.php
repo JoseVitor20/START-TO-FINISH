@@ -39,7 +39,7 @@
                         '1 conta de e-mail profissional'
                     ],
                     'ideal_for' => 'Ideal para quem está dando o primeiro passo',
-                    'price_id' => 'price_1Rt7TUPSFtrJEyUPYdmAq7lF'
+                    'price_id' => 'price_1Rtd6DATrxUtVNls55TD2FwV'
                 ],
                 [
                     'id' => 'basico',
@@ -62,7 +62,7 @@
                         'Backup diário automático'
                     ],
                     'ideal_for' => 'Para pequenos negócios que querem crescer',
-                    'price_id' => 'price_1Rt843PSFtrJEyUPTGsgGNuD'
+                    'price_id' => 'price_1Rtd6zATrxUtVNlslxYeAk0i'
                 ],
                 [
                     'id' => 'essencial',

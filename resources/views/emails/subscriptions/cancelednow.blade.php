@@ -40,7 +40,7 @@
             </div>
 
             {{-- Condicional para PLANO MICRO --}}
-            @if($planName == 'price_1Rt7TUPSFtrJEyUPYdmAq7lF')
+            @if($planName == 'price_1Rtd6DATrxUtVNls55TD2FwV')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         O plano <strong style="color: #00f5d0;">MICRO</strong> foi cancelado imediatamente!
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO BÁSICO --}}
-            @elseif($planName == 'price_1Rt843PSFtrJEyUPTGsgGNuD')
+            @elseif($planName == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         O plano <strong style="color: #00f5d0;">BÁSICO</strong> foi cancelado imediatamente!

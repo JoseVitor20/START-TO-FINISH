@@ -40,7 +40,7 @@
             </div>
 
             {{-- Condicionais de planos --}}
-            @if($planName == 'price_1Rt7TUPSFtrJEyUPYdmAq7lF')
+            @if($planName == 'price_1Rtd6DATrxUtVNls55TD2FwV')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! O plano <strong style="color: #00f5d0;">MICRO</strong> foi renovado com sucesso!
@@ -63,7 +63,7 @@
                         <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 conta de e-mail profissional</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rt843PSFtrJEyUPTGsgGNuD')
+            @elseif($planName == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! O plano <strong style="color: #00f5d0;">BÁSICO</strong> foi renovado com sucesso!

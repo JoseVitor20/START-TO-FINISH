@@ -40,7 +40,7 @@
             </div>
 
             {{-- Condicionais de planos --}}
-            @if($planName == 'price_1Rt7TUPSFtrJEyUPYdmAq7lF')
+            @if($planName == 'price_1Rtd6DATrxUtVNls55TD2FwV')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MICRO</strong> com sucesso!
@@ -59,7 +59,7 @@
                         <li style="margin-bottom: 8px;">Certificado SSL grátis</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rt843PSFtrJEyUPTGsgGNuD')
+            @elseif($planName == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">BÁSICO</strong> com sucesso!
