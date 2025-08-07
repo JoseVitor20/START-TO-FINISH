@@ -167,6 +167,7 @@
 .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--text-pri-color);
+    text-decoration: none !important;
 }
 
 .dropdown-item i {
@@ -245,7 +246,7 @@
 
 .mobile-menu-item a {
     color: var(--text-pri-color);
-    text-decoration: none;
+    text-decoration: none !important;
     display: block;
 }
 

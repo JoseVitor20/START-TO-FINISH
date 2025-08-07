@@ -1,4 +1,8 @@
 /* Estilos Gerais */
+.CARREGAMENTO__logo {
+    top: 130px;
+}
+
 .subscriptions-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -19,7 +23,7 @@
 }
 
 .section-title {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     font-weight: bold;
     color: var(--neon) !important;
     position: relative;
@@ -60,12 +64,13 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1rem;
+    padding: .5rem;    
 }
 
 .product-image {
-    min-width: 200px;
+    min-width: 250px;
     width: 10vw;   
     height: auto;
     object-fit: cover;
@@ -74,7 +79,7 @@
 }
 
 .product-name {
-    font-size: 1.5rem;
+    font-size: 2.5rem !important;
     margin-bottom: 0.5rem;
     color: var(--text-pri-color);
 }
@@ -82,6 +87,7 @@
 .product-description {
     color: var(--text-sec-color);
     line-height: 1.6;
+    padding-left: 1rem;
 }
 
 .subscription-grid {
@@ -89,6 +95,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: .5rem;
     margin-bottom: -1.5rem;
+    padding: .5rem;
 }
 
 .info-section {
@@ -96,7 +103,7 @@
     padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    margin-bottom:.51rem;
+    margin-bottom: .5rem;
 }
 
 .info-section h4 {
@@ -138,6 +145,21 @@
     color: var(--gradiente-pri-color);
 }
 
+.benefits-title{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--neon);
+}
+
+.benefits-list{
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+.benefits-list i{
+    color: var(--success-color);
+}
+
 /* Status */
 .status {
     padding: 0.3rem 0.8rem;
@@ -168,6 +190,7 @@
     flex-wrap: wrap;
     margin-bottom: .5rem;
     gap: .5rem;
+    padding: .5rem;
 }
 
 .btn {

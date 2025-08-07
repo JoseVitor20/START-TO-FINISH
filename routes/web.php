@@ -87,9 +87,7 @@ Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
 
 // Assinatura
-    Route::middleware(['auth', 'verified'])->group(function () {
-        // Rota para exibir os planos de assinatura mensal
-        Route::get('/subscription', [SubscriptionController::class, 'index'])->name('subscription.index');           
+    Route::middleware(['auth', 'verified'])->group(function () {        
         // Rota para armazenar no banco de dados a nova assinatura
         Route::post('/subscription/store', [SubscriptionController::class, 'store'])->name('subscription.store');
         // Rota para exibir o comprovante e mensagem de sucesso

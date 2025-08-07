@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atualização de Plano - {{ config('app.name') }}</title>
+    <title>Confirmação de Atualização de Plano - {{ config('app.name') }}</title>
     <style type="text/css">
         @media screen and (max-width: 600px) {
             h2 {
@@ -31,7 +31,7 @@
         <!-- Content -->
         <div style="padding: 40px;">
             <h1 style="color: #00f5d0; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
-                Atualização de Plano
+                Confirmação de Atualização de Plano
                 <span style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00f5d0, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
             </h1>
 
@@ -39,45 +39,126 @@
                 Olá, {{ $userName }}! 👋
             </div>
 
-            @if($planName == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
+            {{-- Condicionais de planos --}}
+            @if($planName == 'price_1Rt7TUPSFtrJEyUPYdmAq7lF')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
-                        O plano <strong style="color: #00f5d0;">Básico</strong> será atualizado no final do ciclo!
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MICRO</strong> com sucesso!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/plano-basico.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO MICRO.png') }}" alt="Plano Micro" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
-                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá o acesso a esses benefícios do plano Básico:</h3>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Micro:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Benefício 1</li>
-                        <li style="margin-bottom: 8px;">Benefício 2</li>
-                        <li style="margin-bottom: 8px;">Benefício 3</li>
-                        <li style="margin-bottom: 8px;">Benefício 4</li>
-                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                        <li style="margin-bottom: 8px;">Site de 1 página (cartão de visita online)</li>
+                        <li style="margin-bottom: 8px;">Design responsivo</li>
+                        <li style="margin-bottom: 8px;">SEO básico para visibilidade</li>
+                        <li style="margin-bottom: 8px;">Hospedagem de 5GB SSD</li>
+                        <li style="margin-bottom: 8px;">Domínio grátis (enquanto for assinante)</li>
+                        <li style="margin-bottom: 8px;">Manutenção e suporte grátis agendado via WhatsApp</li>
+                        <li style="margin-bottom: 8px;">Certificado SSL grátis</li>
                     </ul>
-                </div>                  
-            @elseif($planName == 'price_1RjQtlPSFtrJEyUPc3gxFVIz')
+                </div>
+            @elseif($planName == 'price_1Rt843PSFtrJEyUPTGsgGNuD')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
-                        O plano <strong style="color: #00f5d0;">Premium</strong> será atualizado no final do ciclo!
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">BÁSICO</strong> com sucesso!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/plano-premium.png') }}" alt="Plano Premium" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO BÁSICO.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
-                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá o acesso a esses benefícios do plano Premium:</h3>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Básico:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Benefício 1</li>
-                        <li style="margin-bottom: 8px;">Benefício 2</li>
-                        <li style="margin-bottom: 8px;">Benefício 3</li>
-                        <li style="margin-bottom: 8px;">Benefício 4</li>
-                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Micro</li>
+                        <li style="margin-bottom: 8px;">Site de até 5 páginas</li>
+                        <li style="margin-bottom: 8px;">SEO para ranqueamento</li>
+                        <li style="margin-bottom: 8px;">Hospedagem premium de 10GB SSD</li>
+                        <li style="margin-bottom: 8px;">Manutenção e suporte com prioridade média</li>
+                        <li style="margin-bottom: 8px;">Relatório mensal de desempenho (Google Analytics)</li>
+                        <li style="margin-bottom: 8px;">3 contas de e-mail profissional</li>
                     </ul>
-                </div>                    
-            @endif            
+                </div>
+            @elseif($planName == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">ESSENCIAL</strong> com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO ESSENCIAL.png') }}" alt="Plano Essencial" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Essencial:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Básico</li>
+                        <li style="margin-bottom: 8px;">Site de até 15 páginas com galeria de produtos</li>
+                        <li style="margin-bottom: 8px;">Design exclusivo e responsivo</li>
+                        <li style="margin-bottom: 8px;">SEO avançado</li>
+                        <li style="margin-bottom: 8px;">Hospedagem avançada de 20GB SSD</li>
+                        <li style="margin-bottom: 8px;">Manutenção e suporte com prioridade alta</li>
+                        <li style="margin-bottom: 8px;">Ambiente de testes (staging)</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">PROFISSIONAL</strong> com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO PROFISSIONAL.png') }}" alt="Plano Profissional" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Profissional:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Essencial</li>
+                        <li style="margin-bottom: 8px;">Site institucional completo com SEO</li>
+                        <li style="margin-bottom: 8px;">Formulário de orçamento e botão de WhatsApp flutuante</li>
+                        <li style="margin-bottom: 8px;">Agendamento online integrado</li>
+                        <li style="margin-bottom: 8px;">SEO Avançado e Local SEO</li>
+                        <li style="margin-bottom: 8px;">Hospedagem premium de 30GB SSD</li>
+                        <li style="margin-bottom: 8px;">Backup diário automático</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">AVANÇADO</strong> com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO AVANÇADO.png') }}" alt="Plano Avançado" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Avançado:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Profissional</li>
+                        <li style="margin-bottom: 8px;">Loja virtual com até 50 produtos</li>
+                        <li style="margin-bottom: 8px;">Páginas ilimitadas</li>
+                        <li style="margin-bottom: 8px;">Integração com meios de pagamento e logística</li>
+                        <li style="margin-bottom: 8px;">Hospedagem empresarial de 50GB SSD</li>
+                        <li style="margin-bottom: 8px;">Suporte com prioridade urgente</li>
+                        <li style="margin-bottom: 8px;">Suporte 24/6 (WhatsApp e e-mail)</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MASTER</strong> com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO MASTER.png') }}" alt="Plano Master" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Master:</h3>
+                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
+                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Avançado</li>
+                        <li style="margin-bottom: 8px;">E-commerce ilimitado e integrações com sistemas</li>
+                        <li style="margin-bottom: 8px;">Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
+                        <li style="margin-bottom: 8px;">Hospedagem dedicada de 100GB SSD</li>
+                        <li style="margin-bottom: 8px;">Suporte com prioridade extrema</li>
+                        <li style="margin-bottom: 8px;">Consultoria estratégica mensal</li>
+                        <li style="margin-bottom: 8px;">Suporte 24/7 (WhatsApp e e-mail)</li>
+                    </ul>
+                </div>
+            @endif
 
             @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
             <p style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 20px;">
-                Seu período atual termina em <strong style="color: #00f5d0;">{{ $endsAt }}</strong>.
+                Sua próxima cobrança será em <strong style="color: #00f5d0;">{{ $endsAt }}</strong>.
             </p>
             @endif
 

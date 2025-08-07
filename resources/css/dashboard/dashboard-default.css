@@ -1,42 +1,52 @@
 /* === PALETA DE CORES === */
 :root {
-    --bg-pri-color: #101010;
-    --bg-sec-color: #262626;
-    --text-pri-color: #fff;
-    --text-sec-color: #cfcfcf;
-    --text-ter-color: #dfdfdf;
-    --inver-img: invert(100%);
-    --primary-color: #1a1a2e;
-    --secondary-color: #21325e;
-    --neon: #00fffd;
-    --gradiente-pri-color: #00fffd;
-    --gradiente-sec-color: #19bf00;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    --card-bg: #1e1e1e;
-    --border-color: #444;
-    --btn-shodow: #fff;
+    /* Dark Mode (Padrão) */
+    --bg-pri-color: #0f0f13;
+    --bg-pri-color-transparent: #0f0f1380;
+    --bg-sec-color: #1a1a24;
+    --bg-sec-color-transparent: #1a1a2480;
+    --text-pri-color: #ffffff;
+    --text-sec-color: #a0a0c0;
+    --primary-color: #1900df;
+    --secondary-color:purple ;
+    --neon: #00f5d0;
+    --gradiente-pri-color: #19bf00;
+    --gradiente-sec-color: #40ffe2;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --card-bg: #1e1e2a;
+    --border-color: #2d2d42;
+    --btn-shodow: #00f5d0;
     --btn-bg-hover: #000;
-    --sol-lua: white;
+    --sol-lua: #00f5d0;
+    --error-color: #ff5e7d;
+    --success-color: #00e0a0;
+    --transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    --inver-img: invert(100%);
+    --success-color: #59ff40;
 }
 
 .light-mode {
-    --bg-pri-color: #fff;
-    --bg-sec-color: #efefef;
-    --text-pri-color: #101010;
-    --text-sec-color: #303030;
-    --text-ter-color: #404040;
-    --inver-img: invert(0%);
-    --primary-color: #3620df;
-    --secondary-color: #8c20ff;
-    --neon: #1ddf00;
-    --gradiente-pri-color: #21ff00;
-    --gradiente-sec-color: #00fffd;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Light Mode */
+    --bg-pri-color: #f8f9ff;
+    --bg-pri-color-transparent: #dbdbe380;            
+    --bg-sec-color: #ffffff;
+    --bg-sec-color-transparent: #ededf180;
+    --text-pri-color: #1a1a2e;
+    --text-sec-color: #6c6c8a;
+    --primary-color: red;
+    --secondary-color: yellow;            
+    --neon: #00a8e8;
+    --gradiente-pri-color: #1900df;
+    --gradiente-sec-color: #ff40d2;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     --card-bg: #ffffff;
-    --border-color: #e0e0e0;
-    --btn-shodow: #bfbfbf;
+    --border-color: #e0e0f0;
+    --btn-shodow: #9f9f9f;
     --btn-bg-hover: #fff;
-    --sol-lua: orange;
+    --sol-lua: #ff9e00;
+    --error-color: #ff5e7d;
+    --inver-img: invert(0%);
+    --success-color: #1ddf00;
 }
 
 /* === ESTILOS GERAIS === */

@@ -16,6 +16,15 @@
 </head>
 <body>
 
+    {{-- === OVERLAY DE CARREGAMENTO === --}}
+    <div class="CARREGAMENTO CARREGAMENTO__overlay">
+        <div class="CARREGAMENTO__content"> 
+            <img class="CARREGAMENTO__logo" src="{{asset('img/logo-internet.png')}}" alt="Logo Start To Finish">                
+            <div class="CARREGAMENTO__spinner">
+            </div>
+        </div>
+    </div>  
+
     @include('dashboard.dashboard-header')
 
     @yield('content')

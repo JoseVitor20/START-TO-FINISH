@@ -9,6 +9,7 @@
     position: relative;
     margin: 0 auto;
     margin-bottom: 50px;
+    padding-top: 100px;
 }
 
 .contract-title {
@@ -149,20 +150,36 @@ strong {
 }
 
 .status-accepted {
-    color: lightgreen;
+    color: var(--success-color);
     border: 1px solid var(--success-color);
 }
 
 .status-refused {
-    color: #ff4040;
+    color: var(--error-color);
     border: 1px solid var(--error-color);
 }
 
 .status-pending {
-    color: #FFA500;
-    border: 1px solid #FFA500;
+    color: var(--sol-lua);
+    border: 1px solid var(--sol-lua);
 }
 
 .status-indicator > i{
     margin-right: 5px;
+}
+
+.download-contract-status{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;  
+    text-decoration: none !important;
+    position: absolute;  
+    top: 20px;
+    left: 35px;
+}
+
+.download-contract-status:hover{
+    transform: scale(.950);
 }

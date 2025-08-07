@@ -209,7 +209,7 @@
       padding-bottom: 40px;
       overflow-y: auto;
       overflow-x: hidden;
-      scrollbar-width: thin;
+      scrollbar-width: none;
       border: 2px solid var(--neon);
       border-radius: 10px;
     }
@@ -285,7 +285,7 @@
       height: 390px;
       overflow-y: auto;
       overflow-x: hidden;
-      scrollbar-width: thin;
+      scrollbar-width: none;
       position: relative;
       padding-left: 30px;
       border: 2px solid var(--neon);
@@ -375,7 +375,7 @@
       position: relative;
       overflow-y: auto;
       overflow-x: hidden;
-      scrollbar-width: thin;
+      scrollbar-width: none;
       border: 2px solid var(--neon);
       border-radius: 10px;
     }

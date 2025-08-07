@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renovação de Plano - {{ config('app.name') }}</title>
+    <title>Confirmação de Renovação de Plano - {{ config('app.name') }}</title>
     <style type="text/css">
         @media screen and (max-width: 600px) {
             h2 {
@@ -31,7 +31,7 @@
         <!-- Content -->
         <div style="padding: 40px;">
             <h1 style="color: #00f5d0; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
-                Renovação de Plano
+                Confirmação de Renovação de Plano
                 <span style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00f5d0, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
             </h1>
 
@@ -39,45 +39,155 @@
                 Olá, {{ $userName }}! 👋
             </div>
 
-            @if($planName == 'price_1RjQsDPSFtrJEyUP3fhEZkGT')
+            {{-- Condicionais de planos --}}
+            @if($planName == 'price_1Rt7TUPSFtrJEyUPYdmAq7lF')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
-                        O plano <strong style="color: #00f5d0;">Básico</strong> foi renovado!
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">MICRO</strong> foi renovado com sucesso!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/plano-basico.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO MICRO.png') }}" alt="Plano Micro" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
-                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você continuará a ter acesso a esses benefícios do plano Básico:</h3>
-                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Benefício 1</li>
-                        <li style="margin-bottom: 8px;">Benefício 2</li>
-                        <li style="margin-bottom: 8px;">Benefício 3</li>
-                        <li style="margin-bottom: 8px;">Benefício 4</li>
-                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Site de 1 página (cartão de visita online)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Criação de site prioritária (sujeito à disponibilidade)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO básico para visibilidade</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem de 5GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Formulário de contato</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL grátis</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup semanal automático</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 conta de e-mail profissional</li>
                     </ul>
-                </div>                  
-            @elseif($planName == 'price_1RjQtlPSFtrJEyUPc3gxFVIz')
+                </div>
+            @elseif($planName == 'price_1Rt843PSFtrJEyUPTGsgGNuD')
                 <div style="margin-bottom: 30px;">
                     <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
-                        O plano <strong style="color: #00f5d0;">Premium</strong> foi renovado!
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">BÁSICO</strong> foi renovado com sucesso!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/plano-premium.png') }}" alt="Plano Premium" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO BÁSICO.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
-                    <h3 style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você continuará a ter acesso a esses benefícios do plano Premium:</h3>
-                    <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Benefício 1</li>
-                        <li style="margin-bottom: 8px;">Benefício 2</li>
-                        <li style="margin-bottom: 8px;">Benefício 3</li>
-                        <li style="margin-bottom: 8px;">Benefício 4</li>
-                        <li style="margin-bottom: 8px;">Benefício 5</li>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Site de até 5 páginas</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Criação de site prioritária (sujeito à disponibilidade)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO para ranqueamento</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem premium de 10GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade média)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Integração com redes sociais</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL grátis</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Relatório mensal de desempenho (Google Analytics)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 3 contas de e-mail profissional</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
                     </ul>
-                </div>                    
-            @endif            
+                </div>
+            @elseif($planName == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">ESSENCIAL</strong> foi renovado com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO ESSENCIAL.png') }}" alt="Plano Essencial" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Site de até 15 páginas com galeria de produtos</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Criação de site prioritária (sujeito à disponibilidade)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design exclusivo e responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO avançado</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem avançada de 20GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Galeria de produtos/serviços</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Ambiente de testes (staging)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup semanal automático</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">PROFISSIONAL</strong> foi renovado com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO PROFISSIONAL.png') }}" alt="Plano Profissional" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Site institucional completo com SEO</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Formulário de orçamento e botão de WhatsApp flutuante</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Agendamento online integrado</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design exclusivo e responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO Avançado e Local SEO</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem premium de 30GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Ambiente de testes (staging)</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">AVANÇADO</strong> foi renovado com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO AVANÇADO.png') }}" alt="Plano Avançado" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Loja virtual com até 50 produtos</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Criação de site prioritária (sujeito à disponibilidade)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design exclusivo e responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Integração com meios de pagamento e logística</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem empresarial de 50GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade urgente)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Páginas ilimitadas</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL premium</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO avançado</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Suporte 24/6 (WhatsApp e e-mail)</li>
+                    </ul>
+                </div>
+            @elseif($planName == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                <div style="margin-bottom: 30px;">
+                    <p style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                        Ótimas notícias! O plano <strong style="color: #00f5d0;">MASTER</strong> foi renovado com sucesso!
+                    </p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="{{ asset('img/assinaturas/PLANO MASTER.png') }}" alt="Plano Master" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                    </div>
+                    <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você continua aproveitando:</h3>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- E-commerce ilimitado e integrações com sistemas</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem dedicada de 100GB SSD</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Criação de site prioritária (sujeito à disponibilidade)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 domínios grátis (enquanto for assinante)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade extrema)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Sistema de gerenciamento de conteúdo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Integração com APIs externas</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Segurança avançada</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design exclusivo e responsivo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO completo</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Consultoria estratégica mensal</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Suporte 24/7 (WhatsApp e e-mail)</li>
+                        <li style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup e recuperação de desastres (diário)</li>
+                    </ul>
+                </div>
+            @endif
 
             @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
             <p style="font-size: 16px; color: #a0a0c0; line-height: 1.7; margin-bottom: 20px;">
-                Próxima cobrança será: <strong style="color: #00f5d0;">{{ $endsAt }}</strong>.
+                Sua próxima cobrança será em <strong style="color: #00f5d0;">{{ $endsAt }}</strong>.
             </p>
             @endif
 

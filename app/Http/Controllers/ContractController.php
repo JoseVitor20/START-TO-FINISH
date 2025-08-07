@@ -55,7 +55,7 @@ class ContractController extends Controller
         ])->setOptions($options);
 
         // Forçar download
-        return $pdf->download('Contrato exclusivo para ('.$user->name. ')'.'.pdf');
+        return $pdf->download('Condições Gerais de Uso dos Serviços – START TO FINISH.pdf');
     }
 
     public function downloadContract()
@@ -68,7 +68,8 @@ class ContractController extends Controller
         // A view que você deseja converter para PDF
         $pdf = Pdf::loadView('contrato.user_contract', compact('user', 'nextBillingDate'));
 
-        return $pdf->download('contrato-prestacao-de-servicos.pdf');
+        return $pdf->download('Contrato de Uso Restrito – '.$user->name.'.pdf');
+
     }
 
 }

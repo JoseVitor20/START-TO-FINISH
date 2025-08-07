@@ -31,6 +31,9 @@
     @endif
 
     <div class="contract-container">
+        <a href="{{ route('contract.download') }}" class="download-contract-status" target="_blank">
+            <i class="fas fa-file-pdf"></i> Baixar contrato em PDF
+        </a>  
         <h1 class="contract-title">Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
         
         <h2 class="section-heading">DAS PARTES</h2>
