@@ -39,7 +39,7 @@
                         '1 conta de e-mail profissional'
                     ],
                     'ideal_for' => 'Ideal para quem está dando o primeiro passo',
-                    'price_id' => 'price_1Rtd6DATrxUtVNls55TD2FwV'
+                    'price_id' => 'price_1RtxvFATrxUtVNlsRUQN7PI5'
                 ],
                 [
                     'id' => 'basico',
