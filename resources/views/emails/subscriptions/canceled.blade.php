@@ -52,7 +52,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO MICRO.png') }}" alt="Plano Micro" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-BASICO.png') }}" alt="Plano Micro" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -81,7 +81,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO BÁSICO.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-BASICO.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -111,7 +111,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO ESSENCIAL.png') }}" alt="Plano Essencial" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-ESSENCIAL.png') }}" alt="Plano Essencial" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -140,7 +140,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO PROFISSIONAL.png') }}" alt="Plano Profissional" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-PROFISSIONAL.png') }}" alt="Plano Profissional" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -169,7 +169,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO AVANÇADO.png') }}" alt="Plano Avançado" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-AVANÇADO.png') }}" alt="Plano Avançado" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
@@ -199,7 +199,7 @@
                         </p>
                     @endif
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO MASTER.png') }}" alt="Plano Master" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{ asset('img/assinaturas/PLANO-MASTER.png') }}" alt="Plano Master" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
                     </div>
                     <h3 style="color: #00f5d0; font-size: 20px; margin-top: 30px; margin-bottom: 10px;">Benefícios que você irá perder:</h3>
                     <ul style="list-style-type: none; padding-left: 0;">
