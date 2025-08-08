@@ -266,95 +266,107 @@
     {{-- O modal para visualização do contrato ainda usa a mesma estrutura HTML --}}
     <div id="contract-modal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2>Contrato de Prestação de Serviços</h2>
-                <button class="close-button" id="close-modal-btn">&times;</button>
+          <div class="modal-header">
+            <h2>Contrato de Prestação de Serviços</h2>
+            <button class="close-button" id="close-modal-btn">&times;</button>
+          </div>
+          <div class="contract-content" id="contract-content">
+            <h1>Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
+            
+            <h2>DAS PARTES</h2>
+            <p>
+              <strong>CONTRATADO:</strong> START TO FINISH, pessoa jurídica de direito privado inscrita no CNPJ/CPF sob o nº 098.717.321-98, com sede na Rua Padre Aquiles Pio Redin, nº 150, Município de Dourados, Estado de Mato Grosso do Sul, doravante denominada PRESTADOR DE SERVIÇOS.
+            </p>
+            <p>
+              <strong>CONTRATANTE:</strong> {{Auth::user()->name}}, pessoa jurídica ou física, inscrito no CNPJ/CPF sob o nº {{Auth::user()->document}}, com endereço em {{Auth::user()->address}}, doravante denominado CLIENTE.
+            </p>
+
+            <h2>CONSIDERAÇÕES INICIAIS</h2>
+            <p>
+              O presente instrumento tem como objetivo estabelecer as condições para a prestação de serviços de assinatura mensal de website, que inclui a criação, manutenção, hospedagem e outros benefícios descritos abaixo.
+            </p>
+
+            <h3>CLÁUSULA 1 - OBJETO E BENEFÍCIOS DA ASSINATURA</h3>
+            <p>
+              <strong>1.1. Objeto:</strong> Este contrato tem por objeto a prestação de serviços de assinatura mensal, pela qual o CLIENTE terá acesso a um pacote de benefícios relacionados a um website, conforme o plano contratado.
+            </p>
+            <p>
+              <strong>1.2. Benefícios da Assinatura:</strong> O CLIENTE, ao manter sua assinatura em dia, terá direito aos seguintes benefícios:
+            </p>
+            <ul>
+              <li>Criação de Site Gratuita: A criação de um site é oferecida gratuitamente, conforme as especificações e limitações do plano de assinatura escolhido.</li>
+              <li>Manutenção Gratuita: O PRESTADOR DE SERVIÇOS realizará a manutenção técnica e de segurança do site.</li>
+              <li>Adição de Novo Conteúdo Gratuita: O PRESTADOR DE SERVIÇOS fará a adição de novos conteúdos fornecidos pelo CLIENTE.</li>
+              <li>Hospedagem Gratuita: O site será hospedado nos servidores do PRESTADOR DE SERVIÇOS.</li>
+              <li>Domínio Gratuito: O domínio do site será gerenciado e mantido pelo PRESTADOR DE SERVIÇOS.</li>
+            </ul>
+
+            <h3>CLÁUSULA 2 - DAS OBRIGAÇÕES DO CLIENTE</h3>
+            <p>
+              <strong>2.1. Agendamento:</strong> O CLIENTE deverá solicitar a criação de site, adição de conteúdo ou qualquer outro serviço através de agendamento prévio, utilizando os canais de comunicação fornecidos pelo PRESTADOR DE SERVIÇOS (e.g., WhatsApp, e-mail, etc.).
+            </p>
+            <p>
+              <strong>2.2. Aviso Prévio:</strong> Para qualquer alteração de plano (upgrade/downgrade) ou cancelamento da assinatura, o CLIENTE deverá notificar o PRESTADOR DE SERVIÇOS com, no mínimo, 7 dias de antecedência, para que a gestão dos agendamentos e das tarefas possa ser realizada de forma adequada.
+            </p>
+            <p>
+              <strong>2.3. Dados Cadastrais:</strong> O CLIENTE é responsável por fornecer e manter atualizados seu CPF/CNPJ e endereço. A falta ou o fornecimento de informações incorretas poderá invalidar este contrato como prova judicial para fins de cobrança ou qualquer outro processo legal movido contra o PRESTADOR DE SERVIÇOS.
+            </p>
+
+            <h3>CLÁUSULA 3 - DAS CONDIÇÕES E RESTRIÇÕES</h3>
+            <p>
+              <strong>3.1. Downgrade de Plano:</strong> O CLIENTE que optar por um "downgrade" (migração para um plano inferior) perderá o acesso e os benefícios do site criado sob o plano anterior. Um novo site será criado, conforme as especificações do novo plano contratado. O site anterior não será excluído, mas sim arquivado, e não estará mais disponível para o CLIENTE, pois o valor do novo plano não cobre a manutenção da estrutura mais complexa.
+            </p>
+            <p>
+              <strong>3.2. Cancelamento da Assinatura:</strong> No caso de cancelamento da assinatura, o CLIENTE perderá imediatamente o acesso a todos os benefícios do plano, incluindo manutenção, hospedagem e domínio. O site criado ficará offline. Caso o CLIENTE deseje adquirir o site para si, deverá pagar o valor justo e acordado pelo site, sendo que o PRESTADOR DE SERVIÇOS entregará todos os arquivos do site. A partir da aquisição, a manutenção, hospedagem e domínio passarão a ser de total responsabilidade do CLIENTE.
+            </p>
+
+            <h3>CLÁUSULA 4 - DO REEMBOLSO</h3>
+            <p>
+              <strong>4.1. Condições de Reembolso:</strong> O CLIENTE tem o direito de solicitar o reembolso integral da primeira compra realizada em até 24 (vinte e quatro) horas após a confirmação do pagamento.
+            </p>
+            <p>
+              <strong>4.2. Procedimento de Solicitação:</strong> Para solicitar o reembolso, a comunicação deve ser feita exclusivamente através dos canais oficiais do PRESTADOR DE SERVIÇOS (e-mail ou WhatsApp). Na solicitação, o CLIENTE deverá informar seu nome completo, o número do pedido ou da transação, e o motivo da desistência.
+            </p>
+            <p>
+              <strong>4.3. Processamento do Reembolso:</strong> Após o recebimento e a devida análise da solicitação, e uma vez verificadas as condições estabelecidas na Cláusula 4.1, o reembolso será processado no prazo acordado entre as partes, conforme os meios de pagamento originais.
+            </p>
+
+            <h3>CLÁUSULA 5 - DAS OBRIGAÇÕES DO PRESTADOR DE SERVIÇOS</h3>
+            <p>
+              <strong>5.1. Gestão de Planos:</strong> Em caso de alteração de plano, o PRESTADOR DE SERVIÇOS garantirá a criação de um novo site conforme o novo plano contratado. O site anterior será substituído pelo novo, mas será arquivado para fins de segurança e histórico, não sendo excluído.
+            </p>
+            <p>
+              <strong>5.2. Arquivamento de Sites:</strong> O PRESTADOR DE SERVIÇOS se compromete a não excluir os sites criados sob planos anteriores, mas sim substituí-los no servidor pelo novo site e mantê-los arquivados, seguindo a regra do item 3.1.
+            </p>
+
+            <h3>CLÁUSULA 6 - DO PAGAMENTO E DA VIGÊNCIA</h3>
+            <p>
+              <strong>6.1. Vigência:</strong> Este contrato entra em vigor a partir da data de sua assinatura e é válido por prazo indeterminado, com renovação automática a cada mês, mediante o pagamento da assinatura.
+            </p>
+            <p>
+              <strong>6.2. Pagamento:</strong> O CLIENTE se compromete a efetuar o pagamento mensal da assinatura na data de {{ \Carbon\Carbon::parse($nextBillingDateIso)->isoFormat('DD [de] MMMM [de] YYYY') }} de cada mês.
+            </p>
+            
+            <h3>CLÁUSULA 7 - DO FORO</h3>
+            <p>
+              <strong>7.1. Resolução de Conflitos:</strong> Fica eleito o foro da comarca de Dourados/MS, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer dúvidas ou conflitos oriundos do presente contrato.
+            </p>
+
+            <div class="signature-section">
+              <p>Rua Visconde de Taunay, 250, no bairro Jardim Londrina</p>
+              <div class="signature-line"></div>
+              <div class="signature-line-text">
+                <p>START TO FINISH<br>PRESTADOR DE SERVIÇOS</p>
+              </div>
+              <div class="signature-line"></div>
+              <div class="signature-line-text">
+                <p>{{Auth::user()->name}}<br>CLIENTE</p>
+              </div>
             </div>
-            <div class="contract-content" id="contract-content">
-                <h1>Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
-                
-                <h2>DAS PARTES</h2>
-                <p>
-                    <strong>CONTRATADO:</strong> START TO FINISH, pessoa jurídica de direito privado inscrita no CNPJ/CPF sob o nº 098.717.321-98, com sede na Rua Padre Aquiles Pio Redin, nº 150, Município de Dourados, Estado de Mato Grosso do Sul, doravante denominada PRESTADOR DE SERVIÇOS.
-                </p>
-                <p>
-                    <strong>CONTRATANTE:</strong> {{Auth::user()->name}}, pessoa jurídica ou física, inscrito no CNPJ/CPF sob o nº {{Auth::user()->document}}, com endereço em {{Auth::user()->address}}, doravante denominado CLIENTE.
-                </p>
-
-                <h2>CONSIDERAÇÕES INICIAIS</h2>
-                <p>
-                    O presente instrumento tem como objetivo estabelecer as condições para a prestação de serviços de assinatura mensal de website, que inclui a criação, manutenção, hospedagem e outros benefícios descritos abaixo.
-                </p>
-
-                <h3>CLÁUSULA 1 - OBJETO E BENEFÍCIOS DA ASSINATURA</h3>
-                <p>
-                    <strong>1.1. Objeto:</strong> Este contrato tem por objeto a prestação de serviços de assinatura mensal, pela qual o CLIENTE terá acesso a um pacote de benefícios relacionados a um website, conforme o plano contratado.
-                </p>
-                <p>
-                    <strong>1.2. Benefícios da Assinatura:</strong> O CLIENTE, ao manter sua assinatura em dia, terá direito aos seguintes benefícios:
-                </p>
-                <ul>
-                    <li>Criação de Site Gratuita: A criação de um site é oferecida gratuitamente, conforme as especificações e limitações do plano de assinatura escolhido.</li>
-                    <li>Manutenção Gratuita: O PRESTADOR DE SERVIÇOS realizará a manutenção técnica e de segurança do site.</li>
-                    <li>Adição de Novo Conteúdo Gratuita: O PRESTADOR DE SERVIÇOS fará a adição de novos conteúdos fornecidos pelo CLIENTE.</li>
-                    <li>Hospedagem Gratuita: O site será hospedado nos servidores do PRESTADOR DE SERVIÇOS.</li>
-                    <li>Domínio Gratuito: O domínio do site será gerenciado e mantido pelo PRESTADOR DE SERVIÇOS.</li>
-                </ul>
-
-                <h3>CLÁUSULA 2 - DAS OBRIGAÇÕES DO CLIENTE</h3>
-                <p>
-                    <strong>2.1. Agendamento:</strong> O CLIENTE deverá solicitar a criação de site, adição de conteúdo ou qualquer outro serviço através de agendamento prévio, utilizando os canais de comunicação fornecidos pelo PRESTADOR DE SERVIÇOS (e.g., WhatsApp, e-mail, etc.).
-                </p>
-                <p>
-                    <strong>2.2. Aviso Prévio:</strong> Para qualquer alteração de plano (upgrade/downgrade) ou cancelamento da assinatura, o CLIENTE deverá notificar o PRESTADOR DE SERVIÇOS com, no mínimo, 7 dias de antecedência, para que a gestão dos agendamentos e das tarefas possa ser realizada de forma adequada.
-                </p>
-                <p>
-                    <strong>2.3. Dados Cadastrais:</strong> O CLIENTE é responsável por fornecer e manter atualizados seu CPF/CNPJ e endereço. A falta ou o fornecimento de informações incorretas poderá invalidar este contrato como prova judicial para fins de cobrança ou qualquer outro processo legal movido contra o PRESTADOR DE SERVIÇOS.
-                </p>
-
-                <h3>CLÁUSULA 3 - DAS CONDIÇÕES E RESTRIÇÕES</h3>
-                <p>
-                    <strong>3.1. Downgrade de Plano:</strong> O CLIENTE que optar por um "downgrade" (migração para um plano inferior) perderá o acesso e os benefícios do site criado sob o plano anterior. Um novo site será criado, conforme as especificações do novo plano contratado. O site anterior não será excluído, mas sim arquivado, e não estará mais disponível para o CLIENTE, pois o valor do novo plano não cobre a manutenção da estrutura mais complexa.
-                </p>
-                <p>
-                    <strong>3.2. Cancelamento da Assinatura:</strong> No caso de cancelamento da assinatura, o CLIENTE perderá imediatamente o acesso a todos os benefícios do plano, incluindo manutenção, hospedagem e domínio. O site criado ficará offline. Caso o CLIENTE deseje adquirir o site para si, deverá pagar o valor justo e acordado pelo site, sendo que o PRESTADOR DE SERVIÇOS entregará todos os arquivos do site. A partir da aquisição, a manutenção, hospedagem e domínio passarão a ser de total responsabilidade do CLIENTE.
-                </p>
-
-                <h3>CLÁUSULA 4 - DAS OBRIGAÇÕES DO PRESTADOR DE SERVIÇOS</h3>
-                <p>
-                    <strong>4.1. Gestão de Planos:</strong> Em caso de alteração de plano, o PRESTADOR DE SERVIÇOS garantirá a criação de um novo site conforme o novo plano contratado. O site anterior será substituído pelo novo, mas será arquivado para fins de segurança e histórico, não sendo excluído.
-                </p>
-                <p>
-                    <strong>4.2. Arquivamento de Sites:</strong> O PRESTADOR DE SERVIÇOS se compromete a não excluir os sites criados sob planos anteriores, mas sim substituí-los no servidor pelo novo site e mantê-los arquivados, seguindo a regra do item 3.1.
-                </p>
-
-                <h3>CLÁUSULA 5 - DO PAGAMENTO E DA VIGÊNCIA</h3>
-                <p>
-                    <strong>5.1. Vigência:</strong> Este contrato entra em vigor a partir da data de sua assinatura e é válido por prazo indeterminado, com renovação automática a cada mês, mediante o pagamento da assinatura.
-                </p>
-                <p>
-                    <strong>5.2. Pagamento:</strong> O CLIENTE se compromete a efetuar o pagamento mensal da assinatura na data de {{ \Carbon\Carbon::parse($nextBillingDateIso)->isoFormat('DD [de] MMMM [de] YYYY') }} de cada mês.
-                </p>
-                
-                <h3>CLÁUSULA 6 - DO FORO</h3>
-                <p>
-                    <strong>6.1. Resolução de Conflitos:</strong> Fica eleito o foro da comarca de Dourados/MS, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer dúvidas ou conflitos oriundos do presente contrato.
-                </p>
-
-                <div class="signature-section">
-                    <p>Rua Visconde de Taunay, 250, no bairro Jardim Londrina</p>
-                    <div class="signature-line"></div>
-                    <div class="signature-line-text">
-                        <p>START TO FINISH<br>PRESTADOR DE SERVIÇOS</p>
-                    </div>
-                    <div class="signature-line"></div>
-                    <div class="signature-line-text">
-                        <p>{{Auth::user()->name}}<br>CLIENTE</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
+
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {

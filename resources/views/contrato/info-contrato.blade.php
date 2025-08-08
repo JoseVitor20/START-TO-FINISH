@@ -3,14 +3,13 @@
 @section('title', 'Contrato de Assinatura')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/welcome/welcome.css', 'resources/js/welcome/welcome.js'])
+  @vite(['resources/css/welcome/welcome.css', 'resources/js/welcome/welcome.js'])
 @endpush
 
 @section('content')
     <div class="contract-container">
         <a href="/#precos" class="voltar-contrato"><i class="fa-solid fa-arrow-left"></i></a>
         <h1 class="contract-title">Contrato de Prestação de Serviços de Assinatura Mensal de Website</h1>
-        
         <h2 class="section-heading">DAS PARTES</h2>
         <p>
             <strong>CONTRATADO:</strong> START TO FINISH, pessoa jurídica de direito privado inscrita no CNPJ sob o nº 098.717.321-98, com sede em Rua Padre Aquiles Pio Redin - 150, doravante denominada <strong>PRESTADOR DE SERVIÇOS</strong>.
@@ -18,12 +17,10 @@
         <p>
             <strong>CONTRATANTE:</strong> {{Auth::user()->name}}, pessoa jurídica ou física, inscrito no CNPJ/CPF sob o nº {{Auth::user()->document}}, com endereço em {{Auth::user()->address}}, doravante denominado <strong>CLIENTE</strong>.
         </p>
-        
         <h2 class="section-heading">CONSIDERAÇÕES INICIAIS</h2>
         <p>
             O presente instrumento tem como objetivo estabelecer as condições para a prestação de serviços de assinatura mensal de website, que inclui a criação, manutenção, hospedagem e outros benefícios descritos abaixo.
         </p>
-        
         <ul class="clause-list">
             <li>
                 <strong class="clause-title">Objeto e Benefícios da Assinatura:</strong> Este contrato tem por objeto a prestação de serviços de assinatura mensal, pela qual o CLIENTE terá acesso a um pacote de benefícios relacionados a um website, conforme o plano contratado.
@@ -51,6 +48,10 @@
                 </ul>
             </li>
             <li>
+                <strong class="clause-title">Do Reembolso:</strong>
+                <p>O CLIENTE tem o direito de solicitar o reembolso integral da primeira compra realizada em até 24 horas após a confirmação do pagamento. Para isso, a solicitação deve ser feita através dos canais de comunicação oficiais do PRESTADOR DE SERVIÇOS (e-mail ou WhatsApp), informando o nome completo, o número do pedido e o motivo da desistência. Após a análise e aprovação da solicitação, o reembolso será processado no prazo acordado entre as partes.</p>
+            </li>
+            <li>
                 <strong class="clause-title">Das Obrigações do Prestador de Serviços:</strong>
                 <ul class="sub-clause-list">
                     <li><strong class="clause-item">a) Gestão de Planos:</strong> Em caso de alteração de plano, o PRESTADOR DE SERVIÇOS garantirá a criação de um novo site conforme o novo plano contratado. O site anterior será substituído pelo novo, mas será arquivado para fins de segurança e histórico, não sendo excluído.</li>
@@ -66,7 +67,6 @@
                 <p>Fica eleito o foro da comarca de Dourados/MS, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer dúvidas ou conflitos oriundos do presente contrato.</p>
             </li>
         </ul>
-
         <div class="signatures-section">
             <div class="signature-block">
                 <div class="signature-line"></div>
