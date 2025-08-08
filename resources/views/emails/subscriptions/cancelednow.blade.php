@@ -46,7 +46,7 @@
                         O plano <strong style="color: #00f5d0;">MICRO</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO MICRO.png') }}" alt="Plano Micro" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-micro.png')}}" alt="Plano Micro" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
@@ -66,7 +66,7 @@
                         O plano <strong style="color: #00f5d0;">BÁSICO</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO BÁSICO.png') }}" alt="Plano Básico" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-basico.png')}}" alt="Plano Básico" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
@@ -86,7 +86,7 @@
                         O plano <strong style="color: #00f5d0;">ESSENCIAL</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO ESSENCIAL.png') }}" alt="Plano Essencial" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-essencial.png')}}" alt="Plano Essencial" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
@@ -106,7 +106,7 @@
                         O plano <strong style="color: #00f5d0;">PROFISSIONAL</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO PROFISSIONAL.png') }}" alt="Plano Profissional" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-profissional.png')}}" alt="Plano Profissional" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
@@ -126,7 +126,7 @@
                         O plano <strong style="color: #00f5d0;">AVANÇADO</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO AVANÇADO.png') }}" alt="Plano Avançado" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-avancado.png')}}" alt="Plano Avançado" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
@@ -146,7 +146,7 @@
                         O plano <strong style="color: #00f5d0;">MASTER</strong> foi cancelado imediatamente!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <img src="{{ asset('img/assinaturas/PLANO MASTER.png') }}" alt="Plano Master" style="max-width: 100%; border-radius: 8px; border: 1px solid #2d2d42;">
+                        <img src="{{asset('img/assinaturas/plano-master.png')}}" alt="Plano Master" style="max-height: 400px; border-radius: 8px; border: 1px solid #2d2d42;">                       
                     </div>
                     <h3 style="color: #e0e0e0; font-size: 18px; margin-bottom: 15px;">Ao cancelar, você perde os seguintes benefícios:</h3>
                     <ul style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
