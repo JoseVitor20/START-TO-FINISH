@@ -210,19 +210,19 @@
 
         <!-- Content -->
         <div class="content" style="padding: 40px;">
-            <h1 class="update-title" style="color: #00f5d0; font-size: 26px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
+            <h1 class="update-title" style="color: #00f5d0; font-size: 16px; margin-bottom: 25px; font-weight: 600; position: relative; display: inline-block;">
                 Confirmação de Atualização de Plano
                 <span class="title-underline" style="display: block; height: 3px; width: 100%; background: linear-gradient(90deg, #00f5d0, #19bf00); border-radius: 3px; position: absolute; bottom: -8px; left: 0;"></span>
             </h1>
 
-            <div class="greeting" style="font-size: 18px; color: #ffffff; margin-bottom: 30px;">
+            <div class="greeting" style="font-size: 14px; color: #ffffff; margin-bottom: 30px;">
                 Olá, {{ $userName }}! 👋
             </div>
 
             {{-- Condicionais de planos --}}
             @if($planName == 'price_1Rtd6DATrxUtVNls55TD2FwV')
                 <div style="margin-bottom: 30px;">
-                    <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
+                    <p class="update-text" style="font-size: 12px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MICRO</strong> com sucesso!
                     </p>
                     <div class="plan-image-container" style="text-align: center; margin: 20px 0;">                       
@@ -230,13 +230,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Micro:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Site de 1 página (cartão de visita online)</li>
-                        <li style="margin-bottom: 8px;">Design responsivo</li>
-                        <li style="margin-bottom: 8px;">SEO básico para visibilidade</li>
-                        <li style="margin-bottom: 8px;">Hospedagem de 5GB SSD</li>
-                        <li style="margin-bottom: 8px;">Domínio grátis (enquanto for assinante)</li>
-                        <li style="margin-bottom: 8px;">Manutenção e suporte grátis agendado via WhatsApp</li>
-                        <li style="margin-bottom: 8px;">Certificado SSL grátis</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Site de 1 página (cartão de visita online)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Design responsivo</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">SEO básico para visibilidade</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem de 5GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Domínio grátis (enquanto for assinante)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Manutenção e suporte grátis agendado via WhatsApp</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Certificado SSL grátis</li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
@@ -249,13 +249,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Básico:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Micro</li>
-                        <li style="margin-bottom: 8px;">Site de até 5 páginas</li>
-                        <li style="margin-bottom: 8px;">SEO para ranqueamento</li>
-                        <li style="margin-bottom: 8px;">Hospedagem premium de 10GB SSD</li>
-                        <li style="margin-bottom: 8px;">Manutenção e suporte com prioridade média</li>
-                        <li style="margin-bottom: 8px;">Relatório mensal de desempenho (Google Analytics)</li>
-                        <li style="margin-bottom: 8px;">3 contas de e-mail profissional</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Todos os benefícios do Plano Micro</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Site de até 5 páginas</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">SEO para ranqueamento</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem premium de 10GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Manutenção e suporte com prioridade média</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Relatório mensal de desempenho (Google Analytics)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">3 contas de e-mail profissional</li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
@@ -268,13 +268,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Essencial:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Básico</li>
-                        <li style="margin-bottom: 8px;">Site de até 15 páginas com galeria de produtos</li>
-                        <li style="margin-bottom: 8px;">Design exclusivo e responsivo</li>
-                        <li style="margin-bottom: 8px;">SEO avançado</li>
-                        <li style="margin-bottom: 8px;">Hospedagem avançada de 20GB SSD</li>
-                        <li style="margin-bottom: 8px;">Manutenção e suporte com prioridade alta</li>
-                        <li style="margin-bottom: 8px;">Ambiente de testes (staging)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Todos os benefícios do Plano Básico</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Site de até 15 páginas com galeria de produtos</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Design exclusivo e responsivo</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">SEO avançado</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem avançada de 20GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Manutenção e suporte com prioridade alta</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Ambiente de testes (staging)</li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
@@ -287,13 +287,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Profissional:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Essencial</li>
-                        <li style="margin-bottom: 8px;">Site institucional completo com SEO</li>
-                        <li style="margin-bottom: 8px;">Formulário de orçamento e botão de WhatsApp flutuante</li>
-                        <li style="margin-bottom: 8px;">Agendamento online integrado</li>
-                        <li style="margin-bottom: 8px;">SEO Avançado e Local SEO</li>
-                        <li style="margin-bottom: 8px;">Hospedagem premium de 30GB SSD</li>
-                        <li style="margin-bottom: 8px;">Backup diário automático</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Todos os benefícios do Plano Essencial</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Site institucional completo com SEO</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Formulário de orçamento e botão de WhatsApp flutuante</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Agendamento online integrado</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">SEO Avançado e Local SEO</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem premium de 30GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Backup diário automático</li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
@@ -306,13 +306,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Avançado:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Profissional</li>
-                        <li style="margin-bottom: 8px;">Loja virtual com até 50 produtos</li>
-                        <li style="margin-bottom: 8px;">Páginas ilimitadas</li>
-                        <li style="margin-bottom: 8px;">Integração com meios de pagamento e logística</li>
-                        <li style="margin-bottom: 8px;">Hospedagem empresarial de 50GB SSD</li>
-                        <li style="margin-bottom: 8px;">Suporte com prioridade urgente</li>
-                        <li style="margin-bottom: 8px;">Suporte 24/6 (WhatsApp e e-mail)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Todos os benefícios do Plano Profissional</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Loja virtual com até 50 produtos</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Páginas ilimitadas</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Integração com meios de pagamento e logística</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem empresarial de 50GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Suporte com prioridade urgente</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Suporte 24/6 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
@@ -325,13 +325,13 @@
                     </div>
                     <h3 class="benefits-heading" style="color: #00f5d0; font-size: 18px; margin-bottom: 15px;">Você terá acesso a esses benefícios no plano Master:</h3>
                     <ul class="benefits-list" style="padding-left: 20px; color: #a0a0c0; line-height: 1.6; margin-bottom: 20px;">
-                        <li style="margin-bottom: 8px;">Todos os benefícios do Plano Avançado</li>
-                        <li style="margin-bottom: 8px;">E-commerce ilimitado e integrações com sistemas</li>
-                        <li style="margin-bottom: 8px;">Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
-                        <li style="margin-bottom: 8px;">Hospedagem dedicada de 100GB SSD</li>
-                        <li style="margin-bottom: 8px;">Suporte com prioridade extrema</li>
-                        <li style="margin-bottom: 8px;">Consultoria estratégica mensal</li>
-                        <li style="margin-bottom: 8px;">Suporte 24/7 (WhatsApp e e-mail)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Todos os benefícios do Plano Avançado</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">E-commerce ilimitado e integrações com sistemas</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem dedicada de 100GB SSD</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Suporte com prioridade extrema</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Consultoria estratégica mensal</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Suporte 24/7 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
             @endif
