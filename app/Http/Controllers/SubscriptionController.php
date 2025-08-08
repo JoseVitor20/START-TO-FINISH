@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SubscriptionPurchased; // Presumo que você tenha estas classes de Mail
+use App\Mail\SubscriptionPurchased; 
 use App\Mail\SubscriptionCanceled;
 use App\Mail\SubscriptionCanceledNow;
 use App\Mail\SubscriptionResumed;
@@ -12,7 +12,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Http; // Importar a fachada Http
+use Illuminate\Support\Facades\Http;
+use Stripe\StripeClient; // Importar a classe StripeClient
 
 
 class SubscriptionController extends Controller
@@ -32,7 +33,7 @@ class SubscriptionController extends Controller
         return $request->user()->newSubscription(request('plan'), request('price_id'))
             ->trialDays(31)
             ->checkout([
-                'success_url' => route('subscription.success') . '?session_id={CHECKOUT_SESSION_ID}',
+                'success_url' => route('subscription.redirectAfterCheckout'), 
                 'cancel_url' => route('subscription.cancelled'),
                 'metadata' => [
                  'price_id' => request('price_id'),
@@ -46,6 +47,8 @@ class SubscriptionController extends Controller
 
     public function success(Request $request)
     {
+        // Este método 'success' não será mais o destino direto do Stripe
+        // Ele pode ser mantido para uma solução futura ou removido se não for mais necessário.
         $user = $request->user();
         $subscription = $user->subscriptions()->latest()->first();
         $stripe = new \Stripe\StripeClient(config('services.stripe.secret'));
