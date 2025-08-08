@@ -30,7 +30,7 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         return $request->user()->newSubscription(request('plan'), request('price_id'))
-            ->trialDays(31)
+            // ->trialDays(31)
             ->checkout([
                 'success_url' => route('subscription.success') . '?session_id={CHECKOUT_SESSION_ID}',
                 'cancel_url' => route('subscription.cancelled'),
