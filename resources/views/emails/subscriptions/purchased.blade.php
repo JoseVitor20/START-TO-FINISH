@@ -220,7 +220,7 @@
             </div>
 
             {{-- Condicional para PLANO MICRO --}}
-            @if($planName == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+            @if($planName == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 12px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">MICRO</strong> foi confirmada com sucesso! 🎉
@@ -240,7 +240,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO BÁSICO --}}
-            @elseif($planName == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+            @elseif($planName == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">BÁSICO</strong> foi confirmada com sucesso! 🎉
@@ -260,7 +260,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO ESSENCIAL --}}
-            @elseif($planName == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+            @elseif($planName == 'price_1RtxyXATrxUtVNlskia8tsRB')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">ESSENCIAL</strong> foi confirmada com sucesso! 🎉
@@ -280,7 +280,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO PROFISSIONAL --}}
-            @elseif($planName == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+            @elseif($planName == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">PROFISSIONAL</strong> foi confirmada com sucesso! 🎉
@@ -300,7 +300,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO AVANÇADO --}}
-            @elseif($planName == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+            @elseif($planName == 'price_1Rty1DATrxUtVNlscvduK7xW')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">AVANÇADO</strong> foi confirmada com sucesso! 🎉
@@ -320,7 +320,7 @@
                     </ul>
                 </div>
             {{-- Condicional para PLANO MASTER --}}
-            @elseif($planName == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+            @elseif($planName == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                 <div style="margin-bottom: 30px;">
                     <p class="subscription-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Sua assinatura do plano <strong style="color: #00f5d0;">MASTER</strong> foi confirmada com sucesso! 🎉

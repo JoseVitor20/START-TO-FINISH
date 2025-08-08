@@ -28,7 +28,7 @@
                                 <div class="plan-benefits">
                                     <h4 class="benefits-title">Benefícios do Plano:</h4>
                                     <ul class="benefits-list">
-                                        @if($subscription->plan_name == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+                                        @if($subscription->plan_name == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                                             <li><i class="fa-solid fa-circle-check"></i> Site de 1 página (cartão de visita online)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Design responsivo</li>
@@ -40,7 +40,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Certificado SSL grátis</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
                                             <li><i class="fa-solid fa-circle-check"></i> 1 conta de e-mail profissional</li>
-                                        @elseif($subscription->plan_name == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+                                        @elseif($subscription->plan_name == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                                             <li><i class="fa-solid fa-circle-check"></i> Site de até 5 páginas</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Design responsivo</li>
@@ -53,7 +53,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Relatório mensal de desempenho (Google Analytics)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> 3 contas de e-mail profissional</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Backup diário automático</li>
-                                        @elseif($subscription->plan_name == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                                        @elseif($subscription->plan_name == 'price_1RtxyXATrxUtVNlskia8tsRB')
                                             <li><i class="fa-solid fa-circle-check"></i> Site de até 15 páginas com galeria de produtos</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Design exclusivo e responsivo</li>
@@ -65,7 +65,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Ambiente de testes (staging)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
                                             <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
-                                        @elseif($subscription->plan_name == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                                        @elseif($subscription->plan_name == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                                             <li><i class="fa-solid fa-circle-check"></i> Site institucional completo com SEO</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Formulário de orçamento e botão de WhatsApp flutuante</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Agendamento online integrado</li>
@@ -77,7 +77,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Ambiente de testes (staging)</li>
-                                        @elseif($subscription->plan_name == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                                        @elseif($subscription->plan_name == 'price_1Rty1DATrxUtVNlscvduK7xW')
                                             <li><i class="fa-solid fa-circle-check"></i> Loja virtual com até 50 produtos</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Design exclusivo e responsivo</li>
@@ -90,7 +90,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> SEO avançado</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Backup diário</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Suporte 24/6 (WhatsApp e e-mail)</li>
-                                        @elseif($subscription->plan_name == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                                        @elseif($subscription->plan_name == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                                             <li><i class="fa-solid fa-circle-check"></i> E-commerce ilimitado e integrações com sistemas</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Hospedagem dedicada de 100GB SSD</li>
@@ -120,17 +120,17 @@
                             <div class="info-section">
                                 <h4>Detalhes do Plano</h4>
                                 <p><strong>Plano:</strong> 
-                                    @if($subscription->plan_name == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+                                    @if($subscription->plan_name == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                                         <strong class="status active micro">Micro</strong>
-                                    @elseif($subscription->plan_name == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+                                    @elseif($subscription->plan_name == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                                         <strong class="status active basico">Básico</strong>
-                                    @elseif($subscription->plan_name == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                                    @elseif($subscription->plan_name == 'price_1RtxyXATrxUtVNlskia8tsRB')
                                         <strong class="status active essencial">Essencial</strong>
-                                    @elseif($subscription->plan_name == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                                    @elseif($subscription->plan_name == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                                         <strong class="status active profissional">Profissional</strong>
-                                    @elseif($subscription->plan_name == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                                    @elseif($subscription->plan_name == 'price_1Rty1DATrxUtVNlscvduK7xW')
                                         <strong class="status active avancado">Avançado</strong>
-                                    @elseif($subscription->plan_name == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                                    @elseif($subscription->plan_name == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                                         <strong class="status active master">Master</strong>
                                     @endif
                                 </p>
@@ -219,17 +219,17 @@
                                 <path d="M9 17L4 12M4 12L9 7M4 12H20" stroke="var(--neon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M15 17L20 12M20 12L15 7M20 12H4" stroke="var(--neon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
                             </svg>
-                            @if($mainSubscription->stripe_price == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+                            @if($mainSubscription->stripe_price == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                                 <h3 class="plan-title">Atualizar Plano Micro</h3>
-                            @elseif($mainSubscription->stripe_price == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+                            @elseif($mainSubscription->stripe_price == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                                 <h3 class="plan-title">Atualizar Plano Básico</h3>
-                            @elseif($mainSubscription->stripe_price == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                            @elseif($mainSubscription->stripe_price == 'price_1RtxyXATrxUtVNlskia8tsRB')
                                 <h3 class="plan-title">Atualizar Plano Essencial</h3>
-                            @elseif($mainSubscription->stripe_price == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                            @elseif($mainSubscription->stripe_price == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                                 <h3 class="plan-title">Atualizar Plano Profissional</h3>
-                            @elseif($mainSubscription->stripe_price == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                            @elseif($mainSubscription->stripe_price == 'price_1Rty1DATrxUtVNlscvduK7xW')
                                 <h3 class="plan-title">Atualizar Plano Avançado</h3>
-                            @elseif($mainSubscription->stripe_price == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                            @elseif($mainSubscription->stripe_price == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                                 <h3 class="plan-title">Atualizar Plano Master</h3>
                             @endif                             
                         </div>
@@ -237,22 +237,22 @@
                         <div class="current-plan-info">
                             <p class="current-plan-label">Seu plano atual:</p>
                             <div class="plan-details">
-                                @if($mainSubscription->stripe_price == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+                                @if($mainSubscription->stripe_price == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                                     <span class="plan-badge status active micro">Micro</span>
                                     <span class="plan-price">R$49,00/mês</span>
-                                @elseif($mainSubscription->stripe_price == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+                                @elseif($mainSubscription->stripe_price == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                                     <span class="plan-badge status active basico">Básico</span>
                                     <span class="plan-price">R$99,00/mês</span>
-                                @elseif($mainSubscription->stripe_price == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                                @elseif($mainSubscription->stripe_price == 'price_1RtxyXATrxUtVNlskia8tsRB')
                                     <span class="plan-badge status active essencial">Essencial</span>
                                     <span class="plan-price">R$149,00/mês</span>
-                                @elseif($mainSubscription->stripe_price == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                                @elseif($mainSubscription->stripe_price == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                                     <span class="plan-badge status active profissional">Profissional</span>
                                     <span class="plan-price">R$199,00/mês</span>
-                                @elseif($mainSubscription->stripe_price == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                                @elseif($mainSubscription->stripe_price == 'price_1Rty1DATrxUtVNlscvduK7xW')
                                     <span class="plan-badge status active avancado">Avançado</span>
                                     <span class="plan-price">R$249,00/mês</span>
-                                @elseif($mainSubscription->stripe_price == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                                @elseif($mainSubscription->stripe_price == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                                     <span class="plan-badge status active master">Master</span>
                                     <span class="plan-price">R$599,00/mês</span>
                                 @endif
@@ -265,22 +265,22 @@
                                 <label for="new_plan" class="form-label">Selecione o novo plano</label>
                                 <div class="select-wrapper">
                                     <select name="new_price_id" id="new_plan" class="plan-select">
-                                        <option value="price_1Rtd6DATrxUtVNls55TD2FwV" @if($mainSubscription->stripe_price == 'price_1Rtd6DATrxUtVNls55TD2FwV') selected @endif>
+                                        <option value="price_1RtxvFATrxUtVNlsRUQN7PI5" @if($mainSubscription->stripe_price == 'price_1RtxvFATrxUtVNlsRUQN7PI5') selected @endif>
                                             Plano Micro - R$49,00/mês
                                         </option>
-                                        <option value="price_1Rtd6zATrxUtVNlslxYeAk0i" @if($mainSubscription->stripe_price == 'price_1Rtd6zATrxUtVNlslxYeAk0i') selected @endif>
+                                        <option value="price_1RtxwcATrxUtVNlsax7gHMWt" @if($mainSubscription->stripe_price == 'price_1RtxwcATrxUtVNlsax7gHMWt') selected @endif>
                                             Plano Básico - R$99,00/mês
                                         </option>
-                                        <option value="price_1Rt85EPSFtrJEyUPK8H2s7E7" @if($mainSubscription->stripe_price == 'price_1Rt85EPSFtrJEyUPK8H2s7E7') selected @endif>
+                                        <option value="price_1RtxyXATrxUtVNlskia8tsRB" @if($mainSubscription->stripe_price == 'price_1RtxyXATrxUtVNlskia8tsRB') selected @endif>
                                             Plano Essencial - R$149,00/mês
                                         </option>
-                                        <option value="price_1Rt86VPSFtrJEyUPfUS70vfM" @if($mainSubscription->stripe_price == 'price_1Rt86VPSFtrJEyUPfUS70vfM') selected @endif>
+                                        <option value="price_1RtxzlATrxUtVNlsC5rdTbcI" @if($mainSubscription->stripe_price == 'price_1RtxzlATrxUtVNlsC5rdTbcI') selected @endif>
                                             Plano Profissional - R$199,00/mês
                                         </option>
-                                        <option value="price_1Rt8A5PSFtrJEyUPWvDK3zVT" @if($mainSubscription->stripe_price == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT') selected @endif>
+                                        <option value="price_1Rty1DATrxUtVNlscvduK7xW" @if($mainSubscription->stripe_price == 'price_1Rty1DATrxUtVNlscvduK7xW') selected @endif>
                                             Plano Avançado - R$249,00/mês
                                         </option>
-                                        <option value="price_1Rt8BWPSFtrJEyUPaF7RDRjt" @if($mainSubscription->stripe_price == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt') selected @endif>
+                                        <option value="price_1Rty2wATrxUtVNlslZP3DyEE" @if($mainSubscription->stripe_price == 'price_1Rty2wATrxUtVNlslZP3DyEE') selected @endif>
                                             Plano Master - R$599,00/mês
                                         </option>
 
@@ -345,17 +345,17 @@
                                     <div class="info-section">
                                         <h4>Detalhes do Plano</h4>
                                         <p><strong>Plano:</strong>
-                                            @if($subscription->plan_name == 'price_1Rtd6DATrxUtVNls55TD2FwV')
+                                            @if($subscription->plan_name == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
                                                 <strong class="status status inactive micro">Micro</strong>
-                                            @elseif($subscription->plan_name == 'price_1Rtd6zATrxUtVNlslxYeAk0i')
+                                            @elseif($subscription->plan_name == 'price_1RtxwcATrxUtVNlsax7gHMWt')
                                                 <strong class="status status inactive basico">Básico</strong>
-                                            @elseif($subscription->plan_name == 'price_1Rt85EPSFtrJEyUPK8H2s7E7')
+                                            @elseif($subscription->plan_name == 'price_1RtxyXATrxUtVNlskia8tsRB')
                                                 <strong class="status status inactive essencial">Essencial</strong>
-                                            @elseif($subscription->plan_name == 'price_1Rt86VPSFtrJEyUPfUS70vfM')
+                                            @elseif($subscription->plan_name == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
                                                 <strong class="status status inactive profissional">Profissional</strong>
-                                            @elseif($subscription->plan_name == 'price_1Rt8A5PSFtrJEyUPWvDK3zVT')
+                                            @elseif($subscription->plan_name == 'price_1Rty1DATrxUtVNlscvduK7xW')
                                                 <strong class="status status inactive avancado">Avançado</strong>
-                                            @elseif($subscription->plan_name == 'price_1Rt8BWPSFtrJEyUPaF7RDRjt')
+                                            @elseif($subscription->plan_name == 'price_1Rty2wATrxUtVNlslZP3DyEE')
                                                 <strong class="status status inactive master">Master</strong>
                                             @endif                        
                                         </p>

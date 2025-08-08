@@ -62,7 +62,7 @@
                         'Backup diário automático'
                     ],
                     'ideal_for' => 'Para pequenos negócios que querem crescer',
-                    'price_id' => 'price_1Rtd6zATrxUtVNlslxYeAk0i'
+                    'price_id' => 'price_1RtxwcATrxUtVNlsax7gHMWt'
                 ],
                 [
                     'id' => 'essencial',
@@ -84,7 +84,7 @@
                         '5 contas de e-mail profissional'
                     ],
                     'ideal_for' => 'Para negócios em crescimento que buscam autoridade',
-                    'price_id' => 'price_1Rt85EPSFtrJEyUPK8H2s7E7'
+                    'price_id' => 'price_1RtxyXATrxUtVNlskia8tsRB'
                 ],
                 [
                     'id' => 'profissional',
@@ -106,7 +106,7 @@
                         'Ambiente de testes (staging)'
                     ],
                     'ideal_for' => 'Para empresas que querem converter mais e escalar',
-                    'price_id' => 'price_1Rt86VPSFtrJEyUPfUS70vfM'
+                    'price_id' => 'price_1RtxzlATrxUtVNlsC5rdTbcI'
                 ],
                 [
                     'id' => 'avancado',
@@ -129,7 +129,7 @@
                         'Suporte 24/6 (WhatsApp e e-mail)'
                     ],
                     'ideal_for' => 'Para empresas prontas para vender online',
-                    'price_id' => 'price_1Rt8A5PSFtrJEyUPWvDK3zVT'
+                    'price_id' => 'price_1Rty1DATrxUtVNlscvduK7xW'
                 ],
                 [
                     'id' => 'master',
@@ -154,7 +154,7 @@
                         'Backup e recuperação de desastres (diário)'
                     ],
                     'ideal_for' => 'Para grandes empresas que buscam o topo',
-                    'price_id' => 'price_1Rt8BWPSFtrJEyUPaF7RDRjt'
+                    'price_id' => 'price_1Rty2wATrxUtVNlslZP3DyEE'
                 ]
             ];
         @endphp
