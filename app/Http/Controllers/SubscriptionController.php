@@ -46,20 +46,55 @@ class SubscriptionController extends Controller
 
     public function success(Request $request)
     {
-        // Apenas para fins de teste de Mod_Security.
-        // Não faz chamadas à API do Stripe aqui para isolar o problema.
+        $user = $request->user();
+        $subscription = $user->subscriptions()->latest()->first();
+        $stripe = new \Stripe\StripeClient(config('services.stripe.secret'));
 
-        Log::info('Tentativa de acesso à página de sucesso. Session ID: ' . $request->query('session_id'));
+        try {
+            // Obter detalhes completos da assinatura no Stripe
+            $stripeSubscription = $stripe->subscriptions->retrieve($subscription->stripe_id);
 
-        // Retorne a view simplificada que você já testou
-        return view('status.success', [
-            // Passe dados mínimos, apenas para garantir que a view funcione
-            'user' => $request->user(),
-            'subscription' => (object)['created_at' => Carbon::now(), 'stripe_id' => 'TEST_ID', 'stripe_status' => 'active'], // Mock de objeto
-            'error' => 'Detalhes completos da assinatura não disponíveis no modo de teste de Mod_Security.'
-        ]);
+            // CONSERTO AQUI: Converter timestamp Unix para ISO 8601 UTC
+            $nextBillingDate = Carbon::createFromTimestamp($stripeSubscription->current_period_end)->toISOString();
+
+            // Obter detalhes do preço e produto
+            $price = $stripe->prices->retrieve($stripeSubscription->plan->id);
+            $product = $stripe->products->retrieve($price->product);
+
+            // Recuperar informações do método de pagamento
+            $paymentMethodDetails = [];
+            if ($stripeSubscription->default_payment_method) {
+                $paymentMethod = $stripe->paymentMethods->retrieve($stripeSubscription->default_payment_method);
+
+                $paymentMethodDetails = [
+                    'type' => $paymentMethod->type,
+                    'brand' => $paymentMethod->card->brand ?? null,
+                    'last4' => $paymentMethod->card->last4 ?? null,
+                    'exp_month' => $paymentMethod->card->exp_month ?? null,
+                    'exp_year' => $paymentMethod->card->exp_year ?? null
+                ];
+            }
+
+            return view('status.success', [
+                'subscription' => $subscription,
+                'stripeSubscription' => $stripeSubscription,
+                'price' => $price,
+                'product' => $product,
+                'nextBillingDate' => $nextBillingDate,
+                'paymentMethod' => $paymentMethodDetails,
+                'user' => $user
+            ]);
+
+        } catch (\Exception $e) {
+            \Log::error('Erro ao buscar detalhes do Stripe: ' . $e->getMessage());
+
+            return view('status.success', [
+                'subscription' => $subscription,
+                'user' => $user,
+                'error' => 'Não foi possível carregar todos os detalhes da assinatura. Por favor, entre em contato com o suporte se precisar de mais informações.'
+            ]);
+        }
     }
-
 
     public function cancelled()
     {
