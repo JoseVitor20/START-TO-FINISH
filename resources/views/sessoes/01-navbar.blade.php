@@ -49,7 +49,6 @@
             @endauth
             @guest
                 <a class="navbar__register-btn" href="register ">
-                    <i class="fas fa-user-plus navbar__icon"></i>
                     <span class="navbar__btn-text"> Ser cliente</span>
                 </a>
                 <a class="navbar__login-btn" href="login">
