@@ -13,8 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     @stack('estilos')
+    @vite(['resources/css/welcome/01-carregamento.css', 'resources/js/welcome/01-carregamento.js'])    
+
 </head>
 <body class="auth-page">
+    {{-- === OVERLAY DE CARREGAMENTO === --}}
+    <div id="loading-overlay">
+        <div class="overlay-background">
+            <div class="overlay-stars"></div>
+        </div>
+        <div class="loading-content">
+            <div class="logo-spinner">
+                <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start to Finish" class="logo-placeholder">
+                <div class="pulse-ring"></div>
+            </div>
+            <p>Estamos preparando tudo para você...</p>
+        </div>
+    </div>
+
+    
     <div class="auth-container">
         @yield('content')
     </div>

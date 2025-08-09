@@ -18,7 +18,7 @@ export default defineConfig({
                     'resources/css/welcome/welcome.css',
                     'resources/js/welcome/welcome.js',
                     'resources/css/welcome/01-carregamento.css',
-                    'resources/js/welcome/01-carregamento.js'
+                    'resources/js/welcome/01-carregamento.js',
                 
                 // Login
                     'resources/css/autenticacao/login.css',
