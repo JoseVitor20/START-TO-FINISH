@@ -3,7 +3,7 @@
 @section('title', 'Elegance Construções - Materiais de Qualidade')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/loja-materiais.css']);
+    @vite(['resources/css/categorias/loja-materiais.css'])
 @endpush
 
 @section('content')

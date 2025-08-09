@@ -1,13 +1,53 @@
+@php
+    function getGravatarUrl($email, $size = 80) {
+        $hash = md5(strtolower(trim($email)));
+        return "https://www.gravatar.com/avatar/{$hash}?s={$size}";
+    }
+
+    $navLinks = [
+        [
+            'href' => route('dashboard'),
+            'text' => 'Dashboard',
+            'icon' => 'fa-solid fa-house',
+            'shouldShow' => !request()->routeIs('dashboard'),
+        ],
+        [
+            'href' => route('profile.edit'),
+            'text' => 'Meu Perfil',
+            'icon' => 'fas fa-cog',
+            'shouldShow' => !request()->routeIs('profile.edit'),
+        ],
+        [
+            'href' => '/#precos',
+            'text' => 'Opções de Assinatura',
+            'icon' => 'fa-solid fa-boxes-stacked',
+            'shouldShow' => true, // Este link é sempre exibido
+        ],
+        [
+            'href' => route('subscription.success'),
+            'text' => 'Status da Assinatura',
+            'icon' => 'fa-solid fa-clipboard-list',
+            'shouldShow' => Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty() && !request()->routeIs('subscription.success'),
+        ],
+        [
+            'href' => route('contract.status'),
+            'text' => 'Contrato e cláusulas',
+            'icon' => 'fa-solid fa-file-contract',
+            'shouldShow' => !request()->routeIs('contract.status'),
+        ],
+    ];
+@endphp
+
 <header class="dashboard-header">
-    <div class="header-left">            
+    <div class="header-left">
         <div class="logo">
-            <a href="/">                    
-                <img src="{{asset('img/starttofinish-black.png')}}" alt="Logo Start To Finish">
+            <a href="/">
+                <img src="{{ asset('img/starttofinish-black.png') }}" alt="Logo Start To Finish">
             </a>
-        </div>            
+        </div>
     </div>
 
-    <div class="header-right">          
+    <div class="header-right">
         <div class="header-actions">
             <button class="header-action header-action--dark-mode" title="Alternar tema">
                 <i class="fas fa-moon"></i>
@@ -15,27 +55,17 @@
         </div>
 
         <div class="user-profile" id="user-profile">
-            @php
-                function getGravatarUrl($email, $size = 80)
-                {
-                    $hash = md5(strtolower(trim($email)));
-                    return "https://www.gravatar.com/avatar/{$hash}?s={$size}";
-                }
-            @endphp
-
             <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="user-avatar">
             
             <div class="user-info">
-                <span class="user-name resumo">{{Auth::user()->name}}</span>
+                <span class="user-name resumo">{{ Auth::user()->name }}</span>
                 @switch(Auth::user()->role)
                     @case('admin')
                         <span class="user-role">Administrador</span>
                     @break
-
                     @case('owner')
                         <span class="user-role">Proprietário</span>
                     @break
-
                     @case('user')
                         <span class="user-role">Cliente</span>
                     @break
@@ -44,51 +74,22 @@
             <i class="fas fa-chevron-down" id="setaDropdown" style="font-size: 0.9rem;"></i>
         </div>
         <button class="mobile-menu-btn" id="mobile-menu-btn">
-            {{-- <i class="fas fa-bars"></i> --}}
             <img src="{{ getGravatarUrl(Auth::user()->email) }}" alt="User" class="user-avatar-mobile">
             <i class="fas fa-chevron-down" id="setaDropdown-mobile" style="font-size: 0.9rem;"></i>
-        </button>            
+        </button>
     </div>
 
-    <!-- Dropdown Menu (opcional) -->
     <div class="dropdown-menu" id="dropdown-menu">
-        @if(request()->is('dashboard'))
-            <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
-            <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
+        @foreach($navLinks as $link)
+            @if ($link['shouldShow'])
+                <a href="{{ $link['href'] }}" class="dropdown-item">
+                    <i class="{{ $link['icon'] }}"></i> {{ $link['text'] }}
+                </a>
             @endif
-            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>            
-        @endif   
+        @endforeach
         
-
-        @if(request()->is('subscription/success'))
-            <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>
-            <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>            
-        @endif  
-
-        @if(request()->is('profile'))
-            <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
-            @endif
-            <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
-            <a href="{{route('contract.status')}}" class="dropdown-item"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
-        @endif        
-
-        @if(request()->is('contrato/status'))
-            <a href="{{route('profile.edit')}}" class="dropdown-item"><i class="fas fa-cog"></i> Meu Perfil</a>        
-            <a href="/#precos" class="dropdown-item"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}" class="dropdown-item"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>            
-            @endif
-            <a href="{{route('dashboard')}}" class="dropdown-item"><i class="fa-solid fa-house"></i> Dashboard</a>
-        @endif                          
-
         <div class="dropdown-divider"></div>
-
+        
         <form method="POST" action="{{ route('logout') }}" class="dropdown-item">
             @csrf
             <button type="submit" class="dropdown-item-sair">
@@ -98,70 +99,16 @@
     </div>
 </header>
 
-<!-- Menu Mobile -->
 <div class="mobile-menu" id="mobile-menu">
-    @if(request()->is('dashboard'))
-        <div class="mobile-menu-item">
-            <a href="{{route('profile.edit')}}"><i class="fas fa-cog"></i> Meu Perfil</a>
-        </div>
-        <div class="mobile-menu-item">
-            <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-        </div>
-        <div class="mobile-menu-item">
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
-            @endif
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
-        </div>        
-    @endif   
-    
-    @if(request()->is('subscription/success'))
-        <div class="mobile-menu-item">
-            <a href="{{route('profile.edit')}}"><i class="fas fa-cog"></i> Meu Perfil</a>
-        </div>
-        <div class="mobile-menu-item">
-            <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
-        </div>        
-    @endif  
-
-    @if(request()->is('profile'))
-        <div class="mobile-menu-item">
-            <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-        </div>
-        <div class="mobile-menu-item">
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
-            @endif
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('contract.status')}}"><i class="fa-solid fa-file-contract"></i> Contrato e cláusulas</a>
-        </div>        
-    @endif
-
-    @if(request()->is('contrato/status'))
-        <div class="mobile-menu-item">
-            <a href="/#precos"><i class="fa-solid fa-boxes-stacked"></i> Opções de Assinatura</a>
-        </div>
-        <div class="mobile-menu-item">
-            @if(Auth::user()->subscriptions()->active()->with('items')->get()->isNotEmpty())
-                <a href="{{route('subscription.success')}}"><i class="fa-solid fa-clipboard-list"></i>Status da Assinatura</a>
-            @endif
-        </div>
-        <div class="mobile-menu-item">
-            <a href="{{route('dashboard')}}"><i class="fa-solid fa-house"></i> Dashboard</a>
-        </div>      
-    @endif
+    @foreach($navLinks as $link)
+        @if ($link['shouldShow'])
+            <div class="mobile-menu-item">
+                <a href="{{ $link['href'] }}">
+                    <i class="{{ $link['icon'] }}"></i> {{ $link['text'] }}
+                </a>
+            </div>
+        @endif
+    @endforeach
 
     <div class="mobile-menu-item">
         <form method="POST" action="{{ route('logout') }}">

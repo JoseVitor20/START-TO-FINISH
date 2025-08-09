@@ -15,14 +15,14 @@
     color: var(--neon);
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 .section-heading {
     color: var(--gradiente-pri-color);
     margin: 1.5rem 0 1rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
@@ -42,7 +42,7 @@
 
 .clause-title {
     color: var(--text-pri-color);
-    font-size: 1.1rem;
+    font-size: .8rem;
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -126,7 +126,7 @@ a {
     transition: var(--transition);
 }
 
-a:hover {
+.contract-container  a:hover {
     color: var(--gradiente-sec-color);
     text-decoration: underline;
 }
@@ -168,6 +168,10 @@ strong {
 }
 
 .option-contract{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 50px;
 }
 
@@ -185,13 +189,13 @@ strong {
 }
 
 .option-contract{
+    font-size: .9rem;
     margin-bottom: 50px;
 }
 
 .aceitar-contract-status{
     padding: 10px;
     border-radius: 5px;
-    margin-left: 10px;
     border: none;  
     text-decoration: none !important;
     color: #303030 ;

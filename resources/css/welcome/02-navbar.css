@@ -414,7 +414,7 @@
         transition: height 0.7s ease-in-out;
         flex-direction: column;
         padding: 0%;
-        background-color: var(--bg-sec-color);
+        background-color: var(--border-color);
         z-index: 1;
         border-bottom: 2px solid var(--neon);
         border-left: 2px solid var(--neon);

@@ -3,7 +3,7 @@
 @section('title', 'DentalCare - Clínica Odontológica')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/odonto.css']);
+    @vite(['resources/css/categorias/odonto.css'])
 @endpush
 
 @section('content')

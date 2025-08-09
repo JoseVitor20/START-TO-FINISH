@@ -3,7 +3,7 @@
 @section('title', 'Flora Elegante - Floricultura')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/floricultura.css', 'resources/js/categorias/floricultura.js']);
+    @vite(['resources/css/categorias/floricultura.css', 'resources/js/categorias/floricultura.js'])
 @endpush
 
 @section('content')

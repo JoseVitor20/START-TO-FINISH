@@ -171,17 +171,10 @@
     font-size: 14px;
 }
 
-.dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-pri-color);
-    text-decoration: none !important;
-}
-
 .dropdown-item i {
     margin-right: 10px;
     width: 20px;
     text-align: center;
-    color: var(--text-sec-color);
 }
 
 .dropdown-divider {
@@ -198,10 +191,6 @@
     padding: 0;
     width: 100%;
     text-align: left;
-}
-
-.dropdown-item button:hover {
-    color: var(--text-pri-color);
 }
 
 .dropdown-item button i {
@@ -258,7 +247,8 @@
 }
 
 .mobile-menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--text-sec-color);
+    color: var(--text-pri-color);
 }
 
 .mobile-menu-item i {

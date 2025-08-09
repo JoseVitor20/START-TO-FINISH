@@ -35,7 +35,7 @@
       </a>
 
       <a href="/#precos" class="aceitar-contract-status">
-        <i class="fa-solid fa-file-signature"></i> Acessar a página para aceitar os termos
+        <i class="fa-solid fa-file-signature"></i> Aceite os termos antes de assinar o plano
       </a>     
     </div>
 
