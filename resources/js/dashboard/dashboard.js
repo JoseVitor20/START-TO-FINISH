@@ -2,7 +2,6 @@
 import dashboardHeader from './dashboard-header.js';
 import dashboardMain from './dashboard-main.js';
 import editProfileDash from './dashboard-edit.js';
-import {initCarregamento} from '../welcome/01-carregamento.js';
 
 
 // Inicialização quando o DOM estiver pronto
@@ -11,5 +10,4 @@ document.addEventListener('DOMContentLoaded', () => {
     dashboardHeader();
     dashboardMain();
     editProfileDash();
-    initCarregamento();
 });

@@ -87,10 +87,25 @@
 
     {{-- === ESTILOS CSS E JS === --}}
         @stack('estilosEcodigos')
-        
+
+        @vite(['resources/css/welcome/01-carregamento.css', 'resources/js/welcome/01-carregamento.js'])
+
 </head>
 
 <body>
+    {{-- === OVERLAY DE CARREGAMENTO === --}}
+    <div id="loading-overlay">
+        <div class="overlay-background">
+            <div class="overlay-stars"></div>
+        </div>
+        <div class="loading-content">
+            <div class="logo-spinner">
+                <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start to Finish" class="logo-placeholder">
+                <div class="pulse-ring"></div>
+            </div>
+            <p>Estamos preparando tudo para você...</p>
+        </div>
+    </div>
 
     @yield('content')
 

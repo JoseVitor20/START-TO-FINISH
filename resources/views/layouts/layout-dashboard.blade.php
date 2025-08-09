@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     @stack('estilosEcodigosDash')
+    @vite(['resources/css/welcome/01-carregamento.css', 'resources/js/welcome/01-carregamento.js'])
 
 </head>
 <body>
@@ -26,7 +27,7 @@
                 <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start to Finish" class="logo-placeholder">
                 <div class="pulse-ring"></div>
             </div>
-            <h1>Carregando...</h1>
+            <p>Estamos preparando tudo para você...</p>
         </div>
     </div>
 

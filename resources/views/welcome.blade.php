@@ -7,20 +7,6 @@
 @endpush
 
 @section('content')
-    {{-- === OVERLAY DE CARREGAMENTO === --}}
-    <div id="loading-overlay">
-        <div class="overlay-background">
-            <div class="overlay-stars"></div>
-        </div>
-        <div class="loading-content">
-            <div class="logo-spinner">
-                <img src="{{asset('img/logo-internet.png')}}" alt="Logo Start to Finish" class="logo-placeholder">
-                <div class="pulse-ring"></div>
-            </div>
-            <h1>Carregando...</h1>
-        </div>
-    </div>
-    
     <div class="real-content">
         @include('sessoes.01-navbar')
         @include('sessoes.02-hero')

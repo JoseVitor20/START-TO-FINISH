@@ -1,5 +1,4 @@
 // Importações existentes
-import { initCarregamento } from './01-carregamento.js';
 import { initDarkMode, initMenuMobile, initHashNavigation } from './02-navbar.js';
 import { initParticles, initTypedEffect } from './03-hero.js';
 import { initSkillFilter } from './04-sobre.js';
@@ -10,7 +9,6 @@ import { initServicoHover } from './07-serviço.js';
 // Inicialização quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializações existentes
-    initCarregamento();
     initDarkMode();
     initMenuMobile();
     initHashNavigation();
