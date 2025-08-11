@@ -139,7 +139,7 @@
         <p>
             A sua compra não foi finalizada. Por favor, tente novamente ou entre em contato com o suporte se o problema persistir.
         </p>
-        <a href="#" class="btn-custom">
+        <a href="/#precos" class="btn-custom">
             Voltar para o Início
         </a>
     </div>
