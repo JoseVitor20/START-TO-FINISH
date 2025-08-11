@@ -88,7 +88,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         // Log para depuração, se necessário
         \Log::info('Redirecionado via /subscription/redirect-after-checkout');
         // Redireciona o usuário para o painel ou outra página de "minhas assinaturas"
-        return redirect()->route('dashboard')->with('status', 'Sua assinatura foi processada com sucesso!');
+        return redirect()->route('subscription.success')->with('status', 'Sua assinatura foi processada com sucesso!');
     })->name('subscription.redirectAfterCheckout');
 
     // Rota para exibir a mensagem de cancelamento de pagamento
