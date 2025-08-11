@@ -2,11 +2,26 @@
 
 @section('title', 'Start To Finish - Compra cancelada!')
 
+@push('estilosEcodigosDash')
+    @vite(['resources/css/dashboard/dashboard.css', 'resources/js/dashboard/dashboard.js'])
+@endpush
+
 @section('content')
 <div class="container mt-5">
-    <div class="card text-center">
-        <div class="card-header bg-success text-white">
-            <h1 class="mb-0">Pagamento Cancelado!</h1>         
+    <div class="card p-4 mx-auto" style="max-width: 500px; background-color: var(--card-bg); border-color: var(--border-color); box-shadow: var(--box-shadow);">
+        <div class="card-body text-center">
+            <div class="icon-container mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="var(--error-color)" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                </svg>
+            </div>
+            <h1 class="card-title mb-2" style="color: var(--error-color);">Pagamento Cancelado</h1>
+            <p class="card-text" style="color: var(--text-sec-color);">
+                A sua compra não foi finalizada. Por favor, tente novamente ou entre em contato com o suporte se o problema persistir.
+            </p>
+            <a href="{{ url('/dashboard') }}" class="btn mt-3" style="background-color: var(--primary-color); color: var(--text-pri-color); border: none; padding: 10px 20px; transition: var(--transition);">
+                Voltar para o Início
+            </a>
         </div>
     </div>
 </div>
