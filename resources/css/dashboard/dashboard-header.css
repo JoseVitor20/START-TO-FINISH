@@ -168,7 +168,12 @@
     color: var(--text-pri-color);
     text-decoration: none;
     transition: all 0.2s;
-    font-size: 14px;
+    font-size: 1.2rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
 }
 
 .dropdown-item i {
@@ -214,7 +219,6 @@
 
 .mobile-menu {
     position: fixed;
-    top: 120px;
     left: 0;
     width: 100%;
     background-color: var(--border-color);
@@ -316,7 +320,7 @@
     }
 
     .mobile-menu{
-        top: 80px;
+        top: 77px;
     }
 
     .logo span {

@@ -23,6 +23,8 @@
     --transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     --inver-img: invert(100%);
     --success-color: #59ff40;
+    --hover-text: #ffffff;
+    --hover-bg: #505050;
 }
 
 .light-mode {
@@ -47,6 +49,8 @@
     --error-color: #ff5e7d;
     --inver-img: invert(0%);
     --success-color: #1ddf00;
+    --hover-bg: #bfbfbf;
+    --hover-text: #404040;
 }
 
 /* === ESTILOS GERAIS === */

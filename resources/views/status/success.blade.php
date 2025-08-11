@@ -110,6 +110,17 @@
                                 <div class="product-info">
                                     <h4 class="product-name">{{ $product->name ?? 'N/A' }}</h4>
                                     <ul class="product-list">
+                                        <li><i class="fa-solid fa-circle-check"></i> Site de 1 página (cartão de visita online)</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Design responsivo</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> SEO básico para visibilidade</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Hospedagem de 5GB SSD</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Domínio grátis (enquanto for assinante)</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Formulário de contato</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Certificado SSL grátis</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> 1 conta de e-mail profissional</li>                                        
                                     @if($product->name == 'Plano Micro')
                                         <li><i class="fa-solid fa-circle-check"></i> Site de 1 página (cartão de visita online)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>

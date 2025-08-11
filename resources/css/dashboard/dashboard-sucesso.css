@@ -161,6 +161,7 @@
     color: var(--text-pri-color);
     font-size: 1rem;
     word-break: break-word;
+    font-weight: bold;
 }
 
 .payment-method, .device-info {
@@ -258,6 +259,10 @@ h3.status-badge-sucesso {
     padding-left: 1rem;
     list-style-type: none;
     font-size: .8rem;
+}
+
+.product-list li{
+    padding-bottom: 5px;
 }
 
 .product-list i{
@@ -529,6 +534,10 @@ h3.status-badge-sucesso {
 }
 
 @media (max-width: 468px) {  /* Para tablets e telas menores */
+    .product-list{
+        font-size: .9rem !important;
+    }
+
     @-moz-document url-prefix() {
         .success-wrapper {
             padding: .5rem;
@@ -550,7 +559,7 @@ h3.status-badge-sucesso {
         }
 
         .product-list{
-            font-size: .7rem;
+            font-size: 1rem;
         }
 
         .modal {
