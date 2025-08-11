@@ -7,6 +7,35 @@
 @endpush
 
 @section('content')
+<style>
+    /* Estilos para o botão de voltar, usando as variáveis da paleta */
+    .btn-custom {
+        background-color: var(--primary-color);
+        color: var(--text-pri-color);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        transition: var(--transition); /* Garante uma transição suave para as mudanças */
+        font-weight: bold;
+        text-decoration: none; /* Remove o sublinhado padrão dos links */
+        display: inline-block; /* Permite que o padding e transform funcionem corretamente */
+        cursor: pointer; /* Indica que é um elemento clicável */
+    }
+
+    .btn-custom:hover {
+        background-color: var(--btn-bg-hover); /* Muda a cor de fundo no hover */
+        box-shadow: 0 0 15px var(--btn-shodow); /* Adiciona uma sombra neon no hover */
+        transform: translateY(-2px); /* Efeito sutil de "levantar" no hover */
+    }
+
+    /* Adiciona uma transição suave e um leve efeito de escala no card ao passar o mouse */
+    .card {
+        transition: var(--transition);
+    }
+    .card:hover {
+        transform: scale(1.005); /* Leve zoom para um efeito elegante */
+    }
+</style>
 {{-- Container principal para centralizar o conteúdo vertical e horizontalmente --}}
 <div class="container d-flex justify-content-center align-items-center vh-100">
     {{-- Card com estilos da paleta de cores e padding aprimorado --}}
@@ -25,7 +54,7 @@
                 A sua compra não foi finalizada. Por favor, tente novamente ou entre em contato com o suporte se o problema persistir.
             </p>
             {{-- Botão para voltar à dashboard com estilos da paleta --}}
-            <a href="{{ url('/dashboard') }}" class="btn" style="background-color: var(--primary-color); color: var(--text-pri-color); border: none; padding: 12px 25px; border-radius: 8px; transition: var(--transition); font-weight: bold;">
+            <a href="{{ url('/dashboard') }}" class="btn btn-custom">
                 Voltar para o Início
             </a>
         </div>
