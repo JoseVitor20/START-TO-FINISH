@@ -713,6 +713,7 @@
         align-items: center;
         gap: 2rem;
         margin-bottom: 1rem;
+        margin: 0 auto;
     }
 
     .product-image{
@@ -745,6 +746,44 @@
 
 
 @media screen and (max-width: 468px) {  /* Para tablets e telas menores */
+    .section-title {
+        font-size: 1.4rem !important; 
+    }
+
+    .subscription-card {
+        padding: .5rem;
+        padding-bottom: 1rem;
+    }
+    .product-name {
+        font-size: 1.5rem !important;
+    }
+
+    .product-description {
+        font-size: .8rem;
+    }
+
+    .benefits-title{
+        font-size: 1.2rem;
+    }
+
+    .benefits-list{
+        font-size: .7rem;
+    }
+
+    .plan-select {
+        font-size: .8rem;
+    }
+
+    .upgrade-button {
+        padding: .7rem;
+        font-size: .8rem;
+    }
+
+    .upgrade-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 255, 253, 0.4);
+    }
+
     @-moz-document url-prefix() {
         .subscriptions-container {
             padding: 1rem;
