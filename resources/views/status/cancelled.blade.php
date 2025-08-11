@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<div class="container mt-5">
+<div class="container m-5">
     <div class="card p-4 mx-auto" style="max-width: 500px; background-color: var(--card-bg); border-color: var(--border-color); box-shadow: var(--box-shadow);">
         <div class="card-body text-center">
             <div class="icon-container mb-4">
