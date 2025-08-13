@@ -8,12 +8,6 @@
 
 @section('content')
     <body data-bs-spy="scroll" data-bs-target="#navbar">
-       <!-- Preloader -->
-       <div class="preloader">
-          <div class="spinner-border text-primary" role="status">
-             <span class="visually-hidden">Loading...</span>
-          </div>
-       </div>
        <!-- Navbar -->
        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
           <div class="container">

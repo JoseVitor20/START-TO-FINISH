@@ -3,7 +3,7 @@
 @section('title', 'MobiliArt - Móveis de Qualidade')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/lojas-moveis.css', 'resources/js/categorias/lojas-moveis.js'])
+    @vite(['resources/css/categorias/lojas-moveis.css'])
 @endpush
 
 @section('content')

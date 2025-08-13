@@ -1,8 +1,3 @@
-// Preloader
-window.addEventListener('load', function() {
-    document.querySelector('.preloader').classList.add('hidden');
-});
-
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
