@@ -400,7 +400,7 @@
                                     <h4>Curso de Informática</h4>
                                     <h5><strong class="text-gradient">></strong> Central Computadores ((67) 99605-2004)</h5>
                                     <ul>
-                                        <li>IPD</li>
+                                        <li>IDP</li>
                                         <li>Windows</li>
                                         <li>Microsoft Office Word, Excel e PowerPoint.</li>
                                         <li>Internet</li>
