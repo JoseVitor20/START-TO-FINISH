@@ -22,9 +22,9 @@
                 [
                     'id' => 'micro',
                     'name' => 'Micro',
-                    'price' => '49',
+                    'price' => '19',
                     'tag' => 'Iniciante',
-                    'description' => '"Pare de perder dinheiro e comece a ganhar." Transforme R$ 49 em um site profissional. Com apenas 2 novos clientes por mês que gastem R$ 25,00 cada, você já recupera o investimento. O ROI é instantâneo. "Por que não dar um passo adiante?" Com mais R$ 50,00 por mês, o Plano Básico te dá um site com mais páginas e recursos para acelerar seu crescimento.',
+                    'description' => '"Pare de perder dinheiro e comece a ganhar." Transforme R$ 19 em um site profissional. Com apenas 2 novos clientes por mês que gastem R$ 25,00 cada, você já recupera o investimento. O ROI é instantâneo. "Por que não dar um passo adiante?" Com mais R$ 20,00 por mês, o Plano Básico te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de 1 página grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
@@ -39,14 +39,16 @@
                         '1 conta de e-mail profissional'
                     ],
                     'ideal_for' => 'Ideal para quem está dando o primeiro passo',
-                    'price_id' => 'price_1RtxvFATrxUtVNlsRUQN7PI5'
+                    'price_id' => 'price_1SCm0XATrxUtVNlsHXiIWMlU'
+                    // 19 = price_1SCm0XATrxUtVNlsHXiIWMlU
+                    // 49 = price_1RtxvFATrxUtVNlsRUQN7PI5
                 ],
                 [
                     'id' => 'basico',
                     'name' => 'Básico',
-                    'price' => '99',
+                    'price' => '39',
                     'tag' => null,
-                    'description' => '"Seu negócio pronto para decolar." Seu site vai trabalhar 24h por dia. Com R$ 99, você investe na sua visibilidade. Com 4 novos clientes por mês, que gastem R$ 25,00 cada, você já paga o plano e lucra. É a garantia de mais visibilidade e retorno. "Pronto para impressionar?" Com apenas mais R$ 50,00 por mês, o Plano Essencial te dá um site com mais páginas e recursos para acelerar seu crescimento.',
+                    'description' => '"Seu negócio pronto para decolar." Seu site vai trabalhar 24h por dia. Com R$ 39, você investe na sua visibilidade. Com 2 novos clientes por mês, que gastem R$ 25,00 cada, você já paga o plano e lucra. É a garantia de mais visibilidade e retorno. "Pronto para impressionar?" Com apenas mais R$ 20,00 por mês, o Plano Essencial te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de até 5 páginas grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
@@ -62,14 +64,16 @@
                         'Backup diário automático'
                     ],
                     'ideal_for' => 'Para pequenos negócios que querem crescer',
-                    'price_id' => 'price_1RtxwcATrxUtVNlsax7gHMWt'
+                    'price_id' => 'price_1SCm2VATrxUtVNlsRTlIdlpn'
+                    // 39 = price_1SCm2VATrxUtVNlsRTlIdlpn
+                    // 99 = price_1RtxwcATrxUtVNlsax7gHMWt
                 ],
                 [
                     'id' => 'essencial',
                     'name' => 'Essencial',
-                    'price' => '149',
+                    'price' => '59',
                     'tag' => 'Popular',
-                    'description' => '"Um site que gera resultados reais." Para quem leva o crescimento a sério. Por R$ 149,00, você atrai os clientes certos com otimização de SEO avançada. Com 5 novos clientes por mês, que gastem R$ 30,00 cada, o retorno já compensa o investimento. Sua marca ganha autoridade e impressiona. "Quer mostrar seus produtos de forma profissional?" Com apenas R$ 50,00 a mais por mês, o Plano Profissional te dá um site com mais páginas e recursos para acelerar seu crescimento.',
+                    'description' => '"Um site que gera resultados reais." Para quem leva o crescimento a sério. Por R$ 59,00, você atrai os clientes certos com otimização de SEO avançada. Com 3 novos clientes por mês, que gastem R$ 25,00 cada, o retorno já compensa o investimento. Sua marca ganha autoridade e impressiona. "Quer mostrar seus produtos de forma profissional?" Com apenas R$ 20,00 a mais por mês, o Plano Profissional te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de até 15 páginas grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
@@ -84,14 +88,16 @@
                         '5 contas de e-mail profissional'
                     ],
                     'ideal_for' => 'Para negócios em crescimento que buscam autoridade',
-                    'price_id' => 'price_1RtxyXATrxUtVNlskia8tsRB'
+                    'price_id' => 'price_1SCm4tATrxUtVNlswjaFgA3g'
+                    // 59 = price_1SCm4tATrxUtVNlswjaFgA3g
+                    // 149 = price_1RtxyXATrxUtVNlskia8tsRB
                 ],
                 [
                     'id' => 'profissional',
                     'name' => 'Profissional',
-                    'price' => '199',
+                    'price' => '79',
                     'tag' => null,
-                    'description' => '"Mais clientes, mais conversão, mais presença." Por R$ 199,00, você investe em um site com agendamento online, galeria de produtos e recursos pensados para gerar resultados. Com apenas 6 clientes por mês que gastem R$ 35,00 cada, você já recupera seu investimento e potencializa seu faturamento. "Quer vender ainda mais?" Com apenas R$ 50,00 a mais por mês, o Plano Avançado oferece uma loja virtual completa para transformar visitantes em compradores 24h por dia.',
+                    'description' => '"Mais clientes, mais conversão, mais presença." Por R$ 79,00, você investe em um site com agendamento online, galeria de produtos e recursos pensados para gerar resultados. Com apenas 4 clientes por mês que gastem R$ 25,00 cada, você já recupera seu investimento e potencializa seu faturamento. "Quer vender ainda mais?" Com apenas R$ 20,00 a mais por mês, o Plano Avançado oferece uma loja virtual completa para transformar visitantes em compradores 24h por dia.',
                     'benefits' => [
                         'Site institucional grátis (enquanto for assinante)',
                         'Formulário de orçamento e botão de WhatsApp flutuante',
@@ -106,14 +112,16 @@
                         'Ambiente de testes (staging)'
                     ],
                     'ideal_for' => 'Para empresas que querem converter mais e escalar',
-                    'price_id' => 'price_1RtxzlATrxUtVNlsC5rdTbcI'
+                    'price_id' => 'price_1SCm7SATrxUtVNls8VjLkuS0'
+                    // 79 = price_1SCm7SATrxUtVNls8VjLkuS0
+                    // 199 = price_1RtxzlATrxUtVNlsC5rdTbcI
                 ],
                 [
                     'id' => 'avancado',
                     'name' => 'Avançado',
-                    'price' => '249',
+                    'price' => '99',
                     'tag' => null,
-                    'description' => '"Sua loja aberta 24/7." É o seu atalho para o mundo das vendas online. Por R$ 249,00, você investe em uma loja virtual completa e segura. Vendendo apenas 8 produtos de R$ 35,00, você já cobre o custo do plano e tem a chance de vender a qualquer momento, para qualquer lugar. "Pronto para escalar?" Com apenas mais R$ 150,00 por mês, o Plano Master te dá uma loja virtual completa para começar a faturar 24/7, com ferramentas de gestão avançada.',
+                    'description' => '"Sua loja aberta 24/7." É o seu atalho para o mundo das vendas online. Por R$ 99,00, você investe em uma loja virtual completa e segura. Vendendo apenas 4 produtos de R$ 25,00, você já cobre o custo do plano e tem a chance de vender a qualquer momento, para qualquer lugar. "Pronto para escalar?" Com apenas mais R$ 50,00 por mês, o Plano Master te dá uma loja virtual completa para começar a faturar 24/7, com ferramentas de gestão avançada.',
                     'benefits' => [
                         'Loja virtual com até 50 produtos grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
@@ -129,14 +137,16 @@
                         'Suporte 24/6 (WhatsApp e e-mail)'
                     ],
                     'ideal_for' => 'Para empresas prontas para vender online',
-                    'price_id' => 'price_1Rty1DATrxUtVNlscvduK7xW'
+                    'price_id' => 'price_1SCm99ATrxUtVNls9ArDBqB1'
+                    // 99 = price_1SCm99ATrxUtVNls9ArDBqB1
+                    // 249 = price_1Rty1DATrxUtVNlscvduK7xW
                 ],
                 [
                     'id' => 'master',
                     'name' => 'Master',
-                    'price' => '599',
+                    'price' => '149',
                     'tag' => null,
-                    'description' => '"Escalabilidade ilimitada e automação total." O plano definitivo para grandes empresas. Por R$ 599,00, você terá um e-commerce sem limites, que se integra com seus sistemas internos para automatizar tudo. Com apenas 18 vendas de R$ 35,00, você cobre o investimento. O retorno não está apenas em vendas, mas na otimização de toda a sua operação e na construção de um império digital.',
+                    'description' => '"Escalabilidade ilimitada e automação total." O plano definitivo para grandes empresas. Por R$ 149,00, você terá um e-commerce sem limites, que se integra com seus sistemas internos para automatizar tudo. Com apenas 6 vendas de R$ 25,00, você cobre o investimento. O retorno não está apenas em vendas, mas na otimização de toda a sua operação e na construção de um império digital.',
                     'benefits' => [
                         'E-commerce ilimitado e integrações com sistemas grátis (enquanto for assinante)',
                         'Aplicação web complexa (gestão de estoque, cotação online, etc.)',
@@ -154,10 +164,13 @@
                         'Backup e recuperação de desastres (diário)'
                     ],
                     'ideal_for' => 'Para grandes empresas que buscam o topo',
-                    'price_id' => 'price_1Rty2wATrxUtVNlslZP3DyEE'
+                    'price_id' => 'price_1SCmAlATrxUtVNlsRpWIdnA1'
+                    // 149 = price_1SCmAlATrxUtVNlsRpWIdnA1
+                    // 599 = price_1Rty2wATrxUtVNlslZP3DyEE
                 ]
             ];
         @endphp
+
 
         @foreach($plans as $plan)
         <div class="pricing-card">

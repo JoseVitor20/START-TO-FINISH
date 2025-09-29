@@ -40,7 +40,7 @@
             </div>
 
             {{-- Condicionais de planos --}}
-            @if($planName == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
+            @if($planName == 'price_1SCm0XATrxUtVNlsHXiIWMlU')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 12px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">
@@ -69,7 +69,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 conta de e-mail profissional</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxwcATrxUtVNlsax7gHMWt')
+            @elseif($planName == 'price_1SCm2VATrxUtVNlsRTlIdlpn')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 10px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">
@@ -99,7 +99,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxyXATrxUtVNlskia8tsRB')
+            @elseif($planName == 'price_1SCm4tATrxUtVNlswjaFgA3g')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 10px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">
@@ -128,7 +128,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
+            @elseif($planName == 'price_1SCm7SATrxUtVNls8VjLkuS0')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 10px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">
@@ -157,7 +157,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Ambiente de testes (staging)</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rty1DATrxUtVNlscvduK7xW')
+            @elseif($planName == 'price_1SCm99ATrxUtVNls9ArDBqB1')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 10px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">
@@ -187,7 +187,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Suporte 24/6 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rty2wATrxUtVNlslZP3DyEE')
+            @elseif($planName == 'price_1SCmAlATrxUtVNlsRpWIdnA1')
                 <div style="margin-bottom: 30px;">
                     @if($endsAt && $endsAt !== 'Data de término do ciclo não definida')
                         <p style="font-size: 10px; color: #ffffff; line-height: 1.7; margin-bottom: 14px;">

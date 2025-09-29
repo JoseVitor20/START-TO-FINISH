@@ -220,7 +220,7 @@
             </div>
 
             {{-- Condicionais de planos --}}
-            @if($planName == 'price_1RtxvFATrxUtVNlsRUQN7PI5')
+            @if($planName == 'price_1SCm0XATrxUtVNlsHXiIWMlU')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 12px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MICRO</strong> com sucesso!
@@ -239,7 +239,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">Certificado SSL grátis</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxwcATrxUtVNlsax7gHMWt')
+            @elseif($planName == 'price_1SCm2VATrxUtVNlsRTlIdlpn')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">BÁSICO</strong> com sucesso!
@@ -258,7 +258,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">3 contas de e-mail profissional</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxyXATrxUtVNlskia8tsRB')
+            @elseif($planName == 'price_1SCm4tATrxUtVNlswjaFgA3g')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">ESSENCIAL</strong> com sucesso!
@@ -277,7 +277,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">Ambiente de testes (staging)</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1RtxzlATrxUtVNlsC5rdTbcI')
+            @elseif($planName == 'price_1SCm7SATrxUtVNls8VjLkuS0')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">PROFISSIONAL</strong> com sucesso!
@@ -296,7 +296,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">Backup diário automático</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rty1DATrxUtVNlscvduK7xW')
+            @elseif($planName == 'price_1SCm99ATrxUtVNls9ArDBqB1')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">AVANÇADO</strong> com sucesso!
@@ -315,7 +315,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">Suporte 24/6 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
-            @elseif($planName == 'price_1Rty2wATrxUtVNlslZP3DyEE')
+            @elseif($planName == 'price_1SCmAlATrxUtVNlsRpWIdnA1')
                 <div style="margin-bottom: 30px;">
                     <p class="update-text" style="font-size: 16px; color: #ffffff; line-height: 1.7; margin-bottom: 20px;">
                         Ótimas notícias! Sua assinatura foi atualizada para o plano <strong style="color: #00f5d0;">MASTER</strong> com sucesso!
