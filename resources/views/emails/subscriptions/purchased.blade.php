@@ -275,8 +275,7 @@
                         <li style="font-size: 10px; margin-bottom: 8px;">Design exclusivo e responsivo</li>
                         <li style="font-size: 10px; margin-bottom: 8px;">SEO avançado</li>
                         <li style="font-size: 10px; margin-bottom: 8px;">Hospedagem avançada de 20GB SSD</li>
-                        <li style="font-size: 10px; margin-bottom: 8px;">Manutenção e suporte com prioridade alta</li>
-                        <li style="font-size: 10px; margin-bottom: 8px;">Ambiente de testes (staging)</li>
+                        <li style="font-size: 10px; margin-bottom: 8px;">Manutenção e suporte com prioridade alta</li>                        
                     </ul>
                 </div>
             {{-- Condicional para PLANO PROFISSIONAL --}}

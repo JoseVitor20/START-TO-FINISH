@@ -61,8 +61,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Hospedagem avançada de 20GB SSD</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Domínio grátis (enquanto for assinante)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
-                                            <li><i class="fa-solid fa-circle-check"></i> Galeria de produtos/serviços</li>
-                                            <li><i class="fa-solid fa-circle-check"></i> Ambiente de testes (staging)</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> Galeria de produtos/serviços</li>                                            
                                             <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
                                             <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
                                         @elseif($subscription->plan_name == 'price_1SCm7SATrxUtVNls8VjLkuS0')
@@ -75,8 +74,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Domínio grátis (enquanto for assinante)</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Backup diário automático</li>
                                             <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
-                                            <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
-                                            <li><i class="fa-solid fa-circle-check"></i> Ambiente de testes (staging)</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>                                            
                                         @elseif($subscription->plan_name == 'price_1SCm99ATrxUtVNls9ArDBqB1')
                                             <li><i class="fa-solid fa-circle-check"></i> Loja virtual com até 50 produtos</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>

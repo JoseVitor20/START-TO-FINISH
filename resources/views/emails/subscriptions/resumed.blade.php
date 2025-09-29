@@ -104,8 +104,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem avançada de 20GB SSD</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Galeria de produtos/serviços</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Ambiente de testes (staging)</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Galeria de produtos/serviços</li>                        
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup semanal automático</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
                     </ul>
@@ -129,8 +128,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Ambiente de testes (staging)</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>                        
                     </ul>
                 </div>
             @elseif($planName == 'price_1SCm99ATrxUtVNls9ArDBqB1')

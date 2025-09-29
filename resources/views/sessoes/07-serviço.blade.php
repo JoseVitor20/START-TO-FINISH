@@ -87,8 +87,7 @@
                         'Hospedagem avançada de 20GB SSD grátis (enquanto for assinante)',
                         'Domínio grátis (enquanto for assinante)',
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)',
-                        'Galeria de produtos/serviços',
-                        'Ambiente de testes (staging)',
+                        'Galeria de produtos/serviços',                        
                         'Backup semanal automático',
                         '5 contas de e-mail profissional'
                     ],
@@ -115,8 +114,7 @@
                         'Domínio grátis (enquanto for assinante)',
                         'Backup diário automático',
                         '5 contas de e-mail profissional',
-                        'Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)',
-                        'Ambiente de testes (staging)'
+                        'Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)',                        
                     ],
                     'ideal_for' => 'Para empresas que querem converter mais e escalar',
                     'price_id' => 'price_1SCm7SATrxUtVNls8VjLkuS0'
