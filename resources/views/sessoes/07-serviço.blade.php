@@ -27,6 +27,7 @@
                     'description' => '"Pare de perder dinheiro e comece a ganhar." Transforme R$ 19 em um site profissional. Com apenas 2 novos clientes por mês que gastem R$ 25,00 cada, você já recupera o investimento. O ROI é instantâneo. "Por que não dar um passo adiante?" Com mais R$ 20,00 por mês, o Plano Básico te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de 1 página grátis (enquanto for assinante)',
+                        'Sessão com até 50 produtos grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
                         'Design responsivo',
                         'SEO básico para visibilidade',
@@ -51,6 +52,8 @@
                     'description' => '"Seu negócio pronto para decolar." Seu site vai trabalhar 24h por dia. Com R$ 39, você investe na sua visibilidade. Com 2 novos clientes por mês, que gastem R$ 25,00 cada, você já paga o plano e lucra. É a garantia de mais visibilidade e retorno. "Pronto para impressionar?" Com apenas mais R$ 20,00 por mês, o Plano Essencial te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de até 5 páginas grátis (enquanto for assinante)',
+                        'Sessão com até 100 produtos grátis (enquanto for assinante)',                    
+                        'Painel Administrativo para edição da página principal',                                            
                         'Criação de site prioritária (sujeito à disponibilidade)',
                         'Design responsivo',
                         'SEO para ranqueamento',
@@ -76,6 +79,8 @@
                     'description' => '"Um site que gera resultados reais." Para quem leva o crescimento a sério. Por R$ 59,00, você atrai os clientes certos com otimização de SEO avançada. Com 3 novos clientes por mês, que gastem R$ 25,00 cada, o retorno já compensa o investimento. Sua marca ganha autoridade e impressiona. "Quer mostrar seus produtos de forma profissional?" Com apenas R$ 20,00 a mais por mês, o Plano Profissional te dá um site com mais páginas e recursos para acelerar seu crescimento.',
                     'benefits' => [
                         'Site de até 15 páginas grátis (enquanto for assinante)',
+                        'Sessão com até 150 produtos grátis (enquanto for assinante)',                    
+                        'Painel Administrativo para edição da página principal',                        
                         'Criação de site prioritária (sujeito à disponibilidade)',
                         'Design exclusivo e responsivo',
                         'SEO avançado',
@@ -100,6 +105,8 @@
                     'description' => '"Mais clientes, mais conversão, mais presença." Por R$ 79,00, você investe em um site com agendamento online, galeria de produtos e recursos pensados para gerar resultados. Com apenas 4 clientes por mês que gastem R$ 25,00 cada, você já recupera seu investimento e potencializa seu faturamento. "Quer vender ainda mais?" Com apenas R$ 20,00 a mais por mês, o Plano Avançado oferece uma loja virtual completa para transformar visitantes em compradores 24h por dia.',
                     'benefits' => [
                         'Site institucional grátis (enquanto for assinante)',
+                        'Sessão com até 200 produtos grátis (enquanto for assinante)',                    
+                        'Painel Administrativo para edição da página principal',                                                
                         'Formulário de orçamento e botão de WhatsApp flutuante',
                         'Agendamento online integrado',
                         'Design exclusivo e responsivo',
@@ -123,7 +130,8 @@
                     'tag' => null,
                     'description' => '"Sua loja aberta 24/7." É o seu atalho para o mundo das vendas online. Por R$ 99,00, você investe em uma loja virtual completa e segura. Vendendo apenas 4 produtos de R$ 25,00, você já cobre o custo do plano e tem a chance de vender a qualquer momento, para qualquer lugar. "Pronto para escalar?" Com apenas mais R$ 50,00 por mês, o Plano Master te dá uma loja virtual completa para começar a faturar 24/7, com ferramentas de gestão avançada.',
                     'benefits' => [
-                        'Loja virtual com até 50 produtos grátis (enquanto for assinante)',
+                        'Loja virtual ilimitada de produtos grátis (enquanto for assinante)',
+                        'Painel Administrativo para edição da página principal',                                                
                         'Criação de site prioritária (sujeito à disponibilidade)',
                         'Design exclusivo e responsivo',
                         'Integração com meios de pagamento e logística',
@@ -149,6 +157,7 @@
                     'description' => '"Escalabilidade ilimitada e automação total." O plano definitivo para grandes empresas. Por R$ 149,00, você terá um e-commerce sem limites, que se integra com seus sistemas internos para automatizar tudo. Com apenas 6 vendas de R$ 25,00, você cobre o investimento. O retorno não está apenas em vendas, mas na otimização de toda a sua operação e na construção de um império digital.',
                     'benefits' => [
                         'E-commerce ilimitado e integrações com sistemas grátis (enquanto for assinante)',
+                        'Painel Administrativo para edição da página principal',                                                
                         'Aplicação web complexa (gestão de estoque, cotação online, etc.)',
                         'Hospedagem dedicada de 100GB SSD grátis (enquanto for assinante)',
                         'Criação de site prioritária (sujeito à disponibilidade)',
