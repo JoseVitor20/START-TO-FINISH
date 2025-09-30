@@ -35,8 +35,7 @@
                         'Domínio grátis (enquanto for assinante)',
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)',
                         'Formulário de contato',
-                        'Certificado SSL grátis',
-                        'Backup semanal automático',
+                        'Certificado SSL grátis',                        
                         '1 conta de e-mail profissional'
                     ],
                     'ideal_for' => 'Ideal para quem está dando o primeiro passo',
@@ -63,8 +62,7 @@
                         'Integração com redes sociais',
                         'Certificado SSL grátis',
                         'Relatório mensal de desempenho (Google Analytics)',
-                        '3 contas de e-mail profissional',
-                        'Backup diário automático'
+                        '3 contas de e-mail profissional',                        
                     ],
                     'ideal_for' => 'Para pequenos negócios que querem crescer',
                     'price_id' => 'price_1SCm2VATrxUtVNlsRTlIdlpn'
@@ -87,9 +85,7 @@
                         'Hospedagem avançada de 20GB SSD grátis (enquanto for assinante)',
                         'Domínio grátis (enquanto for assinante)',
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)',
-                        'Galeria de produtos/serviços',                        
-                        'Backup semanal automático',
-                        '5 contas de e-mail profissional'
+                        'Galeria de produtos/serviços',                                                                        
                     ],
                     'ideal_for' => 'Para negócios em crescimento que buscam autoridade',
                     'price_id' => 'price_1SCm4tATrxUtVNlswjaFgA3g'
@@ -111,9 +107,7 @@
                         'Design exclusivo e responsivo',
                         'SEO Avançado e Local SEO',
                         'Hospedagem premium de 30GB SSD grátis (enquanto for assinante)',
-                        'Domínio grátis (enquanto for assinante)',
-                        'Backup diário automático',
-                        '5 contas de e-mail profissional',
+                        'Domínio grátis (enquanto for assinante)',                                                
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)',                        
                     ],
                     'ideal_for' => 'Para empresas que querem converter mais e escalar',
@@ -136,10 +130,8 @@
                         'Hospedagem empresarial de 50GB SSD grátis (enquanto for assinante)',
                         '1 domínio grátis (enquanto for assinante)',
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade urgente)',
-                        'Páginas ilimitadas',
-                        'Certificado SSL premium',
-                        'SEO avançado',
-                        'Backup diário',
+                        'Páginas ilimitadas',                        
+                        'SEO avançado',                        
                         'Suporte 24/6 (WhatsApp e e-mail)'
                     ],
                     'ideal_for' => 'Para empresas prontas para vender online',
@@ -166,9 +158,7 @@
                         'Segurança avançada',
                         'Design exclusivo e responsivo',
                         'SEO completo',
-                        'Consultoria estratégica mensal',
-                        'Suporte 24/7 (WhatsApp e e-mail)',
-                        'Backup e recuperação de desastres (diário)'
+                        'Suporte 24/7 (WhatsApp e e-mail)',                        
                     ],
                     'ideal_for' => 'Para grandes empresas que buscam o topo',
                     'price_id' => 'price_1SCmAlATrxUtVNlsRpWIdnA1'

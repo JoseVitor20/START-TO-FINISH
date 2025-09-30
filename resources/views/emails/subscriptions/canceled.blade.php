@@ -65,7 +65,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Formulário de contato</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL grátis</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup semanal automático</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 conta de e-mail profissional</li>
                     </ul>
                 </div>
@@ -96,7 +96,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL grátis</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Relatório mensal de desempenho (Google Analytics)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 3 contas de e-mail profissional</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1SCm4tATrxUtVNlswjaFgA3g')
@@ -123,8 +123,8 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Galeria de produtos/serviços</li>                        
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup semanal automático</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1SCm7SATrxUtVNls8VjLkuS0')
@@ -150,8 +150,8 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO Avançado e Local SEO</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Hospedagem premium de 30GB SSD</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Domínio grátis (enquanto for assinante)</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário automático</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 5 contas de e-mail profissional</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>                        
                     </ul>
                 </div>
@@ -179,9 +179,9 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 domínio grátis (enquanto for assinante)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Manutenção e suporte grátis agendado via WhatsApp (prioridade urgente)</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Páginas ilimitadas</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL premium</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO avançado</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup diário</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Suporte 24/6 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
@@ -212,9 +212,9 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Segurança avançada</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Design exclusivo e responsivo</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- SEO completo</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Consultoria estratégica mensal</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Suporte 24/7 (WhatsApp e e-mail)</li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Backup e recuperação de desastres (diário)</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                     </ul>
                 </div>
             @endif

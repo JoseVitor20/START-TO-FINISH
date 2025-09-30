@@ -121,7 +121,7 @@
                                         <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Formulário de contato</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Certificado SSL grátis</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                         <li><i class="fa-solid fa-circle-check"></i> 1 conta de e-mail profissional</li>
                                     @elseif($product->name == 'Plano Básico')
                                         <li><i class="fa-solid fa-circle-check"></i> Site de até 5 páginas</li>
@@ -135,7 +135,7 @@
                                         <li><i class="fa-solid fa-circle-check"></i> Certificado SSL grátis</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Relatório mensal de desempenho (Google Analytics)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> 3 contas de e-mail profissional</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup diário automático</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                     @elseif($product->name == 'Plano Essencial')
                                         <li><i class="fa-solid fa-circle-check"></i> Site de até 15 páginas com galeria de produtos</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
@@ -145,8 +145,8 @@
                                         <li><i class="fa-solid fa-circle-check"></i> Domínio grátis (enquanto for assinante)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Galeria de produtos/serviços</li>                                        
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup semanal automático</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                     @elseif($product->name == 'Plano Profissional')
                                         <li><i class="fa-solid fa-circle-check"></i> Site institucional completo com SEO</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Formulário de orçamento e botão de WhatsApp flutuante</li>
@@ -155,8 +155,8 @@
                                         <li><i class="fa-solid fa-circle-check"></i> SEO Avançado e Local SEO</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Hospedagem premium de 30GB SSD</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Domínio grátis (enquanto for assinante)</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup diário automático</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> 5 contas de e-mail profissional</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                         <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade alta)</li>                                        
                                     @elseif($product->name == 'Plano Avançado')
                                         <li><i class="fa-solid fa-circle-check"></i> Loja virtual com até 50 produtos</li>
@@ -167,9 +167,9 @@
                                         <li><i class="fa-solid fa-circle-check"></i> 1 domínio grátis (enquanto for assinante)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Manutenção e suporte grátis agendado via WhatsApp (prioridade urgente)</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Páginas ilimitadas</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Certificado SSL premium</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                         <li><i class="fa-solid fa-circle-check"></i> SEO avançado</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup diário</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                         <li><i class="fa-solid fa-circle-check"></i> Suporte 24/6 (WhatsApp e e-mail)</li>
                                     @elseif($product->name == 'Plano Master')
                                         <li><i class="fa-solid fa-circle-check"></i> E-commerce ilimitado e integrações com sistemas</li>
@@ -183,9 +183,9 @@
                                         <li><i class="fa-solid fa-circle-check"></i> Segurança avançada</li>
                                         <li><i class="fa-solid fa-circle-check"></i> Design exclusivo e responsivo</li>
                                         <li><i class="fa-solid fa-circle-check"></i> SEO completo</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Consultoria estratégica mensal</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                         <li><i class="fa-solid fa-circle-check"></i> Suporte 24/7 (WhatsApp e e-mail)</li>
-                                        <li><i class="fa-solid fa-circle-check"></i> Backup e recuperação de desastres (diário)</li>
+                                        <li><i class="fa-solid fa-circle-check"></i> </li>
                                     @endif                                        
                                     </ul>                                    
                                 </div>

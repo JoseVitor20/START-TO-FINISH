@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -115,7 +115,7 @@
                         <li style="margin-bottom: 8px;">Agendamento online integrado</li>
                         <li style="margin-bottom: 8px;">SEO Avançado e Local SEO</li>
                         <li style="margin-bottom: 8px;">Hospedagem premium de 30GB SSD</li>
-                        <li style="margin-bottom: 8px;">Backup diário automático</li>
+                        <li style="margin-bottom: 8px;"></li>
                     </ul>
                 </div>
             {{-- Condicional para PLANO AVANÇADO --}}
@@ -154,7 +154,7 @@
                         <li style="margin-bottom: 8px;">Aplicação web complexa (gestão de estoque, cotação online, etc.)</li>
                         <li style="margin-bottom: 8px;">Hospedagem dedicada de 100GB SSD</li>
                         <li style="margin-bottom: 8px;">Suporte com prioridade extrema</li>
-                        <li style="margin-bottom: 8px;">Consultoria estratégica mensal</li>
+                        <li style="margin-bottom: 8px;"></li>
                         <li style="margin-bottom: 8px;">Suporte 24/7 (WhatsApp e e-mail)</li>
                     </ul>
                 </div>
