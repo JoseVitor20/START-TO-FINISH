@@ -237,22 +237,22 @@
                             <div class="plan-details">
                                 @if($mainSubscription->stripe_price == 'price_1SCm0XATrxUtVNlsHXiIWMlU')
                                     <span class="plan-badge status active micro">Micro</span>
-                                    <span class="plan-price">R$49,00/mês</span>
+                                    <span class="plan-price">R$19,00/mês</span>
                                 @elseif($mainSubscription->stripe_price == 'price_1SCm2VATrxUtVNlsRTlIdlpn')
                                     <span class="plan-badge status active basico">Básico</span>
-                                    <span class="plan-price">R$99,00/mês</span>
+                                    <span class="plan-price">R$39,00/mês</span>
                                 @elseif($mainSubscription->stripe_price == 'price_1SCm4tATrxUtVNlswjaFgA3g')
                                     <span class="plan-badge status active essencial">Essencial</span>
-                                    <span class="plan-price">R$149,00/mês</span>
+                                    <span class="plan-price">R$59,00/mês</span>
                                 @elseif($mainSubscription->stripe_price == 'price_1SCm7SATrxUtVNls8VjLkuS0')
                                     <span class="plan-badge status active profissional">Profissional</span>
-                                    <span class="plan-price">R$199,00/mês</span>
+                                    <span class="plan-price">R$79,00/mês</span>
                                 @elseif($mainSubscription->stripe_price == 'price_1SCm99ATrxUtVNls9ArDBqB1')
                                     <span class="plan-badge status active avancado">Avançado</span>
-                                    <span class="plan-price">R$249,00/mês</span>
+                                    <span class="plan-price">R$99,00/mês</span>
                                 @elseif($mainSubscription->stripe_price == 'price_1SCmAlATrxUtVNlsRpWIdnA1')
                                     <span class="plan-badge status active master">Master</span>
-                                    <span class="plan-price">R$599,00/mês</span>
+                                    <span class="plan-price">R$149,00/mês</span>
                                 @endif
                             </div>
                         </div>
@@ -264,22 +264,22 @@
                                 <div class="select-wrapper">
                                     <select name="new_price_id" id="new_plan" class="plan-select">
                                         <option value="price_1SCm0XATrxUtVNlsHXiIWMlU" @if($mainSubscription->stripe_price == 'price_1SCm0XATrxUtVNlsHXiIWMlU') selected @endif>
-                                            Plano Micro - R$49,00/mês
+                                            Plano Micro - R$19,00/mês
                                         </option>
                                         <option value="price_1SCm2VATrxUtVNlsRTlIdlpn" @if($mainSubscription->stripe_price == 'price_1SCm2VATrxUtVNlsRTlIdlpn') selected @endif>
-                                            Plano Básico - R$99,00/mês
+                                            Plano Básico - R$39,00/mês
                                         </option>
                                         <option value="price_1SCm4tATrxUtVNlswjaFgA3g" @if($mainSubscription->stripe_price == 'price_1SCm4tATrxUtVNlswjaFgA3g') selected @endif>
-                                            Plano Essencial - R$149,00/mês
+                                            Plano Essencial - R$59,00/mês
                                         </option>
                                         <option value="price_1SCm7SATrxUtVNls8VjLkuS0" @if($mainSubscription->stripe_price == 'price_1SCm7SATrxUtVNls8VjLkuS0') selected @endif>
-                                            Plano Profissional - R$199,00/mês
+                                            Plano Profissional - R$79,00/mês
                                         </option>
                                         <option value="price_1SCm99ATrxUtVNls9ArDBqB1" @if($mainSubscription->stripe_price == 'price_1SCm99ATrxUtVNls9ArDBqB1') selected @endif>
-                                            Plano Avançado - R$249,00/mês
+                                            Plano Avançado - R$99,00/mês
                                         </option>
                                         <option value="price_1SCmAlATrxUtVNlsRpWIdnA1" @if($mainSubscription->stripe_price == 'price_1SCmAlATrxUtVNlsRpWIdnA1') selected @endif>
-                                            Plano Master - R$599,00/mês
+                                            Plano Master - R$149,00/mês
                                         </option>
 
                                     </select>
