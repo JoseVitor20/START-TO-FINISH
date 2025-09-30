@@ -60,7 +60,7 @@
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Formulário de contato</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- Certificado SSL grátis</li>
                         <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
-                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- 1 conta de e-mail profissional</li>
+                        <li style="font-size: 10px; color: #a0a0c0; line-height: 1.7; margin-bottom: 5px;">- </li>
                     </ul>
                 </div>
             @elseif($planName == 'price_1SCm2VATrxUtVNlsRTlIdlpn')

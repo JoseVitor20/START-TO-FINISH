@@ -35,8 +35,7 @@
                         'Domínio grátis (enquanto for assinante)',
                         'Manutenção e suporte grátis agendado via WhatsApp (prioridade baixa)',
                         'Formulário de contato',
-                        'Certificado SSL grátis',                        
-                        '1 conta de e-mail profissional'
+                        'Certificado SSL grátis',                                            
                     ],
                     'ideal_for' => 'Ideal para quem está dando o primeiro passo',
                     'price_id' => 'price_1SCm0XATrxUtVNlsHXiIWMlU'

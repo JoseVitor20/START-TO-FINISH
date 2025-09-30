@@ -39,7 +39,7 @@
                                             <li><i class="fa-solid fa-circle-check"></i> Formulário de contato</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Certificado SSL grátis</li>
                                             <li><i class="fa-solid fa-circle-check"></i> </li>
-                                            <li><i class="fa-solid fa-circle-check"></i> 1 conta de e-mail profissional</li>
+                                            <li><i class="fa-solid fa-circle-check"></i> </li>
                                         @elseif($subscription->plan_name == 'price_1SCm2VATrxUtVNlsRTlIdlpn')
                                             <li><i class="fa-solid fa-circle-check"></i> Site de até 5 páginas</li>
                                             <li><i class="fa-solid fa-circle-check"></i> Criação de site prioritária (sujeito à disponibilidade)</li>
