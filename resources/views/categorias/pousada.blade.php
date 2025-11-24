@@ -3,7 +3,7 @@
 @section('title', 'Pousada Charmosa - Seu Refúgio na Natureza')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/pousada.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/pousada.css') }}">
 @endpush
 
 @section('content')

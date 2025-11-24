@@ -3,7 +3,7 @@
 @section('title', 'Café Aroma - A melhor cafeteria da cidade')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/cafeteria.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/cafeteria.css') }}">
 @endpush
 
 @section('content')

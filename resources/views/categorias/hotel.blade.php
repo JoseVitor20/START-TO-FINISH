@@ -3,7 +3,8 @@
 @section('title', 'Hotel Paraíso - Luxo e Conforto')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/hotel.css', 'resources/js/categorias/hotel.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/hotel.css') }}">
+    <script type="module" src="{{ asset('js/categorias/hotel.js') }}"></script>                  
 @endpush
 
 @section('content')

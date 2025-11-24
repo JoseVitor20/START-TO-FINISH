@@ -3,7 +3,8 @@
 @section('title', 'Harmonia Mental | Consultório Psicológico')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/psicologico.css', 'resources/css/categorias/psicologico.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/psicologico.css') }}">
+    <script type="module" src="{{ asset('js/categorias/psicologico.js') }}"></script>                                      
 @endpush
 
 @section('content')

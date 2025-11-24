@@ -3,7 +3,8 @@
 @section('title', 'DentalCare - Clínica Odontológica')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/odonto.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/odonto.css') }}">
+    <script type="module" src="{{ asset('js/categorias/odonto.js') }}"></script>                              
 @endpush
 
 @section('content')

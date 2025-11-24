@@ -3,7 +3,8 @@
 @section('title', 'PharmaCare - Sua Farmácia Digital')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/farmacia.css', 'resources/js/categorias/farmacia.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/farmacia.css') }}">
+    <script type="module" src="{{ asset('js/categorias/farmacia.js') }}"></script>          
 @endpush
 
 @section('content')

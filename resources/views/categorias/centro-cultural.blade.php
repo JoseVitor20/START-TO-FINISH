@@ -3,7 +3,8 @@
 @section('title', 'Centro Cultural ArteViva')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/centro-cultural.css', 'resources/js/categorias/centro-cultural.js'])
+    <link rel="stylesheet" href="{{ asset('resources/css/categorias/centro-cultural.css') }}">
+    <script type="module" src="{{ asset('js/categorias/centro-cultural.js') }}"></script>      
 @endpush
 
 @section('content')

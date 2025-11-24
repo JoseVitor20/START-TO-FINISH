@@ -3,7 +3,8 @@
 @section('title', 'MarketPrime - Supermercado Digital')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/mercado.css', 'resources/js/categorias/mercado.js']);
+    <link rel="stylesheet" href="{{ asset('css/categorias/mercado.css') }}">
+    <script type="module" src="{{ asset('js/categorias/mercado.js') }}"></script>                          
 @endpush
 
 @section('content')

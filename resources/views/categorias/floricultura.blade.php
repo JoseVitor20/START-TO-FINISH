@@ -3,7 +3,8 @@
 @section('title', 'Flora Elegante - Floricultura')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/floricultura.css', 'resources/js/categorias/floricultura.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/floricultura.css') }}">
+    <script type="module" src="{{ asset('js/categorias/floricultura.js') }}"></script>              
 @endpush
 
 @section('content')

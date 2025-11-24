@@ -3,7 +3,8 @@
 @section('title', 'Barbearia Vintage - Estilo Clássico para Homens Modernos')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/barbearia.css', 'resources/js/categorias/barbearia.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/barbearia.css') }}">
+    <script type="module" src="{{ asset('js/categorias/barbearia.js') }}"></script>    
 @endpush
 
 @section('content')

@@ -88,7 +88,9 @@
     {{-- === ESTILOS CSS E JS === --}}
         @stack('estilosEcodigos')
 
-        @vite(['resources/css/welcome/01-carregamento.css', 'resources/js/welcome/01-carregamento.js'])
+    {{-- CARREGAMENTO --}}
+    <link rel="stylesheet" href="{{asset('css/welcome/01-carregamento.css')}}">
+    <script src="{{asset('js/welcome/01-carregamento.js')}}"></script>
 
 </head>
 
@@ -120,16 +122,6 @@
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             <script>
               AOS.init();
-            </script>
-
-        <!-- === Google tag (gtag.js) === -->
-            <script async src="google-site-verification=6Sf62hPN2HDwTEdzz7Hc-qaWy-h_A7NP51JfQ8eo7Sk"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'AW-16991394525');
             </script>
 
 </body>

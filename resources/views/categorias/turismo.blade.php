@@ -3,7 +3,7 @@
 @section('title', 'Dream Travel - Sua Agência de Turismo')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/turismo.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/turismo.css') }}">
 @endpush
 
 @section('content')

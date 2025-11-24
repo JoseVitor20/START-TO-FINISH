@@ -3,7 +3,8 @@
 @section('title', 'Elegance Construções - Materiais de Qualidade')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/loja-materiais.css'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/loja-materiais.css') }}">
+    <script type="module" src="{{ asset('js/categorias/loja-materiais.js') }}"></script>                      
 @endpush
 
 @section('content')

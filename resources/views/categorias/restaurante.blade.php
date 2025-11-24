@@ -3,7 +3,8 @@
 @section('title', 'Gourmet Delight | Experiência Gastronômica')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/restaurante.css', 'resources/js/categorias/restaurante.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/restaurante.css') }}">
+    <script type="module" src="{{ asset('js/categorias/restaurante.js') }}"></script>                                          
 @endpush
 
 @section('content')

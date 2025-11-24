@@ -3,7 +3,8 @@
 @section('title', 'Glamour - Salão de Beleza Premium')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/salao-beleza.css', 'resources/js/categorias/salao-beleza.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/salao-beleza.css') }}">
+    <script type="module" src="{{ asset('js/categorias/salao-beleza.js') }}"></script>                                              
 @endpush
 
 @section('content')

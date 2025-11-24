@@ -3,7 +3,8 @@
 @section('title', 'Fashion Boutique - Loja de Roupas')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/loja-roupas.css', 'resources/js/categorias/loja-roupas.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/loja-roupas.css') }}">
+    <script type="module" src="{{ asset('js/categorias/loja-roupas.js') }}"></script>                          
 @endpush
 
 @section('content')

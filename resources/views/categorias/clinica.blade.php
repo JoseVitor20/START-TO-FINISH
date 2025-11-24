@@ -3,7 +3,8 @@
 @section('title', 'VitaCare - Clínica Médica Integrada')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/clinica.css', 'resources/js/categorias/clinica.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/clinica.css') }}">
+    <script type="module" src="{{ asset('js/categorias/clinica.js') }}"></script>      
 @endpush
 
 @section('content')

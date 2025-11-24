@@ -3,7 +3,8 @@
 @section('title', 'Park Aquático Paradise - O Maior Parque Aquático do Brasil')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/park-aquatico.css', 'resources/js/categorias/park-aquatico.js'])
+    <link rel="stylesheet" href="{{ asset('css/categorias/park-aquatico.css') }}">
+    <script type="module" src="{{ asset('js/categorias/park-aquatico.js') }}"></script>                              
 @endpush
 
 @section('content')

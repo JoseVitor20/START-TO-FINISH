@@ -3,7 +3,8 @@
 @section('title', 'Pães&Doces | Panificadora Premium')
 
 @push('estilosEcodigos')
-    @vite(['resources/css/categorias/panificadora.css', 'resources/js/categorias/panificadora.js'])
+   <link rel="stylesheet" href="{{ asset('css/categorias/panificadora.css') }}">
+   <script type="module" src="{{ asset('js/categorias/panificadora.js') }}"></script>                              
 @endpush
 
 @section('content')
